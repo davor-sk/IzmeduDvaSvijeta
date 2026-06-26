@@ -1,0 +1,16 @@
+﻿title: Start
+---
+Kael: Sustav bilježi anomaliju.
+Kael: Netko šalje signal.
+-> Odgovori sam
+    Kael: Čujem vas. Tko ste?
+    <<jump End>>
+-> Prijavi vladi
+    Kael: Ovo moram prijaviti.
+    <<jump End>>
+===
+
+title: End
+---
+Kael: Kraj testa.
+===
