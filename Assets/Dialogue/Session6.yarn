@@ -1,4 +1,101 @@
-﻿title: Session6
+﻿title: Session06_Start
 ---
-This is an example of a Yarn Spinner script. Write your dialogue here!
+Narrator: Kael se vraća u stan nakon još jednog iscrpljujućeg dana.
+Narrator: Na tavanu pronalazi staru kutiju koja je pripadala njegovom djedu.
+
+Kael: Ovo nikada prije nisam vidio...
+
+Narrator: U kutiji se nalaze fotografije, stara pisma i bilježnica ispisana nepoznatim simbolima.
+
+Kael: Ne bi trebalo biti moguće...
+Kael: Ali razumijem što piše.
+
+Narrator: Svaka riječ koju je Kael učio posljednjih tjedana odjednom dobiva potpuno novo značenje.
+
+Dhorn: Kael-vorn.
+
+Kael: Opet ta ista dva izraza...
+
+Narrator: Ovoga puta značenje je jasno.
+
+Dhorn: Vorn.
+Narrator: Vorn znači "onaj koji je otišao". Izbjeglica.
+
+Dhorn: Kael.
+Narrator: Kael nije ime. To je titula. "Onaj koji sluša između svjetova."
+
+Narrator: Kael shvaća da njegov djed nije došao iz nepoznate zemlje.
+
+Narrator: Došao je iz Dhorna.
+
+<<if $moranTranslation == "doma">>
+Kael: Cijelo vrijeme riječ "moran" za mene je značila dom.
+<<elseif $moranTranslation == "sigurnosti">>
+Kael: Cijelo vrijeme riječ "moran" za mene je značila sigurnost.
+<<elseif $moranTranslation == "nade">>
+Kael: Cijelo vrijeme riječ "moran" za mene je značila nadu.
+<<endif>>
+
+Narrator: Odjednom svaka dosadašnja poruka dobiva potpuno novo značenje.
+
+Maren: Vorn. Gdje si?
+
+Dhorn: Kael-vorn. Vrijeme.
+
+Narrator: Obje strane očekuju posljednju odluku.
+
+-> Ostani uz vladu
+    <<set $finalChoice = "government">>
+    <<jump Session06_Government>>
+
+-> Idi prema Dhornu
+    <<set $finalChoice = "dhorn">>
+    <<set $betrayedSurface = true>>
+    <<jump Session06_Dhorn>>
+
+<<if $translationAccuracy >= 6>>
+-> Otkrij istinu objema stranama
+    <<set $finalChoice = "truth">>
+    <<jump Session06_Truth>>
+<<endif>>
+===
+
+title: Session06_Government
+---
+Maren: Dobro. Još uvijek možemo završiti projekt.
+
+Kael: Možda je ovo jedini način da spriječim veći sukob.
+
+<<jump Session06_End>>
+===
+
+title: Session06_Dhorn
+---
+Dhorn: Vel-ahn, kael.
+
+Kael: Ako moram birati, biram svoje korijene.
+
+<<jump Session06_End>>
+===
+
+title: Session06_Truth
+---
+Kael: Dosta skrivanja.
+
+Kael: Vrijeme je da obje strane saznaju cijelu istinu.
+
+Maren: Što želiš reći?
+
+Dhorn: Govor.
+
+Narrator: Posljednja poruka poslana je objema stranama.
+
+<<jump Session06_End>>
+===
+
+title: Session06_End
+---
+Narrator: Sve je spremno za posljednji susret.
+
+<<jump Session07_Start>>
 ===

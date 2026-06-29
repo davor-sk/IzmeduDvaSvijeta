@@ -1,4 +1,90 @@
-﻿title: Session7
+﻿title: Session07_Start
 ---
-This is an example of a Yarn Spinner script. Write your dialogue here!
+Narrator: Posljednja poruka stiže.
+
+<<if $finalChoice == "truth" && $translationAccuracy >= 6>>
+    <<jump Ending_D_Kael>>
+<<elseif $finalChoice == "dhorn" && $betrayedSurface == true && $dhornTrust >= 3>>
+    <<jump Ending_A_Vorn>>
+<<elseif $finalChoice == "government" && $betrayedSurface == true && $dhornTrust < 0>>
+    <<jump Ending_B_Director>>
+<<elseif $marenSuspicion >= 4 && $dhornTrust < 1>>
+    <<jump Ending_C_War>>
+<<elseif $finalChoice == "dhorn">>
+    <<jump Ending_A_Vorn>>
+<<elseif $finalChoice == "government">>
+    <<jump Ending_B_Director>>
+<<else>>
+    <<jump Ending_C_War>>
+<<endif>>
+===
+
+title: Ending_A_Vorn
+---
+Narrator: Kael tipka posljednju poruku Maren.
+Kael: Direktorice Maren. Projekt Vatra-7 mora stati.
+Kael: Razloge ćete pronaći u priloženim dokumentima.
+Kael: Žao mi je. — K. Vorn
+
+Dhorn: Hodi kael. Hodi moran.
+Kael: Dolazim. Dolazim doma.
+
+Narrator: Ekran se gasi. Tišina.
+Narrator: Zatim se čuju koraci koji odlaze prema dolje.
+
+Narrator: KRAJ A — VORN
+Narrator: Onaj koji je otišao — vratio se.
+===
+
+title: Ending_B_Director
+---
+Narrator: Marenin ured. Jutro.
+
+Maren: Projekt je završen, Vorn. Uspješno.
+Maren: Tvoj doprinos bio je ključan.
+
+Narrator: Kael gleda kroz prozor.
+Narrator: Negdje ispod — tišina.
+
+Kael: Vel-ahn, dubina?
+
+Narrator: Nema odgovora.
+Narrator: Kursor treperi.
+
+Narrator: KRAJ B — DIREKTORICA
+Narrator: Pobjednik uvijek zna što je izgubio.
+===
+
+title: Ending_C_War
+---
+Dhorn: Zna Dhorn. Zna toru. Nem-kael više.
+Kael: Dhorn zna. Površina zna. Nema više posrednika.
+
+Maren: Vorn. Pronašli smo vaše komunikacije. Sve komunikacije.
+
+Narrator: Veza se prekida.
+Narrator: Ispod grada nešto se pokreće.
+Narrator: Iznad grada netko izdaje naredbu.
+
+Narrator: KRAJ C — RAT
+Narrator: Kad nestane onaj koji prevodi, ostaju samo naredbe.
+===
+
+title: Ending_D_Kael
+---
+Kael: Dosta je.
+
+Kael: Postoje ljudi ispod nas.
+Kael: Postoji povijest koju smo zakopali.
+Kael: I postoji jezik koji još uvijek možemo razumjeti.
+
+Maren: Ako je ovo istina...
+
+Dhorn: Vel-ahn, kael.
+
+Narrator: Prvi put, poruka ne ide preko laži.
+Narrator: Prvi put, obje strane čuju isto.
+
+Narrator: KRAJ D — KAEL
+Narrator: Onaj koji sluša između — napokon je progovorio.
 ===

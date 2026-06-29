@@ -6,4 +6,5 @@
 <<declare $betrayedSurface = false>>
 <<declare $kaelaIsolated = false>>
 <<declare $moranTranslation = "">> 
+<<declare $finalChoice = "">>
 ===
