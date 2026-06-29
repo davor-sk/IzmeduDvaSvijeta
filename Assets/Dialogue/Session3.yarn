@@ -1,0 +1,87 @@
+﻿title: Session03_Start
+---
+Narrator: Kaelov ured. Jutro.
+Narrator: Dva terminala otvorena su istovremeno.
+Narrator: Danas su stigle dvije poruke. Jedna odozdo. Jedna odozgo.
+Kael: Ne znam kojom bih počeo.
+
+Maren: Vorn. Projekt Vatra-7 ulazi u drugu fazu.
+Maren: Povećavamo kapacitet bušenja za 40%.
+Maren: Komuniciraj s kontaktima i procijeni moguće reakcije.
+Maren: Rok: 48 sati.
+
+Dhorn: Vel-ahn, Gornji-koji-sluša.
+Kael: Razumijemo.
+
+Dhorn: Traži Dhorn — zaustavi vatra-uzima.
+Kael: Dhorn traži da se zaustavi... vatra-uzima.
+Kael: "Vatra" može značiti energiju, silu, možda čak i rat. Ali ovdje zvuči kao bušenje.
+
+Dhorn: Nem-dah — govor. Tah-put ako nem-zaustavi.
+Kael: Bez straha govorimo. Neizvjestan put ako se ne zaustavi.
+Kael: Tah-put. Neizvjesna budućnost. Opasni put. Možda oboje.
+
+Dhorn: Stari dubina pamti — kael zna.
+Kael: Kael?
+Kael: Treći put čujem tu riječ. Nije ime. Ili jest?
+
+Narrator: Kael mora prevesti Marenin ultimatum Dhornu.
+Narrator: Povećanje bušenja za 40%. Rok: 48 sati.
+
+-> Točno prenesi ultimatum: "Vatra-uzima raste. 48 sati."
+    <<set $dhornTrust += 1>>
+    <<set $marenSuspicion += 1>>
+    <<jump Session03_Truth>>
+
+-> Ublaži poruku: "Toru razmatra promjene. Traži Dhorn strpljenje."
+    <<set $dhornTrust -= 1>>
+    <<jump Session03_Softened>>
+
+-> Prikrij potpuno i ne govori Dhornu ništa o ultimatumu
+    <<set $dhornTrust -= 2>>
+    <<set $marenSuspicion -= 1>>
+    <<jump Session03_Hidden>>
+===
+
+title: Session03_Truth
+---
+Narrator: Kael šalje točan prijevod.
+Narrator: S druge strane terminala nastaje duga tišina.
+
+Dhorn: Vel-ahn. Znamo sada.
+Kael: Razumiju. Sada znaju.
+
+<<jump Session03_End>>
+===
+
+title: Session03_Softened
+---
+Narrator: Kael ublažava Mareninu poruku prije slanja Dhornu.
+
+Dhorn: Tah-put.
+Dhorn: Čeka Dhorn. Ali — nem-dugo čeka.
+Kael: Čekat će. Ali ne dugo.
+
+<<jump Session03_End>>
+===
+
+title: Session03_Hidden
+---
+Narrator: Kael ne govori Dhornu ništa o ultimatumu.
+Narrator: Poruka ostaje između njega i Maren.
+
+Kael: Ako ne znaju, možda ima još vremena.
+Kael: Ili sam upravo potrošio jedino vrijeme koje smo imali.
+
+<<jump Session03_End>>
+===
+
+title: Session03_End
+---
+Narrator: 48 sati.
+Narrator: Kael zatvara oba terminala i gleda u strop.
+Kael: Negdje ispod mojih nogu, u dubini koju nikad nisam vidio, netko čeka moj odgovor.
+Kael: A u bilježnici: kael — ???
+
+Narrator: Kraj Sesije 3.
+===

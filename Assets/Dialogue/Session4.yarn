@@ -1,0 +1,85 @@
+﻿title: Session4_Start
+---
+Narrator: Tri dana kasnije. Situacija eskalira.
+
+Narrator: Projekt Vatra-7 faza dva je počela. Kael je osjetio vibracije kroz pod ureda. Ili mu se učinilo.
+
+Dhorn: Gornji-koji-sluša. Pada. Pada sada.
+
+Narrator: (automatski) "Ruši se."
+
+Dhorn: Traži Dhorn — svjetlost toru.
+
+-> znanje / istinu
+    <<set $translationAccuracy += 1>>
+    Kael: Bilježim prijevod "znanje / istinu".
+-> pomoć
+    Kael: Bilježim prijevod "pomoć".
+-> svjetlo / energiju
+    Kael: Bilježim prijevod "svjetlo / energiju".
+
+Dhorn: Daje Dhorn — sjeme vel-moran toru.
+
+<<if $moranTranslation == "doma">>
+Narrator: Kael vidi izraz "dobrog doma".
+<<elseif $moranTranslation == "sigurnosti">>
+Narrator: Kael vidi izraz "dobre sigurnosti".
+<<elseif $moranTranslation == "nade">>
+Narrator: Kael vidi izraz "dobre nade".
+<<endif>>
+
+-> budućnost / nadu
+    <<set $translationAccuracy += 1>>
+    Kael: Bilježim prijevod.
+-> resurse
+    Kael: Bilježim prijevod.
+-> djecu / naraštaj
+    Kael: Bilježim prijevod.
+
+Dhorn: Vorn — nem-hodi dubina.
+Dhorn: Vorn — hodi toru.
+Dhorn: Kael — ostaje.
+
+-> ostaje
+    <<set $translationAccuracy += 1>>
+-> čeka
+-> pamti
+-> sluša
+
+Narrator: U tom trenutku zazvoni terminal.
+
+Government: Vorn. Imam informaciju koja te se tiče.
+
+Government: Naši geolozi pronašli su velike šupljine ispod grada.
+
+Government: Znaš li nešto o tome?
+
+-> Ne, direktorice. Ovo je novo za mene.
+    Government: Razumijem.
+-> Imam neke naznake. Trebam više vremena.
+    <<set $marenSuspicion += 1>>
+    Government: Dobro. Ali požuri.
+-> Da. Komunicirao sam s njima.
+    <<set $marenSuspicion += 3>>
+    Government: Što?!
+
+Narrator: Istovremeno obje strane traže pomoć.
+
+Narrator: Dhorn traži planove bušenja.
+
+Narrator: Vlada traži karte podzemnih prolaza.
+
+-> Pomozi Dhornu
+    <<set $betrayedSurface = true>>
+    <<set $dhornTrust += 3>>
+    <<jump Session5A_Start>>
+
+-> Pomozi Vladi
+    <<set $betrayedSurface = true>>
+    <<set $marenSuspicion -= 2>>
+    <<jump Session5B_Start>>
+
+-> Odbij obje strane
+    <<set $kaelaIsolated = true>>
+    <<jump Session5C_Start>>
+===
