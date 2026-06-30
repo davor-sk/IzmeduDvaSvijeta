@@ -1,0 +1,10 @@
+﻿title: Globals
+---
+<<declare $dhornTrust = 0>>
+<<declare $marenSuspicion = 0>>
+<<declare $translationAccuracy = 0>>
+<<declare $betrayedSurface = false>>
+<<declare $kaelaIsolated = false>>
+<<declare $moranTranslation = "">> 
+<<declare $finalChoice = "">>
+===
