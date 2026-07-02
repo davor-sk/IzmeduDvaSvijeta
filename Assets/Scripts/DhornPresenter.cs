@@ -1,4 +1,3 @@
-using System.Threading;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using TMPro;
@@ -20,32 +19,26 @@ public class DhornPresenter : DialoguePresenterBase
     }
 
     public override async YarnTask RunLineAsync(LocalizedLine line, LineCancellationToken token)
+{
+    speakerNameText.text = line.CharacterName ?? "";
+    dialogueText.text = line.TextWithoutCharacterName.Text;
+    
+    while (true)
     {
-        speakerNameText.text = line.CharacterName ?? "";
-        dialogueText.text = line.TextWithoutCharacterName.Text;
+        bool advance =
+            (Keyboard.current != null &&
+                (Keyboard.current.enterKey.wasPressedThisFrame ||
+                 Keyboard.current.spaceKey.wasPressedThisFrame))
+            ||
+            (Mouse.current != null &&
+                Mouse.current.leftButton.wasPressedThisFrame);
 
-        bool advanced = false;
-        while (!advanced)
-        {
-            if (Keyboard.current != null && (
-                Keyboard.current.enterKey.wasPressedThisFrame ||
-                Keyboard.current.spaceKey.wasPressedThisFrame))
-            {
-                advanced = true;
-            }
-            else if (Mouse.current != null && Mouse.current.leftButton.wasPressedThisFrame)
-            {
-                advanced = true;
-            }
-            await YarnTask.Yield();
-        }
-    }
+        if (advance)
+            break;
 
-    [System.Obsolete]
-    public override YarnTask<DialogueOption> RunOptionsAsync(
-        DialogueOption[] dialogueOptions,
-        CancellationToken cancellationToken)
-    {
-        return YarnTask<DialogueOption>.FromResult(null);
+        await YarnTask.Yield();
     }
+    
+    await YarnTask.Yield();
+}
 }

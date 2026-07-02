@@ -19,17 +19,14 @@ Narrator: Kaelov protokol je jasan: sve anomalije prijaviti nadređenima. Protok
     <<set $dhornTrust -= 1>>
     <<set $marenSuspicion = 0>>
     <<jump Session01_Report>>
-
 -> Odgovori sam, bez prijave
     <<set $dhornTrust += 1>>
     <<set $kaelaIsolated = true>>
     <<jump Session01_Alone>>
-
 -> Ignoriraj signal, zatvori kanal
     <<set $dhornTrust = 0>>
     <<jump Session01_Ignore>>
 ===
-
 title: Session01_Alone
 ---
 Kael: Čujem vas. Tko ste?
@@ -61,7 +58,6 @@ Maren: Vorn. Ovaj signal koji si prijavio. Dobro je što si ga prijavio. Dalje �
 
 -> Razumijem. Kakvi su sljedeći koraci?
     <<jump Session01_Report_End>>
-
 -> Molio bih da ostanem uključen. Moja struka može biti od koristi.
     <<jump Session01_Report_End>>
 ===
@@ -71,7 +67,6 @@ title: Session01_Report_End
 Maren: Zapravo... ostani na projektu.
 Maren: Trebamo nekog tko razumije lingvistiku signala.
 Maren: Ali Vorn, ovo ostaje interno. Razumijemo se?
-
 <<jump Session01_End>>
 ===
 
@@ -80,7 +75,6 @@ title: Session01_Ignore
 Narrator: Kael zatvara kanal.
 Narrator: Signal nestaje s ekrana, ali ne i iz njegove glave.
 Kael: Ako je ovo bila greška, zašto se osjećam kao da sam upravo nekome zatvorio vrata?
-
 <<jump Session01_End>>
 ===
 
