@@ -1,53 +1,152 @@
 ﻿title: Session06_Start
 ---
+Narrator: Kasno navečer.
+
 Narrator: Kael se vraća u stan nakon još jednog iscrpljujućeg dana.
-Narrator: Na tavanu pronalazi staru kutiju koja je pripadala njegovom djedu.
 
-Kael: Ovo nikada prije nisam vidio...
+Narrator: Stan je tih.
 
-Narrator: U kutiji se nalaze fotografije, stara pisma i bilježnica ispisana nepoznatim simbolima.
+Narrator: Po prvi put nakon dugo vremena ne pali terminal.
 
-Kael: Ne bi trebalo biti moguće...
-Kael: Ali razumijem što piše.
+Kael: Ne mogu više.
 
-Narrator: Svaka riječ koju je Kael učio posljednjih tjedana odjednom dobiva potpuno novo značenje.
+Kael: Cijeli tjedan prevodim tuđe riječi.
+
+Kael: A više ne razumijem ni svoje.
+
+Narrator: Tražeći stare bilješke, penje se na tavan.
+
+Narrator: Iza stare police pronalazi drvenu kutiju.
+
+Narrator: Na poklopcu je urezan simbol koji nikada prije nije primijetio.
+
+Kael: Čudno...
+
+Kael: Kao da sam ga već negdje vidio.
+
+Narrator: U kutiji se nalaze požutjele fotografije.
+
+Narrator: Nekoliko pisama.
+
+Narrator: I stara bilježnica ispisana nepoznatim simbolima.
+
+Kael: Ovo ne bi trebalo biti moguće...
+
+Kael: Ali...
+
+Kael: Razumijem što piše.
+
+Narrator: Ne prevodi.
+
+Narrator: Ne traži značenje.
+
+Narrator: Jednostavno razumije.
+
+Kael: Ne učim njihov jezik...
+
+Kael: Sjećam ga se.
+
+Narrator: Svaka riječ koju je posljednjih tjedana zapisivao u svoju bilježnicu odjednom dobiva novo značenje.
+
+Narrator: Kao da su cijelo vrijeme bile dio njega.
 
 Dhorn: Kael-vorn.
 
-Kael: Opet ta ista dva izraza...
+Kael: Opet.
 
-Narrator: Ovoga puta značenje je jasno.
+Kael: Ta ista dva izraza.
+
+Kael: Cijelo vrijeme bili su ispred mene.
+
+Narrator: Ovoga puta značenje je potpuno jasno.
 
 Dhorn: Vorn.
-Narrator: Vorn znači "onaj koji je otišao". Izbjeglica.
+
+Narrator: Vorn znači...
+
+Narrator: Onaj koji je otišao.
+
+Narrator: Izbjeglica.
+
+Kael: Djed...
+
+Narrator: Kael okreće jednu od fotografija.
+
+Narrator: Na poleđini je istim pismom napisana samo jedna riječ.
+
+Narrator: Vorn.
+
+Kael: Cijelo vrijeme...
+
+Kael: Govorili su o njemu.
 
 Dhorn: Kael.
-Narrator: Kael nije ime. To je titula. "Onaj koji sluša između svjetova."
+
+Narrator: Kael nije ime.
+
+Narrator: To je titula.
+
+Narrator: Onaj koji sluša između svjetova.
+
+Kael: Zato...
+
+Kael: Zato su me tako zvali od prvog dana.
+
+Kael: Nikada nisu pogriješili.
 
 Narrator: Kael shvaća da njegov djed nije došao iz nepoznate zemlje.
 
 Narrator: Došao je iz Dhorna.
 
+Narrator: Cijelo vrijeme prevodio je vlastito nasljeđe.
+
 <<if $moranTranslation == "doma">>
 Kael: Cijelo vrijeme riječ "moran" za mene je značila dom.
+
+Kael: Možda zato što sam ga cijeli život tražio.
 <<elseif $moranTranslation == "sigurnosti">>
 Kael: Cijelo vrijeme riječ "moran" za mene je značila sigurnost.
+
+Kael: A cijeli život pokušavao sam pronaći mjesto gdje je mogu osjetiti.
 <<elseif $moranTranslation == "nade">>
 Kael: Cijelo vrijeme riječ "moran" za mene je značila nadu.
+
+Kael: Možda zato što je nada jedino što nam je svima ostalo.
 <<endif>>
 
-Narrator: Odjednom svaka dosadašnja poruka dobiva potpuno novo značenje.
+Narrator: Svaka poruka.
 
-Maren: Vorn. Gdje si?
+Narrator: Svaki prijevod.
 
-Dhorn: Kael-vorn. Vrijeme.
+Narrator: Svaka odluka.
 
-Narrator: Obje strane očekuju posljednju odluku.
+Narrator: Odjednom dobiva potpuno novo značenje.
+
+Kael: Nisam bio slučajni prevoditelj.
+
+Kael: Oni su mene tražili.
+
+Maren: Vorn.
+
+Maren: Gdje si?
+
+Kael: Prvi put...
+
+Kael: Nisam siguran kome se javlja.
+
+Dhorn: Kael-vorn.
+
+Dhorn: Vrijeme.
+
+Narrator: Obje strane čekaju.
+
+Narrator: Više nema novih riječi.
+
+Narrator: Ostala je samo jedna odluka.
 
 -> Ostani uz vladu
     <<set $finalChoice = "government">>
     <<jump Session06_Government>>
-
 -> Idi prema Dhornu
     <<set $finalChoice = "dhorn">>
     <<set $betrayedSurface = true>>
@@ -62,7 +161,13 @@ Narrator: Obje strane očekuju posljednju odluku.
 
 title: Session06_Government
 ---
-Maren: Dobro. Još uvijek možemo završiti projekt.
+Maren: Dobro.
+
+Maren: Još uvijek možemo završiti projekt.
+
+Kael: Cijeli život nisam znao tko sam.
+
+Kael: To ne znači da sada moram odbaciti svijet u kojem sam odrastao.
 
 Kael: Možda je ovo jedini način da spriječim veći sukob.
 
@@ -73,7 +178,15 @@ title: Session06_Dhorn
 ---
 Dhorn: Vel-ahn, kael.
 
-Kael: Ako moram birati, biram svoje korijene.
+Dhorn: Moran čeka.
+
+Kael: Cijeli život mislio sam da nemam odgovor.
+
+Kael: A možda sam ga nosio u sebi od početka.
+
+Kael: Ako moram birati...
+
+Kael: Biram svoje korijene.
 
 <<jump Session06_End>>
 ===
@@ -82,11 +195,15 @@ title: Session06_Truth
 ---
 Kael: Dosta skrivanja.
 
-Kael: Vrijeme je da obje strane saznaju cijelu istinu.
+Kael: Dosta prijevoda koji mijenjaju značenje.
+
+Kael: Vrijeme je da obje strane čuju iste riječi.
 
 Maren: Što želiš reći?
 
 Dhorn: Govor.
+
+Kael: Istina više ne pripada ni jednima ni drugima.
 
 Narrator: Posljednja poruka poslana je objema stranama.
 
@@ -96,6 +213,10 @@ Narrator: Posljednja poruka poslana je objema stranama.
 title: Session06_End
 ---
 Narrator: Sve je spremno za posljednji susret.
+
+Narrator: Ovoga puta Kael neće prevoditi samo riječi.
+
+Narrator: Prevodit će budućnost.
 
 <<jump Session07_Start>>
 ===

@@ -1,59 +1,93 @@
 ﻿title: Session02_Start
 ---
-Narrator: Tjedan dana kasnije. Kael ima bilježnicu punu bilješki.
-Narrator: Dhorn govori polako. Uče novi jezik zajedno s Kaelom. Ili Kael uči njihov.
-Kael: Teško je reći čiji je jezik stariji.
+Narrator: Tjedan dana kasnije.
+Narrator: Kaelova bilježnica više nije prazna.
+Narrator: Svaka stranica ispunjena je riječima koje ne postoje ni u jednom poznatom jeziku.
+
+Kael: Svake noći dodam jednu ili dvije nove riječi.
+Kael: Svakog jutra manje sam siguran da ih stvarno učim.
+Kael: Ponekad imam osjećaj da ih se samo prisjećam.
+
+Narrator: Signal stiže točno u isto vrijeme kao i prošli put.
 
 Dhorn: Vel-ahn, Gornji-koji-sluša.
 Kael: Razumijemo, Gornji-koji-sluša.
 
-Dhorn: Uzima toru — kamen dubine.
-Kael: Uzimate površina — kamen dubine.
-Kael: Nisam siguran. "Uzima", "kamen" i "dubina" ovdje nose previše značenja.
+Dhorn: Uzima toru, kamen dubine.
+Kael: Uzimate površina, kamen dubine.
 
-Dhorn: Pada zid-moran. Dugo pada.
-Kael: Riječ "moran" pojavljuje se prvi put. Moram odlučiti kako je razumijem.
+Kael: "Uzima" može značiti uzeti...
+Kael: ...ali i oduzeti.
+Kael: "Kamen" možda nije kamen.
+Kael: A "dubina" možda nije samo mjesto.
+
+Dhorn: Pada zid, moran. Dugo pada.
+
+Narrator: Kael zastaje.
+
+Narrator: Riječ "moran" nikada prije nije vidio.
+
+Kael: Čudno.
+Kael: Nekako mi zvuči poznato.
+
+Kael: Ako je pogrešno prevedem...
+Kael: možda ću promijeniti cijelu poruku.
 
 -> moran znači doma
     <<set $moranTranslation = "doma">>
     <<set $translationAccuracy += 1>>
-    Kael: Padaju zidovi doma. Dugo padaju.
+    Kael: Padaju zidovi doma.
+    Kael: Dugo padaju.
     <<jump Session02_Daje>>
-
 -> moran znači sigurnosti
     <<set $moranTranslation = "sigurnosti">>
     <<set $translationAccuracy += 1>>
-    Kael: Padaju zidovi sigurnosti. Dugo padaju.
+    Kael: Padaju zidovi sigurnosti.
+    Kael: Dugo padaju.
     <<jump Session02_Daje>>
-
 -> moran znači nade
     <<set $moranTranslation = "nade">>
     <<set $translationAccuracy += 0>>
-    Kael: Padaju zidovi nade. Dugo padaju.
+    Kael: Padaju zidovi nade.
+    Kael: Dugo padaju.
     <<jump Session02_Daje>>
 ===
 
 title: Session02_Daje
 ---
-Dhorn: Nem-dah govorimo. Vel — daje ruku toru.
-Kael: Bez straha govorimo. Dobro — nudimo ruku površini.
+Dhorn: Nem-dah govorimo. Vel, daje ruku toru.
+Kael: Bez straha govorimo.
+Kael: Dobro, nudimo ruku površini.
 
-Dhorn: Stari dubina pamti — vorn.
-Kael: Stara dubina pamti — vorn.
-Kael: Vorn. Ime? Titula? Koncept? Ne mogu zaključiti.
+Kael: Ili možda traže našu ruku.
+Kael: Još uvijek ne znam tko kome govori.
 
-Narrator: Kael sastavlja prijevod od svojih odabira i priprema ga za Maren.
-Narrator: Isti Dhorn tekst može postati potpuno drugačija poruka.
+Dhorn: Stari dubina pamti, vorn.
+Kael: Stara dubina pamti, vorn.
+
+Kael: Opet ta riječ.
+Kael: Vorn.
+
+Kael: Ime?
+Kael: Titula?
+Kael: Mjesto?
+
+Kael: Ne mogu zaključiti.
+
+Narrator: Kael sastavlja prijevod od svojih odabira.
+
+Narrator: Isti Dhorn tekst može zvučati kao molba.
+Narrator: Ili kao prijetnja.
+
+Narrator: Sve ovisi o riječima koje je upravo odabrao.
 
 -> Pošalji Kaelov prijevod Maren kakav jest
     <<set $dhornTrust += 1>>
     <<jump Session02_Maren_Direct>>
-
 -> Ublaži prije slanja i izbriši najdramatičniji dio
     <<set $marenSuspicion -= 1>>
     <<set $dhornTrust -= 1>>
     <<jump Session02_Maren_Softened>>
-
 -> Prikrij potpuno i pošalji samo lingvistički napredak
     <<set $marenSuspicion -= 2>>
     <<set $dhornTrust -= 2>>
@@ -62,31 +96,78 @@ Narrator: Isti Dhorn tekst može postati potpuno drugačija poruka.
 
 title: Session02_Maren_Direct
 ---
-Maren: Savez. Zanimljivo. Što oni uopće mogu ponuditi nama?
-Narrator: Maren čeka izvještaj. Dhorn čeka odgovor.
-Kael: U bilježnici je četrnaest riječi. Možda petnaest, ako "vorn" ikad dobije značenje.
-Kael: Zašto baš sad mislim na djeda kojeg nikad nisam upoznao?
+Maren: Savez.
+
+Maren: Zanimljivo.
+
+Maren: Ako je prijevod točan...
+
+Maren: Što oni uopće mogu ponuditi nama?
+
+Kael: Ne znam što je opasnije.
+Kael: Njihove riječi...
+Kael: ili moje tumačenje.
+
+Narrator: Maren čeka izvještaj.
+Narrator: Dhorn čeka odgovor.
+
+Kael: U bilježnici je četrnaest riječi.
+
+Kael: Možda petnaest...
+
+Kael: ...ako "vorn" ikad dobije značenje.
+
+Kael: Zašto baš sada razmišljam o djedu kojeg nikad nisam upoznao?
 
 <<jump Session02_End>>
 ===
 
 title: Session02_Maren_Softened
 ---
-Maren: Vorn, ovo je... nedovoljno. Trebam konkretnije informacije.
-Maren: Možeš li ih pitati da budu jasniji?
-Narrator: Maren čeka izvještaj. Dhorn čeka odgovor.
-Kael: U bilježnici je četrnaest riječi. Možda petnaest, ako "vorn" ikad dobije značenje.
-Kael: Zašto baš sad mislim na djeda kojeg nikad nisam upoznao?
+Maren: Vorn...
+
+Maren: Ovo je nedovoljno.
+
+Maren: Trebam konkretnije informacije.
+
+Maren: Možeš li ih navesti da budu jasniji?
+
+Kael: Što ako oni jesu jasni...
+Kael: a problem je u meni?
+
+Narrator: Maren čeka izvještaj.
+Narrator: Dhorn čeka odgovor.
+
+Kael: U bilježnici je četrnaest riječi.
+
+Kael: Možda petnaest...
+
+Kael: ...ako "vorn" ikad dobije značenje.
+
+Kael: Zašto baš sada razmišljam o djedu kojeg nikad nisam upoznao?
 
 <<jump Session02_End>>
 ===
 
 title: Session02_Maren_Hidden
 ---
-Maren: Samo lingvistički napredak? Vorn, očekivala sam više od toga.
+Maren: Samo lingvistički napredak?
+
+Maren: Vorn...
+
+Maren: Očekivala sam više.
+
 Narrator: Dhorn će u sljedećem kontaktu ponoviti ono što Kael nije prenio.
-Kael: U bilježnici je četrnaest riječi. Možda petnaest, ako "vorn" ikad dobije značenje.
-Kael: Zašto baš sad mislim na djeda kojeg nikad nisam upoznao?
+
+Kael: Svaki put kad nešto prešutim...
+
+Kael: imam osjećaj da obje strane znaju više nego što govore.
+
+Kael: U bilježnici je četrnaest riječi.
+
+Kael: Možda petnaest...
+
+Kael: ...ako "vorn" ikad dobije značenje.
 
 <<jump Session02_End>>
 ===

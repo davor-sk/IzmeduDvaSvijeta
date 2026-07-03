@@ -1,84 +1,148 @@
 ﻿title: Session4_Start
 ---
-Narrator: Tri dana kasnije. Situacija eskalira.
+Narrator: Tri dana kasnije.
+Narrator: Situacija više ne eskalira polako.
+Narrator: Sada puca.
 
-Narrator: Projekt Vatra-7 faza dva je počela. Kael je osjetio vibracije kroz pod ureda. Ili mu se učinilo.
+Narrator: Projekt Vatra-7 faza dva je počela.
+Narrator: Kael je osjetio vibracije kroz pod ureda.
+
+Kael: Ili mi se učinilo.
+Kael: U zadnje vrijeme više ne vjerujem ni podu ispod sebe.
 
 Dhorn: Gornji-koji-sluša. Pada. Pada sada.
 
-Narrator: (automatski) "Ruši se."
+Kael: Pada.
+Kael: Ruši se.
+Kael: Ne govore više kao netko tko upozorava.
+Kael: Govore kao netko tko je već pod ruševinama.
 
-Dhorn: Traži Dhorn — svjetlost toru.
+Dhorn: Traži Dhorn, svjetlost toru.
+
+Kael: Svjetlost.
+Kael: Znanje.
+Kael: Istina.
+Kael: Ili samo pomoć.
 
 -> znanje / istinu
     <<set $translationAccuracy += 1>>
-    Kael: Bilježim prijevod "znanje / istinu".
+    Kael: Bilježim prijevod: znanje i istinu.
 -> pomoć
-    Kael: Bilježim prijevod "pomoć".
+    Kael: Bilježim prijevod: pomoć.
 -> svjetlo / energiju
-    Kael: Bilježim prijevod "svjetlo / energiju".
+    Kael: Bilježim prijevod: svjetlo ili energiju.
 
-Dhorn: Daje Dhorn — sjeme vel-moran toru.
+Dhorn: Daje Dhorn, sjeme vel-moran toru.
+
+Kael: Sjeme.
+Kael: Budućnost, možda.
+Kael: Ili djeca.
+Kael: Nešto što se ne smije izgubiti.
 
 <<if $moranTranslation == "doma">>
-Narrator: Kael vidi izraz "dobrog doma".
+Narrator: Kael ponovno vidi riječ moran.
+Narrator: Ovaj put ona znači dobrog doma.
+Kael: Dom.
+Kael: Za njih to nije mjesto.
+Kael: To je ono što pokušavaju spasiti.
 <<elseif $moranTranslation == "sigurnosti">>
-Narrator: Kael vidi izraz "dobre sigurnosti".
+Narrator: Kael ponovno vidi riječ moran.
+Narrator: Ovaj put ona znači dobre sigurnosti.
+Kael: Sigurnost.
+Kael: Možda je to jedino što traže.
 <<elseif $moranTranslation == "nade">>
-Narrator: Kael vidi izraz "dobre nade".
+Narrator: Kael ponovno vidi riječ moran.
+Narrator: Ovaj put ona znači dobre nade.
+Kael: Nada.
+Kael: Čudno je koliko opasno zvuči jedna nježna riječ.
 <<endif>>
 
 -> budućnost / nadu
     <<set $translationAccuracy += 1>>
-    Kael: Bilježim prijevod.
+    Kael: Bilježim prijevod: budućnost i nada.
 -> resurse
-    Kael: Bilježim prijevod.
+    Kael: Bilježim prijevod: resurse.
 -> djecu / naraštaj
-    Kael: Bilježim prijevod.
+    Kael: Bilježim prijevod: djecu i naraštaj.
 
-Dhorn: Vorn — nem-hodi dubina.
-Dhorn: Vorn — hodi toru.
-Dhorn: Kael — ostaje.
+Dhorn: Vorn, nem-hodi dubina.
+Dhorn: Vorn, hodi toru.
+Dhorn: Kael, ostaje.
+
+Kael: Vorn.
+Kael: Kael.
+Kael: Iste rečenice.
+Kael: Različite uloge.
+
+Kael: Jedan odlazi gore.
+Kael: Jedan ostaje.
+Kael: Je li ovo povijest?
+Kael: Upozorenje?
+Kael: Ili me pokušavaju podsjetiti na nešto što još ne znam?
 
 -> ostaje
     <<set $translationAccuracy += 1>>
+    Kael: Bilježim prijevod: ostaje.
 -> čeka
+    Kael: Bilježim prijevod: čeka.
 -> pamti
+    Kael: Bilježim prijevod: pamti.
 -> sluša
+    Kael: Bilježim prijevod: sluša.
 
-Narrator: U tom trenutku zazvoni terminal.
+Narrator: U tom trenutku zazvoni drugi terminal.
 
-Government: Vorn. Imam informaciju koja te se tiče.
+Government: Vorn.
+Government: Imam informaciju koja te se tiče.
+
+Kael: Naravno da ima.
 
 Government: Naši geolozi pronašli su velike šupljine ispod grada.
+Government: Sistematske.
+Government: Netko je tamo živio.
+Government: Ili još živi.
+
+Kael: Dakle, znaju.
+Kael: Ne sve.
+Kael: Ali dovoljno.
 
 Government: Znaš li nešto o tome?
 
 -> Ne, direktorice. Ovo je novo za mene.
     Government: Razumijem.
+    Kael: To je laž.
+    Kael: Kratka, čista i izgovorena bez zastajanja.
 -> Imam neke naznake. Trebam više vremena.
     <<set $marenSuspicion += 1>>
-    Government: Dobro. Ali požuri.
+    Government: Dobro.
+    Government: Ali požuri.
+    Kael: Vrijeme.
+    Kael: Svi ga traže, a nitko ga više nema.
 -> Da. Komunicirao sam s njima.
     <<set $marenSuspicion += 3>>
     Government: Što?!
+    Kael: Prvi put danas nisam prevodio.
+    Kael: Samo sam rekao istinu.
 
-Narrator: Istovremeno obje strane traže pomoć.
+Narrator: Obje strane sada traže pomoć.
 
 Narrator: Dhorn traži planove bušenja.
 
 Narrator: Vlada traži karte podzemnih prolaza.
 
+Kael: Ako pomognem Dhornu, izdajem površinu.
+Kael: Ako pomognem vladi, izdajem one ispod.
+Kael: Ako odbijem obje strane...
+Kael: možda izdajem sve.
+
 -> Pomozi Dhornu
     <<set $betrayedSurface = true>>
     <<set $dhornTrust += 3>>
     <<jump Session5A_Start>>
-
 -> Pomozi Vladi
     <<set $betrayedSurface = true>>
     <<set $marenSuspicion -= 2>>
     <<jump Session5B_Start>>
-
 -> Odbij obje strane
     <<set $kaelaIsolated = true>>
     <<jump Session5C_Start>>

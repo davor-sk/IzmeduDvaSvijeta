@@ -1,22 +1,36 @@
 ﻿title: Session5A_Start
 ---
-Narrator: Sesija 5A — Dhorn zna.
+Narrator: Dhorn zna.
+Narrator: Kael je odabrao pomoći Dhornu.
+Narrator: Planovi bušenja više nisu tajna.
+
+Kael: Prije nekoliko dana samo sam prevodio poruke.
+Kael: Sada se informacije kreću kroz mene kao kroz pukotinu u zidu.
 
 Dhorn: Vel-ahn, kael.
-Kael: Ovaj put Dhorn me zove izravno tim imenom. Kael.
 
-Dhorn: Svjetlost toru — vel-ahn Dhorn. Zaustavljamo vatra-uzima.
-Kael: Znanje o vašim planovima — Dhorn razumije. Zaustavljamo bušenje.
+Kael: Ovaj put Dhorn me zove izravno tim imenom.
+Kael: Kael.
+Kael: Još uvijek ne znam što znači.
+Kael: Ali više ne zvuči kao slučajnost.
 
-Dhorn: Ali — traži Dhorn još. Skriva toru — put do dubine.
-Kael: Traže još. Žele da sakrijem ulaze u podzemlje od vlade.
+Dhorn: Svjetlost toru, vel-ahn Dhorn. Zaustavljamo vatra-uzima.
+Kael: Znanje o vašim planovima, Dhorn razumije.
+Kael: Zaustavljamo bušenje.
+
+Kael: Nisam siguran trebam li osjetiti olakšanje.
+Kael: Ili strah.
+
+Dhorn: Ali, traži Dhorn još. Skriva toru put do dubine.
+Kael: Traže još.
+Kael: Žele da sakrijem ulaze u podzemlje od vlade.
 Kael: Više nisam samo prevoditelj.
+Kael: Ako pristanem, postajem sudionik.
 
 -> Pristani i sakrij ulaze
     <<set $translationAccuracy += 1>>
     Kael: Vel-ahn. Skriva kael.
     <<jump Session05A_Accept>>
-
 -> Odbij
     <<set $dhornTrust -= 2>>
     Kael: Nem-ahn. Nem-skriva.
@@ -26,10 +40,20 @@ Kael: Više nisam samo prevoditelj.
 title: Session05A_Accept
 ---
 Narrator: Kael pristaje.
-Narrator: Od ovog trenutka više ne prenosi samo poruke. Aktivno bira stranu.
+Narrator: Od ovog trenutka više ne prenosi samo poruke.
+Narrator: Aktivno bira stranu.
+
+Kael: Ne znam hoće li ovo spasiti Dhorn.
+Kael: Ali znam da bi ih istina koju vlada traži mogla uništiti.
 
 Dhorn: Vel-ahn, kael.
 Dhorn: Moran čeka.
+
+Kael: Moran.
+Kael: Dom.
+Kael: Sigurnost.
+Kael: Nada.
+Kael: Koju god riječ sam izabrao, sada ima težinu.
 
 <<jump Session05_End>>
 ===
@@ -40,31 +64,55 @@ Narrator: Dhorn ne odgovara odmah.
 Narrator: Tišina traje dovoljno dugo da Kael požali što ju je izazvao.
 
 Kael: Možda sam upravo izgubio njihovo povjerenje.
+Kael: Možda sam prvi put učinio ispravnu stvar.
+Kael: Problem je što više ne znam razlikovati jedno od drugoga.
+
+Dhorn: Nem-ahn.
+Dhorn: Dhorn pamti.
+
+Kael: Naravno da pamte.
+Kael: Svi pamte ono što sam pokušao prevesti.
 
 <<jump Session05_End>>
 ===
 
 title: Session5B_Start
 ---
-Narrator: Sesija 5B — Agent.
+Narrator: Agent.
+Narrator: Kael je pomogao vladi.
+Narrator: Karte podzemnih prolaza sada su u Mareninim rukama.
 
-Maren: Karte su bile... korisne.
-Maren: Šaljemo tim za izviđanje. Diskretno.
-Maren: Nastavi komunikaciju. Drži ih mirnim dok tim ne završi posao.
+Maren: Karte su bile korisne.
+Maren: Vrlo korisne.
+Maren: Šaljemo tim za izviđanje.
+Maren: Diskretno.
+Maren: Nastavi komunikaciju.
+Maren: Drži ih mirnim dok tim ne završi posao.
 
-Dhorn: Gornji-koji-sluša. Hodi toru — dubina.
+Kael: Drži ih mirnim.
+Kael: Kao da se radi o proceduri.
+Kael: Kao da ljudi ispod grada nisu ljudi, nego problem koji treba držati pod kontrolom.
+
+Dhorn: Gornji-koji-sluša. Hodi toru dubina.
 Kael: Vaši kreću se prema podzemlju.
 
+Kael: Oni znaju.
+Kael: Ne znam kako.
+Kael: Ali znaju.
+
 Dhorn: Zna Dhorn. Tah-put, kael-vorn.
+
 Kael: Kael-vorn.
-Kael: Spojili su ih u jednu riječ. Što to znači?
+Kael: Spojili su ih u jednu riječ.
+Kael: Kael.
+Kael: Vorn.
+Kael: Kao da su oduvijek pripadale zajedno.
 
 -> Upozori Dhorn i prekrši Marenin nalog
     <<set $betrayedSurface = false>>
     <<set $dhornTrust += 2>>
     <<set $marenSuspicion += 3>>
     <<jump Session05B_Warn>>
-
 -> Šuti i prati Marenin plan
     <<set $dhornTrust -= 3>>
     <<jump Session05B_Silent>>
@@ -73,12 +121,18 @@ Kael: Spojili su ih u jednu riječ. Što to znači?
 title: Session05B_Warn
 ---
 Narrator: Kael šalje upozorenje Dhornu.
-Narrator: Time izdaje Marenin nalog, ali prvi put govori bez prikrivanja.
+Narrator: Time izdaje Marenin nalog.
+Narrator: Ali prvi put govori bez prikrivanja.
 
-Kael: Morate se maknuti. Dolaze.
+Kael: Morate se maknuti.
+Kael: Dolaze.
 
 Dhorn: Vel-ahn.
-Dhorn: Zna sada Dhorn. Zna kael-vorn.
+Dhorn: Zna sada Dhorn.
+Dhorn: Zna kael-vorn.
+
+Kael: Možda sam prekasno rekao istinu.
+Kael: Ali barem je ovaj put nisam preveo u nešto bezopasno.
 
 <<jump Session05_End>>
 ===
@@ -89,30 +143,58 @@ Narrator: Kael ne šalje upozorenje.
 Narrator: Marenin plan se nastavlja.
 
 Kael: Ako šutim, možda sve ostane pod kontrolom.
+Kael: Ako šutim, možda nitko neće znati što sam učinio.
+Kael: Ako šutim...
+
+Narrator: Terminal ostaje otvoren.
+
 Kael: Ali znam da neće.
+
+Dhorn: Nem-ahn.
+Dhorn: Dhorn zna.
+
+Kael: Naravno da znaju.
+Kael: Samo sam ja još pokušavao vjerovati da mogu sakriti prijevod.
 
 <<jump Session05_End>>
 ===
 
 title: Session5C_Start
 ---
-Narrator: Sesija 5C — Obje strane sumnjaju.
+Narrator: Obje strane sumnjaju.
+Narrator: Kael nije pomogao nikome.
+Narrator: Ponekad neutralnost izgleda kao izdaja objema stranama.
+
+Kael: Nisam im dao planove.
+Kael: Nisam im dao karte.
+Kael: Nisam spasio nikoga.
+Kael: Samo sam odgodio trenutak kada će svi shvatiti da stojim između njih.
 
 Dhorn: Nem-ahn, Gornji-koji-sluša?
 Kael: Ne razumiješ, Gornji-koji-sluša?
 
-Dhorn: Ili — nem-govor. Skriva kael.
-Kael: Ili ne govoriš. Kael skriva.
+Dhorn: Ili nem-govor. Skriva kael.
+Kael: Ili ne govoriš.
+Kael: Kael skriva.
 
-Maren: Vorn. Nisi nam dostavio ništa korisno u tjedan dana.
+Kael: Opet ta riječ.
+Kael: Kael.
+Kael: Ovaj put zvuči kao optužba.
+
+Maren: Vorn.
+Maren: Nisi nam dostavio ništa korisno u tjedan dana.
 Maren: Imam dojam da igraš na dvije strane.
-Maren: Imam pravo znati — jesi li još uvijek na našoj strani?
+Maren: Imam pravo znati.
+Maren: Jesi li još uvijek na našoj strani?
+
+Kael: Našoj strani.
+Kael: Njihovoj strani.
+Kael: Nitko me više ne pita što je istina.
 
 -> Da, direktorice. Uvijek.
     <<set $marenSuspicion -= 1>>
     <<set $dhornTrust -= 1>>
     <<jump Session05C_Lie>>
-
 -> Situacija je kompleksnija nego što izgleda.
     <<set $marenSuspicion += 1>>
     <<jump Session05C_Complex>>
@@ -123,24 +205,38 @@ Maren: Imam pravo znati — jesi li još uvijek na našoj strani?
 
 title: Session05C_Lie
 ---
-Narrator: Kael laže brzo, gotovo automatski.
+Narrator: Kael laže brzo.
+Narrator: Gotovo automatski.
 
 Maren: Dobro.
 Maren: Onda to i dokaži.
 
-Kael: Nisam siguran kome sam upravo lagao. Njoj, njima ili sebi.
+Kael: Nisam siguran kome sam upravo lagao.
+Kael: Njoj.
+Kael: Njima.
+Kael: Ili sebi.
+
+Narrator: S druge strane veze Dhorn šuti.
+Narrator: Kael prvi put poželi da netko drugi prevede njega.
 
 <<jump Session05_End>>
 ===
 
 title: Session05C_Complex
 ---
-Narrator: Kael ne govori cijelu istinu, ali više ne može ni jednostavno lagati.
+Narrator: Kael ne govori cijelu istinu.
+Narrator: Ali više ne može ni jednostavno lagati.
 
 Maren: Kompleksnija?
 Maren: Onda mi donesi nešto konkretno, Vorn.
 
-Kael: Možda me ne poštuje. Ali prvi put me sluša.
+Kael: Možda me ne poštuje.
+Kael: Ali prvi put me sluša.
+Kael: I to je opasnije nego da viče.
+
+Narrator: Dhorn poruka ostaje otvorena.
+Narrator: Marenin nalog ostaje neispunjen.
+Narrator: Kael ostaje između.
 
 <<jump Session05_End>>
 ===
@@ -152,7 +248,13 @@ Narrator: Kael šuti.
 Maren: Razumijem.
 
 Narrator: To je najgori mogući odgovor.
+
 Kael: Ponekad šutnja kaže više nego prijevod.
+Kael: Ponekad kaže upravo ono što si pokušao sakriti.
+
+Narrator: Terminal se ne gasi.
+Narrator: Niti jedna strana ne prekida vezu.
+Narrator: Kao da obje čekaju da Kael prvi nestane.
 
 <<jump Session05_End>>
 ===

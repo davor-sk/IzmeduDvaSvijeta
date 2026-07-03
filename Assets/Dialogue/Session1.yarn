@@ -1,19 +1,44 @@
 ﻿title: Session01_Start
 ---
-Narrator: Kaelov ured. 02:47. Kael radi prekovremeno.
-Narrator: Sustav bilježi anomaliju na kanalu 7-G. Nije šum. Nije greška. Netko šalje.
+Narrator: Kaelov ured.
+Narrator: 02:47.
+Narrator: Još jedna noćna smjena.
+
+Kael: Trebao sam otići prije dva sata.
+Kael: Ali kad sustav jednom počne šaptati, teško je prestati slušati.
+
+Narrator: Terminal kratko zatreperi.
+Narrator: Sustav bilježi anomaliju na kanalu 7-G.
+Narrator: Nije šum.
+Narrator: Nije greška.
+Narrator: Netko šalje.
+
+Kael: Kanal 7-G ne bi trebao imati promet.
+Kael: Ne noću. Ne ovako duboko u mreži.
 
 Dhorn: Vel-ahn toru, Gornji-koji-sluša.
 Kael: Čujemo te, Gornji-koji-sluša.
 
+Kael: Ne znam zašto sam to preveo baš tako.
+Kael: Kao da rečenica već postoji negdje u meni.
+
 Dhorn: Nem-dah skriva, nem-dah strah. Govorimo.
 Kael: Nema skrivanja, nema straha. Samo govorimo.
 
-Dhorn: Znate li — koliko duboko ide dubina?
-Kael: Znate li — koliko daleko ide dubina?
+Narrator: Kael zastaje nad riječju dah.
+Narrator: Nije samo strah.
+Narrator: Bliže je hladnom kamenu u prsima.
+
+Dhorn: Znate li koliko duboko ide dubina?
+Kael: Znate li koliko daleko ide dubina?
 Kael: Dubina možda označava prostor, ali možda i vrijeme. Nisam siguran.
 
-Narrator: Kaelov protokol je jasan: sve anomalije prijaviti nadređenima. Protokol je uvijek bio jasan.
+Narrator: Kaelov protokol je jasan: sve anomalije prijaviti nadređenima.
+Narrator: Protokol je uvijek bio jasan.
+
+Kael: Prevoditelj ne odlučuje.
+Kael: Prevoditelj prenosi.
+Kael: Barem bi tako trebalo biti.
 
 -> Prijavi vladi odmah
     <<set $dhornTrust -= 1>>
@@ -27,34 +52,64 @@ Narrator: Kaelov protokol je jasan: sve anomalije prijaviti nadređenima. Protok
     <<set $dhornTrust = 0>>
     <<jump Session01_Ignore>>
 ===
+
 title: Session01_Alone
 ---
-Kael: Čujem vas. Tko ste?
+Kael: Čujem vas.
+Kael: Tko ste?
 
-Narrator: Dhorn odgovor dolazi brže nego prije, kao da su čekali.
+Narrator: Dhorn odgovor dolazi brže nego prije.
+Narrator: Kao da nisu čekali signal.
+Narrator: Kao da su čekali njega.
 
 Dhorn: Zovemo se Dhorn. Hodi dubina.
 Kael: Zovemo se Dhorn. Živimo u dubini ili podzemlju.
 
+Kael: Hodi nije samo živjeti.
+Kael: To je kretati se kroz mjesto koje te poznaje.
+
 Dhorn: Dugo čeka Dhorn. Dugo nem-govor.
 Kael: Dugo je Dhorn čekao. Dugo bez govora.
 
-Dhorn: Danas — govorimo.
-Kael: Danas — govorimo.
+Dhorn: Danas govorimo.
+Kael: Danas govorimo.
 
 Narrator: Kael ne prijavljuje kontakt te noći.
 Narrator: U bilježnici piše: vel, nem, ahn, toru, dah, moran, hodi, dubina, čeka.
-Kael: Devet riječi. Prvih devet riječi novog jezika. Ili starog.
+
+Kael: Devet riječi.
+Kael: Prvih devet riječi novog jezika.
+Kael: Ili starog.
+
+Kael: Ne znam zašto mi ruka drhti.
+Kael: Možda zbog umora.
+Kael: Možda zato što sam upravo prekršio protokol.
+Kael: A možda zato što se prvi put nakon dugo vremena osjećam kao da me netko stvarno čuo.
 
 <<jump Session01_End>>
 ===
 
 title: Session01_Report
 ---
-Narrator: Automatski protokol. Kael šalje izvještaj o anomaliji.
-Narrator: Sljedeće jutro, ured.
+Narrator: Automatski protokol.
+Narrator: Kael šalje izvještaj o anomaliji.
+Narrator: U naslovu piše: Kanal 7-G, nepoznati izvor, mogući lingvistički obrazac.
 
-Maren: Vorn. Ovaj signal koji si prijavio. Dobro je što si ga prijavio. Dalje ćemo mi.
+Kael: Dovoljno neutralno.
+Kael: Dovoljno službeno.
+Kael: Dovoljno da više ne bude samo moj problem.
+
+Narrator: Sljedeće jutro.
+Narrator: Ured.
+
+Maren: Vorn.
+Maren: Ovaj signal koji si prijavio.
+Maren: Dobro je što si ga prijavio.
+Maren: Dalje ćemo mi.
+
+Kael: Dalje ćemo mi.
+Kael: To nikad ne znači da je stvar riješena.
+Kael: To znači da više nisi jedini koji zna.
 
 -> Razumijem. Kakvi su sljedeći koraci?
     <<jump Session01_Report_End>>
@@ -66,15 +121,36 @@ title: Session01_Report_End
 ---
 Maren: Zapravo... ostani na projektu.
 Maren: Trebamo nekog tko razumije lingvistiku signala.
-Maren: Ali Vorn, ovo ostaje interno. Razumijemo se?
+Maren: Tehničari čuju frekvenciju.
+Maren: Ti čuješ namjeru.
+Maren: Ali Vorn, ovo ostaje interno.
+Maren: Razumijemo se?
+
+Kael: Razumijemo se.
+Kael: Nisam siguran da je to istina.
+
 <<jump Session01_End>>
 ===
 
 title: Session01_Ignore
 ---
 Narrator: Kael zatvara kanal.
-Narrator: Signal nestaje s ekrana, ali ne i iz njegove glave.
+Narrator: Signal nestaje s ekrana.
+Narrator: Ali ne i iz njegove glave.
+
 Kael: Ako je ovo bila greška, zašto se osjećam kao da sam upravo nekome zatvorio vrata?
+
+Narrator: Nekoliko sekundi kasnije, terminal ponovno zatreperi.
+Narrator: Isti kanal.
+Narrator: Isti ritam.
+Narrator: Jači signal.
+
+Kael: Ne.
+Kael: Ne večeras.
+
+Narrator: Kael gasi monitor.
+Narrator: U mraku sobe ostaje samo odraz njegova lica na crnom ekranu.
+
 <<jump Session01_End>>
 ===
 
