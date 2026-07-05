@@ -50,8 +50,6 @@ public class EndingCardController : MonoBehaviour
 
     public void GoToMainMenu()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(
-            UnityEngine.SceneManagement.SceneManager.GetActiveScene().name
-        );
+    UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
     }
 }
