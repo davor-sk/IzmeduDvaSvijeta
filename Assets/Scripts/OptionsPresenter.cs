@@ -31,9 +31,10 @@ public class OptionsPresenter : DialoguePresenterBase
         for (int i = 0; i < dialogueOptions.Length; i++)
         {
             var buttonObj = Instantiate(optionButtonPrefab, optionsContainer);
+            if (buttonObj == null) continue;
             spawnedButtons.Add(buttonObj);
 
-            var rect = buttonObj.GetComponent<RectTransform>();
+var rect = buttonObj.GetComponent<RectTransform>();
             if (rect != null)
             {
                 rect.anchorMin = new Vector2(0, 1);
@@ -49,7 +50,7 @@ public class OptionsPresenter : DialoguePresenterBase
                 buttonText.text = dialogueOptions[i].Line.TextWithoutCharacterName.Text;
                 buttonText.color = Color.white;
                 buttonText.fontSize = 18;
-                buttonText.enableWordWrapping = true;
+                buttonText.textWrappingMode = TextWrappingModes.Normal;
                 buttonText.overflowMode = TextOverflowModes.Ellipsis;
             }
 

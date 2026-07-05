@@ -12,6 +12,12 @@ public class NotebookController : MonoBehaviour
         AddWord("vel-ahn", "razumijemo");
         AddWord("moran", "dom");
         AddWord("nem-dah", "bez straha");
+        AddWord("vel-ahn", "razumijemo");
+        AddWord("moran", "dom");
+        AddWord("nem-dah", "bez straha");
+        AddWord("vel-ahn", "razumijemo");
+        AddWord("moran", "dom");
+        AddWord("nem-dah", "bez straha");
     }
 
     [YarnCommand("add_word")]
