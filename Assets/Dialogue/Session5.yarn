@@ -7,6 +7,7 @@ Narrator: Planovi bušenja više nisu tajna.
 Kael: Prije nekoliko dana samo sam prevodio poruke.
 Kael: Sada se informacije kreću kroz mene kao kroz pukotinu u zidu.
 
+<<radio_static AudioManager>>
 Dhorn: Vel-ahn, kael.
 
 Kael: Ovaj put Dhorn me zove izravno tim imenom.
@@ -24,6 +25,13 @@ Kael: Ili strah.
 Dhorn: Ali, traži Dhorn još. Skriva toru put do dubine.
 Kael: Traže još.
 Kael: Žele da sakrijem ulaze u podzemlje od vlade.
+
+Kael: Skriva.
+Kael: Sada je jasno.
+Kael: Sakriti. Držati nešto izvan tuđeg pogleda.
+
+<<add_word NotebookPanel "skriva" "skrivati / sakriti">>
+
 Kael: Više nisam samo prevoditelj.
 Kael: Ako pristanem, postajem sudionik.
 
@@ -82,6 +90,7 @@ Narrator: Agent.
 Narrator: Kael je pomogao vladi.
 Narrator: Karte podzemnih prolaza sada su u Mareninim rukama.
 
+<<notification_beep AudioManager>>
 Maren: Karte su bile korisne.
 Maren: Vrlo korisne.
 Maren: Šaljemo tim za izviđanje.
@@ -93,6 +102,7 @@ Kael: Drži ih mirnim.
 Kael: Kao da se radi o proceduri.
 Kael: Kao da ljudi ispod grada nisu ljudi, nego problem koji treba držati pod kontrolom.
 
+<<radio_static AudioManager>>
 Dhorn: Gornji-koji-sluša. Hodi toru dubina.
 Kael: Vaši kreću se prema podzemlju.
 
@@ -170,6 +180,7 @@ Kael: Nisam im dao karte.
 Kael: Nisam spasio nikoga.
 Kael: Samo sam odgodio trenutak kada će svi shvatiti da stojim između njih.
 
+<<radio_static AudioManager>>
 Dhorn: Nem-ahn, Gornji-koji-sluša?
 Kael: Ne razumiješ, Gornji-koji-sluša?
 
@@ -177,10 +188,17 @@ Dhorn: Ili nem-govor. Skriva kael.
 Kael: Ili ne govoriš.
 Kael: Kael skriva.
 
+Kael: Skriva.
+Kael: Sakriti nešto.
+Kael: Ne pokazati istinu.
+
+<<add_word NotebookPanel "skriva" "skrivati / sakriti">>
+
 Kael: Opet ta riječ.
 Kael: Kael.
 Kael: Ovaj put zvuči kao optužba.
 
+<<notification_beep AudioManager>>
 Maren: Vorn.
 Maren: Nisi nam dostavio ništa korisno u tjedan dana.
 Maren: Imam dojam da igraš na dvije strane.
@@ -198,7 +216,6 @@ Kael: Nitko me više ne pita što je istina.
 -> Situacija je kompleksnija nego što izgleda.
     <<set $marenSuspicion += 1>>
     <<jump Session05C_Complex>>
-
 -> Šuti
     <<jump Session05C_Silent>>
 ===

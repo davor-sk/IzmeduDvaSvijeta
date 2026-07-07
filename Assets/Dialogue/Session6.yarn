@@ -36,6 +36,8 @@ Kael: Ali...
 
 Kael: Razumijem što piše.
 
+<<cinematic_hit AudioManager>>
+
 Narrator: Ne prevodi.
 
 Narrator: Ne traži značenje.
@@ -50,6 +52,7 @@ Narrator: Svaka riječ koju je posljednjih tjedana zapisivao u svoju bilježnicu
 
 Narrator: Kao da su cijelo vrijeme bile dio njega.
 
+<<radio_static AudioManager>>
 Dhorn: Kael-vorn.
 
 Kael: Opet.
@@ -67,6 +70,8 @@ Narrator: Vorn znači...
 Narrator: Onaj koji je otišao.
 
 Narrator: Izbjeglica.
+
+<<add_word NotebookPanel "vorn" "onaj koji je otišao / izbjeglica">>
 
 Kael: Djed...
 
@@ -87,6 +92,10 @@ Narrator: Kael nije ime.
 Narrator: To je titula.
 
 Narrator: Onaj koji sluša između svjetova.
+
+<<add_word NotebookPanel "kael" "posrednik / onaj koji sluša između">>
+
+<<cinematic_hit AudioManager>>
 
 Kael: Zato...
 
@@ -126,6 +135,7 @@ Kael: Nisam bio slučajni prevoditelj.
 
 Kael: Oni su mene tražili.
 
+<<notification_beep AudioManager>>
 Maren: Vorn.
 
 Maren: Gdje si?
@@ -134,6 +144,7 @@ Kael: Prvi put...
 
 Kael: Nisam siguran kome se javlja.
 
+<<radio_static AudioManager>>
 Dhorn: Kael-vorn.
 
 Dhorn: Vrijeme.

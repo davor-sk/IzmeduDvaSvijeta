@@ -1,4 +1,4 @@
-using System.Collections;
+ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -12,20 +12,20 @@ public class EndingCardController : MonoBehaviour
     public TextMeshProUGUI endingQuote;
     public GameObject mainMenuButton;
     public CanvasGroup canvasGroup;
-    public DialogueRunner dialogueRunner; 
+    public DialogueRunner dialogueRunner;
 
     [YarnCommand("show_ending")]
     public void ShowEnding(string quote)
     {
-        
-        if (dialogueRunner != null && dialogueRunner.IsDialogueRunning)
-        {
-            dialogueRunner.Stop();
-        }
-
         endingCardPanel.SetActive(true);
+
+        canvasGroup.alpha = 0f;
+        canvasGroup.interactable = true;
+        canvasGroup.blocksRaycasts = true;
+
         endingQuote.text = quote;
         mainMenuButton.SetActive(false);
+
         StartCoroutine(FadeInAndShowButton());
     }
 
