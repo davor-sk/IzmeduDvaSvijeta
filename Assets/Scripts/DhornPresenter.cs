@@ -51,7 +51,10 @@ public class DhornPresenter : DialoguePresenterBase
                 break;
         }
 
+        float autoAdvanceDelay = 3.5f;
+        float elapsed = 0f;
         bool advanced = false;
+
         while (!advanced)
         {
             if (Keyboard.current != null && (
@@ -64,6 +67,12 @@ public class DhornPresenter : DialoguePresenterBase
             {
                 advanced = true;
             }
+            else if (elapsed >= autoAdvanceDelay)
+            {
+                advanced = true;
+            }
+
+            elapsed += Time.deltaTime;
             await YarnTask.Yield();
         }
     }
