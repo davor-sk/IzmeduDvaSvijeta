@@ -10,18 +10,33 @@ Kael: Ponekad imam osjećaj da ih se samo prisjećam.
 
 Narrator: Signal stiže točno u isto vrijeme kao i prošli put.
 
+<<radio_static AudioManager>>
 Dhorn: Vel-ahn, Gornji-koji-sluša.
 Kael: Razumijemo, Gornji-koji-sluša.
 
 Dhorn: Uzima toru, kamen dubine.
-Kael: Uzimate površina, kamen dubine.
+Kael: Uzimate površinu, kamen dubine.
 
 Kael: "Uzima" može značiti uzeti...
 Kael: ...ali i oduzeti.
+
+<<add_word NotebookPanel "uzima" "uzimati / oduzimati">>
+
 Kael: "Kamen" možda nije kamen.
+
+<<add_word NotebookPanel "kamen" "kamen / resurs">>
+
 Kael: A "dubina" možda nije samo mjesto.
 
+<<add_word NotebookPanel "toru" "površina / vi gore">>
+
 Dhorn: Pada zid, moran. Dugo pada.
+
+Kael: "Pada" je jasnije.
+Kael: Nešto propada.
+Kael: Ili se ruši.
+
+<<add_word NotebookPanel "pada" "propadati / rušiti se">>
 
 Narrator: Kael zastaje.
 
@@ -36,18 +51,21 @@ Kael: možda ću promijeniti cijelu poruku.
 -> moran znači doma
     <<set $moranTranslation = "doma">>
     <<set $translationAccuracy += 1>>
+    <<add_word NotebookPanel "moran" "dom">>
     Kael: Padaju zidovi doma.
     Kael: Dugo padaju.
     <<jump Session02_Daje>>
 -> moran znači sigurnosti
     <<set $moranTranslation = "sigurnosti">>
     <<set $translationAccuracy += 1>>
+    <<add_word NotebookPanel "moran" "sigurnost">>
     Kael: Padaju zidovi sigurnosti.
     Kael: Dugo padaju.
     <<jump Session02_Daje>>
 -> moran znači nade
     <<set $moranTranslation = "nade">>
     <<set $translationAccuracy += 0>>
+    <<add_word NotebookPanel "moran" "nada">>
     Kael: Padaju zidovi nade.
     Kael: Dugo padaju.
     <<jump Session02_Daje>>
@@ -58,6 +76,12 @@ title: Session02_Daje
 Dhorn: Nem-dah govorimo. Vel, daje ruku toru.
 Kael: Bez straha govorimo.
 Kael: Dobro, nudimo ruku površini.
+
+Kael: "Ruka" ovdje nije samo dio tijela.
+Kael: Možda znači suradnju.
+Kael: Ili savez.
+
+<<add_word NotebookPanel "ruka" "savez / suradnja">>
 
 Kael: Ili možda traže našu ruku.
 Kael: Još uvijek ne znam tko kome govori.
@@ -111,11 +135,11 @@ Kael: ili moje tumačenje.
 Narrator: Maren čeka izvještaj.
 Narrator: Dhorn čeka odgovor.
 
-Kael: U bilježnici je četrnaest riječi.
+Kael: Bilježnica se puni.
+Kael: Ali što više riječi razumijem...
+Kael: manje sam siguran da razumijem poruku.
 
-Kael: Možda petnaest...
-
-Kael: ...ako "vorn" ikad dobije značenje.
+Kael: A "vorn" još uvijek nema značenje.
 
 Kael: Zašto baš sada razmišljam o djedu kojeg nikad nisam upoznao?
 
@@ -138,11 +162,11 @@ Kael: a problem je u meni?
 Narrator: Maren čeka izvještaj.
 Narrator: Dhorn čeka odgovor.
 
-Kael: U bilježnici je četrnaest riječi.
+Kael: Bilježnica se puni.
+Kael: Ali što više riječi razumijem...
+Kael: manje sam siguran da razumijem poruku.
 
-Kael: Možda petnaest...
-
-Kael: ...ako "vorn" ikad dobije značenje.
+Kael: A "vorn" još uvijek nema značenje.
 
 Kael: Zašto baš sada razmišljam o djedu kojeg nikad nisam upoznao?
 
@@ -163,11 +187,9 @@ Kael: Svaki put kad nešto prešutim...
 
 Kael: imam osjećaj da obje strane znaju više nego što govore.
 
-Kael: U bilježnici je četrnaest riječi.
+Kael: Bilježnica se puni.
 
-Kael: Možda petnaest...
-
-Kael: ...ako "vorn" ikad dobije značenje.
+Kael: A "vorn" još uvijek nema značenje.
 
 <<jump Session02_End>>
 ===

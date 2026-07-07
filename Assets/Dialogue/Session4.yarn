@@ -10,6 +10,15 @@ Narrator: Kael je osjetio vibracije kroz pod ureda.
 Kael: Ili mi se učinilo.
 Kael: U zadnje vrijeme više ne vjerujem ni podu ispod sebe.
 
+Kael: Vatra.
+Kael: Sada razumijem.
+Kael: Za Dhorn to nije samo energija.
+Kael: To je sila.
+Kael: Bušenje koje dolazi prema njima.
+
+<<add_word NotebookPanel "vatra" "energija / sila / bušenje">>
+
+<<radio_static AudioManager>>
 Dhorn: Gornji-koji-sluša. Pada. Pada sada.
 
 Kael: Pada.
@@ -27,10 +36,13 @@ Kael: Ili samo pomoć.
 -> znanje / istinu
     <<set $translationAccuracy += 1>>
     Kael: Bilježim prijevod: znanje i istinu.
+    <<add_word NotebookPanel "svjetlost" "znanje / istina">>
 -> pomoć
     Kael: Bilježim prijevod: pomoć.
+    <<add_word NotebookPanel "svjetlost" "pomoć">>
 -> svjetlo / energiju
     Kael: Bilježim prijevod: svjetlo ili energiju.
+    <<add_word NotebookPanel "svjetlost" "svjetlo / energija">>
 
 Dhorn: Daje Dhorn, sjeme vel-moran toru.
 
@@ -60,10 +72,13 @@ Kael: Čudno je koliko opasno zvuči jedna nježna riječ.
 -> budućnost / nadu
     <<set $translationAccuracy += 1>>
     Kael: Bilježim prijevod: budućnost i nada.
+    <<add_word NotebookPanel "sjeme" "budućnost / nada">>
 -> resurse
     Kael: Bilježim prijevod: resurse.
+    <<add_word NotebookPanel "sjeme" "resursi">>
 -> djecu / naraštaj
     Kael: Bilježim prijevod: djecu i naraštaj.
+    <<add_word NotebookPanel "sjeme" "djeca / naraštaj">>
 
 Dhorn: Vorn, nem-hodi dubina.
 Dhorn: Vorn, hodi toru.
@@ -92,6 +107,7 @@ Kael: Ili me pokušavaju podsjetiti na nešto što još ne znam?
 
 Narrator: U tom trenutku zazvoni drugi terminal.
 
+<<notification_beep AudioManager>>
 Government: Vorn.
 Government: Imam informaciju koja te se tiče.
 

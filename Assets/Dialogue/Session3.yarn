@@ -13,6 +13,7 @@ Narrator: Jedna odozdo.
 
 Kael: Prije tjedan dana ovo bi bilo nezamislivo.
 
+<<notification_beep AudioManager>>
 Maren: Vorn.
 Maren: Projekt Vatra-7 ulazi u drugu fazu.
 Maren: Povećavamo kapacitet bušenja za četrdeset posto.
@@ -24,11 +25,14 @@ Kael: Četrdeset osam sati.
 Kael: Za njih je to samo rok.
 Kael: Za nekoga drugoga možda je kraj.
 
+<<radio_static AudioManager>>
 Dhorn: Vel-ahn, Gornji-koji-sluša.
 Kael: Razumijemo.
 
 Dhorn: Traži Dhorn, zaustavi vatra-uzima.
 Kael: Dhorn traži da se zaustavi... vatra-uzima.
+
+<<add_word NotebookPanel "traži" "tražiti / trebati">>
 
 Kael: "Vatra" više ne zvuči kao energija.
 Kael: Zvuči kao nešto što dolazi prema njima.
@@ -37,11 +41,27 @@ Dhorn: Nem-dah govor. Tah-put ako nem-zaustavi.
 Kael: Bez straha govorimo.
 Kael: Neizvjestan put ako se ne zaustavi.
 
+Kael: Sada razumijem "dah".
+Kael: Nije samo strah.
+Kael: Može biti opasnost.
+Kael: Prijetnja.
+
+<<add_word NotebookPanel "dah" "strah / opasnost / prijetnja">>
+
 Kael: Tah-put.
 Kael: Neizvjesna budućnost.
 Kael: Ili upozorenje.
 
 Dhorn: Stari dubina pamti, kael zna.
+
+Kael: "Dubina".
+Kael: Sada sam siguran.
+Kael: Ne govore samo o prostoru.
+Kael: Govore o svom podzemlju.
+Kael: O svom teritoriju.
+
+<<add_word NotebookPanel "dubina" "podzemlje / Dhorn teritorij">>
+
 Kael: Opet ta riječ.
 
 Kael: Kael.

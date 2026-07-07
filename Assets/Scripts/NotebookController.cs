@@ -9,15 +9,7 @@ public class NotebookController : MonoBehaviour
 
     void Start()
     {
-        AddWord("vel-ahn", "razumijemo");
-        AddWord("moran", "dom");
-        AddWord("nem-dah", "bez straha");
-        AddWord("vel-ahn", "razumijemo");
-        AddWord("moran", "dom");
-        AddWord("nem-dah", "bez straha");
-        AddWord("vel-ahn", "razumijemo");
-        AddWord("moran", "dom");
-        AddWord("nem-dah", "bez straha");
+        ClearNotebook();
     }
 
     [YarnCommand("add_word")]
