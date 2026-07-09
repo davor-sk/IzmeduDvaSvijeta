@@ -6,14 +6,14 @@ public class PauseMenuController : MonoBehaviour
 {
     public GameObject pauseMenuPanel;
 
-    // Set to false while the ending card is showing so Escape can't interrupt it.
+    
     public static bool CanPause = true;
 
     private bool isPaused = false;
 
     void Start()
     {
-        // Ensure the game starts unpaused, even if we came back from a paused scene.
+       
         Time.timeScale = 1f;
         CanPause = true;
         if (pauseMenuPanel != null)
@@ -42,7 +42,7 @@ public class PauseMenuController : MonoBehaviour
             pauseMenuPanel.SetActive(true);
     }
 
-    // "Nastavi igru" button
+    
     public void ResumeGame()
     {
         isPaused = false;
@@ -51,14 +51,14 @@ public class PauseMenuController : MonoBehaviour
             pauseMenuPanel.SetActive(false);
     }
 
-    // "Glavni izbornik" button — abandons the current run
+   
     public void GoToMainMenu()
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene("MainMenu");
     }
 
-    // "Izlaz" button
+   
     public void QuitGame()
     {
         Application.Quit();
