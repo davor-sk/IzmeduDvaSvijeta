@@ -52,6 +52,8 @@ Narrator: Svaka riječ koju je posljednjih tjedana zapisivao u svoju bilježnicu
 
 Narrator: Kao da su cijelo vrijeme bile dio njega.
 
+<<add_word NotebookPanel "moran" "dom / sigurnost / porijeklo">>
+
 <<radio_static AudioManager>>
 Dhorn: Kael-vorn.
 
