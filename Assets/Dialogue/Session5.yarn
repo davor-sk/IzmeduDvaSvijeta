@@ -1,212 +1,595 @@
 ﻿title: Session5A_Start
 ---
+Narrator: Dva sata i četrdeset minuta do punog kapaciteta Vatre-7.
+
 Narrator: Dhorn zna.
+
 Narrator: Kael je odabrao pomoći Dhornu.
+
 Narrator: Planovi bušenja više nisu tajna.
 
+Narrator: Na lijevom terminalu još uvijek treperi upozorenje:
+
+Narrator: NEOVLAŠTENI PRIJENOS KLASIFICIRANIH PODATAKA.
+
 Kael: Prije nekoliko dana samo sam prevodio poruke.
+
 Kael: Sada se informacije kreću kroz mene kao kroz pukotinu u zidu.
+
+Kael: Jednom kad pukotina nastane...
+
+Kael: više ne bira što će kroz nju proći.
+
+Narrator: Kanal 7-G otvara se.
 
 <<radio_static AudioManager>>
 Dhorn: Vel-ahn, kael.
 
-Kael: Ovaj put Dhorn me zove izravno tim imenom.
+Kael: Ovaj put Dhorn me zove izravno tom riječju.
+
 Kael: Kael.
+
 Kael: Još uvijek ne znam što znači.
+
 Kael: Ali više ne zvuči kao slučajnost.
 
-Dhorn: Svjetlost toru, vel-ahn Dhorn. Zaustavljamo vatra-uzima.
-Kael: Znanje o vašim planovima, Dhorn razumije.
-Kael: Zaustavljamo bušenje.
+Dhorn: Svjetlost toru, vel-ahn Dhorn.
 
-Kael: Nisam siguran trebam li osjetiti olakšanje.
-Kael: Ili strah.
+Dhorn: Zaustavlja Dhorn vatra-uzima.
 
-Dhorn: Ali, traži Dhorn još. Skriva toru put do dubine.
+Kael: Razumjeli su planove površine.
+
+Kael: Zaustavljaju bušenje.
+
+Narrator: Kael otvara prikaz projekta Vatra-7.
+
+Narrator: Jedan od četiri aktivna tunela iznenada prestaje slati podatke.
+
+Narrator: TUNEL C — SIGNAL IZGUBLJEN.
+
+Kael: Uspjeli su.
+
+Narrator: Nekoliko sekundi poslije drugi tunel mijenja smjer.
+
+Narrator: TUNEL B — ODSTUPANJE OD PLANIRANE PUTANJE.
+
+Kael: Ili su ga preusmjerili.
+
+Kael: Ili se tlo ispod njega urušilo.
+
+Narrator: Odbrojavanje se ne zaustavlja.
+
+Narrator: 02:38:14.
+
+Kael: Zaustavili su dva tunela.
+
+Kael: Ostala su još dva.
+
+Dhorn: Ali traži Dhorn još.
+
+Dhorn: Skriva toru put do dubine.
+
 Kael: Traže još.
-Kael: Žele da sakrijem ulaze u podzemlje od vlade.
+
+Kael: Žele da sakrijem ulaze u podzemlje od površine.
 
 Kael: Skriva.
-Kael: Sada je jasno.
-Kael: Sakriti. Držati nešto izvan tuđeg pogleda.
 
-<<add_word NotebookPanel "skriva" "skrivati / sakriti">>
+Kael: Sada je jasno.
+
+Kael: Sakriti.
+
+Kael: Držati nešto izvan tuđeg pogleda.
+
+Kael: Ili lagati kako bi nešto ostalo sigurno.
+
+<<add_word NotebookPanel "skriva" "skrivati / sakriti / lagati">>
 
 Kael: Više nisam samo prevoditelj.
-Kael: Ako pristanem, postajem sudionik.
+
+Kael: Ako pristanem...
+
+Kael: postajem sudionik.
 
 -> Pristani i sakrij ulaze
     <<set $translationAccuracy += 1>>
-    Kael: Vel-ahn. Skriva kael.
+    Kael: Vel-ahn.
+    Kael: Skriva kael.
     <<jump Session05A_Accept>>
--> Odbij
+-> Odbij skrivati ulaze
     <<set $dhornTrust -= 2>>
-    Kael: Nem-ahn. Nem-skriva.
+    Kael: Nem-ahn.
+    Kael: Nem-skriva.
     <<jump Session05A_Refuse>>
 ===
+
 
 title: Session05A_Accept
 ---
 Narrator: Kael pristaje.
-Narrator: Od ovog trenutka više ne prenosi samo poruke.
-Narrator: Aktivno bira stranu.
+
+Narrator: Briše koordinate poznatih prolaza iz aktivne baze.
+
+Narrator: Mijenja nekoliko vrijednosti.
+
+Narrator: Dubina postaje čvrsta stijena.
+
+Narrator: Tunel postaje geološka pogreška.
+
+Narrator: Ulaz postaje mjesto na kojem, službeno, nema ničega.
+
+Kael: Od ovog trenutka više ne prenosim samo poruke.
+
+Kael: Aktivno biram što će površina smjeti vidjeti.
+
+Narrator: Sustav traži potvrdu.
+
+Narrator: TRAJNO IZBRISATI PODATKE?
+
+Kael: Da.
+
+Narrator: Potvrđeno.
 
 Kael: Ne znam hoće li ovo spasiti Dhorn.
-Kael: Ali znam da bi ih istina koju vlada traži mogla uništiti.
 
+Kael: Ali znam da bi ih istina koju zapovjedništvo traži mogla uništiti.
+
+<<radio_static AudioManager>>
 Dhorn: Vel-ahn, kael.
+
 Dhorn: Moran čeka.
 
 Kael: Moran.
-Kael: Dom.
-Kael: Sigurnost.
-Kael: Nada.
-Kael: Koju god riječ sam izabrao, sada ima težinu.
 
-<<jump Session05_End>>
+Kael: Dom.
+
+Kael: Sigurnost.
+
+Kael: Nada.
+
+Kael: Koju god riječ sam izabrao...
+
+Kael: sada ima težinu.
+
+Narrator: Dhorn šalje dio starog tehničkog nacrta.
+
+Narrator: Kael ga otvara.
+
+Narrator: Nacrt je gotovo identičan planu Vatre-7.
+
+Kael: Ovo nije njihov crtež.
+
+Kael: Ovo je površinski dokument.
+
+Narrator: U donjem kutu nalazi se izblijedjela oznaka.
+
+Narrator: ARHIVA V-27.
+
+Kael: V-27.
+
+Kael: Dvadeset sedam godina.
+
+Narrator: Ispod oznake stoji rukom dopisana riječ na Dhorn jeziku.
+
+Narrator: Vorn.
+
+Kael: Kako je površinski dokument završio kod Dhorna?
+
+<<jump Session05_SharedDiscovery>>
 ===
+
 
 title: Session05A_Refuse
 ---
 Narrator: Dhorn ne odgovara odmah.
+
 Narrator: Tišina traje dovoljno dugo da Kael požali što ju je izazvao.
 
 Kael: Možda sam upravo izgubio njihovo povjerenje.
+
 Kael: Možda sam prvi put učinio ispravnu stvar.
+
 Kael: Problem je što više ne znam razlikovati jedno od drugoga.
 
+<<radio_static AudioManager>>
 Dhorn: Nem-ahn.
+
 Dhorn: Dhorn pamti.
 
 Kael: Naravno da pamte.
+
 Kael: Svi pamte ono što sam pokušao prevesti.
 
-<<jump Session05_End>>
+Dhorn: Pamti stari kael.
+
+Dhorn: Pamti vorn.
+
+Kael: Stari kael.
+
+Kael: Vorn.
+
+Dhorn: Daje Dhorn svjetlost.
+
+Narrator: Na terminal stiže oštećena datoteka.
+
+Narrator: Stari površinski tehnički nacrt.
+
+Narrator: Datum: prije dvadeset sedam godina.
+
+Kael: Ovo je iz iste arhive kao izbrisani izvještaj.
+
+Narrator: U donjem kutu stoji oznaka:
+
+Narrator: LINGVISTIČKI POSREDNIK — V.
+
+Narrator: Preko slova V netko je naknadno napisao jednu Dhorn riječ.
+
+Narrator: Vorn.
+
+Kael: Tko si bio?
+
+<<jump Session05_SharedDiscovery>>
 ===
+
 
 title: Session5B_Start
 ---
-Narrator: Agent.
-Narrator: Kael je pomogao vladi.
-Narrator: Karte podzemnih prolaza sada su u Mareninim rukama.
+Narrator: Dva sata i četrdeset minuta do punog kapaciteta Vatre-7.
+
+Narrator: Kael je pomogao Maren.
+
+Narrator: Karte podzemnih prolaza sada su u njezinim rukama.
+
+Narrator: Ili su barem trebale biti.
 
 <<notification_beep AudioManager>>
 Maren: Karte su bile korisne.
-Maren: Vrlo korisne.
-Maren: Šaljemo tim za izviđanje.
-Maren: Diskretno.
-Maren: Nastavi komunikaciju.
-Maren: Drži ih mirnim dok tim ne završi posao.
 
-Kael: Drži ih mirnim.
-Kael: Kao da se radi o proceduri.
-Kael: Kao da ljudi ispod grada nisu ljudi, nego problem koji treba držati pod kontrolom.
+Maren: Vrlo korisne.
+
+Kael: Bile?
+
+Maren: Šaljemo tim za izviđanje.
+
+Maren: Diskretno.
+
+Maren: Nastavi komunikaciju.
+
+Maren: Drži ih mirnima dok tim ne završi posao.
+
+Kael: Koliko ljudi šaljete?
+
+Maren: Vorn...
+
+Kael: Koliko?
+
+Maren: To više nije moja odluka.
+
+Kael: Rekli ste da ćete poslati izviđače.
+
+Maren: To je bio plan.
+
+Kael: Bio?
+
+Narrator: Maren ne odgovara.
+
+Kael: Tko je dobio karte?
+
+Maren: Operativno zapovjedništvo.
+
+Kael: Dali ste ih vojsci.
+
+Maren: Nisam imala izbor.
+
+Kael: Svi mi stalno govorite da nemate izbor...
+
+Kael: dok od mene tražite da biram umjesto vas.
+
+Narrator: Na drugom terminalu pojavljuje se Dhorn signal.
 
 <<radio_static AudioManager>>
-Dhorn: Gornji-koji-sluša. Hodi toru dubina.
-Kael: Vaši kreću se prema podzemlju.
+Dhorn: Gornji-koji-sluša.
+
+Dhorn: Hodi toru dubina.
+
+Kael: Površina se kreće prema podzemlju.
 
 Kael: Oni znaju.
+
 Kael: Ne znam kako.
+
 Kael: Ali znaju.
 
-Dhorn: Zna Dhorn. Tah-put, kael-vorn.
+Dhorn: Mnogo ruka.
+
+Dhorn: Vatra ruka.
+
+Dhorn: Nem-svjetlost.
+
+Kael: Mnogo ljudi.
+
+Kael: Oružje.
+
+Kael: Bez znanja.
+
+Kael: To nije izviđački tim.
+
+Narrator: Na vladinom terminalu kratko se pojavi operativna obavijest.
+
+Narrator: JEDINICA ČETRNAEST — ULAZAK ODOBREN.
+
+Narrator: PRAVILA SUKOBA AKTIVNA.
+
+Kael: Pravila sukoba?
+
+Kael: Maren!
+
+<<notification_beep AudioManager>>
+Maren: Nisam to odobrila.
+
+Kael: Ali moje karte jesu.
+
+Maren: Vorn, slušaj me.
+
+Maren: Ako ih sada upozoriš, zapovjedništvo će znati da si ti izvor.
+
+Kael: Ako ih ne upozorim...
+
+Kael: možda više neće biti nikoga koga možemo pitati.
+
+Dhorn: Zna Dhorn.
+
+Dhorn: Tah-put, kael-vorn.
 
 Kael: Kael-vorn.
+
 Kael: Spojili su ih u jednu riječ.
-Kael: Kael.
+
+Kael.
+
 Kael: Vorn.
+
 Kael: Kao da su oduvijek pripadale zajedno.
 
 -> Upozori Dhorn i prekrši Marenin nalog
-    <<set $betrayedSurface = false>>
+    <<set $betrayedSurface = true>>
     <<set $dhornTrust += 2>>
     <<set $marenSuspicion += 3>>
     <<jump Session05B_Warn>>
--> Šuti i prati Marenin plan
+-> Šuti i dopusti da operacija nastavi
     <<set $dhornTrust -= 3>>
     <<jump Session05B_Silent>>
 ===
 
+
 title: Session05B_Warn
 ---
-Narrator: Kael šalje upozorenje Dhornu.
-Narrator: Time izdaje Marenin nalog.
+Narrator: Kael otvara kanal prema Dhornu.
+
+Narrator: Time izdaje nalog površine.
+
 Narrator: Ali prvi put govori bez prikrivanja.
 
 Kael: Morate se maknuti.
-Kael: Dolaze.
 
+Kael: Ne dolaze razgovarati.
+
+Kael: Dolaze s oružjem.
+
+<<radio_static AudioManager>>
 Dhorn: Vel-ahn.
+
 Dhorn: Zna sada Dhorn.
+
 Dhorn: Zna kael-vorn.
 
 Kael: Možda sam prekasno rekao istinu.
+
 Kael: Ali barem je ovaj put nisam preveo u nešto bezopasno.
 
-<<jump Session05_End>>
+Narrator: Na vladinom terminalu pojavljuje se upozorenje.
+
+Narrator: NEOVLAŠTENA KOMUNIKACIJA OTKRIVENA.
+
+Narrator: IDENTIFIKACIJA KORISNIKA U TIJEKU.
+
+<<notification_beep AudioManager>>
+Maren: Što si učinio?
+
+Kael: Ono što vi niste mogli.
+
+Maren: Moramo te izvući iz zgrade.
+
+Kael: Zašto?
+
+Maren: Jer više nisi samo prevoditelj.
+
+Maren: Sada si dokaz.
+
+Narrator: Dhorn šalje kratku datoteku.
+
+Narrator: Fotografija starog metalnog predmeta.
+
+Narrator: Na njemu je površinska oznaka:
+
+Narrator: V-27.
+
+Narrator: I Dhorn riječ:
+
+Narrator: Vorn.
+
+Kael: Ovo je bilo dolje dvadeset sedam godina.
+
+<<jump Session05_SharedDiscovery>>
 ===
+
 
 title: Session05B_Silent
 ---
 Narrator: Kael ne šalje upozorenje.
-Narrator: Marenin plan se nastavlja.
 
-Kael: Ako šutim, možda sve ostane pod kontrolom.
-Kael: Ako šutim, možda nitko neće znati što sam učinio.
+Narrator: Operacija se nastavlja.
+
+Kael: Ako šutim...
+
+Kael: možda sve ostane pod kontrolom.
+
+Kael: Ako šutim...
+
+Kael: možda nitko neće znati što sam učinio.
+
 Kael: Ako šutim...
 
 Narrator: Terminal ostaje otvoren.
 
-Kael: Ali znam da neće.
+Kael: Ali ja ću znati.
 
+Narrator: Na zaslonu se pojavljuju položaji jedinice Četrnaest.
+
+Narrator: Jedna oznaka ulazi u prvi prolaz.
+
+Narrator: Zatim druga.
+
+Narrator: Zatim treća.
+
+<<radio_static AudioManager>>
 Dhorn: Nem-ahn.
+
 Dhorn: Dhorn zna.
 
+Dhorn: Skriva kael.
+
 Kael: Naravno da znaju.
+
 Kael: Samo sam ja još pokušavao vjerovati da mogu sakriti prijevod.
 
-<<jump Session05_End>>
+Narrator: Veza se ispuni smetnjama.
+
+Narrator: U pozadini se čuje dubok udarac.
+
+Narrator: Jedna oznaka jedinice Četrnaest nestaje.
+
+Narrator: Zatim se cijela karta zacrveni.
+
+Narrator: KONTAKT IZGUBLJEN.
+
+Kael: Ne.
+
+<<notification_beep AudioManager>>
+Maren: Tim se ne javlja.
+
+Kael: Što ste poslali dolje?
+
+Maren: Nisam znala da će ih biti toliko.
+
+Kael: Niste znali ništa.
+
+Kael: A ja sam vam dao put.
+
+Narrator: Prije prekida Dhorn šalje jednu sliku.
+
+Narrator: Stari metalni odašiljač s površine.
+
+Narrator: Na njemu je oznaka V-27.
+
+Narrator: I riječ urezana Dhorn pismom.
+
+Narrator: Vorn.
+
+Kael: Netko je prije dvadeset sedam godina već bio tamo.
+
+<<jump Session05_SharedDiscovery>>
 ===
+
 
 title: Session5C_Start
 ---
+Narrator: Dva sata i četrdeset minuta do punog kapaciteta Vatre-7.
+
 Narrator: Obje strane sumnjaju.
+
 Narrator: Kael nije pomogao nikome.
+
 Narrator: Ponekad neutralnost izgleda kao izdaja objema stranama.
 
 Kael: Nisam im dao planove.
+
 Kael: Nisam im dao karte.
+
 Kael: Nisam spasio nikoga.
+
 Kael: Samo sam odgodio trenutak kada će svi shvatiti da stojim između njih.
+
+Narrator: Kael pokušava pronaći treći put.
+
+Narrator: Ponovno otvara arhivu incidenta od prije dvadeset sedam godina.
+
+Narrator: Pristup odbijen.
+
+Kael: Ne ovaj put.
+
+Narrator: Koristi kanal 7-G kao ulaznu točku.
+
+Narrator: Sustav kratko zastane.
+
+Narrator: Jedna izbrisana datoteka vraća se u privremenu memoriju.
+
+Narrator: IZVJEŠTAJ V-27.
+
+Narrator: OŠTEĆENI PODACI.
+
+Narrator: AUTOR: LINGVISTIČKI POSREDNIK — V.
+
+Kael: V.
+
+Narrator: Prije nego što uspije otvoriti datoteku, Dhorn se javlja.
 
 <<radio_static AudioManager>>
 Dhorn: Nem-ahn, Gornji-koji-sluša?
+
 Kael: Ne razumiješ, Gornji-koji-sluša?
 
-Dhorn: Ili nem-govor. Skriva kael.
+Dhorn: Ili nem-govor.
+
+Dhorn: Skriva kael.
+
 Kael: Ili ne govoriš.
+
 Kael: Kael skriva.
 
 Kael: Skriva.
+
 Kael: Sakriti nešto.
+
 Kael: Ne pokazati istinu.
 
-<<add_word NotebookPanel "skriva" "skrivati / sakriti">>
+Kael: Ili lagati.
+
+<<add_word NotebookPanel "skriva" "skrivati / sakriti / lagati">>
 
 Kael: Opet ta riječ.
+
 Kael: Kael.
+
 Kael: Ovaj put zvuči kao optužba.
 
 <<notification_beep AudioManager>>
 Maren: Vorn.
-Maren: Nisi nam dostavio ništa korisno u tjedan dana.
+
+Maren: Nisi nam dostavio ništa korisno.
+
+Maren: Zapovjedništvo će uskoro preuzeti cijeli projekt.
+
 Maren: Imam dojam da igraš na dvije strane.
+
 Maren: Imam pravo znati.
+
 Maren: Jesi li još uvijek na našoj strani?
 
 Kael: Našoj strani.
+
 Kael: Njihovoj strani.
+
 Kael: Nitko me više ne pita što je istina.
 
 -> Da, direktorice. Uvijek.
@@ -220,43 +603,96 @@ Kael: Nitko me više ne pita što je istina.
     <<jump Session05C_Silent>>
 ===
 
+
 title: Session05C_Lie
 ---
 Narrator: Kael laže brzo.
+
 Narrator: Gotovo automatski.
 
+Kael: Da, direktorice.
+
+Kael: Uvijek.
+
 Maren: Dobro.
+
 Maren: Onda to i dokaži.
 
 Kael: Nisam siguran kome sam upravo lagao.
+
 Kael: Njoj.
+
 Kael: Njima.
+
 Kael: Ili sebi.
 
 Narrator: S druge strane veze Dhorn šuti.
+
 Narrator: Kael prvi put poželi da netko drugi prevede njega.
 
-<<jump Session05_End>>
+Narrator: Iz privremene arhive otvara se dio izvještaja V-27.
+
+Narrator: „Subjekt odbija povratak na površinu.”
+
+Narrator: „Navodi da moran više nije iznad.”
+
+Kael: Subjekt?
+
+Kael: Tko se nije vratio?
+
+<<jump Session05C_ArchiveEnd>>
 ===
+
 
 title: Session05C_Complex
 ---
 Narrator: Kael ne govori cijelu istinu.
+
 Narrator: Ali više ne može ni jednostavno lagati.
 
+Kael: Situacija je kompleksnija nego što izgleda.
+
 Maren: Kompleksnija?
+
 Maren: Onda mi donesi nešto konkretno, Vorn.
 
-Kael: Možda me ne poštuje.
-Kael: Ali prvi put me sluša.
-Kael: I to je opasnije nego da viče.
+Kael: Imam oznaku iz starog izvještaja.
 
-Narrator: Dhorn poruka ostaje otvorena.
-Narrator: Marenin nalog ostaje neispunjen.
-Narrator: Kael ostaje između.
+Kael: Lingvistički posrednik — V.
 
-<<jump Session05_End>>
+Narrator: Maren utihne.
+
+Kael: Znate što znači?
+
+Maren: Ne preko ovog kanala.
+
+Kael: Onda dođite ovamo.
+
+Maren: Ne mogu.
+
+Kael: Ne možete...
+
+Kael: ili vas netko promatra?
+
+Maren: Oboje.
+
+Narrator: Veza se prekida.
+
+Kael: Možda mi ne vjeruje.
+
+Kael: Ali prvi put me se boji netko tko nije Dhorn.
+
+Narrator: Iz privremene arhive otvara se dio izvještaja V-27.
+
+Narrator: „Posrednik tvrdi da poziv nije bio slučajan.”
+
+Narrator: „Dhorn je znao njegovo ime prije prvog kontakta.”
+
+Kael: Isto kao sa mnom.
+
+<<jump Session05C_ArchiveEnd>>
 ===
+
 
 title: Session05C_Silent
 ---
@@ -267,16 +703,132 @@ Maren: Razumijem.
 Narrator: To je najgori mogući odgovor.
 
 Kael: Ponekad šutnja kaže više nego prijevod.
+
 Kael: Ponekad kaže upravo ono što si pokušao sakriti.
 
 Narrator: Terminal se ne gasi.
+
 Narrator: Niti jedna strana ne prekida vezu.
+
 Narrator: Kao da obje čekaju da Kael prvi nestane.
+
+Narrator: Iz privremene arhive otvara se posljednji čitljivi dio izvještaja V-27.
+
+Narrator: „Ako ovo čita novi kael...”
+
+Narrator: „Ne vjeruj prijevodu koji ti daju.”
+
+Narrator: „Sjeti se riječi koju si čuo prije nego što si znao govoriti.”
+
+Kael: Prije nego što sam znao govoriti?
+
+<<jump Session05C_ArchiveEnd>>
+===
+
+
+title: Session05C_ArchiveEnd
+---
+Narrator: Datoteka se počinje brisati.
+
+Kael: Ne.
+
+Kael: Ne još.
+
+Narrator: Kael kopira posljednji preostali fragment.
+
+Narrator: Nije tekst.
+
+Narrator: To je fotografija simbola urezanog u drvenu površinu.
+
+Kael: Poznajem taj simbol.
+
+Kael: Ali ne znam odakle.
+
+Narrator: Ispod simbola stoji jedna riječ.
+
+Narrator: Vorn.
+
+<<jump Session05_SharedDiscovery>>
+===
+
+
+title: Session05_SharedDiscovery
+---
+Narrator: Odbrojavanje se nastavlja.
+
+Narrator: 01:17:42.
+
+Narrator: Kael promatra riječ Vorn.
+
+Narrator: Oznaku V-27.
+
+Narrator: Simbol koji mu je neobjašnjivo poznat.
+
+Kael: Prije dvadeset sedam godina postojao je još jedan kontakt.
+
+Kael: Netko je odgovorio.
+
+Kael: Netko je bio između površine i Dhorna.
+
+Kael: A Dhorn ga je zvao Vorn.
+
+Narrator: Kael povećava sliku simbola.
+
+Kael: Vidio sam ga.
+
+Kael: Ne u uredu.
+
+Kael: Ne u arhivi.
+
+Kael: Negdje prije toga.
+
+Narrator: Pokušava se prisjetiti.
+
+Narrator: Drvena kutija.
+
+Narrator: Tavan.
+
+Narrator: Stvari koje su ostale nakon bakine smrti.
+
+Kael: Kutija.
+
+Kael: Na tavanu.
+
+Narrator: Na oba terminala istovremeno stiže nova poruka.
+
+<<notification_beep AudioManager>>
+Maren: Vorn.
+
+Maren: Zapovjedništvo dolazi po tebe.
+
+<<radio_static AudioManager>>
+Dhorn: Kael-vorn.
+
+Dhorn: Vrijeme nem-dugo.
+
+Kael: Obje strane koriste istu riječ.
+
+Kael: Vorn.
+
+Kael: I obje govore kao da pripada meni.
+
+Narrator: Kael uzima kaput.
+
+Narrator: Prvi put od početka kontakta napušta ured prije završetka smjene.
+
+Kael: Ako odgovor nije u njihovim arhivama...
+
+Kael: možda je cijelo vrijeme bio u mojoj.
 
 <<jump Session05_End>>
 ===
 
+
 title: Session05_End
 ---
+Narrator: Četrdeset pet minuta kasnije.
+
+Narrator: Kael stiže pred vrata svog stana.
+
 <<jump Session06_Start>>
 ===

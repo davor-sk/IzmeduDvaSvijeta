@@ -1,83 +1,232 @@
 ﻿title: Session03_Start
 ---
-Narrator: Dva dana kasnije.
 Narrator: Kaelov ured.
+
 Narrator: Dva terminala svijetle istovremeno.
 
+Narrator: Na lijevom ekranu čeka klasificirana poruka.
+
+Narrator: Na desnom ekranu pulsira kanal 7-G.
+
 Kael: Više ne čekam signal.
-Kael: Sada čekam koju će stranu sustav prvu spojiti.
+
+Kael: Sada čekam koju će me stranu sustav prvu natjerati da izdam.
 
 Narrator: Danas su stigle dvije poruke.
+
 Narrator: Jedna odozgo.
+
 Narrator: Jedna odozdo.
 
-Kael: Prije tjedan dana ovo bi bilo nezamislivo.
+Kael: Prije deset dana ovo bi bilo nezamislivo.
+
+Kael: Sada je postalo rutina.
+
+Narrator: Kael ponovno pokušava otvoriti arhivu signala starih dvadeset sedam godina.
+
+Narrator: Pristup odbijen.
+
+Narrator: Datoteka ne postoji.
+
+Kael: Datoteke ne nestaju same.
+
+Kael: Netko ju je uklonio nakon što sam je vidio.
+
+Narrator: Vladin terminal zazvoni.
 
 <<notification_beep AudioManager>>
 Maren: Vorn.
+
 Maren: Projekt Vatra-7 ulazi u drugu fazu.
+
 Maren: Povećavamo kapacitet bušenja za četrdeset posto.
+
 Maren: Komuniciraj s kontaktima.
+
 Maren: Procijeni moguće reakcije.
+
 Maren: Rok je četrdeset osam sati.
 
 Kael: Četrdeset osam sati.
+
 Kael: Za njih je to samo rok.
+
 Kael: Za nekoga drugoga možda je kraj.
+
+Kael: Direktorice.
+
+Kael: Kada je Projekt Vatra-7 zapravo započeo?
+
+Narrator: Maren ne odgovara odmah.
+
+Maren: To nije relevantno za tvoj zadatak.
+
+Kael: Signali na kanalu 7-G zabilježeni su prije dvadeset sedam godina.
+
+Kael: Projekt sigurno nije nastao prošli tjedan.
+
+Maren: Usredotoči se na prijevod.
+
+Kael: Jeste li tada znali da je netko dolje?
+
+Maren: Znali smo da postoji nešto.
+
+Kael: Nešto?
+
+Maren: Geološke nepravilnosti.
+
+Maren: Praznine.
+
+Maren: Obrasci koji nisu odgovarali prirodnim formacijama.
+
+Kael: I svejedno ste počeli bušiti.
+
+Maren: Projekt Vatra-7 važan je za energetsku stabilnost cijelog grada.
+
+Kael: To nije odgovor.
+
+Maren: To je jedini odgovor koji ćeš dobiti.
+
+Narrator: Veza se prekida.
+
+Kael: Vatra-7 nije reakcija na Dhorn.
+
+Kael: Dhorn je reakcija na Vatru-7.
+
+Narrator: Desni terminal zasvijetli.
+
+Narrator: Signal je snažniji nego ikada prije.
 
 <<radio_static AudioManager>>
 Dhorn: Vel-ahn, Gornji-koji-sluša.
+
 Kael: Razumijemo.
 
 Dhorn: Traži Dhorn, zaustavi vatra-uzima.
-Kael: Dhorn traži da se zaustavi... vatra-uzima.
+
+Kael: Dhorn traži da se zaustavi...
+
+Kael: vatra-uzima.
 
 <<add_word NotebookPanel "traži" "tražiti / trebati">>
 
-Kael: "Vatra" više ne zvuči kao energija.
-Kael: Zvuči kao nešto što dolazi prema njima.
+Kael: Vatra više ne zvuči kao energija.
 
-Dhorn: Nem-dah govor. Tah-put ako nem-zaustavi.
+Kael: Zvuči kao sila.
+
+Kael: Kao nešto što prodire kroz kamen prema njima.
+
+Dhorn: Pada zid-moran.
+
+Dhorn: Pada sjeme.
+
+Dhorn: Pada sada.
+
+Kael: Zidovi doma se ruše.
+
+Kael: Budućnost se ruši.
+
+Kael: Sada.
+
+Narrator: Kael osjeti slabu vibraciju kroz stol.
+
+Narrator: Čaša vode zadrhti.
+
+Kael: Nije mi se učinilo.
+
+Narrator: Još jedna vibracija.
+
+Narrator: Ovoga puta jača.
+
+Kael: Bušenje je već počelo.
+
+Dhorn: Nem-dah govor.
+
+Dhorn: Tah-put ako nem-zaustavi.
+
 Kael: Bez straha govorimo.
+
 Kael: Neizvjestan put ako se ne zaustavi.
 
-Kael: Sada razumijem "dah".
+Kael: Sada razumijem dah.
+
 Kael: Nije samo strah.
-Kael: Može biti opasnost.
-Kael: Prijetnja.
+
+Kael: To je opasnost.
+
+Kael: Prijetnja koja je već dovoljno blizu da je osjetiš u tijelu.
 
 <<add_word NotebookPanel "dah" "strah / opasnost / prijetnja">>
 
 Kael: Tah-put.
+
 Kael: Neizvjesna budućnost.
-Kael: Ili upozorenje.
 
-Dhorn: Stari dubina pamti, kael zna.
+Kael: Ili posljednje upozorenje.
 
-Kael: "Dubina".
+Dhorn: Stari dubina pamti.
+
+Dhorn: Stari dubina pamti vorn.
+
+Dhorn: Kael zna.
+
+Kael: Dubina.
+
 Kael: Sada sam siguran.
+
 Kael: Ne govore samo o prostoru.
+
 Kael: Govore o svom podzemlju.
-Kael: O svom teritoriju.
+
+Kael: O teritoriju.
+
+Kael: O domu.
 
 <<add_word NotebookPanel "dubina" "podzemlje / Dhorn teritorij">>
 
-Kael: Opet ta riječ.
+Kael: Stara dubina pamti Vorn.
+
+Kael: Kael zna.
+
+Kael: Opet te dvije riječi.
+
+Kael: Vorn.
+
+Kael: Kael.
+
+Narrator: Kael otvara bilježnicu.
+
+Narrator: Uz riječ vorn još uvijek stoji upitnik.
+
+Narrator: Uz riječ kael nema ni pretpostavke.
 
 Kael: Kael.
 
 Kael: Treći put.
-Kael: Nije prevedena.
-Kael: A ipak imam osjećaj da bih trebao znati što znači.
 
-Narrator: Kael mora prenijeti Marenin ultimatum.
+Kael: Nije prevedena.
+
+Kael: A ipak imam osjećaj da ne govore nekom nepoznatom posredniku.
+
+Kael: Govore meni.
+
+Narrator: Kael se vraća na Mareninu poruku.
 
 Narrator: Povećanje bušenja za četrdeset posto.
 
 Narrator: Rok: četrdeset osam sati.
 
-Kael: Jedna rečenica.
-Kael: Toliko je dovoljno da započne rat.
+Narrator: Dhorn ne zna da je odluka već donesena.
+
+Kael: Moram im prenijeti ultimatum.
+
+Kael: Ali prijevod više nije samo prijevod.
+
+Kael: Jedna rečenica može im dati vrijeme da se pripreme.
+
+Kael: Može ih smiriti.
+
+Kael: Ili ih ostaviti pod ruševinama bez upozorenja.
 
 -> Točno prenesi ultimatum: "Vatra-uzima raste. 48 sati."
     <<set $dhornTrust += 1>>
@@ -92,29 +241,67 @@ Kael: Toliko je dovoljno da započne rat.
     <<jump Session03_Hidden>>
 ===
 
+
 title: Session03_Truth
 ---
 Narrator: Kael šalje točan prijevod.
+
+Kael: Vatra-uzima raste.
+
+Kael: Četrdeset osam sati.
 
 Narrator: S druge strane terminala nastaje tišina.
 
 Narrator: Dulja nego ikada prije.
 
+Narrator: Kael provjerava vezu.
+
+Narrator: Signal je još uvijek aktivan.
+
+Kael: Još su tamo.
+
+Kael: Samo više ne odgovaraju.
+
+Narrator: Nakon gotovo pune minute signal se ponovno mijenja.
+
+<<radio_static AudioManager>>
 Dhorn: Vel-ahn.
 
 Dhorn: Znamo sada.
 
+Dhorn: Čeka Dhorn nem-dugo.
+
+Dhorn: Sprema dubina.
+
 Kael: Razumiju.
 
-Kael: I mislim da ih je upravo postalo strah.
+Kael: Neće dugo čekati.
 
-<<jump Session03_End>>
+Kael: Dubina se priprema.
+
+Kael: Rekao sam im istinu.
+
+Kael: I možda sam upravo započeo rat.
+
+<<jump Session03_CommonEnd>>
 ===
+
 
 title: Session03_Softened
 ---
 Narrator: Kael ublažava Mareninu poruku prije slanja.
 
+Kael: Toru razmatra promjene.
+
+Kael: Dhorn treba biti strpljiv.
+
+Narrator: Riječ „četrdeset osam“ ostaje neposlana.
+
+Narrator: Povećanje bušenja nestaje iz prijevoda.
+
+Narrator: Opasnost postaje „promjena“.
+
+<<radio_static AudioManager>>
 Dhorn: Tah-put.
 
 Dhorn: Čeka Dhorn.
@@ -125,31 +312,128 @@ Kael: Čekat će.
 
 Kael: Ali ne još dugo.
 
-Kael: Samo se nadam da nisam kupio vrijeme koje nitko neće znati iskoristiti.
+Dhorn: Zna vatra.
 
-<<jump Session03_End>>
+Dhorn: Osjeti dubina.
+
+Kael: Oni već znaju da se nešto događa.
+
+Kael: Osjete bušenje.
+
+Kael: Nisam im kupio vrijeme.
+
+Kael: Samo sam im oduzeo istinu.
+
+<<jump Session03_CommonEnd>>
 ===
+
 
 title: Session03_Hidden
 ---
 Narrator: Kael ne govori Dhornu ništa o ultimatumu.
 
-Narrator: Poruka ostaje između njega i Maren.
+Narrator: Marenina poruka ostaje između njega i površine.
 
 Kael: Ako ne znaju...
 
-Kael: možda još postoji prilika.
+Kael: možda još postoji prilika da sve zaustavim prije panike.
 
-Kael: Ali što ako im upravo oduzimam mogućnost da se pripreme?
+Narrator: Nova vibracija prolazi kroz pod.
 
-Kael: Ili sam upravo potrošio jedino vrijeme koje smo imali.
+Narrator: Ovoga puta svjetlo na trenutak zatreperi.
 
-<<jump Session03_End>>
+Kael: Ali bušenje ne čeka moj prijevod.
+
+<<radio_static AudioManager>>
+Dhorn: Vatra bliže.
+
+Dhorn: Pada zid.
+
+Dhorn: Zašto nem-govor, kael?
+
+Kael: Znaju.
+
+Kael: Ne trebaju mene da im kažem što osjećaju pod nogama.
+
+Kael: Pitali su zašto šutim.
+
+Kael: Ne znam što kael znači.
+
+Kael: Ali sada zvuči kao optužba.
+
+Narrator: Kael ne odgovara.
+
+Narrator: Signal ostaje otvoren.
+
+Kael: Možda im upravo oduzimam mogućnost da se pripreme.
+
+Kael: Ili sam već potrošio jedino vrijeme koje smo imali.
+
+<<jump Session03_CommonEnd>>
 ===
 
-title: Session03_End
+
+title: Session03_CommonEnd
 ---
-Narrator: Četrdeset osam sati.
+Narrator: Na vladinom terminalu pojavljuje se novo ažuriranje.
+
+<<notification_beep AudioManager>>
+Narrator: PROJEKT VATRA-7.
+
+Narrator: FAZA DVA.
+
+Narrator: PROCJENJENI POČETAK PUNOG KAPACITETA:
+
+Narrator: 47 SATI, 52 MINUTE.
+
+Kael: Odbrojavanje je već počelo.
+
+Narrator: Kael pokušava otvoriti tehničke detalje projekta.
+
+Narrator: Pristup odbijen.
+
+Narrator: Pokušava otvoriti stare geološke izvještaje.
+
+Narrator: Pristup odbijen.
+
+Narrator: Jedna datoteka nakratko se pojavi prije nego što je sustav ukloni.
+
+Narrator: IZVJEŠTAJ O INCIDENTU — KANAL 7-G.
+
+Narrator: Prije dvadeset sedam godina.
+
+Kael: Incident?
+
+Narrator: Kael uspije pročitati samo jednu rečenicu.
+
+Narrator: „Kontakt izgubljen nakon pokušaja odgovora.“
+
+Kael: Pokušaja odgovora?
+
+Kael: Netko je već razgovarao s njima.
+
+Narrator: Datoteka nestaje.
+
+Kael: Maren nije prva osoba koja je čula Dhorn.
+
+Kael: A ja nisam prvi prevoditelj.
+
+Narrator: Na Dhorn terminalu pojavi se posljednja kratka poruka.
+
+<<radio_static AudioManager>>
+Dhorn: Stari kael nem-govor.
+
+Dhorn: Novi kael čeka.
+
+Kael: Stari kael nije govorio.
+
+Kael: Novi kael čeka.
+
+Kael: Novi...
+
+Kael: kael.
+
+Narrator: Četrdeset sedam sati i pedeset minuta.
 
 Narrator: Dva terminala ponovno utihnu.
 
@@ -159,13 +443,27 @@ Kael: Negdje ispod mojih nogu...
 
 Kael: u dubini koju nikad nisam vidio...
 
-Kael: netko čeka moj odgovor.
+Kael: cijela civilizacija čeka moj odgovor.
 
-Kael: A u bilježnici još jedna riječ bez prijevoda.
+Kael: A prije dvadeset sedam godina...
+
+Kael: netko drugi je sjedio između ova ista dva svijeta.
+
+Narrator: Kael otvara bilježnicu.
+
+Kael: vorn???
 
 Kael: kael???
 
-Kael: Što ako cijelo vrijeme prevodim riječ koja govori o meni?
+Kael: Tko je bio prije mene?
+
+<<jump Session03_End>>
+===
+
+
+title: Session03_End
+---
+Narrator: Četrdeset četiri sata kasnije.
 
 <<jump Session4_Start>>
 ===

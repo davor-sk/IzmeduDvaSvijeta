@@ -1,36 +1,100 @@
 ﻿title: Session06_Start
 ---
-Narrator: Kasno navečer.
+Narrator: Kael stoji pred vratima svog stana.
 
-Narrator: Kael se vraća u stan nakon još jednog iscrpljujućeg dana.
+Narrator: Na zaslonu mobitela odbrojavanje projekta Vatra-7 nastavlja se smanjivati.
+
+Narrator: 00:31:46.
+
+Narrator: 00:31:45.
+
+Narrator: 00:31:44.
+
+Kael: Pola sata.
+
+Kael: Dvadeset sedam godina skrivanja.
+
+Kael: I pola sata da shvatim zašto.
+
+Narrator: Otključava vrata.
 
 Narrator: Stan je tih.
 
 Narrator: Po prvi put nakon dugo vremena ne pali terminal.
 
-Kael: Ne mogu više.
+Kael: Simbol.
 
-Kael: Cijeli tjedan prevodim tuđe riječi.
+Kael: Drvena kutija.
 
-Kael: A više ne razumijem ni svoje.
+Kael: Tavan.
 
-Narrator: Tražeći stare bilješke, penje se na tavan.
+Narrator: Ne traži stare bilješke nasumično.
+
+Narrator: Točno zna što traži.
+
+Narrator: Samo još ne zna zašto zna.
+
+Narrator: Penje se na tavan.
+
+Narrator: Prašina prekriva kutije, stare knjige i stvari koje nitko godinama nije otvorio.
 
 Narrator: Iza stare police pronalazi drvenu kutiju.
 
-Narrator: Na poklopcu je urezan simbol koji nikada prije nije primijetio.
+Narrator: Na poklopcu je urezan isti simbol iz izvještaja V-27.
 
-Kael: Čudno...
+Kael: To je taj simbol.
 
-Kael: Kao da sam ga već negdje vidio.
+Kael: Bio je ovdje cijelo vrijeme.
+
+Narrator: Kael prelazi prstima preko ureza.
+
+Narrator: Ruka mu se zaustavlja na jednom dijelu znaka.
+
+Kael: Znam kako se otvara.
+
+Narrator: Ne postoji vidljiva brava.
+
+Narrator: Ipak pritisne tri točke točnim redoslijedom.
+
+Narrator: Poklopac popusti.
+
+Kael: Kako sam to znao?
 
 Narrator: U kutiji se nalaze požutjele fotografije.
 
 Narrator: Nekoliko pisama.
 
-Narrator: I stara bilježnica ispisana nepoznatim simbolima.
+Narrator: Stari metalni odašiljač.
 
-Kael: Ovo ne bi trebalo biti moguće...
+Narrator: I bilježnica ispisana nepoznatim simbolima.
+
+Narrator: Na odašiljaču stoji površinska oznaka.
+
+Narrator: V-27.
+
+Kael: Bio je njegov.
+
+Narrator: Kael podiže prvu fotografiju.
+
+Narrator: Na njoj je mladić kojeg nikada nije upoznao.
+
+Narrator: Ali poznaje njegove oči.
+
+Kael: Djed.
+
+Narrator: Iza njega nalazi se ulaz u tunel.
+
+Narrator: Na poleđini fotografije zapisane su dvije riječi.
+
+Narrator: Kael-vorn.
+
+Kael: Opet.
+
+Kael: Cijelo vrijeme su bile ispred mene.
+
+Narrator: Kael otvara staru bilježnicu.
+
+Kael: Ovo ne bi trebalo biti moguće.
 
 Kael: Ali...
 
@@ -40,32 +104,99 @@ Kael: Razumijem što piše.
 
 Narrator: Ne prevodi.
 
-Narrator: Ne traži značenje.
+Narrator: Ne rastavlja rečenice.
+
+Narrator: Ne traži značenje u kontekstu.
 
 Narrator: Jednostavno razumije.
 
-Kael: Ne učim njihov jezik...
+Kael: Ne učim njihov jezik.
 
 Kael: Sjećam ga se.
 
-Narrator: Svaka riječ koju je posljednjih tjedana zapisivao u svoju bilježnicu odjednom dobiva novo značenje.
+Narrator: Prva stranica nosi datum od prije dvadeset sedam godina.
 
-Narrator: Kao da su cijelo vrijeme bile dio njega.
+Narrator: Isti datum kao incident na kanalu 7-G.
+
+Narrator: Kael počinje čitati.
+
+Narrator: „Čuo sam ih prije nego što je sustav registrirao signal.”
+
+Narrator: „Znali su da dolazim.”
+
+Narrator: „Nazvali su me vorn.”
+
+Narrator: „Nisam tada razumio zašto.”
+
+Kael: To si bio ti.
+
+Kael: Lingvistički posrednik — V.
+
+Narrator: Sljedeća stranica.
+
+Narrator: „Površina je pronašla dubinu.”
+
+Narrator: „Ne zna što je pronašla.”
+
+Narrator: „Ako im kažem istinu, doći će s Vatrom.”
+
+Narrator: „Ako šutim, Dhorn će ostati sam.”
+
+Kael: Isto pitanje.
+
+Kael: Isti izbor.
+
+Kael: Prije dvadeset sedam godina.
+
+Narrator: Na posljednjoj ispunjenoj stranici rukopis postaje nestabilan.
+
+Narrator: „Pokušao sam odgovoriti.”
+
+Narrator: „Oni iznad prekinuli su kontakt.”
+
+Narrator: „Izbrisali su moje izvještaje.”
+
+Narrator: „Rekli su da više nisam pouzdan.”
+
+Narrator: „Ali Dhorn mi je ponudio moran.”
+
+Kael: Moran.
+
+Narrator: Svaka riječ koju je posljednjih tjedana zapisivao odjednom dobiva veću dubinu.
+
+Narrator: Ne samo prijevod.
+
+Narrator: Sjećanje.
+
+Narrator: Pripadnost.
 
 <<add_word NotebookPanel "moran" "dom / sigurnost / porijeklo">>
 
-<<radio_static AudioManager>>
-Dhorn: Kael-vorn.
+Kael: Moran nije samo dom.
 
-Kael: Opet.
+Kael: To je mjesto kojem pripadaš.
 
-Kael: Ta ista dva izraza.
+Kael: Mjesto na kojem si siguran.
 
-Kael: Cijelo vrijeme bili su ispred mene.
+Kael: I mjesto iz kojeg dolaziš...
 
-Narrator: Ovoga puta značenje je potpuno jasno.
+Kael: čak i kada ga nikada nisi vidio.
 
-Dhorn: Vorn.
+Narrator: Kael nastavlja čitati.
+
+Narrator: „Nisam se vratio na površinu.”
+
+Narrator: „Rekli su da sam pobjegao.”
+
+Narrator: „Možda jesam.”
+
+Narrator: „Ali prvi put nisam bježao od nečega.”
+
+Narrator: „Išao sam prema domu.”
+
+Narrator: Ispod posljednje rečenice stoji samo jedna riječ.
+
+Narrator: Vorn.
 
 Narrator: Vorn znači...
 
@@ -73,56 +204,100 @@ Narrator: Onaj koji je otišao.
 
 Narrator: Izbjeglica.
 
+Narrator: Ali i onaj koji je napustio jedan svijet kako bi pronašao drugi.
+
 <<add_word NotebookPanel "vorn" "onaj koji je otišao / izbjeglica">>
-
-Kael: Djed...
-
-Narrator: Kael okreće jednu od fotografija.
-
-Narrator: Na poleđini je istim pismom napisana samo jedna riječ.
-
-Narrator: Vorn.
-
-Kael: Cijelo vrijeme...
 
 Kael: Govorili su o njemu.
 
-Dhorn: Kael.
+Kael: Moj djed nije nestao.
 
-Narrator: Kael nije ime.
+Kael: Vratio se Dhornu.
+
+Narrator: Kael okreće fotografiju.
+
+Narrator: Na poleđini je uz riječ Vorn dopisana druga riječ.
+
+Narrator: Kael.
+
+Kael: Kael nije moje ime.
 
 Narrator: To je titula.
 
-Narrator: Onaj koji sluša između svjetova.
+Narrator: Onaj koji sluša između.
+
+Narrator: Posrednik između dva svijeta.
+
+Narrator: Osoba koja čuje obje strane...
+
+Narrator: ali ne pripada potpuno nijednoj.
 
 <<add_word NotebookPanel "kael" "posrednik / onaj koji sluša između">>
 
 <<cinematic_hit AudioManager>>
 
-Kael: Zato...
-
 Kael: Zato su me tako zvali od prvog dana.
 
-Kael: Nikada nisu pogriješili.
+Kael: Nisu pogriješili moje ime.
 
-Narrator: Kael shvaća da njegov djed nije došao iz nepoznate zemlje.
+Kael: Dali su mi istu titulu koju je nosio on.
 
-Narrator: Došao je iz Dhorna.
+Narrator: Kael ponovno pogleda riječi na fotografiji.
 
-Narrator: Cijelo vrijeme prevodio je vlastito nasljeđe.
+Narrator: Kael-vorn.
+
+Kael: Posrednik potomak onoga koji je otišao.
+
+Kael: Novi slušatelj iz loze izbjeglice.
+
+Kael: Nisu čekali bilo kojeg prevoditelja.
+
+Kael: Čekali su nekoga tko će se sjetiti.
+
+Narrator: Na unutarnjoj strani poklopca nalazi se još jedna poruka.
+
+Narrator: Napisana je na površinskom jeziku.
+
+Narrator: Namijenjena nekome tko će jednog dana otvoriti kutiju.
+
+Narrator: „Jezik će pronaći put natrag.”
+
+Narrator: „Kada ga čuješ, nemoj vjerovati da biraš između njih i nas.”
+
+Narrator: „Postojimo samo dok netko još sluša obje strane.”
+
+Kael: Znao si da će se signal vratiti.
+
+Kael: Znao si da će netko pronaći kutiju.
+
+Narrator: Posljednja rečenica gotovo je izblijedjela.
+
+Narrator: „Oprosti mi što sam ti ostavio izbor koji ja nisam uspio dovršiti.”
+
+Kael: Nisi mi ostavio izbor.
+
+Kael: Ostavio si mi upozorenje.
 
 <<if $moranTranslation == "doma">>
-Kael: Cijelo vrijeme riječ "moran" za mene je značila dom.
+Kael: Cijelo vrijeme riječ moran za mene je značila dom.
 
-Kael: Možda zato što sam ga cijeli život tražio.
+Kael: Možda zato što je dio mene već znao da postoji mjesto koje nikada nisam vidio.
+
+Kael: Mjesto iz kojeg dolazim.
 <<elseif $moranTranslation == "sigurnosti">>
-Kael: Cijelo vrijeme riječ "moran" za mene je značila sigurnost.
+Kael: Cijelo vrijeme riječ moran za mene je značila sigurnost.
 
-Kael: A cijeli život pokušavao sam pronaći mjesto gdje je mogu osjetiti.
+Kael: Možda sam u jeziku tražio ono što moj djed nije mogao pronaći na površini.
+
+Kael: Mjesto na kojem ne mora skrivati tko je.
 <<elseif $moranTranslation == "nade">>
-Kael: Cijelo vrijeme riječ "moran" za mene je značila nadu.
+Kael: Cijelo vrijeme riječ moran za mene je značila nadu.
 
-Kael: Možda zato što je nada jedino što nam je svima ostalo.
+Kael: Nije bio potpuni prijevod.
+
+Kael: Ali možda nije bio ni potpuno pogrešan.
+
+Kael: Dom je ponekad samo nada da negdje možeš pripadati.
 <<endif>>
 
 Narrator: Svaka poruka.
@@ -135,101 +310,400 @@ Narrator: Odjednom dobiva potpuno novo značenje.
 
 Kael: Nisam bio slučajni prevoditelj.
 
-Kael: Oni su mene tražili.
+Kael: Dhorn nije slučajno pronašao moj terminal.
+
+Kael: Oni su čekali povratak kael-vorna.
+
+Narrator: Mobitel zavibrira.
+
+Narrator: Odbrojavanje pokazuje manje od dvadeset minuta.
+
+Narrator: 00:18:09.
+
+Narrator: Vladina veza prisilno se otvara.
 
 <<notification_beep AudioManager>>
 Maren: Vorn.
 
 Maren: Gdje si?
 
-Kael: Prvi put...
+Kael: Kod kuće.
 
-Kael: Nisam siguran kome se javlja.
+Maren: Zapovjedništvo je preuzelo kanal 7-G.
+
+Maren: Poslali su ljude prema tvojoj lokaciji.
+
+Kael: Zašto prema meni?
+
+Maren: Pronašli su neovlaštene prijenose.
+
+Maren: I stari dosje V-27.
+
+Maren: Tvoje ime i ime lingvističkog posrednika povezani su u sustavu.
+
+Kael: To nije bilo njegovo ime.
+
+Maren: Što?
+
+Kael: Vorn nije prezime koje je počelo na površini.
+
+Kael: To je riječ.
+
+Maren: Što znači?
+
+Kael: Onaj koji je otišao.
+
+Narrator: Maren utihne.
+
+Maren: Tvoj djed.
+
+Kael: Da.
+
+Maren: Bio je osoba iz incidenta.
+
+Kael: Bio je prvi posrednik.
+
+Maren: Vorn...
+
+Kael: Kael.
+
+Maren: Što?
+
+Kael: To je riječ za posrednika.
+
+Kael: Za onoga koji sluša između.
+
+Kael: Mene ne zovu mojim imenom.
+
+Kael: Zovu me onime što jesam.
+
+Maren: Onda me poslušaj kao posrednik.
+
+Maren: Zapovjedništvo će za osamnaest minuta pokrenuti puni prodor.
+
+Maren: Ako se vratiš i potvrdiš da Dhorn predstavlja prijetnju...
+
+Maren: mogu pokušati zadržati operaciju pod kontrolom.
+
+Kael: Želite da lažem.
+
+Maren: Želim spriječiti da vojska uđe bez ikoga tko razumije što se događa.
+
+Kael: A nakon toga?
+
+Maren: Ne znam.
+
+Kael: Napokon iskren odgovor.
+
+Narrator: Stari odašiljač V-27 odjednom se uključuje.
+
+Narrator: Baterija nije spojena.
+
+Narrator: Ipak, kroz zvučnik prolazi poznata statika.
 
 <<radio_static AudioManager>>
 Dhorn: Kael-vorn.
 
-Dhorn: Vrijeme.
+Dhorn: Moran tvoj, dubina.
 
-Narrator: Obje strane čekaju.
+Dhorn: Uvijek dubina.
+
+Kael: Moj dom je u dubini.
+
+Kael: Moje porijeklo je u dubini.
+
+Dhorn: Vatra blizu.
+
+Dhorn: Traži Dhorn, dođi.
+
+Dhorn: Moran čeka.
+
+Narrator: Obje veze ostaju otvorene.
+
+Narrator: Maren čuje Dhorn.
+
+Narrator: Dhorn možda čuje Maren.
+
+Maren: Koliko ih ima?
+
+Kael: Ne znam.
+
+Maren: Jesu li naoružani?
+
+Kael: Uplašeni su.
+
+Maren: To nije isto pitanje.
+
+Kael: Za ljude koji čekaju da im se dom uruši...
+
+Kael: možda jest.
+
+Dhorn: Govor kael.
+
+Dhorn: Vrijeme nem-dugo.
+
+Narrator: Odbrojavanje nastavlja padati.
+
+Narrator: 00:15:00.
 
 Narrator: Više nema novih riječi.
 
-Narrator: Ostala je samo jedna odluka.
+Narrator: Više nema vremena za oprezne prijevode.
 
--> Ostani uz vladu
+Narrator: Ostala je samo odluka što će Kael napraviti s istinom.
+
+-> Vrati se Maren i ostani uz površinu
     <<set $finalChoice = "government">>
     <<jump Session06_Government>>
--> Idi prema Dhornu
+-> Napusti površinu i idi prema Dhornu
     <<set $finalChoice = "dhorn">>
     <<set $betrayedSurface = true>>
     <<jump Session06_Dhorn>>
-
 <<if $translationAccuracy >= 6>>
--> Otkrij istinu objema stranama
+-> Otvori oba kanala i otkrij cijelu istinu
     <<set $finalChoice = "truth">>
     <<jump Session06_Truth>>
 <<endif>>
 ===
 
+
 title: Session06_Government
 ---
+Kael: Vraćam se.
+
 Maren: Dobro.
 
-Maren: Još uvijek možemo završiti projekt.
+Maren: Pokušat ću zadržati zapovjedništvo dok ne stigneš.
 
-Kael: Cijeli život nisam znao tko sam.
+Kael: Ne vraćam se zato što im vjerujem.
 
-Kael: To ne znači da sada moram odbaciti svijet u kojem sam odrastao.
+Maren: Nisam to ni očekivala.
 
-Kael: Možda je ovo jedini način da spriječim veći sukob.
+Kael: Vraćam se jer je površina također moj dom.
+
+Kael: Ovdje sam odrastao.
+
+Kael: Ovdje sam naučio govoriti.
+
+Kael: Istina o mom porijeklu ne briše život koji sam ovdje imao.
+
+Maren: Možda još uvijek možemo zaustaviti veći sukob.
+
+Kael: Ili ćemo samo odabrati tišu verziju istog nasilja.
+
+Maren: Vorn...
+
+Kael: Kael.
+
+Kael: Ako već želite da budem posrednik...
+
+Kael: onda ćete ovaj put morati čuti i ono što vam se ne sviđa.
+
+Narrator: Kael zatvara staru kutiju.
+
+Narrator: Bilježnicu svoga djeda nosi sa sobom.
+
+Narrator: Dok izlazi iz stana, Dhorn odašiljač ostaje uključen.
+
+<<radio_static AudioManager>>
+Dhorn: Tah-put, kael.
+
+Kael: Neizvjestan put.
+
+Kael: Znam.
 
 <<jump Session06_End>>
 ===
 
+
 title: Session06_Dhorn
 ---
-Dhorn: Vel-ahn, kael.
+Kael: Ne vraćam se u ured.
 
-Dhorn: Moran čeka.
+Maren: Vorn, razmisli.
+
+Kael: Razmišljam već cijeli život.
+
+Kael: Samo nisam znao o čemu.
+
+Maren: Ako odeš prema njima, zapovjedništvo će te smatrati neprijateljem.
+
+Kael: Ako ostanem i šutim...
+
+Kael: Dhorn me već ima pravo smatrati istim.
+
+Maren: Površina je tvoj dom.
+
+Kael: Jedan od njih.
+
+Narrator: Kael uzima bilježnicu svoga djeda i stari odašiljač.
 
 Kael: Cijeli život mislio sam da nemam odgovor.
 
 Kael: A možda sam ga nosio u sebi od početka.
 
-Kael: Ako moram birati...
+<<radio_static AudioManager>>
+Dhorn: Vel-ahn, kael.
+
+Dhorn: Moran čeka.
+
+Kael: Ako moram krenuti prema jednom svijetu...
+
+Kael: krenut ću prema onome koji me čeka već dvadeset sedam godina.
 
 Kael: Biram svoje korijene.
 
+Maren: Kael...
+
+Narrator: Prvi put Maren koristi titulu, a ne prezime.
+
+Maren: Ne znam mogu li ih zaustaviti.
+
+Kael: Onda im barem recite da tamo dolje nisu pronašli čudovišta.
+
+Kael: Pronašli su ljude.
+
+Narrator: Kael prekida vezu s površinom.
+
+Narrator: Dhorn kanal ostaje otvoren.
+
 <<jump Session06_End>>
 ===
+
 
 title: Session06_Truth
 ---
+Kael: Neću birati kojoj ću strani lagati.
+
+Maren: Što namjeravaš?
+
+Kael: Završiti ono što moj djed nije mogao.
+
+Narrator: Kael povezuje stari odašiljač V-27 s aktivnim kanalom.
+
+Narrator: Otvara vladinu vezu.
+
+Narrator: Otvara Dhorn vezu.
+
+Narrator: Obje strane prvi put slušaju isti kanal.
+
 Kael: Dosta skrivanja.
 
-Kael: Dosta prijevoda koji mijenjaju značenje.
+Kael: Dosta izvještaja iz kojih nestaju ljudi.
 
-Kael: Vrijeme je da obje strane čuju iste riječi.
+Kael: Dosta prijevoda koji mijenjaju značenje kako bi nekome bili prihvatljiviji.
 
-Maren: Što želiš reći?
+Maren: Vorn, ovaj kanal nije siguran.
+
+Kael: Upravo zato ga otvaram.
+
+Kael: Moje ime je Kael Vorn.
+
+Kael: Vorn znači onaj koji je otišao.
+
+Kael: Moj djed došao je iz Dhorna prije dvadeset sedam godina.
+
+Kael: Bio je prvi posrednik.
+
+Kael: Površina je prekinula njegov kontakt i izbrisala njegove izvještaje.
+
+Maren: Kael...
+
+Kael: Sada vojska koristi iste tunele, iste karte i iste laži.
+
+Kael: Ali ovaj put istina neće nestati u arhivi.
 
 Dhorn: Govor.
 
-Kael: Istina više ne pripada ni jednima ni drugima.
+Kael: Dhorn postoji.
+
+Kael: Nisu geološka anomalija.
+
+Kael: Nisu resurs.
+
+Kael: I nisu napali površinu.
+
+Kael: Površina je godinama uzimala energiju ispod njihovih domova.
+
+Maren: Ako sve ovo preneseš javno...
+
+Kael: Onda više nitko neće moći tvrditi da nije znao.
+
+Dhorn: Vel-ahn, kael.
+
+Kael: Dhorn razumije.
+
+Kael: Sada trebam da razumije i površina.
+
+Maren: Što predlažeš?
+
+Kael: Zaustavite Vatra-7.
+
+Kael: Otvorite pregovore.
+
+Kael: I pošaljite nekoga bez oružja.
+
+Maren: Zapovjedništvo neće prihvatiti samo tvoju riječ.
+
+Kael: Zato ne šaljem samo svoju.
+
+Narrator: Kael počinje prenositi bilježnicu V-27.
+
+Narrator: Fotografije.
+
+Narrator: Izbrisane izvještaje.
+
+Narrator: Snimke komunikacije.
+
+Narrator: I koordinate Dhorna...
+
+Narrator: ali samo na šifrirani kanal koji istodobno kontroliraju obje strane.
+
+Kael: Više nitko neće imati cijelu moć nad prijevodom.
+
+Kael: Ni ja.
+
+Narrator: Maren dugo šuti.
+
+Maren: Daj mi pet minuta.
+
+Kael: Imamo petnaest.
+
+Maren: Onda ću ih morati uvjeriti za deset.
+
+Dhorn: Čeka Dhorn.
+
+Dhorn: Nem-dugo.
+
+Kael: Čekat će.
+
+Kael: Ali ne dugo.
 
 Narrator: Posljednja poruka poslana je objema stranama.
+
+Narrator: Prvi put bez skrivene verzije.
+
+Narrator: Prvi put bez ublaženog prijevoda.
 
 <<jump Session06_End>>
 ===
 
+
 title: Session06_End
 ---
+Narrator: Odbrojavanje pokazuje deset minuta.
+
 Narrator: Sve je spremno za posljednji susret.
 
-Narrator: Ovoga puta Kael neće prevoditi samo riječi.
+Narrator: Na površini se izdaju naredbe.
 
-Narrator: Prevodit će budućnost.
+Narrator: U dubini se zatvaraju prolazi.
+
+Narrator: A između njih ostaje jedan otvoren kanal.
+
+Kael: Ovoga puta neću prevoditi samo riječi.
+
+Kael: Prevodit ću budućnost.
 
 <<jump Session07_Start>>
 ===
