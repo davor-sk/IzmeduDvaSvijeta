@@ -1,52 +1,128 @@
 ﻿title: Session02_Start
 ---
-Narrator: Tjedan dana kasnije.
+
 Narrator: Kaelova bilježnica više nije prazna.
+
 Narrator: Svaka stranica ispunjena je riječima koje ne postoje ni u jednom poznatom jeziku.
 
 Kael: Svake noći dodam jednu ili dvije nove riječi.
+
 Kael: Svakog jutra manje sam siguran da ih stvarno učim.
+
 Kael: Ponekad imam osjećaj da ih se samo prisjećam.
+
+Narrator: Jedna riječ stoji odvojena od ostalih.
+
+Narrator: Bez prijevoda.
+
+Kael: Moran.
+
+Kael: Sedam dana.
+
+Kael: Sedam dana gledam tu riječ.
+
+Kael: I još uvijek ne znam što znači.
+
+Narrator: Kael je pokušao pronaći riječ u svakoj dostupnoj jezičnoj bazi.
+
+Narrator: Nema rezultata.
+
+Narrator: Pokušao je pronaći slične glasovne obrasce.
+
+Narrator: Nema rezultata.
+
+Kael: Pa zašto mi onda zvuči poznato?
 
 Narrator: Signal stiže točno u isto vrijeme kao i prošli put.
 
+Narrator: 02:47.
+
+Kael: Naravno.
+
+Kael: Čekao sam vas.
+
 <<radio_static AudioManager>>
 Dhorn: Vel-ahn, Gornji-koji-sluša.
+
 Kael: Razumijemo, Gornji-koji-sluša.
 
 Dhorn: Uzima toru, kamen dubine.
+
 Kael: Uzimate površinu, kamen dubine.
 
+Kael: Ne.
+
+Kael: To nema smisla.
+
 Kael: "Uzima" može značiti uzeti...
+
 Kael: ...ali i oduzeti.
 
 <<add_word NotebookPanel "uzima" "uzimati / oduzimati">>
 
 Kael: "Kamen" možda nije kamen.
 
+Kael: Možda je ono što površina uzima iz dubine.
+
 <<add_word NotebookPanel "kamen" "kamen / resurs">>
 
-Kael: A "dubina" možda nije samo mjesto.
+Kael: Toru.
+
+Kael: Površina.
+
+Kael: Vi gore.
 
 <<add_word NotebookPanel "toru" "površina / vi gore">>
 
+Kael: Dakle...
+
+Kael: Površina uzima resurse iz dubine.
+
+Kael: Ili...
+
+Kael: Površina oduzima nešto dubini.
+
+Narrator: Ista rečenica.
+
+Narrator: Dva prijevoda.
+
+Narrator: Dvije potpuno različite optužbe.
+
 Dhorn: Pada zid, moran. Dugo pada.
 
-Kael: "Pada" je jasnije.
+Kael: Pada.
+
 Kael: Nešto propada.
+
 Kael: Ili se ruši.
 
 <<add_word NotebookPanel "pada" "propadati / rušiti se">>
 
 Narrator: Kael zastaje.
 
-Narrator: Riječ "moran" nikada prije nije vidio.
+Narrator: Moran.
 
-Kael: Čudno.
-Kael: Nekako mi zvuči poznato.
+Narrator: Ista riječ iz posljednje poruke prije sedam dana.
+
+Kael: Čeka moran.
+
+Kael: Sada...
+
+Kael: Pada zid, moran.
+
+Kael: Što si ti?
+
+Narrator: Kael promatra riječ na ekranu.
+
+Narrator: Ne može je prevesti.
+
+Narrator: Ali svaki ponuđeni prijevod izaziva drukčiji osjećaj.
 
 Kael: Ako je pogrešno prevedem...
-Kael: možda ću promijeniti cijelu poruku.
+
+Kael: neću promijeniti samo jednu riječ.
+
+Kael: Promijenit ću cijelu poruku.
 
 -> moran znači doma
     <<set $moranTranslation = "doma">>
@@ -54,6 +130,9 @@ Kael: možda ću promijeniti cijelu poruku.
     <<add_word NotebookPanel "moran" "dom">>
     Kael: Padaju zidovi doma.
     Kael: Dugo padaju.
+    Kael: Dom.
+    Kael: Ne znam zašto...
+    Kael: ali taj prijevod zvuči kao sjećanje.
     <<jump Session02_Daje>>
 -> moran znači sigurnosti
     <<set $moranTranslation = "sigurnosti">>
@@ -61,6 +140,9 @@ Kael: možda ću promijeniti cijelu poruku.
     <<add_word NotebookPanel "moran" "sigurnost">>
     Kael: Padaju zidovi sigurnosti.
     Kael: Dugo padaju.
+    Kael: Sigurnost.
+    Kael: Kao da ne govore o zidu.
+    Kael: Govore o onome što zid štiti.
     <<jump Session02_Daje>>
 -> moran znači nade
     <<set $moranTranslation = "nade">>
@@ -68,42 +150,88 @@ Kael: možda ću promijeniti cijelu poruku.
     <<add_word NotebookPanel "moran" "nada">>
     Kael: Padaju zidovi nade.
     Kael: Dugo padaju.
+    Kael: Nada.
+    Kael: Zvuči ispravno.
+    Kael: Ali ne mogu objasniti zašto.
     <<jump Session02_Daje>>
 ===
+
 
 title: Session02_Daje
 ---
 Dhorn: Nem-dah govorimo. Vel, daje ruku toru.
+
 Kael: Bez straha govorimo.
-Kael: Dobro, nudimo ruku površini.
+
+Kael: Dobro...
+
+Kael: Nudimo ruku površini.
 
 Kael: "Ruka" ovdje nije samo dio tijela.
+
 Kael: Možda znači suradnju.
+
 Kael: Ili savez.
 
 <<add_word NotebookPanel "ruka" "savez / suradnja">>
 
-Kael: Ili možda traže našu ruku.
-Kael: Još uvijek ne znam tko kome govori.
+Kael: Ali tko pruža ruku kome?
+
+Kael: Nude li oni savez nama?
+
+Kael: Ili traže da mi konačno pružimo ruku njima?
 
 Dhorn: Stari dubina pamti, vorn.
-Kael: Stara dubina pamti, vorn.
+
+Kael: Stara dubina pamti...
+
+Kael: Vorn.
+
+Narrator: Kael se ukoči.
 
 Kael: Opet ta riječ.
+
 Kael: Vorn.
 
 Kael: Ime?
+
 Kael: Titula?
+
 Kael: Mjesto?
 
-Kael: Ne mogu zaključiti.
+Kael: Ili netko koga očekuju?
+
+Narrator: Kael pretražuje vlastite bilješke.
+
+Narrator: Riječ se ne pojavljuje ni u jednom ranijem Dhorn signalu.
+
+Kael: Onda zašto imam osjećaj da je važna?
 
 Narrator: Kael sastavlja prijevod od svojih odabira.
 
+Narrator: Površina oduzima resurse dubini.
+
+Narrator: Zidovi doma propadaju.
+
+Narrator: Dhorn pruža ruku.
+
+Narrator: Stara dubina pamti Vorn.
+
 Narrator: Isti Dhorn tekst može zvučati kao molba.
+
+Narrator: Kao optužba.
+
 Narrator: Ili kao prijetnja.
 
-Narrator: Sve ovisi o riječima koje je upravo odabrao.
+Narrator: Sve ovisi o riječima koje je Kael upravo odabrao.
+
+Kael: Ja nisam samo preveo njihovu poruku.
+
+Kael: Ja sam odlučio što ona znači.
+
+Narrator: Na drugom terminalu čeka prazan obrazac izvještaja.
+
+Narrator: Primatelj: direktorica Maren.
 
 -> Pošalji Kaelov prijevod Maren kakav jest
     <<set $dhornTrust += 1>>
@@ -118,8 +246,14 @@ Narrator: Sve ovisi o riječima koje je upravo odabrao.
     <<jump Session02_Maren_Hidden>>
 ===
 
+
 title: Session02_Maren_Direct
 ---
+Narrator: Kael šalje cijeli prijevod.
+
+Narrator: Odgovor stiže gotovo odmah.
+
+<<notification_beep AudioManager>>
 Maren: Savez.
 
 Maren: Zanimljivo.
@@ -128,26 +262,51 @@ Maren: Ako je prijevod točan...
 
 Maren: Što oni uopće mogu ponuditi nama?
 
-Kael: Ne znam što je opasnije.
-Kael: Njihove riječi...
-Kael: ili moje tumačenje.
+Kael: Nama?
 
-Narrator: Maren čeka izvještaj.
-Narrator: Dhorn čeka odgovor.
+Kael: Govorite kao da već znate što je dolje.
 
-Kael: Bilježnica se puni.
-Kael: Ali što više riječi razumijem...
-Kael: manje sam siguran da razumijem poruku.
+Narrator: Nekoliko sekundi nema odgovora.
 
-Kael: A "vorn" još uvijek nema značenje.
+Maren: Biraj riječi pažljivo, Vorn.
 
-Kael: Zašto baš sada razmišljam o djedu kojeg nikad nisam upoznao?
+Maren: To ti je posao.
 
-<<jump Session02_End>>
+Kael: Nisam vas pitao za svoj posao.
+
+Kael: Pitao sam što znate.
+
+Maren: Znamo da ispod grada postoje anomalije.
+
+Maren: Znamo već neko vrijeme.
+
+Kael: Koliko dugo?
+
+Maren: Dovoljno dugo.
+
+Kael: Moj prvi izvještaj bio je prije sedam dana.
+
+Maren: Tvoj prvi izvještaj nije bio početak, Vorn.
+
+Narrator: Veza se prekida.
+
+Kael: Onda što je bilo?
+
+<<jump Session02_CommonEnding>>
 ===
+
 
 title: Session02_Maren_Softened
 ---
+Narrator: Kael briše najdramatičnije dijelove prijevoda.
+
+Narrator: Nestaju zidovi koji padaju.
+
+Narrator: Nestaje moguća optužba.
+
+Narrator: Ostaje samo prijedlog suradnje.
+
+<<notification_beep AudioManager>>
 Maren: Vorn...
 
 Maren: Ovo je nedovoljno.
@@ -157,44 +316,147 @@ Maren: Trebam konkretnije informacije.
 Maren: Možeš li ih navesti da budu jasniji?
 
 Kael: Što ako oni jesu jasni...
+
 Kael: a problem je u meni?
 
-Narrator: Maren čeka izvještaj.
-Narrator: Dhorn čeka odgovor.
+Maren: Onda riješi problem.
 
-Kael: Bilježnica se puni.
-Kael: Ali što više riječi razumijem...
-Kael: manje sam siguran da razumijem poruku.
+Kael: Direktorice...
 
-Kael: A "vorn" još uvijek nema značenje.
+Kael: Jeste li prije mog izvještaja znali da nešto postoji ispod grada?
 
-Kael: Zašto baš sada razmišljam o djedu kojeg nikad nisam upoznao?
+Narrator: Tišina.
 
-<<jump Session02_End>>
+Maren: Znali smo za anomalije.
+
+Kael: Koliko dugo?
+
+Maren: To nije relevantno za tvoj zadatak.
+
+Kael: Meni jest.
+
+Maren: Tvoj prvi izvještaj nije bio početak, Vorn.
+
+Narrator: Veza se prekida.
+
+Kael: Onda zašto ste čekali mene?
+
+<<jump Session02_CommonEnding>>
 ===
+
 
 title: Session02_Maren_Hidden
 ---
+Narrator: Kael šalje samo lingvistički napredak.
+
+Narrator: Bez zidova.
+
+Narrator: Bez resursa.
+
+Narrator: Bez saveza.
+
+Narrator: Bez Vorna.
+
+<<notification_beep AudioManager>>
 Maren: Samo lingvistički napredak?
 
 Maren: Vorn...
 
 Maren: Očekivala sam više.
 
-Narrator: Dhorn će u sljedećem kontaktu ponoviti ono što Kael nije prenio.
+Kael: Očekivali ste?
 
-Kael: Svaki put kad nešto prešutim...
+Kael: Od jezika za koji prije tjedan dana navodno niste znali da postoji?
 
-Kael: imam osjećaj da obje strane znaju više nego što govore.
+Narrator: Maren ne odgovara odmah.
+
+Maren: Nisam rekla da nismo znali za anomalije.
+
+Kael: Koliko dugo znate?
+
+Maren: Dovoljno dugo da znam kada mi netko ne šalje cijelu istinu.
+
+Narrator: Kael gleda vlastiti izvještaj.
+
+Narrator: Praznine koje je sam napravio.
+
+Maren: Tvoj prvi izvještaj nije bio početak, Vorn.
+
+Narrator: Veza se prekida.
+
+Kael: Ne.
+
+Kael: Ali možda je bio početak za mene.
+
+<<jump Session02_CommonEnding>>
+===
+
+
+title: Session02_CommonEnding
+---
+Narrator: Maren čeka sljedeći izvještaj.
+
+Narrator: Dhorn čeka sljedeći odgovor.
 
 Kael: Bilježnica se puni.
 
-Kael: A "vorn" još uvijek nema značenje.
+Kael: Ali što više riječi razumijem...
+
+Kael: manje sam siguran da razumijem poruku.
+
+Narrator: Kael otvara arhivu anomalija kanala 7-G.
+
+Narrator: Pristup odbijen.
+
+Kael: Naravno.
+
+Narrator: Pokušava ponovno.
+
+Narrator: Pristup odbijen.
+
+Narrator: Na trenutak, prije nego što se prozor zatvori, vidi jedan podatak.
+
+Narrator: Datum prvog zabilježenog signala.
+
+Kael: Ne.
+
+Narrator: Signal nije prvi put zabilježen prije sedam dana.
+
+Narrator: Nije ni prije sedam mjeseci.
+
+Narrator: Prvi zapis star je dvadeset sedam godina.
+
+Kael: Dvadeset sedam godina?
+
+Narrator: Kael pokušava ponovno otvoriti zapis.
+
+Narrator: Datoteka više ne postoji.
+
+Kael: Maren zna da oni postoje.
+
+Kael: Dhorn zna da ja postojim.
+
+Kael: A ja...
+
+Kael: ja još uvijek ne znam tko je Vorn.
+
+Narrator: Terminal kratko zatreperi.
+
+Narrator: Nema nove poruke.
+
+Narrator: Samo jedna riječ ostaje na ekranu.
+
+Dhorn: Vorn.
+
+Kael: Tko si ti?
 
 <<jump Session02_End>>
 ===
 
+
 title: Session02_End
 ---
+Narrator: Dva dana kasnije.
+
 <<jump Session03_Start>>
 ===

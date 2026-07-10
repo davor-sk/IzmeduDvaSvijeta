@@ -1,36 +1,101 @@
 ﻿title: Session4_Start
 ---
-Narrator: Tri dana kasnije.
+Narrator: Kaelov ured.
+
+Narrator: Do punog kapaciteta projekta Vatra-7 ostalo je manje od četiri sata.
+
 Narrator: Situacija više ne eskalira polako.
+
 Narrator: Sada puca.
 
-Narrator: Projekt Vatra-7 faza dva je počela.
-Narrator: Kael je osjetio vibracije kroz pod ureda.
+Narrator: Nova vibracija prolazi kroz zgradu.
 
-Kael: Ili mi se učinilo.
-Kael: U zadnje vrijeme više ne vjerujem ni podu ispod sebe.
+Narrator: Prašina pada sa stropa.
+
+Narrator: Na stolu se prevrće prazna šalica.
+
+Kael: Više mi se ne pričinjava.
+
+Kael: Pod se stvarno trese.
+
+Narrator: Na vladinom terminalu odbrojavanje se nastavlja.
+
+Narrator: 03:51:24.
+
+Narrator: 03:51:23.
+
+Narrator: 03:51:22.
+
+Kael: Četiri sata.
+
+Kael: Oni to zovu povećanjem kapaciteta.
+
+Kael: Dhorn to zove rušenjem doma.
 
 Kael: Vatra.
-Kael: Sada razumijem.
-Kael: Za Dhorn to nije samo energija.
-Kael: To je sila.
-Kael: Bušenje koje dolazi prema njima.
 
-<<add_word NotebookPanel "vatra" "energija / sila / bušenje">>
+Kael: Sada razumijem.
+
+Kael: Za Dhorn to nije samo energija.
+
+Kael: To je sila.
+
+Kael: Bušenje.
+
+Kael: A u pravom kontekstu...
+
+Kael: rat.
+
+<<add_word NotebookPanel "vatra" "energija / sila / bušenje / rat">>
+
+Narrator: Kanal 7-G otvara se bez Kaelova zahtjeva.
+
+Narrator: Signal je isprekidan.
+
+Narrator: Slabiji nego prije.
 
 <<radio_static AudioManager>>
-Dhorn: Gornji-koji-sluša. Pada. Pada sada.
+Dhorn: Gornji-koji-sluša.
+
+Dhorn: Pada.
+
+Dhorn: Pada sada.
 
 Kael: Pada.
+
 Kael: Ruši se.
+
 Kael: Ne govore više kao netko tko upozorava.
+
 Kael: Govore kao netko tko je već pod ruševinama.
 
+Dhorn: Zid-moran pada.
+
+Dhorn: Sjeme dah.
+
+Dhorn: Nem-dugo.
+
+Kael: Zidovi doma se ruše.
+
+Kael: Budućnost je u opasnosti.
+
+Kael: Nemaju još mnogo vremena.
+
+Narrator: Signal na trenutak nestaje.
+
+Kael: Dhorn?
+
+Narrator: Nekoliko sekundi nema odgovora.
+
+<<radio_static AudioManager>>
 Dhorn: Traži Dhorn, svjetlost toru.
 
 Kael: Svjetlost.
+
 Kael: Znanje.
+
 Kael: Istina.
+
 Kael: Ili samo pomoć.
 
 -> znanje / istinu
@@ -44,29 +109,60 @@ Kael: Ili samo pomoć.
     Kael: Bilježim prijevod: svjetlo ili energiju.
     <<add_word NotebookPanel "svjetlost" "svjetlo / energija">>
 
+Kael: Traže informacije s površine.
+
+Kael: Žele znati što dolazi.
+
+Kael: I koliko će još trajati.
+
 Dhorn: Daje Dhorn, sjeme vel-moran toru.
 
 Kael: Sjeme.
+
 Kael: Budućnost, možda.
+
 Kael: Ili djeca.
+
 Kael: Nešto što se ne smije izgubiti.
 
 <<if $moranTranslation == "doma">>
 Narrator: Kael ponovno vidi riječ moran.
-Narrator: Ovaj put ona znači dobrog doma.
-Kael: Dom.
-Kael: Za njih to nije mjesto.
-Kael: To je ono što pokušavaju spasiti.
+
+Narrator: Ovaj put, uz pozitivni prefiks vel-.
+
+Kael: Vel-moran.
+
+Kael: Dobar dom.
+
+Kael: Siguran dom.
+
+Kael: Za njih to nije samo mjesto.
+
+Kael: To je ono što pokušavaju sačuvati.
 <<elseif $moranTranslation == "sigurnosti">>
 Narrator: Kael ponovno vidi riječ moran.
-Narrator: Ovaj put ona znači dobre sigurnosti.
+
+Narrator: Ovaj put, uz pozitivni prefiks vel-.
+
+Kael: Vel-moran.
+
 Kael: Sigurnost.
-Kael: Možda je to jedino što traže.
+
+Kael: Ne traže pobjedu.
+
+Kael: Traže mjesto na kojem više neće osjećati kako se strop ruši.
 <<elseif $moranTranslation == "nade">>
 Narrator: Kael ponovno vidi riječ moran.
-Narrator: Ovaj put ona znači dobre nade.
-Kael: Nada.
-Kael: Čudno je koliko opasno zvuči jedna nježna riječ.
+
+Narrator: Ovaj put, uz pozitivni prefiks vel-.
+
+Kael: Vel-moran.
+
+Kael: Dobra nada.
+
+Kael: Još uvijek nisam siguran da je to pravi prijevod.
+
+Kael: Ali sada razumijem zašto sam ga izabrao.
 <<endif>>
 
 -> budućnost / nadu
@@ -80,20 +176,51 @@ Kael: Čudno je koliko opasno zvuči jedna nježna riječ.
     Kael: Bilježim prijevod: djecu i naraštaj.
     <<add_word NotebookPanel "sjeme" "djeca / naraštaj">>
 
+Narrator: Signal ponovno oslabi.
+
+Narrator: Kroz statiku se probija nova poruka.
+
 Dhorn: Vorn, nem-hodi dubina.
+
 Dhorn: Vorn, hodi toru.
+
 Dhorn: Kael, ostaje.
 
 Kael: Vorn.
+
 Kael: Kael.
+
 Kael: Iste rečenice.
+
 Kael: Različite uloge.
 
-Kael: Jedan odlazi gore.
-Kael: Jedan ostaje.
+Kael: Jedan više ne živi u dubini.
+
+Kael: Jedan odlazi na površinu.
+
+Kael: Jedan ostaje između.
+
+Narrator: Kael se sjeti datoteke od prije dvadeset sedam godina.
+
+Narrator: „Kontakt izgubljen nakon pokušaja odgovora.”
+
+Narrator: „Stari kael nije govorio.”
+
+Kael: Je li Vorn bio taj koji je odgovorio?
+
+Kael: Je li on bio prvi kael?
+
+Kael: Ili su to uvijek bile dvije različite osobe?
+
+Kael: Jedan koji odlazi.
+
+Kael: Jedan koji ostaje.
+
 Kael: Je li ovo povijest?
+
 Kael: Upozorenje?
-Kael: Ili me pokušavaju podsjetiti na nešto što još ne znam?
+
+Kael: Ili uputa za ono što moram napraviti?
 
 -> ostaje
     <<set $translationAccuracy += 1>>
@@ -108,58 +235,216 @@ Kael: Ili me pokušavaju podsjetiti na nešto što još ne znam?
 Narrator: U tom trenutku zazvoni drugi terminal.
 
 <<notification_beep AudioManager>>
-Government: Vorn.
-Government: Imam informaciju koja te se tiče.
+Maren: Vorn.
 
-Kael: Naravno da ima.
+Maren: Moramo razgovarati.
 
-Government: Naši geolozi pronašli su velike šupljine ispod grada.
-Government: Sistematske.
-Government: Netko je tamo živio.
-Government: Ili još živi.
+Kael: Sada?
 
-Kael: Dakle, znaju.
-Kael: Ne sve.
-Kael: Ali dovoljno.
+Maren: Upravo sada.
 
-Government: Znaš li nešto o tome?
+Kael: Do punog kapaciteta ostalo je manje od četiri sata.
 
--> Ne, direktorice. Ovo je novo za mene.
-    Government: Razumijem.
-    Kael: To je laž.
-    Kael: Kratka, čista i izgovorena bez zastajanja.
--> Imam neke naznake. Trebam više vremena.
-    <<set $marenSuspicion += 1>>
-    Government: Dobro.
-    Government: Ali požuri.
-    Kael: Vrijeme.
-    Kael: Svi ga traže, a nitko ga više nema.
--> Da. Komunicirao sam s njima.
-    <<set $marenSuspicion += 3>>
-    Government: Što?!
-    Kael: Prvi put danas nisam prevodio.
-    Kael: Samo sam rekao istinu.
+Maren: Znam.
 
-Narrator: Obje strane sada traže pomoć.
+Kael: Onda ga zaustavite.
 
-Narrator: Dhorn traži planove bušenja.
+Narrator: Maren ne odgovara.
 
-Narrator: Vlada traži karte podzemnih prolaza.
+Kael: Direktorice?
 
-Kael: Ako pomognem Dhornu, izdajem površinu.
-Kael: Ako pomognem vladi, izdajem one ispod.
+Maren: Ne mogu.
+
+Kael: Ne možete...
+
+Kael: ili ne želite?
+
+Maren: Fazu dva više ne nadzire moj odjel.
+
+Kael: Tko je nadzire?
+
+Maren: Operativno zapovjedništvo.
+
+Kael: Vojska.
+
+Maren: Nisam to rekla.
+
+Kael: Niste morali.
+
+Maren: Kad smo pronašli sustavne šupljine, projekt je prekategoriziran.
+
+Maren: Više se ne vodi kao energetsko istraživanje.
+
+Kael: Kako se vodi?
+
+Maren: Kao pitanje sigurnosti.
+
+Kael: Sigurnosti od ljudi za koje još jučer niste priznali da postoje?
+
+Maren: Vorn, slušaj me.
+
+Maren: Ako zapovjedništvo potvrdi da je ispod grada organizirana civilizacija...
+
+Maren: prestat će tražiti resurse.
+
+Maren: Počet će tražiti prijetnju.
+
+Kael: A vi ste im dali bušilice.
+
+Maren: Pokušavam dobiti vrijeme.
+
+Kael: I zato od mene tražite prijevode?
+
+Maren: Zato od tebe tražim nešto konkretnije.
+
+Maren: Naši geolozi pronašli su velike šupljine ispod grada.
+
+Maren: Sustavne prolaze.
+
+Maren: Zidove.
+
+Maren: Netko je tamo živio.
+
+Maren: Ili još živi.
+
+Kael: Znate da još žive.
+
+Maren: Ja imam sumnju.
+
+Maren: Zapovjedništvu trebaju dokazi.
+
+Maren: Znaš li nešto što im može potvrditi gdje se nalaze?
+
+Narrator: Kael shvaća što Maren zapravo traži.
+
+Narrator: Karte podzemnih prolaza.
+
+Narrator: Ulaze.
+
+Narrator: Put do Dhorna.
+
+Kael: A ako vam ih dam?
+
+Maren: Možda mogu poslati izviđački tim prije nego što pošalju nešto gore.
+
+Kael: „Možda.”
+
+Maren: To je jedino što imam.
+
+Kael: Dhorn traži planove bušenja.
+
+Kael: Vi tražite njihove prolaze.
+
+Kael: Obje strane traže od mene da im pokažem gdje je ona druga najranjivija.
+
+Maren: Ja pokušavam spriječiti katastrofu.
+
+Kael: I oni.
+
+Narrator: Veza ostaje otvorena.
+
+Narrator: Maren prvi put ne zvuči kao direktorica.
+
+Narrator: Zvuči kao netko tko je upravo izgubio kontrolu.
+
+Maren: Vorn...
+
+Maren: Postoji još nešto.
+
+Kael: Naravno da postoji.
+
+Maren: Datoteka koju si pokušao otvoriti.
+
+Maren: Incident od prije dvadeset sedam godina.
+
+Kael: Vi ste je izbrisali.
+
+Maren: Nisam.
+
+Kael: Tko onda jest?
+
+Maren: Netko tko je znao da ćeš je tražiti.
+
+Kael: Tko je pokušao odgovoriti Dhornu?
+
+Maren: U izvještaju nema imena.
+
+Kael: Lažete.
+
+Maren: Postoji samo oznaka.
+
+Maren: LINGVISTIČKI POSREDNIK — V.
+
+Kael: V.
+
+Kael: Vorn?
+
+Maren: Ne znam.
+
+Kael: Ali znate više nego što mi govorite.
+
+Maren: Znam da je nakon tog incidenta kanal 7-G zatvoren.
+
+Maren: Znam da je nekoliko dokumenata nestalo.
+
+Maren: I znam da se signal ponovno pojavio kada si ti sjeo za terminal.
+
+Kael: Mislite da to nije slučajnost.
+
+Maren: Mislim da više nemamo vremena za slučajnosti.
+
+Narrator: Na zidu odbrojavanje prelazi ispod tri sata.
+
+Narrator: 02:59:59.
+
+Narrator: 02:59:58.
+
+Narrator: 02:59:57.
+
+Narrator: Obje strane sada traže Kaelovu pomoć.
+
+Narrator: Dhorn traži planove bušenja kako bi zaštitio svoje domove.
+
+Narrator: Maren traži karte prolaza prije nego što zapovjedništvo pošalje vojsku.
+
+Kael: Ako pomognem Dhornu...
+
+Kael: izdajem površinu.
+
+Kael: Ako pomognem vladi...
+
+Kael: možda pokazujem vojsci put do njih.
+
 Kael: Ako odbijem obje strane...
-Kael: možda izdajem sve.
 
--> Pomozi Dhornu
+Kael: ostavljam ih da djeluju bez ikoga između.
+
+Kael: Prevoditelj ne odlučuje.
+
+Kael: To sam si govorio.
+
+Kael: Ali cijelo vrijeme samo sam odgađao odluku.
+
+-> Pomozi Dhornu i pošalji planove bušenja
     <<set $betrayedSurface = true>>
     <<set $dhornTrust += 3>>
+    Kael: Poslat ću im planove.
+    Kael: Ako već ne mogu zaustaviti Vatru-7...
+    Kael: mogu im barem pokazati odakle dolazi.
     <<jump Session5A_Start>>
--> Pomozi Vladi
-    <<set $betrayedSurface = true>>
+-> Pomozi Maren i pošalji karte podzemnih prolaza
     <<set $marenSuspicion -= 2>>
+    Kael: Poslat ću vam karte.
+    Kael: Ali ako ih zapovjedništvo iskoristi protiv Dhorna...
+    Maren: Razumijem.
+    Kael: Ne.
+    Kael: Mislim da nitko od nas više ne razumije što radi.
     <<jump Session5B_Start>>
 -> Odbij obje strane
     <<set $kaelaIsolated = true>>
+    Kael: Neću vam dati njihove prolaze.
+    Kael: I njima neću dati vaše planove.
+    Maren: Onda što ćeš napraviti?
+    Kael: Pronaći odgovor koji ne počinje izdajom.
     <<jump Session5C_Start>>
 ===
