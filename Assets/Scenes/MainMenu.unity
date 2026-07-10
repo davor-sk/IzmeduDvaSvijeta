@@ -1219,7 +1219,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Opis igre: Opis ide ovdje'
+  m_text: "OPIS.: Ti si Kael, lingvist koji je otkrio tajni kontakt s podzemnom civilizacijom
+    Dhorn \u2014 a nitko na povr\u0161ini ne zna da postoje. Svaka poruka koju \"prevede\u0161\"
+    tvoj je izbor: \u0161to \u0107e\u0161 otkriti, pre\u0161utjeti ili izmijeniti,
+    i svaka odluka oblikuje sudbinu oba svijeta."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1246,8 +1249,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 18
+  m_fontSizeBase: 18
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
