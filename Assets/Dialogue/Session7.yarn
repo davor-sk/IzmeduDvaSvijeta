@@ -12,7 +12,7 @@ Narrator: i svaka strana koju je pokušao zaštititi...
 
 Narrator: sada vodi prema jednom završetku.
 
-<<if $finalChoice == "truth" && $translationAccuracy >= 6>>
+<<if $finalChoice == "truth">>
     <<jump Ending_D_Kael>>
 <<elseif $finalChoice == "dhorn">>
     <<jump Ending_A_Vorn>>
