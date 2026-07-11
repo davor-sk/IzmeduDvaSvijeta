@@ -53,6 +53,9 @@ public class EndingCardController : MonoBehaviour
 
     public void GoToMainMenu()
     {
-    UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
+        Time.timeScale = 1f;
+        PauseMenuController.CanPause = true;
+
+        UnityEngine.SceneManagement.SceneManager.LoadScene(0);
     }
 }

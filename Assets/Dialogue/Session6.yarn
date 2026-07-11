@@ -452,7 +452,6 @@ Narrator: Više nema vremena za oprezne prijevode.
 
 Narrator: Ostala je samo odluka što će Kael napraviti s istinom.
 
-Narrator: DEBUG — translationAccuracy = {$translationAccuracy}
 
 <<if $translationAccuracy >= 5>>
     <<jump Session06_FinalChoice_WithTruth>>
