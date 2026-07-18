@@ -16,8 +16,7 @@ public class EndingCardController : MonoBehaviour
 
     [YarnCommand("show_ending")]
     public void ShowEnding(string quote)
-    {
-        // Block the pause menu so Escape can't interrupt the ending sequence.
+    {        
         PauseMenuController.CanPause = false;
 
         endingCardPanel.SetActive(true);

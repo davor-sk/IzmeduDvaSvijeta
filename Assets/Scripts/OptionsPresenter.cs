@@ -10,12 +10,17 @@ public class OptionsPresenter : DialoguePresenterBase
     public Transform? optionsContainer;
     public GameObject? optionButtonPrefab;
 
+    // NOVO — reference za layout integraciju
+    public LayoutElement? optionsBoxLayoutElement;
+    public RectTransform? dialogueContainerRect;
+
     private List<GameObject> spawnedButtons = new List<GameObject>();
     private int selectedIndex = -1;
 
     public float buttonWidth = 180f;
     public float buttonHeight = 50f;
     public float buttonSpacing = 10f;
+    public float buttonHorizontalPadding = 20f;
 
     public override YarnTask OnDialogueStartedAsync() => YarnTask.CompletedTask;
     public override YarnTask OnDialogueCompleteAsync() { ClearButtons(); return YarnTask.CompletedTask; }
@@ -34,14 +39,14 @@ public class OptionsPresenter : DialoguePresenterBase
             if (buttonObj == null) continue;
             spawnedButtons.Add(buttonObj);
 
-var rect = buttonObj.GetComponent<RectTransform>();
+            var rect = buttonObj.GetComponent<RectTransform>();
             if (rect != null)
             {
                 rect.anchorMin = new Vector2(0, 1);
-            rect.anchorMax = new Vector2(1, 1);
-            rect.pivot = new Vector2(0.5f, 1f);
-            rect.sizeDelta = new Vector2(0, buttonHeight);
-            rect.anchoredPosition = new Vector2(0, -i * (buttonHeight + buttonSpacing));
+                rect.anchorMax = new Vector2(1, 1);
+                rect.pivot = new Vector2(0.5f, 1f);
+                rect.sizeDelta = new Vector2(-buttonHorizontalPadding * 2f, buttonHeight);
+                rect.anchoredPosition = new Vector2(0, -i * (buttonHeight + buttonSpacing));
             }
 
             var buttonText = buttonObj.GetComponentInChildren<TextMeshProUGUI>();
@@ -66,6 +71,10 @@ var rect = buttonObj.GetComponent<RectTransform>();
                 });
             }
         }
+
+        // NOVO — javi DialogueContainer Vertical Layout Groupu koliko je OptionsBox visok,
+        // pa se cijeli blok (DialogueBox + OptionsBox) ispravno centrira oko stvarnog sadržaja
+        UpdateOptionsBoxHeight(dialogueOptions.Length);
 
         float elapsed = 0f;
         while (elapsed < 0.2f)
@@ -92,6 +101,23 @@ var rect = buttonObj.GetComponent<RectTransform>();
         return selected;
     }
 
+    // NOVO — postavlja preferredHeight na OptionsBox, pa Content Size Fitter/Layout Group
+    // na DialogueContaineru automatski preračuna centriranje, bez ručnog anchoredPosition računanja
+    private void UpdateOptionsBoxHeight(int optionCount)
+    {
+        if (optionsBoxLayoutElement != null)
+        {
+            optionsBoxLayoutElement.preferredHeight = optionCount > 0
+                ? optionCount * buttonHeight + (optionCount - 1) * buttonSpacing
+                : 0f;
+        }
+
+        if (dialogueContainerRect != null)
+        {
+            LayoutRebuilder.ForceRebuildLayoutImmediate(dialogueContainerRect);
+        }
+    }
+
     private void ClearButtons()
     {
         foreach (var btn in spawnedButtons)
@@ -100,5 +126,9 @@ var rect = buttonObj.GetComponent<RectTransform>();
         }
         spawnedButtons.Clear();
         selectedIndex = -1;
+
+        // NOVO — kad nema opcija (linija bez izbora), OptionsBox se stisne na 0
+        // pa se DialogueBox centrira sam, bez praznog prostora ispod
+        UpdateOptionsBoxHeight(0);
     }
 }
