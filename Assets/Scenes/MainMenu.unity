@@ -178,8 +178,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: IZLAZ
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: fbb21660b81a7e448b62423234b7e766, type: 2}
+  m_sharedMaterial: {fileID: -6965739680021536611, guid: fbb21660b81a7e448b62423234b7e766, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -315,8 +315,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "IZME\u0110U DVA SVIJETA"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 3da806e65a6d41b4b93f08cad19719a0, type: 2}
+  m_sharedMaterial: {fileID: -2669529968630489197, guid: 3da806e65a6d41b4b93f08cad19719a0, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -456,8 +456,8 @@ MonoBehaviour:
 
     Pauza - ESSC'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: fbb21660b81a7e448b62423234b7e766, type: 2}
+  m_sharedMaterial: {fileID: -6965739680021536611, guid: fbb21660b81a7e448b62423234b7e766, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1177,8 +1177,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Izme\u0111u povr\u0161ine i dubine - jedan \u010Dovjek slu\u0161a."
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 3da806e65a6d41b4b93f08cad19719a0, type: 2}
+  m_sharedMaterial: {fileID: -2669529968630489197, guid: 3da806e65a6d41b4b93f08cad19719a0, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1498,13 +1498,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "OPIS.: \nTi si Kael, lingvist koji je otkrio tajni kontakt s podzemnom
+  m_text: "OPIS: \nTi si Kael, lingvist koji je otkrio tajni kontakt s podzemnom
     civilizacijom Dhorn \u2014 a nitko na povr\u0161ini ne zna da postoje. Svaka
     poruka koju \"prevede\u0161\" tvoj je izbor: \u0161to \u0107e\u0161 otkriti,
     pre\u0161utjeti ili izmijeniti, i svaka odluka oblikuje sudbinu oba svijeta."
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: fbb21660b81a7e448b62423234b7e766, type: 2}
+  m_sharedMaterial: {fileID: -6965739680021536611, guid: fbb21660b81a7e448b62423234b7e766, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1684,8 +1684,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: NOVA IGRA
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: fbb21660b81a7e448b62423234b7e766, type: 2}
+  m_sharedMaterial: {fileID: -6965739680021536611, guid: fbb21660b81a7e448b62423234b7e766, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

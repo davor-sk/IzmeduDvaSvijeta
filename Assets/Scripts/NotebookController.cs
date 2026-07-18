@@ -7,6 +7,8 @@ public class NotebookController : MonoBehaviour
 {
     public Transform wordListContent;
     public GameObject notebookEntryPrefab;
+    public TMP_FontAsset dhornWordFont;
+    public TMP_FontAsset translationFont;
 
     private Dictionary<string, TextMeshProUGUI> wordTranslations =
         new Dictionary<string, TextMeshProUGUI>();
@@ -14,7 +16,6 @@ public class NotebookController : MonoBehaviour
     [YarnCommand("add_word")]
     public void AddWord(string dhornWord, string translation)
     {
-        // Ako riječ već postoji, samo ažuriraj prijevod
         if (wordTranslations.ContainsKey(dhornWord))
         {
             wordTranslations[dhornWord].text = translation;
@@ -29,7 +30,6 @@ public class NotebookController : MonoBehaviour
             return;
         }
 
-        // Ako riječ još ne postoji, napravi novi unos
         GameObject entry = Instantiate(
             notebookEntryPrefab,
             wordListContent
@@ -40,7 +40,10 @@ public class NotebookController : MonoBehaviour
         if (texts.Length >= 2)
         {
             texts[0].text = dhornWord;
+            texts[0].font = dhornWordFont;
+
             texts[1].text = translation;
+            texts[1].font = translationFont;
 
             wordTranslations.Add(dhornWord, texts[1]);
         }
