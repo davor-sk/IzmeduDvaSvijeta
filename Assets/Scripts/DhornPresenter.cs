@@ -4,11 +4,13 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using TMPro;
 using Yarn.Unity;
+using UnityEngine.UI;
 
 public class DhornPresenter : DialoguePresenterBase
 {
     public TextMeshProUGUI speakerNameText;
     public TextMeshProUGUI dialogueText;
+    public Image avatarImage;
 
     [System.Serializable]
     public class SpeakerVisual
@@ -18,6 +20,8 @@ public class DhornPresenter : DialoguePresenterBase
         public Color32 dialogueColor;
         public TMP_FontAsset dialogueFont;
         public TMP_FontAsset speakerNameFont;
+        public Sprite avatarSprite; 
+        public bool avatarOnRight; 
     }
 
     public List<SpeakerVisual> speakerVisuals;
@@ -50,11 +54,25 @@ public class DhornPresenter : DialoguePresenterBase
             dialogueText.color = visual.dialogueColor;
             if (visual.dialogueFont != null) dialogueText.font = visual.dialogueFont;
             if (visual.speakerNameFont != null) speakerNameText.font = visual.speakerNameFont;
+            if (visual.avatarSprite != null)
+            {
+                avatarImage.gameObject.SetActive(true);
+                avatarImage.sprite = visual.avatarSprite;
+                if (visual.avatarOnRight)
+                    avatarImage.transform.SetAsLastSibling();
+                else
+                    avatarImage.transform.SetAsFirstSibling();
+            }
+            else
+            {
+                avatarImage.gameObject.SetActive(false);
+            }
         }
         else
         {
             speakerNameText.color = DefaultColor;
             dialogueText.color = DefaultColor;
+            avatarImage.gameObject.SetActive(false);
         }
 
         float autoAdvanceDelay = 3.5f;
