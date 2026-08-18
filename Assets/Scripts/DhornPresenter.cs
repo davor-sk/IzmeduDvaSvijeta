@@ -1,13 +1,32 @@
+using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using TMPro;
 using Yarn.Unity;
+using UnityEngine.UI;
 
 public class DhornPresenter : DialoguePresenterBase
 {
     public TextMeshProUGUI speakerNameText;
     public TextMeshProUGUI dialogueText;
+    public Image avatarImage;
+
+    [System.Serializable]
+    public class SpeakerVisual
+    {
+        public string speakerName;
+        public Color32 speakerNameColor;
+        public Color32 dialogueColor;
+        public TMP_FontAsset dialogueFont;
+        public TMP_FontAsset speakerNameFont;
+        public Sprite avatarSprite; 
+        public bool avatarOnRight; 
+    }
+
+    public List<SpeakerVisual> speakerVisuals;
+
+    private static readonly Color32 DefaultColor = new Color32(224, 224, 224, 255);
 
     public override YarnTask OnDialogueStartedAsync()
     {
@@ -27,28 +46,33 @@ public class DhornPresenter : DialoguePresenterBase
         speakerNameText.text = speaker;
         dialogueText.text = text;
 
-        switch (speaker)
+        var visual = speakerVisuals?.Find(v => v.speakerName == speaker);
+
+        if (visual != null)
         {
-            case "Dhorn":
-                speakerNameText.color = new Color32(76, 175, 80, 255);
-                dialogueText.color = new Color32(200, 230, 200, 255);
-                break;
-            case "Kael":
-                speakerNameText.color = new Color32(224, 224, 224, 255);
-                dialogueText.color = new Color32(224, 224, 224, 255);
-                break;
-            case "Maren":
-                speakerNameText.color = new Color32(255, 152, 0, 255);
-                dialogueText.color = new Color32(255, 220, 180, 255);
-                break;
-            case "Narrator":
-                speakerNameText.color = new Color32(158, 158, 158, 255);
-                dialogueText.color = new Color32(158, 158, 158, 255);
-                break;
-            default:
-                speakerNameText.color = new Color32(224, 224, 224, 255);
-                dialogueText.color = new Color32(224, 224, 224, 255);
-                break;
+            speakerNameText.color = visual.speakerNameColor;
+            dialogueText.color = visual.dialogueColor;
+            if (visual.dialogueFont != null) dialogueText.font = visual.dialogueFont;
+            if (visual.speakerNameFont != null) speakerNameText.font = visual.speakerNameFont;
+            if (visual.avatarSprite != null)
+            {
+                avatarImage.gameObject.SetActive(true);
+                avatarImage.sprite = visual.avatarSprite;
+                if (visual.avatarOnRight)
+                    avatarImage.transform.SetAsLastSibling();
+                else
+                    avatarImage.transform.SetAsFirstSibling();
+            }
+            else
+            {
+                avatarImage.gameObject.SetActive(false);
+            }
+        }
+        else
+        {
+            speakerNameText.color = DefaultColor;
+            dialogueText.color = DefaultColor;
+            avatarImage.gameObject.SetActive(false);
         }
 
         float autoAdvanceDelay = 3.5f;
