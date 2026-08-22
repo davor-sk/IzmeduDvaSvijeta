@@ -1,469 +1,732 @@
-﻿title: Session03_Start
+﻿title: Session3
 ---
-Narrator: Kaelov ured.
+Kael: Treća smjena otkad je kanal 7-G prestao biti samo anomalija.
 
-Narrator: Dva terminala svijetle istovremeno.
+<<if $knowsOldContact>>
+    Kael: U arhivi sam pronašao podatak koji ne mogu ignorirati. Najstariji zapis na 7-G star je dvadeset sedam godina.
+<<elseif $marenConfirmedPreviousContact>>
+    Kael: Maren je pažljivo birala riječi, ali rekla je dovoljno. Moj kontakt nije prvi.
+<<elseif $knowsPreviousContactHint>>
+    Kael: Dhorni tvrde da je prije mene postojao drugi Vorn. Još uvijek nemam neovisan dokaz.
+<<elseif $knowsOldSignalActivity>>
+    Kael: Znam da aktivnost na 7-G nije nova. Ali star signal nije isto što i stari kontakt.
+<<else>>
+    Kael: Još uvijek ne znam postoji li išta prije mog prvog razgovora s njima.
+<<endif>>
 
-Narrator: Na lijevom ekranu čeka klasificirana poruka.
+<<if $foundVornFragment>>
+    Kael: U starom fragmentu ostale su tri riječi. Vorn. Toru. Moran.
+<<endif>>
 
-Narrator: Na desnom ekranu pulsira kanal 7-G.
+<<if $knowsSurfaceExtraction>>
+    Kael: I imam jednu potvrđenu činjenicu. Površina stvarno provodi geološke radove u području Dhorn signala.
+<<elseif $dhornClaimsExtraction>>
+    Kael: Dhorni tvrde da Površina uzima nešto iz njihove dubine. Tvrdnja još nije isto što i dokaz.
+<<endif>>
 
-Kael: Više ne čekam signal.
+Kael: Večeras želim povezati tragove, ne samo skupljati nove riječi. Što želim prvo napraviti?
 
-Kael: Sada čekam koju će me stranu sustav prvu natjerati da izdam.
+-> Suoči Dhorne s podatkom o 27 godina. <<if $knowsOldContact>>
+    <<jump Session3Ask27>>
+-> Pitaj Dhorne o starom fragmentu "vorn — toru — moran". <<if $foundVornFragment>>
+    <<jump Session3AskFragment>>
+-> Pitaj Dhorne izravno o prethodnom Vornu. <<if $knowsPreviousContactHint>>
+    <<jump Session3AskPreviousVorn>>
+-> Pitaj Dhorne zašto te zovu "kael-vorn".
+    <<jump Session3AskKaelVorn>>
+-> Prvo kontaktiraj Maren.
+    <<jump Session3MarenOpening>>
+-> Pričekaj da Dhorni prvi progovore.
+    <<jump Session3NeutralContact>>
+===
 
-Narrator: Danas su stigle dvije poruke.
-
-Narrator: Jedna odozgo.
-
-Narrator: Jedna odozdo.
-
-Kael: Prije deset dana ovo bi bilo nezamislivo.
-
-Kael: Sada je postalo rutina.
-
-Narrator: Kael ponovno pokušava otvoriti arhivu signala starih dvadeset sedam godina.
-
-Narrator: Pristup odbijen.
-
-Narrator: Datoteka ne postoji.
-
-Kael: Datoteke ne nestaju same.
-
-Kael: Netko ju je uklonio nakon što sam je vidio.
-
-Narrator: Vladin terminal zazvoni.
-
-<<notification_beep AudioManager>>
-Maren: Vorn.
-
-Maren: Projekt Vatra-7 ulazi u drugu fazu.
-
-Maren: Povećavamo kapacitet bušenja za četrdeset posto.
-
-Maren: Komuniciraj s kontaktima.
-
-Maren: Procijeni moguće reakcije.
-
-Maren: Rok je četrdeset osam sati.
-
-Kael: Četrdeset osam sati.
-
-Kael: Za njih je to samo rok.
-
-Kael: Za nekoga drugoga možda je kraj.
-
-Kael: Direktorice.
-
-Kael: Kada je Projekt Vatra-7 zapravo započeo?
-
-Narrator: Maren ne odgovara odmah.
-
-Maren: To nije relevantno za tvoj zadatak.
-
-Kael: Signali na kanalu 7-G zabilježeni su prije dvadeset sedam godina.
-
-Kael: Projekt sigurno nije nastao prošli tjedan.
-
-Maren: Usredotoči se na prijevod.
-
-Kael: Jeste li tada znali da je netko dolje?
-
-Maren: Znali smo da postoji nešto.
-
-Kael: Nešto?
-
-Maren: Geološke nepravilnosti.
-
-Maren: Praznine.
-
-Maren: Obrasci koji nisu odgovarali prirodnim formacijama.
-
-Kael: I svejedno ste počeli bušiti.
-
-Maren: Projekt Vatra-7 važan je za energetsku stabilnost cijelog grada.
-
-Kael: To nije odgovor.
-
-Maren: To je jedini odgovor koji ćeš dobiti.
-
-Narrator: Veza se prekida.
-
-Kael: Vatra-7 nije reakcija na Dhorn.
-
-Kael: Dhorn je reakcija na Vatru-7.
-
-Narrator: Desni terminal zasvijetli.
-
-Narrator: Signal je snažniji nego ikada prije.
-
+title: Session3Ask27
+---
 <<radio_static AudioManager>>
-Dhorn: Vel-ahn, Gornji-koji-sluša.
-
-Kael: Razumijemo.
-
-Dhorn: Traži Dhorn, zaustavi vatra-uzima.
-
-Kael: Dhorn traži da se zaustavi...
-
-Kael: vatra-uzima.
-
-<<add_word NotebookPanel "traži" "tražiti / trebati">>
-
-Kael: Vatra više ne zvuči kao energija.
-
-Kael: Zvuči kao sila.
-
-Kael: Kao nešto što prodire kroz kamen prema njima.
-
-Dhorn: Pada zid-moran.
-
-Dhorn: Pada sjeme.
-
-Dhorn: Pada sada.
-
-Kael: Zidovi doma se ruše.
-
-Kael: Budućnost se ruši.
-
-Kael: Sada.
-
-Narrator: Kael osjeti slabu vibraciju kroz stol.
-
-Narrator: Čaša vode zadrhti.
-
-Kael: Nije mi se učinilo.
-
-Narrator: Još jedna vibracija.
-
-Narrator: Ovoga puta jača.
-
-Kael: Bušenje je već počelo.
-
-Dhorn: Nem-dah govor.
-
-Dhorn: Tah-put ako nem-zaustavi.
-
-Kael: Bez straha govorimo.
-
-Kael: Neizvjestan put ako se ne zaustavi.
-
-Kael: Sada razumijem dah.
-
-Kael: Nije samo strah.
-
-Kael: To je opasnost.
-
-Kael: Prijetnja koja je već dovoljno blizu da je osjetiš u tijelu.
-
-<<add_word NotebookPanel "dah" "strah / opasnost / prijetnja">>
-
-Kael: Tah-put.
-
-Kael: Neizvjesna budućnost.
-
-Kael: Ili posljednje upozorenje.
-
-Dhorn: Stari dubina pamti.
-
-Dhorn: Stari dubina pamti vorn.
-
-Dhorn: Kael zna.
-
-Kael: Dubina.
-
-Kael: Sada sam siguran.
-
-Kael: Ne govore samo o prostoru.
-
-Kael: Govore o svom podzemlju.
-
-Kael: O teritoriju.
-
-Kael: O domu.
-
-<<add_word NotebookPanel "dubina" "podzemlje / Dhorn teritorij">>
-
-Kael: Stara dubina pamti Vorn.
-
-Kael: Kael zna.
-
-Kael: Opet te dvije riječi.
-
-Kael: Vorn.
-
-Kael: Kael.
-
-Narrator: Kael otvara bilježnicu.
-
-Narrator: Uz riječ vorn još uvijek stoji upitnik.
-
-Narrator: Uz riječ kael nema ni pretpostavke.
-
-Kael: Kael.
-
-Kael: Treći put.
-
-Kael: Nije prevedena.
-
-Kael: A ipak imam osjećaj da ne govore nekom nepoznatom posredniku.
-
-Kael: Govore meni.
-
-Narrator: Kael se vraća na Mareninu poruku.
-
-Narrator: Povećanje bušenja za četrdeset posto.
-
-Narrator: Rok: četrdeset osam sati.
-
-Narrator: Dhorn ne zna da je odluka već donesena.
-
-Kael: Moram im prenijeti ultimatum.
-
-Kael: Ali prijevod više nije samo prijevod.
-
-Kael: Jedna rečenica može im dati vrijeme da se pripreme.
-
-Kael: Može ih smiriti.
-
-Kael: Ili ih ostaviti pod ruševinama bez upozorenja.
-
--> Točno prenesi ultimatum: "Vatra-uzima raste. 48 sati."
+Dhorn: Vel-ahn, kael-vorn.
+Kael: Imam datum iz naše arhive. Prije dvadeset sedam godina. Toru-vorn?
+Dhorn: Dugo prije. Toru-vorn. Da.
+Kael: Njihovo sjećanje podudara se s arhivskim tragom.
+<<set $knowsPreviousContactHint = true>>
+// OTKRIĆE: Dhorni povezuju prethodnog Vorna s razdobljem starog zapisa na 7-G.
+// CLUE_UNLOCK: C05_PREVIOUS_CONTACT
+<<jump Session3VornRefinement>>
+===
+
+title: Session3AskFragment
+---
+<<radio_static AudioManager>>
+Dhorn: Vel-ahn, kael-vorn.
+Kael: Stari toru zapis. Vorn. Moran.
+Dhorn: Stari vorn govor toru. Stari vorn govor Dh'orn. Moran čeka.
+Kael: Fragment se stvarno odnosi na prethodnog posrednika i njegov razgovor s obje strane.
+<<set $knowsPreviousContactHint = true>>
+// OTKRIĆE: Stari fragment "vorn — toru — moran" odnosi se na prethodnog Vorna.
+// CLUE_UNLOCK: C05_PREVIOUS_CONTACT
+<<jump Session3VornRefinement>>
+===
+
+title: Session3AskPreviousVorn
+---
+<<radio_static AudioManager>>
+Dhorn: Vel-ahn, kael-vorn.
+Kael: Prije vorn. Tko?
+Dhorn: Toru-vorn. Stari vorn.
+Kael: Prethodni Vorn bio je s Površine.
+<<set $knowsPreviousContactHint = true>>
+// OTKRIĆE: Dhorni tvrde da je prethodni Vorn bio netko s Površine.
+// CLUE_UNLOCK: C05_PREVIOUS_CONTACT
+<<jump Session3VornRefinement>>
+===
+
+title: Session3AskKaelVorn
+---
+<<radio_static AudioManager>>
+Dhorn: Vel-ahn, kael-vorn.
+Kael: Zašto kael-vorn? Zašto ja?
+Dhorn: Vorn sluša. Vorn nosi govor. Kael nastavlja.
+Kael: "Kael nastavlja." Dakle riječ "kael" očito nije samo moje ime.
+// OTKRIĆE: Dhorni povezuju riječ "kael" s nastavljanjem nečega što je bilo prije.
+<<jump Session3VornRefinement>>
+===
+
+title: Session3NeutralContact
+---
+<<radio_static AudioManager>>
+Dhorn: Vel-ahn, kael-vorn.
+Kael: Slušam.
+Dhorn: Vorn sluša toru. Vorn sluša Dh'orn. Vorn nosi govor između.
+Kael: Opet definiraju ulogu, ne osobu.
+<<jump Session3VornRefinement>>
+===
+
+title: Session3VornRefinement
+---
+<<if $knowsVornNotName == false>>
+    Dhorn: Vorn nem-ime. Vorn uloga.
+    <<add_word NotebookPanel "nem" "ne / negacija [POTVRĐENO]">>
+    <<set $knowsVornNotName = true>>
+    // OTKRIĆE: Vorn nije osobno ime nego uloga.
+    // CLUE_UNLOCK: C06_VORN_ROLE
+<<endif>>
+
+Dhorn: Vorn sluša toru. Vorn sluša Dh'orn. Vorn nosi govor između.
+
+Kael: Ovo nije prvi put da pokušavam prevesti "vorn". Ali sada imam više konteksta. Koji je najprecizniji prijevod koji trenutno mogu zapisati?
+
+-> "Prevoditelj."
+    <<set $vornTranslation = "translator">>
+    <<add_word NotebookPanel "vorn" "prevoditelj (?)">>
+    <<jump Session3VornFinalCheck>>
+-> "Posrednik između dviju strana."
+    <<set $vornTranslation = "mediator">>
+    <<set $translationAccuracy += 1>>
+    <<add_word NotebookPanel "vorn" "prevoditelj / posrednik između strana [POTVRĐENO]">>
+    <<jump Session3VornFinalCheck>>
+-> "Predstavnik Površine."
+    <<set $vornTranslation = "representative">>
+    <<add_word NotebookPanel "vorn" "predstavnik Površine (?)">>
+    <<jump Session3VornFinalCheck>>
+-> "Glasnik."
+    <<set $vornTranslation = "messenger">>
+    <<add_word NotebookPanel "vorn" "glasnik (?)">>
+    <<jump Session3VornFinalCheck>>
+-> Još ne zaključuj.
+    <<set $vornTranslation = "unknown">>
+    <<add_word NotebookPanel "vorn" "uloga između Površine i Dhorna (?)">>
+    <<jump Session3VornFinalCheck>>
+===
+
+title: Session3VornFinalCheck
+---
+<<if $vornTranslation == "mediator">>
+    Kael: To se uklapa u sve primjere. Vorn sluša obje strane i nosi govor između njih. Ovo mogu smatrati potvrđenim prijevodom.
+    <<add_word NotebookPanel "vorn" "prevoditelj / posrednik između strana [POTVRĐENO]">>
+    <<jump Session3AfterVornCheck>>
+<<elseif $vornTranslation == "translator">>
+    Kael: "Prevoditelj" nije pogrešno, ali više nije dovoljno precizno. Dhorni opisuju osobu koja sluša obje strane i posreduje između njih. Želim li usavršiti prijevod?
+    -> Promijeni u "posrednik između dviju strana".
+        <<set $vornTranslation = "mediator">>
+        <<set $translationAccuracy += 1>>
+        <<add_word NotebookPanel "vorn" "prevoditelj / posrednik između strana [POTVRĐENO]">>
+        <<jump Session3AfterVornCheck>>
+    -> Zadrži "prevoditelj" kao nepotpun prijevod.
+        <<add_word NotebookPanel "vorn" "prevoditelj (?)">>
+        <<jump Session3AfterVornCheck>>
+    -> Ostavi riječ nepoznatom.
+        <<set $vornTranslation = "unknown">>
+        <<add_word NotebookPanel "vorn" "???">>
+        <<jump Session3AfterVornCheck>>
+<<else>>
+    Kael: Ovaj prijevod ne objašnjava dovoljno dobro činjenicu da Vorn sluša i Toru i Dhorne te prenosi govor između njih. Želim li ga promijeniti?
+    -> Promijeni u "posrednik između dviju strana".
+        <<set $vornTranslation = "mediator">>
+        <<set $translationAccuracy += 1>>
+        <<add_word NotebookPanel "vorn" "prevoditelj / posrednik između strana [POTVRĐENO]">>
+        <<jump Session3AfterVornCheck>>
+    -> Zadrži trenutni prijevod kao pretpostavku.
+        Kael: Ostavit ću ga s upitnikom.
+        <<jump Session3AfterVornCheck>>
+    -> Ostavi riječ nepoznatom.
+        <<set $vornTranslation = "unknown">>
+        <<add_word NotebookPanel "vorn" "???">>
+        <<jump Session3AfterVornCheck>>
+<<endif>>
+===
+
+title: Session3AfterVornCheck
+---
+Dhorn: Stari vorn nem-govor.
+
+Kael: Prethodni Vorn više ne govori. Što želim pitati?
+
+-> "Što mu se dogodilo?"
+    Kael: Stari vorn. Što poslije?
+    Dhorn: Toru utiša vorn.
+    <<jump Session3Utisa>>
+-> "Je li umro?"
+    Kael: Stari vorn nem-dah?
+    Dhorn: Nem-znamo. Toru utiša vorn.
+    <<add_word NotebookPanel "nem" "ne / negacija [POTVRĐENO]">>
+    Kael: Ne znaju je li mrtav. To je važno.
+    <<jump Session3Utisa>>
+-> "Je li Površina prekinula njegov kontakt?"
+    Kael: Toru zaustavi govor?
+    Dhorn: Toru utiša vorn. Poslije nem-govor.
+    Kael: Moguće. Još uvijek ne znam je li "utiša" doslovno ili politički izraz.
+    <<jump Session3Utisa>>
+-> "Je li Vorn izdao Dhorne?"
+    Kael: Vorn izdaja Dh'orn?
+    Dhorn: Nem. Vorn govor. Toru utiša.
+    <<add_word NotebookPanel "nem" "ne / negacija [POTVRĐENO]">>
     <<set $dhornTrust += 1>>
-    <<set $marenSuspicion += 1>>
-    <<jump Session03_Truth>>
--> Ublaži poruku: "Toru razmatra promjene. Traži Dhorn strpljenje."
-    <<set $dhornTrust -= 1>>
-    <<jump Session03_Softened>>
--> Prikrij potpuno i ne govori Dhornu ništa o ultimatumu
-    <<set $dhornTrust -= 2>>
-    <<set $marenSuspicion -= 1>>
-    <<jump Session03_Hidden>>
+    Kael: Dhorni ne krive njega.
+    <<jump Session3Utisa>>
 ===
 
-
-title: Session03_Truth
+title: Session3Utisa
 ---
-Narrator: Kael šalje točan prijevod.
+Kael: "Utiša." Nova riječ. Što znači "utiša" u rečenici "Toru utiša vorn"?
 
-Kael: Vatra-uzima raste.
+-> "Ubiti."
+    <<set $utisaTranslation = "kill">>
+    <<add_word NotebookPanel "utiša" "ubiti (?)">>
+    Kael: Ako je to točno, Dhorni optužuju Površinu za ubojstvo.
+-> "Prekinuti komunikaciju."
+    <<set $utisaTranslation = "silence_contact">>
+    <<set $translationAccuracy += 1>>
+    <<add_word NotebookPanel "utiša" "prekinuti komunikaciju / ušutkati (?)">>
+    Kael: To se izravno uklapa u "poslije nem-govor".
+-> "Zabraniti govor."
+    <<set $utisaTranslation = "forbid_speech">>
+    <<set $translationAccuracy += 1>>
+    <<add_word NotebookPanel "utiša" "zabraniti govor / ušutkati (?)">>
+    Kael: I to bi objasnilo zašto je govor prestao.
+-> "Ukloniti / zatvoriti."
+    <<set $utisaTranslation = "remove">>
+    <<add_word NotebookPanel "utiša" "ukloniti / zatvoriti (?)">>
+    Kael: Moguće, ali ne znam govori li riječ o mjestu, ulozi ili samom govoru.
+-> Nisam siguran.
+    <<set $utisaTranslation = "unknown">>
+    <<add_word NotebookPanel "utiša" "???">>
+    Kael: Neću jednu Dhorn riječ pretvoriti u činjenicu.
 
-Kael: Četrdeset osam sati.
+<<set $knowsVornSilenced = true>>
+// OTKRIĆE: Dhorni tvrde da je Površina "utišala" prethodnog Vorna i da je nakon toga prestao govoriti.
+// CLUE_UNLOCK: C12_SILENCED_VORN
 
-Narrator: S druge strane terminala nastaje tišina.
+Dhorn: Kael-vorn?
 
-Narrator: Dulja nego ikada prije.
+Kael: Pitaju prihvaćam li ulogu koju još uvijek pokušavam razumjeti.
 
-Narrator: Kael provjerava vezu.
+-> "Nastavit ću razgovor."
+    Kael: Ja slušam. Ja govorim.
+    <<set $dhornTrust += 2>>
+    Dhorn: Kael-vorn.
+-> "Možda."
+    Kael: Možda.
+    <<set $dhornTrust += 1>>
+    Dhorn: Kael čeka.
+-> "Ja sam samo prevoditelj."
+    Kael: Samo prevodim.
+    Dhorn: Vorn prevodi. Vorn bira govor.
+    Kael: Vorn bira govor... Njima očito nije svejedno kako prenosim poruku.
+-> "Nisam Vorn."
+    Kael: Nem-vorn.
+    Dhorn: Kael još čeka.
+-> "Još ne znam dovoljno."
+    Kael: Ne znam još.
+    Dhorn: Dobro. Vorn prvo sluša.
 
-Narrator: Signal je još uvijek aktivan.
-
-Kael: Još su tamo.
-
-Kael: Samo više ne odgovaraju.
-
-Narrator: Nakon gotovo pune minute signal se ponovno mijenja.
-
-<<radio_static AudioManager>>
-Dhorn: Vel-ahn.
-
-Dhorn: Znamo sada.
-
-Dhorn: Čeka Dhorn nem-dugo.
-
-Dhorn: Sprema dubina.
-
-Kael: Razumiju.
-
-Kael: Neće dugo čekati.
-
-Kael: Dubina se priprema.
-
-Kael: Rekao sam im istinu.
-
-Kael: I možda sam upravo započeo rat.
-
-<<jump Session03_CommonEnd>>
+<<jump Session3MarenContact>>
 ===
 
-
-title: Session03_Softened
+title: Session3MarenOpening
 ---
-Narrator: Kael ublažava Mareninu poruku prije slanja.
-
-Kael: Toru razmatra promjene.
-
-Kael: Dhorn treba biti strpljiv.
-
-Narrator: Riječ „četrdeset osam“ ostaje neposlana.
-
-Narrator: Povećanje bušenja nestaje iz prijevoda.
-
-Narrator: Opasnost postaje „promjena“.
-
-<<radio_static AudioManager>>
-Dhorn: Tah-put.
-
-Dhorn: Čeka Dhorn.
-
-Dhorn: Ali nem-dugo čeka.
-
-Kael: Čekat će.
-
-Kael: Ali ne još dugo.
-
-Dhorn: Zna vatra.
-
-Dhorn: Osjeti dubina.
-
-Kael: Oni već znaju da se nešto događa.
-
-Kael: Osjete bušenje.
-
-Kael: Nisam im kupio vrijeme.
-
-Kael: Samo sam im oduzeo istinu.
-
-<<jump Session03_CommonEnd>>
-===
-
-
-title: Session03_Hidden
----
-Narrator: Kael ne govori Dhornu ništa o ultimatumu.
-
-Narrator: Marenina poruka ostaje između njega i površine.
-
-Kael: Ako ne znaju...
-
-Kael: možda još postoji prilika da sve zaustavim prije panike.
-
-Narrator: Nova vibracija prolazi kroz pod.
-
-Narrator: Ovoga puta svjetlo na trenutak zatreperi.
-
-Kael: Ali bušenje ne čeka moj prijevod.
-
-<<radio_static AudioManager>>
-Dhorn: Vatra bliže.
-
-Dhorn: Pada zid.
-
-Dhorn: Zašto nem-govor, kael?
-
-Kael: Znaju.
-
-Kael: Ne trebaju mene da im kažem što osjećaju pod nogama.
-
-Kael: Pitali su zašto šutim.
-
-Kael: Ne znam što kael znači.
-
-Kael: Ali sada zvuči kao optužba.
-
-Narrator: Kael ne odgovara.
-
-Narrator: Signal ostaje otvoren.
-
-Kael: Možda im upravo oduzimam mogućnost da se pripreme.
-
-Kael: Ili sam već potrošio jedino vrijeme koje smo imali.
-
-<<jump Session03_CommonEnd>>
-===
-
-
-title: Session03_CommonEnd
----
-Narrator: Na vladinom terminalu pojavljuje se novo ažuriranje.
-
 <<notification_beep AudioManager>>
-Narrator: PROJEKT VATRA-7.
+Maren: Kael. Trebam ažuriranje o 7-G.
 
-Narrator: FAZA DVA.
+<<if $reportedFullTranslation>>
+    Maren: Prošli put si prijavio da Dhorni aktivnosti Površine vide kao prijetnju svom prostoru.
+<<elseif $softenedTranslation>>
+    Maren: Tvoj prethodni izvještaj bio je oprezan. Pretpostavljam da sada imaš više konteksta.
+<<elseif $hidTranslation>>
+    Maren: Tvoj prethodni izvještaj sadržavao je gotovo samo lingvističke bilješke.
+    <<set $marenSuspicion += 1>>
+    <<set $governmentTrust -= 1>>
+<<else>>
+    Maren: Prošli put nisi htio dati konačnu interpretaciju.
+<<endif>>
 
-Narrator: PROCJENJENI POČETAK PUNOG KAPACITETA:
+Kael: Što želim napraviti?
 
-Narrator: 47 SATI, 52 MINUTE.
-
-Kael: Odbrojavanje je već počelo.
-
-Narrator: Kael pokušava otvoriti tehničke detalje projekta.
-
-Narrator: Pristup odbijen.
-
-Narrator: Pokušava otvoriti stare geološke izvještaje.
-
-Narrator: Pristup odbijen.
-
-Narrator: Jedna datoteka nakratko se pojavi prije nego što je sustav ukloni.
-
-Narrator: IZVJEŠTAJ O INCIDENTU — KANAL 7-G.
-
-Narrator: Prije dvadeset sedam godina.
-
-Kael: Incident?
-
-Narrator: Kael uspije pročitati samo jednu rečenicu.
-
-Narrator: „Kontakt izgubljen nakon pokušaja odgovora.“
-
-Kael: Pokušaja odgovora?
-
-Kael: Netko je već razgovarao s njima.
-
-Narrator: Datoteka nestaje.
-
-Kael: Maren nije prva osoba koja je čula Dhorn.
-
-Kael: A ja nisam prvi prevoditelj.
-
-Narrator: Na Dhorn terminalu pojavi se posljednja kratka poruka.
-
-<<radio_static AudioManager>>
-Dhorn: Stari kael nem-govor.
-
-Dhorn: Novi kael čeka.
-
-Kael: Stari kael nije govorio.
-
-Kael: Novi kael čeka.
-
-Kael: Novi...
-
-Kael: kael.
-
-Narrator: Četrdeset sedam sati i pedeset minuta.
-
-Narrator: Dva terminala ponovno utihnu.
-
-Narrator: Soba je tiša nego inače.
-
-Kael: Negdje ispod mojih nogu...
-
-Kael: u dubini koju nikad nisam vidio...
-
-Kael: cijela civilizacija čeka moj odgovor.
-
-Kael: A prije dvadeset sedam godina...
-
-Kael: netko drugi je sjedio između ova ista dva svijeta.
-
-Narrator: Kael otvara bilježnicu.
-
-Kael: vorn???
-
-Kael: kael???
-
-Kael: Tko je bio prije mene?
-
-<<jump Session03_End>>
+-> Suoči je s podatkom o zapisu starom 27 godina. <<if $knowsOldContact>>
+    Kael: Najstariji zapis na 7-G star je dvadeset sedam godina.
+    Maren: Gdje si to vidio?
+    <<set $marenSuspicion += 1>>
+    <<set $governmentTrust -= 1>>
+    <<jump Session3MarenEvidencePressure>>
+-> Pokaži joj stari fragment koji spominje Vorna. <<if $foundVornFragment>>
+    Kael: U staroj arhivi postoji fragment s riječima vorn, toru i moran.
+    Maren: Nisi trebao imati pristup toj datoteci.
+    Kael: Ali znaš koja je.
+    <<set $marenSuspicion += 1>>
+    <<set $governmentTrust -= 1>>
+    <<jump Session3MarenEvidencePressure>>
+-> Podsjeti je da je već potvrdila raniji kontakt. <<if $marenConfirmedPreviousContact>>
+    Kael: Prošli put rekla si "prvi potvrđeni kontakt u ovom programu". Što je bilo prije ovog programa?
+    Maren: Pažljivo slušaš.
+    <<jump Session3MarenEvidencePressure>>
+-> Pitaj samo koliko dugo prate anomalije.
+    Kael: Koliko dugo pratite 7-G?
+    Maren: Dovoljno dugo da znam kako se takvi podaci pogrešno tumače.
+    Kael: Dakle nemaš mi namjeru odgovoriti.
+    Maren: Ne na temelju tog pitanja.
+    <<jump Session3NoMarenVersion>>
+-> Ne pritiskaj je.
+    Kael: Još radim na prijevodu.
+    Maren: Onda nastavi.
+    <<jump Session3NoMarenVersion>>
 ===
 
-
-title: Session03_End
+title: Session3MarenContact
 ---
-Narrator: Četrdeset četiri sata kasnije.
+<<notification_beep AudioManager>>
+Maren: Kael. Trebam ažurirani izvještaj.
+
+<<if $reportedFullTranslation>>
+    Maren: Tvoj prošli izvještaj već je sadržavao tvrdnje o Vornu i aktivnostima u dubini.
+<<elseif $softenedTranslation>>
+    Maren: Prošli put si poruku opisao kao zabrinutost. Je li sada ozbiljnija?
+<<elseif $hidTranslation>>
+    Maren: Vorn se nije pojavio u tvom prethodnom izvještaju.
+    <<set $marenSuspicion += 1>>
+    <<set $governmentTrust -= 1>>
+<<else>>
+    Maren: Nadam se da sada jasnije odvajaš prijevod od pretpostavke.
+<<endif>>
+
+Kael: Što ću joj reći?
+
+-> Reci da Dhorni govore o prethodnom Vornu kojeg je Površina "utišala".
+    <<set $reportedVornTheory = true>>
+    <<set $governmentTrust += 1>>
+    Kael: Tvrde da je postojao Vorn prije mene. I da ga je Površina "utišala".
+    <<jump Session3MarenUtisaReaction>>
+-> Suoči je sa starošću zapisa. <<if $knowsOldContact>>
+    Kael: Najstariji zapis na 7-G star je dvadeset sedam godina.
+    Maren: Odakle ti to?
+    <<set $marenSuspicion += 1>>
+    <<set $governmentTrust -= 1>>
+    <<jump Session3MarenEvidencePressure>>
+-> Pokaži joj stari Vorn fragment. <<if $foundVornFragment>>
+    Kael: Pronašao sam stari fragment: vorn, toru, moran.
+    Maren: To nije materijal kojem bi trebao imati pristup.
+    <<set $marenSuspicion += 1>>
+    <<set $governmentTrust -= 1>>
+    <<jump Session3MarenEvidencePressure>>
+-> Ne otkrivaj što su Dhorni rekli o starom Vornu.
+    <<set $withheldVornTheory = true>>
+    Kael: Još nemam dovoljno pouzdan prijevod.
+    Maren: Onda mi pošalji samo ono u što si siguran.
+    <<jump Session3NoMarenVersion>>
+===
+
+title: Session3MarenUtisaReaction
+---
+Maren: "Utišala"? To je tvoj prijevod?
+
+<<if $utisaTranslation == "kill">>
+    -> "Mislim da znači ubiti."
+        Kael: To je moja trenutna hipoteza.
+        Maren: Hipoteza o ubojstvu nije prijevod. Treba ti dokaz.
+        <<set $marenSuspicion += 1>>
+        <<set $governmentTrust -= 1>>
+    -> "Možda sam ga preveo preagresivno."
+        Kael: Znam samo da nakon toga Vorn više nije govorio.
+        Maren: To je puno preciznije.
+    -> "Reci mi ti što se dogodilo."
+        Kael: Ako znaš za njega, reci mi.
+        Maren: Donesi mi dokaz da govoriš o istom događaju.
+<<else>>
+    -> "Najsigurnije je reći da mu je komunikacija zaustavljena."
+        Kael: Ne tvrdim da je umro.
+        Maren: Dobro. Drži se onoga što tekst podržava.
+    -> "Još ne znam koliko je riječ ozbiljna."
+        Kael: Utišati može značiti više stvari.
+        Maren: Upravo zato ne zaključuj prerano.
+    -> "Reci mi ti što se dogodilo."
+        Kael: Ti očito znaš više.
+        Maren: Onda mi pokaži što ti znaš.
+<<endif>>
+
+<<if $knowsOldContact || $foundVornFragment || $marenConfirmedPreviousContact>>
+    <<jump Session3MarenEvidencePressure>>
+<<else>>
+    <<jump Session3NoMarenVersion>>
+<<endif>>
+===
+
+title: Session3MarenEvidencePressure
+---
+Maren: Dobro. Postojao je raniji pokušaj kontakta.
+
+<<set $knowsPreviousContactHint = true>>
+<<set $marenConfirmedPreviousContact = true>>
+<<set $marenGaveOldContactVersion = true>>
+// OTKRIĆE: Maren potvrđuje raniji pokušaj kontakta s Dhornima.
+// CLUE_UNLOCK: C05_PREVIOUS_CONTACT
+
+Kael: Što se dogodilo?
+
+Maren: Kontakt je procijenjen kao neodrživ i prekinut.
+
+Kael: A Vorn?
+
+Maren: Ne mogu ti dati identitet osobe iz klasificiranog programa.
+
+Kael: Što želim pitati dalje?
+
+-> "Je li Površina odlučila prekinuti kontakt?"
+    Kael: Dakle odluka je došla s naše strane?
+    Maren: Odluka je donesena nakon procjene rizika.
+    // OTKRIĆE: Maren tvrdi da je prethodni kontakt prekinut nakon procjene rizika.
+-> "Je li prethodni Vorn umro?"
+    Kael: Je li ta osoba umrla?
+    Maren: Neću razgovarati o osobnim podacima iz klasificiranog programa.
+    Kael: To nije odgovor.
+-> "Je li prekid imao veze s radovima u dubini?"
+    Kael: Je li Vorn otkrio nešto o geološkim radovima?
+    Maren: Povezuješ dvije stvari bez dokaza.
+    Kael: Znači nisam jedini kojem je ta veza pala na pamet.
+    <<set $marenSuspicion += 1>>
+    <<set $governmentTrust -= 1>>
+-> "Zašto su zapisi zaključani?"
+    Kael: Ako je program samo neuspješan, zašto ga skrivati?
+    Maren: Zato što klasifikacija ne nestaje samo zato što je projekt završen.
+-> Pusti temu.
+    Kael: U redu.
+
+Maren: Nastavi prevoditi. I nemoj pretvoriti dvije nepotpune priče u jednu sigurnu činjenicu. Laku noć.
+
+<<jump Session3InterpretationChoice>>
+===
+
+title: Session3NoMarenVersion
+---
+Kael: Maren mi nije dala svoju verziju starog kontakta.
+
+<<if $knowsVornSilenced>>
+    Kael: Za sada imam samo Dhorn tvrdnju da je prethodni Vorn "utišan".
+<<endif>>
+
+Kael: To nije dovoljno za zaključak.
+
+<<jump Session3ResearchStart>>
+===
+
+title: Session3InterpretationChoice
+---
+Kael: Sada imam dvije formulacije istog događaja. Dhorni: "Površina utiša Vorn." Maren: "Kontakt je procijenjen kao neodrživ i prekinut." Kako trenutno objašnjavam kontradikciju?
+
+-> Površina je namjerno uklonila Vorna iz kontakta.
+    <<set $session3Interpretation = "surface_removed_vorn">>
+    Kael: Obje formulacije mogu opisivati istu odluku, samo iz suprotnih perspektiva.
+-> Program je možda prekinut iz stvarnih sigurnosnih razloga.
+    <<set $session3Interpretation = "security_reason">>
+    Kael: Dhorni možda vide posljedicu, a ne razlog.
+-> Maren skriva ključni dio događaja.
+    <<set $session3Interpretation = "maren_hiding">>
+    Kael: Njezina formulacija je previše administrativna da bi mi išta objasnila.
+-> Dhorni možda "utiša" tumače šire nego ja.
+    <<set $session3Interpretation = "dhorn_language_gap">>
+    Kael: Možda još uvijek pogrešno razumijem samu riječ.
+-> Nemam dovoljno dokaza.
+    <<set $session3Interpretation = "insufficient_evidence">>
+    Kael: Dvije priče nisu dokaz.
+
+<<jump Session3ResearchStart>>
+===
+
+title: Session3ResearchStart
+---
+Kael: Imam vremena istražiti dvije stvari.
+
+<<set $session3ResearchCount = 0>>
+<<jump Session3ResearchHub>>
+===
+
+title: Session3ResearchHub
+---
+<<if $session3ResearchCount >= 2>>
+    <<jump Session3AfterResearch>>
+<<endif>>
+
+Kael: Što želim istražiti?
+
+-> Identitet prethodnog Vorna. <<if $researchedVornIdentityS3 == false>>
+    <<set $researchedVornIdentityS3 = true>>
+    <<set $session3ResearchCount += 1>>
+    <<jump ResearchVornIdentityS3>>
+-> Izvještaj o prekidu starog kontakta. <<if $researchedIncidentS3 == false>>
+    <<set $researchedIncidentS3 = true>>
+    <<set $session3ResearchCount += 1>>
+    <<jump ResearchIncidentS3>>
+-> Provjeri postoje li druge oznake povezane s "V". <<if $researchedVDesignationS3 == false>>
+    <<set $researchedVDesignationS3 = true>>
+    <<set $session3ResearchCount += 1>>
+    <<jump ResearchVProgramS3>>
+-> Stare Dhorn transmisije. <<if $researchedOldTransmissionS3 == false>>
+    <<set $researchedOldTransmissionS3 = true>>
+    <<set $session3ResearchCount += 1>>
+    <<jump ResearchOldTransmissionS3>>
+-> Ne riskiraj više.
+    <<jump Session3AfterResearch>>
+===
+
+title: ResearchVornIdentityS3
+---
+Kael: Pretražujem kadrovske zapise povezane sa 7-G. Većina imena je uklonjena. Jedan zapis ipak ostaje. SUBJECT: V-27. ROLE: LINGUISTIC INTERMEDIARY. NAME: CLASSIFIED.
+
+<<set $knowsV27Designation = true>>
+// OTKRIĆE: U starom programu postoji klasificirani lingvistički posrednik označen kao V-27.
+// CLUE_UNLOCK: C13_V27
+
+<<if $knowsOldContact>>
+    Kael: Broj 27 podudara se s podatkom o starosti najstarijeg zapisa. Možda označava godinu kontakta. Možda nešto sasvim drugo.
+<<else>>
+    Kael: Ne znam što 27 znači.
+<<endif>>
+
+Kael: V možda znači Vorn. Ali još uvijek je samo hipoteza.
+
+<<jump Session3ResearchHub>>
+===
+
+title: ResearchIncidentS3
+---
+Kael: Pretražujem izvještaje o incidentima vezanim uz 7-G. Jedan rezultat. CONTACT TERMINATED. INTERMEDIARY REMOVED FROM PROGRAM.
+
+<<set $foundIncidentReport = true>>
+<<set $knowsVornRemovedFromProgram = true>>
+// OTKRIĆE: Službeni dokument kaže da je nakon prekida kontakta posrednik uklonjen iz programa.
+// CLUE_UNLOCK: C14_REMOVED_FROM_PROGRAM
+
+Kael: "Uklonjen iz programa." Ovaj dokument daje mi novi kontekst za riječ "utiša".
+
+<<if $utisaTranslation == "silence_contact" || $utisaTranslation == "forbid_speech">>
+    Kael: Moj prijevod se uklapa u ono što sada znam: kontakt je prekinut, a posrednik uklonjen iz programa. To još uvijek ne govori što se s osobom dogodilo nakon toga.
+    <<set $utisaTranslation = "silence_contact">>
+    <<add_word NotebookPanel "utiša" "ušutkati / prekinuti komunikaciju [POTVRĐENO]">>
+<<else>>
+    <<if $utisaTranslation == "kill">>
+        Kael: Dokument ne potvrđuje moj prijevod "ubiti". Možda je Vorn kasnije umro, ali sama riječ "utiša" očito ne znači nužno smrt.
+    <<elseif $utisaTranslation == "remove">>
+        Kael: "Ukloniti" je blizu posljedici događaja, ali Dhorn kontekst naglašava prestanak govora.
+    <<elseif $utisaTranslation == "unknown">>
+        Kael: Napokon imam dovoljno konteksta da pokušam preciznije.
+    <<endif>>
+    Kael: Želim li promijeniti prijevod?
+    -> Promijeni u "ušutkati / prekinuti komunikaciju".
+        <<set $utisaTranslation = "silence_contact">>
+        <<set $correctedUtisaTranslation = true>>
+        <<set $translationAccuracy += 1>>
+        <<add_word NotebookPanel "utiša" "ušutkati / prekinuti komunikaciju [POTVRĐENO]">>
+        Kael: Ovo opisuje ono što tekst stvarno potvrđuje bez nagađanja o njegovoj smrti.
+    -> Zadrži trenutni prijevod kao pretpostavku.
+        Kael: Neću ga još označiti potvrđenim.
+    -> Ostavi riječ nepoznatom.
+        <<set $utisaTranslation = "unknown">>
+        <<add_word NotebookPanel "utiša" "???">>
+<<endif>>
+
+<<if $knowsSurfaceExtraction>>
+    Kael: Prethodni Vorn, klasificirani program i radovi u dubini. Još nemam dokaz da su povezani. Ali sada znam koje pitanje trebam postaviti.
+    // OTKRIĆE: Kael počinje sumnjati da prekid starog kontakta možda ima veze s aktivnostima Površine u dubini.
+    // CLUE_UNLOCK: C16_VORN_DEPTH_LINK
+<<elseif $dhornClaimsExtraction>>
+    Kael: Dhorni tvrde da Površina nešto uzima iz dubine. Ako je stari Vorn znao za istu tvrdnju, možda je to važno.
+<<endif>>
+
+<<jump Session3ResearchHub>>
+===
+
+title: ResearchVProgramS3
+---
+Kael: Pretražujem stare jezične programe po oznaci "V-". V-11 — STATUS: CLOSED. V-19 — STATUS: ARCHIVED. V-27 — STATUS: CLASSIFIED.
+
+<<set $knowsVProgram = true>>
+// OTKRIĆE: U starim sustavima postoji više oznaka oblika V-broj; V-27 nije jedini takav zapis.
+// CLUE_UNLOCK: C15_V_PROGRAM
+
+Kael: Znači V-27 možda nije jedinstvena oznaka jednog slučaja. Postojao je cijeli niz V-zapisa. Jesu li svi bili posrednici? Sustav mi ne daje odgovor.
+
+<<jump Session3ResearchHub>>
+===
+
+title: ResearchOldTransmissionS3
+---
+Kael: Otvaram oštećeni komunikacijski fragment. "...vorn... toru... moran... nem-govor..." Kako ga tumačim?
+
+-> "Vorn s Površine govorio je o moranu, a zatim je komunikacija prestala."
+    <<set $translationAccuracy += 1>>
+    Kael: To je najoprezniji prijevod koji mogu opravdati.
+-> "Površina je zabranila Vornu da govori o moranu."
+    Kael: Moguće, ali fragment nema dovoljno riječi za taj zaključak.
+-> "Vorn je izdao Dhorne."
+    Kael: Ništa u fragmentu ne potvrđuje izdaju.
+-> "Dhorni su odbili razgovarati s Vornom."
+    Kael: Red riječi mi ne podupire tu interpretaciju.
+-> Ne pokušavaj rekonstruirati cijelu priču iz četiri riječi.
+    Kael: To je možda najvažnija lekcija dosad.
+
+// OTKRIĆE: Stara transmisija povezuje Vorna, Površinu, moran i prekid govora.
+
+<<jump Session3ResearchHub>>
+===
+
+title: Session3AfterResearch
+---
+Kael: Dosta.
+
+<<if $knowsV27Designation>>
+    Kael: Znam da je postojao klasificirani lingvistički posrednik V-27.
+<<endif>>
+
+<<if $knowsVProgram>>
+    Kael: I V-27 nije jedina oznaka oblika V-broj.
+<<endif>>
+
+<<if $foundIncidentReport>>
+    Kael: Znam da je posrednik nakon prekida kontakta uklonjen iz programa.
+<<endif>>
+
+<<if $correctedUtisaTranslation>>
+    Kael: I znam koliko lako jedna pogrešna riječ može promijeniti cijelu priču.
+<<endif>>
+
+<<if $knowsSurfaceExtraction && $foundIncidentReport>>
+    Kael: Ostaje pitanje koje ne mogu dokazati. Je li prethodni Vorn nestao zato što je saznao što Površina radi u dubini?
+<<elseif $dhornClaimsExtraction && $foundIncidentReport>>
+    Kael: Ostaje pitanje. Je li prethodni Vorn uklonjen zbog onoga što su Dhorni tvrdili o dubini?
+<<endif>>
+
+<<jump Session3FinalContact>>
+===
+
+title: Session3FinalContact
+---
+<<radio_static AudioManager>>
+Dhorn: Kael-vorn. Prije vorn nem-govor. Novi vorn čeka.
+
+Kael: Prethodni Vorn više ne govori. Novi Vorn čeka. Kako ću odgovoriti?
+
+-> "Nastavit ću razgovor."
+    Kael: Ja slušam. Ja govorim.
+    <<set $dhornTrust += 2>>
+    Dhorn: Kael-vorn.
+-> "Neću završiti kao prethodni Vorn."
+    Kael: Nem-stari vorn.
+    <<set $dhornTrust += 1>>
+    Dhorn: Kael bira.
+-> "Još nisam vaš Vorn."
+    Kael: Još nem-vorn.
+    Dhorn: Vorn prvo sluša.
+-> "Reci mi tko je bio prije mene."
+    Kael: Prije vorn. Ime?
+    Dhorn: Toru ime izgubljeno. Dubina pamti govor.
+    Kael: Ne daju mi ime. Pamte samo njegov govor.
+-> Ne odgovori.
+    Kael: ...
+
+Dhorn: Kael nastavlja.
+
+Kael: Opet. "Kael nastavlja."
+
+<<set $kaelTranslation = "continues">>
+<<add_word NotebookPanel "kael" "nastavlja / onaj koji nastavlja (?)">>
+// OTKRIĆE: "Kael" je povezan s nastavljanjem prethodne uloge, ali značenje još nije potpuno potvrđeno.
+
+Kael: Još nije dovoljno da riječ nazovem "nasljednik". Ali više nije samo moje ime.
+
+<<jump Session3Ending>>
+===
+
+title: Session3Ending
+---
+Kael: Do večeras sam dobio više pitanja nego odgovora.
+
+<<if $knowsOldContact>>
+    Kael: Znam da je aktivnost na 7-G zabilježena prije dvadeset sedam godina.
+<<endif>>
+
+<<if $marenConfirmedPreviousContact>>
+    Kael: Znam da je postojao raniji pokušaj kontakta.
+<<elseif $knowsPreviousContactHint>>
+    Kael: Dhorni tvrde da je postojao prethodni Vorn.
+<<endif>>
+
+<<if $knowsV27Designation>>
+    Kael: U starom programu postoji posrednik označen kao V-27.
+<<endif>>
+
+<<if $knowsVProgram>>
+    Kael: I V-27 možda nije jedini V-zapis.
+<<endif>>
+
+<<if $foundIncidentReport>>
+    Kael: Službeni dokument kaže da je posrednik uklonjen iz programa.
+<<endif>>
+
+Kael: Dhorni kažu "utišan".
+<<if $marenGaveOldContactVersion>>
+    Kael: Maren kaže "kontakt prekinut nakon procjene rizika".
+<<endif>>
+<<if $foundIncidentReport>>
+    Kael: Dokument kaže "uklonjen iz programa".
+<<endif>>
+
+Kael: Tri formulacije mogu opisivati isti događaj. Ili tri potpuno različite priče.
+
+<<if $vornTranslation == "mediator">>
+    Kael: Vorn više nije samo upitnik. Prevoditelj. Posrednik između strana.
+<<endif>>
+
+<<if $utisaTranslation == "silence_contact" && $foundIncidentReport>>
+    Kael: A "utiša" sada najvjerojatnije znači ušutkati ili prekinuti komunikaciju.
+<<endif>>
+
+Kael: I ostala je još jedna riječ koju nisam riješio: "vatra". Dhorni je koriste od prvog kontakta. Povezuju je s Površinom, dubinom i nečim što dolazi nakon "uzima".
+<<if $knowsSurfaceExtraction>>
+    Kael: Sada znam da Površina stvarno provodi geološke radove u području njihova signala. Ali još nemam dokaz da "vatra" znači te radove.
+<<elseif $dhornClaimsExtraction>>
+    Kael: Znam samo da Dhorni povezuju Vatru s onim što tvrde da Površina radi u dubini. Tvrdnja još nije dokaz.
+<<else>>
+    Kael: Još uvijek nemam dovoljno konteksta da znam na što se odnosi.
+<<endif>>
+<<add_word NotebookPanel "vatra" "??? / povezano s Površinom i dubinom; značenje još nepotvrđeno">>
+
+Kael: A "kael"... ...još uvijek znači samo nešto blizu "onaj koji nastavlja". Ne znam tko je bio prethodni Vorn. Ne znam zašto je nestao. I još ne znam jesu li njegov nestanak i ono što se događa u dubini povezani. Ali sada znam što moram otkriti sljedeće.
 
 <<jump Session4_Start>>
 ===

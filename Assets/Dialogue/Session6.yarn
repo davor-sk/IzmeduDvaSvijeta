@@ -1,728 +1,339 @@
-﻿title: Session06_Start
+﻿title: Session6_Start
 ---
-Narrator: Kael stoji pred vratima svog stana.
-
-Narrator: Na zaslonu mobitela odbrojavanje projekta Vatra-7 nastavlja se smanjivati.
-
-Narrator: 00:31:46.
-
-Narrator: 00:31:45.
-
-Narrator: 00:31:44.
-
-Kael: Pola sata.
-
-Kael: Dvadeset sedam godina skrivanja.
-
-Kael: I pola sata da shvatim zašto.
-
-Narrator: Otključava vrata.
-
-Narrator: Stan je tih.
-
-Narrator: Po prvi put nakon dugo vremena ne pali terminal.
-
-Kael: Simbol.
-
-Kael: Drvena kutija.
-
-Kael: Tavan.
-
-Narrator: Ne traži stare bilješke nasumično.
-
-Narrator: Točno zna što traži.
-
-Narrator: Samo još ne zna zašto zna.
-
-Narrator: Penje se na tavan.
-
-Narrator: Prašina prekriva kutije, stare knjige i stvari koje nitko godinama nije otvorio.
-
-Narrator: Iza stare police pronalazi drvenu kutiju.
-
-Narrator: Na poklopcu je urezan isti simbol iz izvještaja V-27.
-
-Kael: To je taj simbol.
-
-Kael: Bio je ovdje cijelo vrijeme.
-
-Narrator: Kael prelazi prstima preko ureza.
-
-Narrator: Ruka mu se zaustavlja na jednom dijelu znaka.
-
-Kael: Znam kako se otvara.
-
-Narrator: Ne postoji vidljiva brava.
-
-Narrator: Ipak pritisne tri točke točnim redoslijedom.
-
-Narrator: Poklopac popusti.
-
-Kael: Kako sam to znao?
-
-Narrator: U kutiji se nalaze požutjele fotografije.
-
-Narrator: Nekoliko pisama.
-
-Narrator: Stari metalni odašiljač.
-
-Narrator: I bilježnica ispisana nepoznatim simbolima.
-
-Narrator: Na odašiljaču stoji površinska oznaka.
-
-Narrator: V-27.
-
-Kael: Bio je njegov.
-
-Narrator: Kael podiže prvu fotografiju.
-
-Narrator: Na njoj je mladić kojeg nikada nije upoznao.
-
-Narrator: Ali poznaje njegove oči.
-
-Kael: Djed.
-
-Narrator: Iza njega nalazi se ulaz u tunel.
-
-Narrator: Na poleđini fotografije zapisane su dvije riječi.
-
-Narrator: Kael-vorn.
-
-Kael: Opet.
-
-Kael: Cijelo vrijeme su bile ispred mene.
-
-Narrator: Kael otvara staru bilježnicu.
-
-Kael: Ovo ne bi trebalo biti moguće.
-
-Kael: Ali...
-
-Kael: Razumijem što piše.
-
-<<cinematic_hit AudioManager>>
-
-Narrator: Ne prevodi.
-
-Narrator: Ne rastavlja rečenice.
-
-Narrator: Ne traži značenje u kontekstu.
-
-Narrator: Jednostavno razumije.
-
-Kael: Ne učim njihov jezik.
-
-Kael: Sjećam ga se.
-
-Narrator: Prva stranica nosi datum od prije dvadeset sedam godina.
-
-Narrator: Isti datum kao incident na kanalu 7-G.
-
-Narrator: Kael počinje čitati.
-
-Narrator: „Čuo sam ih prije nego što je sustav registrirao signal.”
-
-Narrator: „Znali su da dolazim.”
-
-Narrator: „Nazvali su me vorn.”
-
-Narrator: „Nisam tada razumio zašto.”
-
-Kael: To si bio ti.
-
-Kael: Lingvistički posrednik — V.
-
-Narrator: Sljedeća stranica.
-
-Narrator: „Površina je pronašla dubinu.”
-
-Narrator: „Ne zna što je pronašla.”
-
-Narrator: „Ako im kažem istinu, doći će s Vatrom.”
-
-Narrator: „Ako šutim, Dhorn će ostati sam.”
-
-Kael: Isto pitanje.
-
-Kael: Isti izbor.
-
-Kael: Prije dvadeset sedam godina.
-
-Narrator: Na posljednjoj ispunjenoj stranici rukopis postaje nestabilan.
-
-Narrator: „Pokušao sam odgovoriti.”
-
-Narrator: „Oni iznad prekinuli su kontakt.”
-
-Narrator: „Izbrisali su moje izvještaje.”
-
-Narrator: „Rekli su da više nisam pouzdan.”
-
-Narrator: „Ali Dhorn mi je ponudio moran.”
-
-Kael: Moran.
-
-Narrator: Svaka riječ koju je posljednjih tjedana zapisivao odjednom dobiva veću dubinu.
-
-Narrator: Ne samo prijevod.
-
-Narrator: Sjećanje.
-
-Narrator: Pripadnost.
-
-<<add_word NotebookPanel "moran" "dom / sigurnost / porijeklo">>
-
-Kael: Moran nije samo dom.
-
-Kael: To je mjesto kojem pripadaš.
-
-Kael: Mjesto na kojem si siguran.
-
-Kael: I mjesto iz kojeg dolaziš...
-
-Kael: čak i kada ga nikada nisi vidio.
-
-Narrator: Kael nastavlja čitati.
-
-Narrator: „Nisam se vratio na površinu.”
-
-Narrator: „Rekli su da sam pobjegao.”
-
-Narrator: „Možda jesam.”
-
-Narrator: „Ali prvi put nisam bježao od nečega.”
-
-Narrator: „Išao sam prema domu.”
-
-Narrator: Ispod posljednje rečenice stoji samo jedna riječ.
-
-Narrator: Vorn.
-
-Narrator: Vorn znači...
-
-Narrator: Onaj koji je otišao.
-
-Narrator: Izbjeglica.
-
-Narrator: Ali i onaj koji je napustio jedan svijet kako bi pronašao drugi.
-
-<<add_word NotebookPanel "vorn" "onaj koji je otišao / izbjeglica">>
-
-Kael: Govorili su o njemu.
-
-Kael: Moj djed nije nestao.
-
-Kael: Vratio se Dhornu.
-
-Narrator: Kael okreće fotografiju.
-
-Narrator: Na poleđini je uz riječ Vorn dopisana druga riječ.
-
-Narrator: Kael.
-
-Kael: Kael nije moje ime.
-
-Narrator: To je titula.
-
-Narrator: Onaj koji sluša između.
-
-Narrator: Posrednik između dva svijeta.
-
-Narrator: Osoba koja čuje obje strane...
-
-Narrator: ali ne pripada potpuno nijednoj.
-
-<<add_word NotebookPanel "kael" "posrednik / onaj koji sluša između">>
-
-<<cinematic_hit AudioManager>>
-
-Kael: Zato su me tako zvali od prvog dana.
-
-Kael: Nisu pogriješili moje ime.
-
-Kael: Dali su mi istu titulu koju je nosio on.
-
-Narrator: Kael ponovno pogleda riječi na fotografiji.
-
-Narrator: Kael-vorn.
-
-Kael: Posrednik potomak onoga koji je otišao.
-
-Kael: Novi slušatelj iz loze izbjeglice.
-
-Kael: Nisu čekali bilo kojeg prevoditelja.
-
-Kael: Čekali su nekoga tko će se sjetiti.
-
-Narrator: Na unutarnjoj strani poklopca nalazi se još jedna poruka.
-
-Narrator: Napisana je na površinskom jeziku.
-
-Narrator: Namijenjena nekome tko će jednog dana otvoriti kutiju.
-
-Narrator: „Jezik će pronaći put natrag.”
-
-Narrator: „Kada ga čuješ, nemoj vjerovati da biraš između njih i nas.”
-
-Narrator: „Postojimo samo dok netko još sluša obje strane.”
-
-Kael: Znao si da će se signal vratiti.
-
-Kael: Znao si da će netko pronaći kutiju.
-
-Narrator: Posljednja rečenica gotovo je izblijedjela.
-
-Narrator: „Oprosti mi što sam ti ostavio izbor koji ja nisam uspio dovršiti.”
-
-Kael: Nisi mi ostavio izbor.
-
-Kael: Ostavio si mi upozorenje.
-
-<<if $moranTranslation == "doma">>
-Kael: Cijelo vrijeme riječ moran za mene je značila dom.
-
-Kael: Možda zato što je dio mene već znao da postoji mjesto koje nikada nisam vidio.
-
-Kael: Mjesto iz kojeg dolazim.
-<<elseif $moranTranslation == "sigurnosti">>
-Kael: Cijelo vrijeme riječ moran za mene je značila sigurnost.
-
-Kael: Možda sam u jeziku tražio ono što moj djed nije mogao pronaći na površini.
-
-Kael: Mjesto na kojem ne mora skrivati tko je.
-<<elseif $moranTranslation == "nade">>
-Kael: Cijelo vrijeme riječ moran za mene je značila nadu.
-
-Kael: Nije bio potpuni prijevod.
-
-Kael: Ali možda nije bio ni potpuno pogrešan.
-
-Kael: Dom je ponekad samo nada da negdje možeš pripadati.
+Kael: Tri sata i nešto sitno do punog kapaciteta. Nakon odluke koju sam donio, više ne postoji neutralna verzija ove priče.
+
+<<if $session5Route == "dhorn">>
+    Kael: Dao sam Dhornima put Vatre-7. Sad moram vidjeti što su napravili s tim.
+    <<jump Session6_DhornRoute>>
+<<elseif $session5Route == "government">>
+    Kael: Dao sam Površini procijenjene Dhorn prolaze. Sad moram vidjeti u što su ih pretvorili.
+    <<jump Session6_GovernmentRoute>>
+<<else>>
+    Kael: Odbio sam obje strane. Ako neću birati na slijepo, moram pronaći nešto čvršće od još jedne tvrdnje.
+    <<jump Session6_IndependentRoute>>
+<<endif>>
+===
+
+title: Session6_DhornRoute
+---
+<<radio_static AudioManager>>
+
+Dhorn: Kael-vorn. Put Vatre znamo. Zatvorili smo tri prolaza. Moran diše još.
+
+Kael: Koristili su planove obrambeno, barem prema onome što sada tvrde.
+
+<<set $dhornUsedPlansDefensively = true>>
+// OTKRIĆE: Dhorni tvrde da su podatke o Vatri-7 koristili za zatvaranje prolaza i zaštitu morana.
+
+Dhorn: Toru traži drugi put. Kael-vorn sakrije ulaz?
+
+Kael: Sad traže sljedeći korak: da im pomognem sakriti ulaze. Što ću napraviti?
+
+-> Promijeni podatke koje Površina vidi.
+    <<set $alteredSurfaceDataS6 = true>>
+    <<set $dhornTrust += 4>>
+    <<set $governmentTrust -= 4>>
+    <<set $escalation += 1>>
+    Kael: Ako promijenim podatke, više ne štitim samo prijevod. Aktivno prikrivam teren.
+    Dhorn: Kael-vorn čuva moran.
+-> Odbij mijenjati podatke, ali upozori Dhorne koje prolaze Površina prati.
+    <<set $warnedDhornTacticallyS6 = true>>
+    <<set $dhornTrust += 2>>
+    <<set $governmentTrust -= 2>>
+    Kael: Neću mijenjati sustav, ali mogu im reći koje pravce Zapovjedništvo već provjerava.
+    Dhorn: Dovoljno za jedan dah.
+-> Odbij daljnju pomoć.
+    <<set $refusedFurtherDhornHelpS6 = true>>
+    <<set $dhornTrust -= 1>>
+    Kael: Dao sam planove Vatre. Neću sada postati njihov operativac.
+    Dhorn: Vorn bira granicu.
+-> Pitaj jesu li zaustavili nekoga s Površine.
+    Kael: Toru ruka došla? Dh'orn zaustavio?
+    Dhorn: Nem-još. Put zatvoren prije toru.
+    Kael: Za sada tvrde da nije bilo izravnog sukoba.
+
+Dhorn: Stari toru papir. Vorn znak. Kael-vorn vidi?
+
+Kael: Na kanalu se pojavljuje stari sken. Površinski tehnički dokument. Oznaka V-27.
+
+<<set $foundV27ArchiveTrace = true>>
+// OTKRIĆE: Dhorni posjeduju stari površinski tehnički dokument povezan s oznakom V-27.
+// CLUE_UNLOCK: C25_V27_ARCHIVE_TRACE
+
+Kael: Prije nego zaključim što gledam, mogu provjeriti jednu stvar.
+
+-> Provjeri autentičnost dokumenta u Surface arhivi.
+    <<set $verifiedDhornV27DocumentS6 = true>>
+    Kael: Broj obrasca, tehnički format i oznaka sektora odgovaraju starim Surface zapisima. Sken je stvaran, iako još ne znam kako je završio kod Dhorna.
+    <<set $governmentTrust += 1>>
+-> Pitaj Dhorne kako su došli do dokumenta.
+    <<set $askedDhornDocumentOriginS6 = true>>
+    Kael: Odakle vam ovo?
+    Dhorn: Stari vorn dao govor i papir. Poslije toru nem-došao.
+    Kael: Tvrde da im je prethodni Vorn ostavio dokument. To je nova Dhorn tvrdnja, ne neovisna potvrda.
+-> Usporedi oznaku V-27 s vlastitim arhivskim tragovima.
+    <<set $comparedV27RecordsS6 = true>>
+    Kael: Oznaka se podudara s klasificiranim posrednikom iz starog programa. Ovo nije samo slučajni tehnički papir s istim brojem.
+-> Prvo pregledaj rukom nacrtane oznake na dokumentu.
+    <<set $inspectedV27SymbolS6 = true>>
+    Kael: U kutu je znak koji nije dio službenog obrasca. Netko ga je nacrtao rukom.
+
+Kael: U kutu dokumenta stoji simbol. Krug prekinut jednom kosom crtom. Znam taj simbol.
+
+<<set $recognizedV27Symbol = true>>
+// OTKRIĆE: Kael osobno prepoznaje simbol povezan s V-27, ali još ne zna odakle.
+// CLUE_UNLOCK: C26_RECOGNIZED_SYMBOL
+
+Kael: Ne mogu se sjetiti gdje sam ga vidio. Ali nisam ga prvi put vidio večeras.
+
+<<jump Session6_CommonSymbol>>
+===
+
+title: Session6_GovernmentRoute
+---
+<<notification_beep AudioManager>>
+
+Maren: Kael, tvoje procijenjene rute završile su u operativnom paketu. Zapovjedništvo je odobrilo ulazak Jedinice Četrnaest u dubinski sektor.
+
+Kael: Rekla si da ćeš ih pokušati zadržati izvan operativnog naloga.
+
+Maren: Pokušala sam. Nisam odobrila ovu eskalaciju.
+
+<<set $unit14EntryApproved = true>>
+<<set $marenDidNotAuthorizeUnit14 = true>>
+// OTKRIĆE: Jedinica Četrnaest dobila je odobrenje za ulazak; Maren kaže da nije odobrila eskalaciju.
+// CLUE_UNLOCK: C27_UNIT14_ENTRY
+// CLUE_UNLOCK: C28_MAREN_DID_NOT_AUTHORIZE
+
+Kael: Pravila?
+
+Maren: Rules of Engagement su aktivna. Ne znači da će pucati prvi. Znači da je mogućnost sukoba sada ugrađena u proceduru.
+
+<<set $escalation += 2>>
+
+Kael: Imam nekoliko minuta prije ulaska. Što ću napraviti?
+
+-> Precizno upozori Dhorne na Jedinicu Četrnaest.
+    <<set $warnedDhornAboutUnit14 = true>>
+    <<set $dhornTrust += 3>>
+    <<set $governmentTrust -= 2>>
+    Kael: Toru ruka ulazi. Jedinica četrnaest. Oružje postoji. Ne znam hoće li napasti.
+    Dhorn: Dh'orn čuje. Dh'orn ne napada prvi ako toru stane.
+-> Reci Dhornima da Površina napada.
+    <<set $framedUnit14AsAttack = true>>
+    <<set $escalation += 3>>
+    <<set $dhornTrust += 1>>
+    <<set $governmentTrust -= 4>>
+    Kael: Toru napada. Oružana ruka dolazi.
+    Dhorn: Onda Dh'orn sprema obranu.
+    Kael: Upravo sam sigurnosni ulazak preveo kao napad. Ako nisam u pravu, posljedice više neće biti lingvističke.
+-> Ne upozoravaj Dhorne.
+    <<set $withheldUnit14Warning = true>>
+    <<set $dhornTrust -= 3>>
+    <<set $governmentTrust += 1>>
+    Kael: Ako ih upozorim, možda ubrzam reakciju. Ako šutim, ulazak će ih zateći.
+-> Pritisni Maren da zaustavi operaciju.
+    Kael: Zaustavi ih.
+    Maren: Nemam ovlast za jednostrani prekid. Mogu zatražiti odgodu i staviti svoj potpis na protivljenje.
+    <<set $marenOpposedUnit14 = true>>
+    Kael: Onda napravi to.
+    Maren: Već jesam.
+
+Maren: Prije nego veza pukne, nešto ti šaljem. Stari registar pristupa koji je Zapovjedništvo upravo povuklo zbog sektora.
+
+Kael: V-27.
+
+<<set $foundV27ArchiveTrace = true>>
+// OTKRIĆE: V-27 se pojavljuje u starom površinskom tehničkom registru vezanom uz isti dubinski sektor.
+// CLUE_UNLOCK: C25_V27_ARCHIVE_TRACE
+
+Kael: Imam vremena provjeriti jednu stvar prije nego Jedinica Četrnaest krene.
+
+-> Provjeri zašto je Zapovjedništvo upravo povuklo V-27 registar.
+    <<set $checkedCommandV27PullS6 = true>>
+    Kael: Zahtjev je vezan uz isti dubinski sektor i stare komunikacijske pristupe. Zapovjedništvo očito traži povijest lokacije prije ulaska.
+    <<set $marenSuspicion += 1>>
+-> Pitaj Maren zna li što znači rukom nacrtani simbol.
+    <<set $askedMarenAboutSymbolS6 = true>>
+    Kael: Uz V-27 je nacrtan znak. Krug prekinut kosom crtom. Znaš li što znači?
+    Maren: Ne. Nije službena oznaka programa. Ako ga prepoznaješ, to nije iz ovog sustava.
+    Kael: Onda je osoban.
+-> Usporedi V-27 registar s incident reportom iz S3.
+    <<set $comparedV27IncidentS6 = true>>
+    <<if $foundIncidentReport>>
+        Kael: Isti posrednik koji je nakon prekida kontakta označen kao "removed from program" imao je pristup ovom sektoru. Dva službena zapisa sada se podudaraju.
+    <<else>>
+        Kael: Nemam incident report iz stare istrage, pa zasad mogu potvrditi samo vezu V-27 s ovim sektorom.
+    <<endif>>
+-> Provjeri postoji li trag privatnog komunikacijskog uređaja.
+    <<set $checkedV27PrivateCommsS6 = true>>
+    Kael: Jedna servisna napomena spominje nestandardni komunikacijski uređaj registriran uz V-27. Detalji su zaključani, ali trag postoji.
+    <<set $knowsV27PrivateTransmitter = true>>
+    // OTKRIĆE: U registru postoji trag nestandardnog komunikacijskog uređaja povezanog s V-27.
+    // CLUE_UNLOCK: C29_V27_PRIVATE_TRANSMITTER
+
+Kael: Uz oznaku postoji rukom nacrtan simbol. Krug prekinut kosom crtom. Znam ga.
+
+<<set $recognizedV27Symbol = true>>
+// OTKRIĆE: Kael osobno prepoznaje simbol povezan s V-27, ali još ne zna odakle.
+// CLUE_UNLOCK: C26_RECOGNIZED_SYMBOL
+
+<<jump Session6_CommonSymbol>>
+===
+
+title: Session6_IndependentRoute
+---
+Kael: Ako neću vjerovati ni jednoj strani bez provjere, onda mi ostaje arhiv. V-27. Stari sektor. Kanal 7-G. Imam vremena za dvije provjere prije nego Vatra-7 dođe do sljedeće razine.
+
+<<set $session6ResearchCount = 0>>
+<<jump Session6_IndependentHub>>
+===
+
+title: Session6_IndependentHub
+---
+<<if $session6ResearchCount >= 2>>
+    <<jump Session6_IndependentAfterResearch>>
 <<endif>>
 
-Narrator: Svaka poruka.
+Kael: Što ću provjeriti?
 
-Narrator: Svaki prijevod.
+-> Stare tehničke zapise V-27. <<if $researchedV27TechnicalS6 == false>>
+    <<set $researchedV27TechnicalS6 = true>>
+    <<set $session6ResearchCount += 1>>
+    <<jump Session6_ResearchV27Technical>>
+-> Oznake i ručne bilješke u starim izvještajima. <<if $researchedMaintenanceMarksS6 == false>>
+    <<set $researchedMaintenanceMarksS6 = true>>
+    <<set $session6ResearchCount += 1>>
+    <<jump Session6_ResearchMarks>>
+-> Privatne 7-G transmisije iz starog razdoblja. <<if $researchedPrivateSignalS6 == false>>
+    <<set $researchedPrivateSignalS6 = true>>
+    <<set $session6ResearchCount += 1>>
+    <<jump Session6_ResearchPrivateSignal>>
+-> Povijest istog dubinskog sektora. <<if $researchedSectorHistoryS6 == false>>
+    <<set $researchedSectorHistoryS6 = true>>
+    <<set $session6ResearchCount += 1>>
+    <<jump Session6_ResearchSector>>
+-> Prekini istraživanje i složi ono što već imaš.
+    <<jump Session6_IndependentAfterResearch>>
+===
 
-Narrator: Svaka odluka.
+title: Session6_ResearchV27Technical
+---
+Kael: Stari tehnički indeks. V-27. Pristup dubinskim kartama, komunikacijskom terminalu 7-G i geološkim zapisima sektora.
 
-Narrator: Odjednom dobiva potpuno novo značenje.
+<<set $foundV27ArchiveTrace = true>>
+// OTKRIĆE: V-27 je imao tehnički pristup istom širem dubinskom sektoru i komunikaciji 7-G.
+// CLUE_UNLOCK: C25_V27_ARCHIVE_TRACE
 
-Kael: Nisam bio slučajni prevoditelj.
+Kael: To i dalje ne govori zašto je uklonjen. Ali više nije samo lingvistički posrednik bez veze s terenom.
 
-Kael: Dhorn nije slučajno pronašao moj terminal.
+<<jump Session6_IndependentHub>>
+===
 
-Kael: Oni su čekali povratak kael-vorna.
+title: Session6_ResearchMarks
+---
+Kael: Na nekoliko starih papira pojavljuje se isti rukom nacrtan znak. Krug prekinut kosom crtom. Nije službena oznaka programa. Vidio sam to prije.
 
-Narrator: Mobitel zavibrira.
+<<set $recognizedV27Symbol = true>>
+// OTKRIĆE: Kael prepoznaje privatni simbol povezan s V-27.
+// CLUE_UNLOCK: C26_RECOGNIZED_SYMBOL
 
-Narrator: Odbrojavanje pokazuje manje od dvadeset minuta.
+Kael: Ne u sustavu. Negdje drugdje. Negdje osobno.
 
-Narrator: 00:18:09.
+<<jump Session6_IndependentHub>>
+===
 
-Narrator: Vladina veza prisilno se otvara.
+title: Session6_ResearchPrivateSignal
+---
+Kael: Jedan servisni zapis nije vezan uz službeni terminal. PRIVATNI ODAŠILJAČ — 7-G — AUTORIZACIJA V-27.
+
+<<set $knowsV27PrivateTransmitter = true>>
+// OTKRIĆE: V-27 koristio je privatni odašiljač na 7-G izvan standardne procedure.
+// CLUE_UNLOCK: C29_V27_PRIVATE_TRANSMITTER
+
+Kael: Netko je održavao vezu i izvan službenog sustava. To bi objasnilo kako su dijelovi komunikacije preživjeli gašenje programa.
+
+<<jump Session6_IndependentHub>>
+===
+
+title: Session6_ResearchSector
+---
+Kael: Stare geološke oznake i današnja Vatra-7 nisu isti projekt, ali koriste isti širi sektor. V-27 je imao pristup tom području desetljećima prije mene.
+
+<<set $foundV27ArchiveTrace = true>>
+
+<<if $foundV27VatraTrace>>
+    Kael: To potvrđuje trag koji sam već vidio u S4. I dalje je veza, ne dokaz zašto je kontakt prekinut.
+<<else>>
+    Kael: Prvi put imam tehničku vezu između V-27 i područja koje danas koristi Vatra-7.
+<<endif>>
+
+<<jump Session6_IndependentHub>>
+===
+
+title: Session6_IndependentAfterResearch
+---
+<<if $recognizedV27Symbol == false>>
+    Kael: Još mi nedostaje nešto osobno. Nešto što ovaj zapis veže uz osobu, ne samo oznaku. Na dnu jednog dokumenta primjećujem rukom nacrtan znak. Krug prekinut kosom crtom. Znam ga.
+    <<set $recognizedV27Symbol = true>>
+    // OTKRIĆE: Kael prepoznaje privatni simbol povezan s V-27.
+    // CLUE_UNLOCK: C26_RECOGNIZED_SYMBOL
+<<endif>>
+
+<<if $foundV27ArchiveTrace == false>>
+    Kael: Oznaka V-27 pojavljuje se u starom tehničkom indeksu sektora. Dovoljno da znam da je bio povezan s ovim mjestom, ali ne i zašto.
+    <<set $foundV27ArchiveTrace = true>>
+    // OTKRIĆE: V-27 se pojavljuje u starom tehničkom zapisu dubinskog sektora.
+    // CLUE_UNLOCK: C25_V27_ARCHIVE_TRACE
+<<endif>>
+
+Kael: Simbol nije iz sustava. Znam ga iz života prije 7-G.
+
+<<jump Session6_CommonSymbol>>
+===
+
+title: Session6_CommonSymbol
+---
+Kael: Krug prekinut kosom crtom. Sad se sjećam gdje sam ga vidio. Na staroj drvenoj kutiji kod kuće. Djedovoj kutiji. Stajala je na tavanu otkad sam bio dijete.
+
+<<set $rememberedSymbolAtHome = true>>
+
+Kael: Nikad nisam znao što znak znači. Samo da mi je rečeno da kutiju ne diram.
+
+<<if $knowsV27Designation>>
+    Kael: V-27. Stari Vorn. I simbol s djedove kutije.
+<<else>>
+    Kael: Stari Vorn. Oznaka V-27 koju sam sada ponovno pronašao. I simbol s djedove kutije.
+<<endif>>
+
+Kael: To još nije dokaz da je V-27 bio moj djed. Ali prvi put imam trag koji ne vodi dublje u arhiv. Vodi kući.
 
 <<notification_beep AudioManager>>
-Maren: Vorn.
 
-Maren: Gdje si?
+Maren: Kael, gdje ideš?
 
-Kael: Kod kuće.
+Kael: Trebam provjeriti nešto što nije u sustavu.
 
-Maren: Zapovjedništvo je preuzelo kanal 7-G.
-
-Maren: Poslali su ljude prema tvojoj lokaciji.
-
-Kael: Zašto prema meni?
-
-Maren: Pronašli su neovlaštene prijenose.
-
-Maren: I stari dosje V-27.
-
-Maren: Tvoje ime i ime lingvističkog posrednika povezani su u sustavu.
-
-Kael: To nije bilo njegovo ime.
-
-Maren: Što?
-
-Kael: Vorn nije prezime koje je počelo na površini.
-
-Kael: To je riječ.
-
-Maren: Što znači?
-
-Kael: Onaj koji je otišao.
-
-Narrator: Maren utihne.
-
-Maren: Tvoj djed.
-
-Kael: Da.
-
-Maren: Bio je osoba iz incidenta.
-
-Kael: Bio je prvi posrednik.
-
-Maren: Vorn...
-
-Kael: Kael.
-
-Maren: Što?
-
-Kael: To je riječ za posrednika.
-
-Kael: Za onoga koji sluša između.
-
-Kael: Mene ne zovu mojim imenom.
-
-Kael: Zovu me onime što jesam.
-
-Maren: Onda me poslušaj kao posrednik.
-
-Maren: Zapovjedništvo će za osamnaest minuta pokrenuti puni prodor.
-
-Maren: Ako se vratiš i potvrdiš da Dhorn predstavlja prijetnju...
-
-Maren: mogu pokušati zadržati operaciju pod kontrolom.
-
-Kael: Želite da lažem.
-
-Maren: Želim spriječiti da vojska uđe bez ikoga tko razumije što se događa.
-
-Kael: A nakon toga?
-
-Maren: Ne znam.
-
-Kael: Napokon iskren odgovor.
-
-Narrator: Stari odašiljač V-27 odjednom se uključuje.
-
-Narrator: Baterija nije spojena.
-
-Narrator: Ipak, kroz zvučnik prolazi poznata statika.
-
-<<radio_static AudioManager>>
-Dhorn: Kael-vorn.
-
-Dhorn: Moran tvoj, dubina.
-
-Dhorn: Uvijek dubina.
-
-Kael: Moj dom je u dubini.
-
-Kael: Moje porijeklo je u dubini.
-
-Dhorn: Vatra blizu.
-
-Dhorn: Traži Dhorn, dođi.
-
-Dhorn: Moran čeka.
-
-Narrator: Obje veze ostaju otvorene.
-
-Narrator: Maren čuje Dhorn.
-
-Narrator: Dhorn možda čuje Maren.
-
-Maren: Koliko ih ima?
-
-Kael: Ne znam.
-
-Maren: Jesu li naoružani?
-
-Kael: Uplašeni su.
-
-Maren: To nije isto pitanje.
-
-Kael: Za ljude koji čekaju da im se dom uruši...
-
-Kael: možda jest.
-
-Dhorn: Govor kael.
-
-Dhorn: Vrijeme nem-dugo.
-
-Narrator: Odbrojavanje nastavlja padati.
-
-Narrator: 00:15:00.
-
-Narrator: Više nema novih riječi.
-
-Narrator: Više nema vremena za oprezne prijevode.
-
-Narrator: Ostala je samo odluka što će Kael napraviti s istinom.
-
-
-<<if $translationAccuracy >= 5>>
-    <<jump Session06_FinalChoice_WithTruth>>
-<<else>>
-    <<jump Session06_FinalChoice_Normal>>
-<<endif>>
-===
-
-title: Session06_FinalChoice_WithTruth
----
--> Otvori oba kanala i otkrij cijelu istinu
-    <<set $finalChoice = "truth">>
-    <<jump Session06_Truth>>
--> Vrati se Maren i ostani uz površinu
-    <<set $finalChoice = "government">>
-    <<jump Session06_Government>>
--> Napusti površinu i idi prema Dhornu
-    <<set $finalChoice = "dhorn">>
-    <<set $betrayedSurface = true>>
-    <<jump Session06_Dhorn>>
-===
-
-
-title: Session06_FinalChoice_Normal
----
--> Vrati se Maren i ostani uz površinu
-    <<set $finalChoice = "government">>
-    <<jump Session06_Government>>
--> Napusti površinu i idi prema Dhornu
-    <<set $finalChoice = "dhorn">>
-    <<set $betrayedSurface = true>>
-    <<jump Session06_Dhorn>>
-===
-
-title: Session06_Government
----
-Kael: Vraćam se.
-
-Maren: Dobro.
-
-Maren: Pokušat ću zadržati zapovjedništvo dok ne stigneš.
-
-Kael: Ne vraćam se zato što im vjerujem.
-
-Maren: Nisam to ni očekivala.
-
-Kael: Vraćam se jer je površina također moj dom.
-
-Kael: Ovdje sam odrastao.
-
-Kael: Ovdje sam naučio govoriti.
-
-Kael: Istina o mom porijeklu ne briše život koji sam ovdje imao.
-
-Maren: Možda još uvijek možemo zaustaviti veći sukob.
-
-Kael: Ili ćemo samo odabrati tišu verziju istog nasilja.
-
-Maren: Vorn...
-
-Kael: Kael.
-
-Kael: Ako već želite da budem posrednik...
-
-Kael: onda ćete ovaj put morati čuti i ono što vam se ne sviđa.
-
-Narrator: Kael zatvara staru kutiju.
-
-Narrator: Bilježnicu svoga djeda nosi sa sobom.
-
-Narrator: Dok izlazi iz stana, Dhorn odašiljač ostaje uključen.
-
-<<radio_static AudioManager>>
-Dhorn: Tah-put, kael.
-
-Kael: Neizvjestan put.
+Maren: Imamo manje od tri sata.
 
 Kael: Znam.
 
-<<jump Session06_End>>
+<<jump Session6_Ending>>
 ===
 
-
-title: Session06_Dhorn
+title: Session6_Ending
 ---
-Kael: Ne vraćam se u ured.
-
-Maren: Vorn, razmisli.
-
-Kael: Razmišljam već cijeli život.
-
-Kael: Samo nisam znao o čemu.
-
-Maren: Ako odeš prema njima, zapovjedništvo će te smatrati neprijateljem.
-
-Kael: Ako ostanem i šutim...
-
-Kael: Dhorn me već ima pravo smatrati istim.
-
-Maren: Površina je tvoj dom.
-
-Kael: Jedan od njih.
-
-Narrator: Kael uzima bilježnicu svoga djeda i stari odašiljač.
-
-Kael: Cijeli život mislio sam da nemam odgovor.
-
-Kael: A možda sam ga nosio u sebi od početka.
-
-<<radio_static AudioManager>>
-Dhorn: Vel-ahn, kael.
-
-Dhorn: Moran čeka.
-
-Kael: Ako moram krenuti prema jednom svijetu...
-
-Kael: krenut ću prema onome koji me čeka već dvadeset sedam godina.
-
-Kael: Biram svoje korijene.
-
-Maren: Kael...
-
-Narrator: Prvi put Maren koristi titulu, a ne prezime.
-
-Maren: Ne znam mogu li ih zaustaviti.
-
-Kael: Onda im barem recite da tamo dolje nisu pronašli čudovišta.
-
-Kael: Pronašli su ljude.
-
-Narrator: Kael prekida vezu s površinom.
-
-Narrator: Dhorn kanal ostaje otvoren.
-
-<<jump Session06_End>>
-===
-
-
-title: Session06_Truth
----
-Kael: Neću birati kojoj ću strani lagati.
-
-Maren: Što namjeravaš?
-
-Kael: Završiti ono što moj djed nije mogao.
-
-Narrator: Kael povezuje stari odašiljač V-27 s aktivnim kanalom.
-
-Narrator: Otvara vladinu vezu.
-
-Narrator: Otvara Dhorn vezu.
-
-Narrator: Obje strane prvi put slušaju isti kanal.
-
-Kael: Dosta skrivanja.
-
-Kael: Dosta izvještaja iz kojih nestaju ljudi.
-
-Kael: Dosta prijevoda koji mijenjaju značenje kako bi nekome bili prihvatljiviji.
-
-Maren: Vorn, ovaj kanal nije siguran.
-
-Kael: Upravo zato ga otvaram.
-
-Kael: Moje ime je Kael Vorn.
-
-Kael: Vorn znači onaj koji je otišao.
-
-Kael: Moj djed došao je iz Dhorna prije dvadeset sedam godina.
-
-Kael: Bio je prvi posrednik.
-
-Kael: Površina je prekinula njegov kontakt i izbrisala njegove izvještaje.
-
-Maren: Kael...
-
-Kael: Sada vojska koristi iste tunele, iste karte i iste laži.
-
-Kael: Ali ovaj put istina neće nestati u arhivi.
-
-Dhorn: Govor.
-
-Kael: Dhorn postoji.
-
-Kael: Nisu geološka anomalija.
-
-Kael: Nisu resurs.
-
-Kael: I nisu napali površinu.
-
-Kael: Površina je godinama uzimala energiju ispod njihovih domova.
-
-Maren: Ako sve ovo preneseš javno...
-
-Kael: Onda više nitko neće moći tvrditi da nije znao.
-
-Dhorn: Vel-ahn, kael.
-
-Kael: Dhorn razumije.
-
-Kael: Sada trebam da razumije i površina.
-
-Maren: Što predlažeš?
-
-Kael: Zaustavite Vatra-7.
-
-Kael: Otvorite pregovore.
-
-Kael: I pošaljite nekoga bez oružja.
-
-Maren: Zapovjedništvo neće prihvatiti samo tvoju riječ.
-
-Kael: Zato ne šaljem samo svoju.
-
-Narrator: Kael počinje prenositi bilježnicu V-27.
-
-Narrator: Fotografije.
-
-Narrator: Izbrisane izvještaje.
-
-Narrator: Snimke komunikacije.
-
-Narrator: I koordinate Dhorna...
-
-Narrator: ali samo na šifrirani kanal koji istodobno kontroliraju obje strane.
-
-Kael: Više nitko neće imati cijelu moć nad prijevodom.
-
-Kael: Ni ja.
-
-Narrator: Maren dugo šuti.
-
-Maren: Daj mi pet minuta.
-
-Kael: Imamo petnaest.
-
-Maren: Onda ću ih morati uvjeriti za deset.
-
-Dhorn: Čeka Dhorn.
-
-Dhorn: Nem-dugo.
-
-Kael: Čekat će.
-
-Kael: Ali ne dugo.
-
-Narrator: Posljednja poruka poslana je objema stranama.
-
-Narrator: Prvi put bez skrivene verzije.
-
-Narrator: Prvi put bez ublaženog prijevoda.
-
-<<jump Session06_End>>
-===
-
-
-title: Session06_End
----
-Narrator: Odbrojavanje pokazuje deset minuta.
-
-Narrator: Sve je spremno za posljednji susret.
-
-Narrator: Na površini se izdaju naredbe.
-
-Narrator: U dubini se zatvaraju prolazi.
-
-Narrator: A između njih ostaje jedan otvoren kanal.
-
-Kael: Ovoga puta neću prevoditi samo riječi.
-
-Kael: Prevodit ću budućnost.
-
-<<jump Session07_Start>>
+Kael: Odbrojavanje nastavlja bez mene. Vatra-7 neće stati zato što sam pronašao simbol.
+
+<<if $session5Route == "dhorn">>
+    Kael: Dhorni sada imaju dio planova. Površina zna da su podaci izašli. Što god pronađem kod kuće, vraćam se u situaciju koju sam već promijenio.
+<<elseif $session5Route == "government">>
+    Kael: Jedinica Četrnaest se priprema za ulazak. Što god pronađem kod kuće, možda će morati objasniti tko je već jednom bio između tih istih strana.
+<<else>>
+    Kael: Odbio sam obje strane jer nisam imao dovoljno dokaza. Ako je taj simbol stvarno povezan s V-27, možda napokon imam nešto što nije ničija verzija priče.
+<<endif>>
+
+Kael: Djedova kutija. V-27. Stari Vorn. Vrijeme je da otvorim nešto što je zatvoreno puno dulje od kanala 7-G.
+
+<<jump Session7_Start>>
 ===

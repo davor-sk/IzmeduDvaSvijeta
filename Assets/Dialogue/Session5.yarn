@@ -1,834 +1,317 @@
-﻿title: Session5A_Start
+﻿title: Session5_Start
 ---
-Narrator: Dva sata i četrdeset minuta do punog kapaciteta Vatre-7.
+Kael: Četrdeset četiri sata kasnije. Na ekranu odbrojavanje više ne izgleda kao upozorenje. 03:51:24 do punog kapaciteta Vatre-7. Zgrada zadrhti prije nego što stignem sjesti.
 
-Narrator: Dhorn zna.
-
-Narrator: Kael je odabrao pomoći Dhornu.
-
-Narrator: Planovi bušenja više nisu tajna.
-
-Narrator: Na lijevom terminalu još uvijek treperi upozorenje:
-
-Narrator: NEOVLAŠTENI PRIJENOS KLASIFICIRANIH PODATAKA.
-
-Kael: Prije nekoliko dana samo sam prevodio poruke.
-
-Kael: Sada se informacije kreću kroz mene kao kroz pukotinu u zidu.
-
-Kael: Jednom kad pukotina nastane...
-
-Kael: više ne bira što će kroz nju proći.
-
-Narrator: Kanal 7-G otvara se.
+<<set $escalation += 1>>
 
 <<radio_static AudioManager>>
-Dhorn: Vel-ahn, kael.
 
-Kael: Ovaj put Dhorn me zove izravno tom riječju.
+Dhorn: Kael-vorn. Vatra sada. Zid-moran pada. Dh'orn čuva.
 
-Kael: Kael.
+Kael: Oni više ne govore o onome što će se dogoditi. Govore o onome što se već događa.
 
-Kael: Još uvijek ne znam što znači.
-
-Kael: Ali više ne zvuči kao slučajnost.
-
-Dhorn: Svjetlost toru, vel-ahn Dhorn.
-
-Dhorn: Zaustavlja Dhorn vatra-uzima.
-
-Kael: Razumjeli su planove površine.
-
-Kael: Zaustavljaju bušenje.
-
-Narrator: Kael otvara prikaz projekta Vatra-7.
-
-Narrator: Jedan od četiri aktivna tunela iznenada prestaje slati podatke.
-
-Narrator: TUNEL C — SIGNAL IZGUBLJEN.
-
-Kael: Uspjeli su.
-
-Narrator: Nekoliko sekundi poslije drugi tunel mijenja smjer.
-
-Narrator: TUNEL B — ODSTUPANJE OD PLANIRANE PUTANJE.
-
-Kael: Ili su ga preusmjerili.
-
-Kael: Ili se tlo ispod njega urušilo.
-
-Narrator: Odbrojavanje se ne zaustavlja.
-
-Narrator: 02:38:14.
-
-Kael: Zaustavili su dva tunela.
-
-Kael: Ostala su još dva.
-
-Dhorn: Ali traži Dhorn još.
-
-Dhorn: Skriva toru put do dubine.
-
-Kael: Traže još.
-
-Kael: Žele da sakrijem ulaze u podzemlje od površine.
-
-Kael: Skriva.
-
-Kael: Sada je jasno.
-
-Kael: Sakriti.
-
-Kael: Držati nešto izvan tuđeg pogleda.
-
-Kael: Ili lagati kako bi nešto ostalo sigurno.
-
-<<add_word NotebookPanel "skriva" "skrivati / sakriti / lagati">>
-
-Kael: Više nisam samo prevoditelj.
-
-Kael: Ako pristanem...
-
-Kael: postajem sudionik.
-
--> Pristani i sakrij ulaze
-    <<set $translationAccuracy += 1>>
-    Kael: Vel-ahn.
-    Kael: Skriva kael.
-    <<jump Session05A_Accept>>
--> Odbij skrivati ulaze
-    <<set $dhornTrust -= 2>>
-    Kael: Nem-ahn.
-    Kael: Nem-skriva.
-    <<jump Session05A_Refuse>>
-===
-
-
-title: Session05A_Accept
----
-Narrator: Kael pristaje.
-
-Narrator: Briše koordinate poznatih prolaza iz aktivne baze.
-
-Narrator: Mijenja nekoliko vrijednosti.
-
-Narrator: Dubina postaje čvrsta stijena.
-
-Narrator: Tunel postaje geološka pogreška.
-
-Narrator: Ulaz postaje mjesto na kojem, službeno, nema ničega.
-
-Kael: Od ovog trenutka više ne prenosim samo poruke.
-
-Kael: Aktivno biram što će površina smjeti vidjeti.
-
-Narrator: Sustav traži potvrdu.
-
-Narrator: TRAJNO IZBRISATI PODATKE?
-
-Kael: Da.
-
-Narrator: Potvrđeno.
-
-Kael: Ne znam hoće li ovo spasiti Dhorn.
-
-Kael: Ali znam da bi ih istina koju zapovjedništvo traži mogla uništiti.
-
-<<radio_static AudioManager>>
-Dhorn: Vel-ahn, kael.
-
-Dhorn: Moran čeka.
-
-Kael: Moran.
-
-Kael: Dom.
-
-Kael: Sigurnost.
-
-Kael: Nada.
-
-Kael: Koju god riječ sam izabrao...
-
-Kael: sada ima težinu.
-
-Narrator: Dhorn šalje dio starog tehničkog nacrta.
-
-Narrator: Kael ga otvara.
-
-Narrator: Nacrt je gotovo identičan planu Vatre-7.
-
-Kael: Ovo nije njihov crtež.
-
-Kael: Ovo je površinski dokument.
-
-Narrator: U donjem kutu nalazi se izblijedjela oznaka.
-
-Narrator: ARHIVA V-27.
-
-Kael: V-27.
-
-Kael: Dvadeset sedam godina.
-
-Narrator: Ispod oznake stoji rukom dopisana riječ na Dhorn jeziku.
-
-Narrator: Vorn.
-
-Kael: Kako je površinski dokument završio kod Dhorna?
-
-<<jump Session05_SharedDiscovery>>
-===
-
-
-title: Session05A_Refuse
----
-Narrator: Dhorn ne odgovara odmah.
-
-Narrator: Tišina traje dovoljno dugo da Kael požali što ju je izazvao.
-
-Kael: Možda sam upravo izgubio njihovo povjerenje.
-
-Kael: Možda sam prvi put učinio ispravnu stvar.
-
-Kael: Problem je što više ne znam razlikovati jedno od drugoga.
-
-<<radio_static AudioManager>>
-Dhorn: Nem-ahn.
-
-Dhorn: Dhorn pamti.
-
-Kael: Naravno da pamte.
-
-Kael: Svi pamte ono što sam pokušao prevesti.
-
-Dhorn: Pamti stari kael.
-
-Dhorn: Pamti vorn.
-
-Kael: Stari kael.
-
-Kael: Vorn.
-
-Dhorn: Daje Dhorn svjetlost.
-
-Narrator: Na terminal stiže oštećena datoteka.
-
-Narrator: Stari površinski tehnički nacrt.
-
-Narrator: Datum: prije dvadeset sedam godina.
-
-Kael: Ovo je iz iste arhive kao izbrisani izvještaj.
-
-Narrator: U donjem kutu stoji oznaka:
-
-Narrator: LINGVISTIČKI POSREDNIK — V.
-
-Narrator: Preko slova V netko je naknadno napisao jednu Dhorn riječ.
-
-Narrator: Vorn.
-
-Kael: Tko si bio?
-
-<<jump Session05_SharedDiscovery>>
-===
-
-
-title: Session5B_Start
----
-Narrator: Dva sata i četrdeset minuta do punog kapaciteta Vatre-7.
-
-Narrator: Kael je pomogao Maren.
-
-Narrator: Karte podzemnih prolaza sada su u njezinim rukama.
-
-Narrator: Ili su barem trebale biti.
+<<set $dhornClaimsCollapseNow = true>>
+// OTKRIĆE: Dhorni tvrde da se njihov prostor već urušava tijekom približavanja punog kapaciteta Vatre-7.
+// CLUE_UNLOCK: C21_DHORN_COLLAPSE_NOW
 
 <<notification_beep AudioManager>>
-Maren: Karte su bile korisne.
 
-Maren: Vrlo korisne.
+Maren: Kael, ostani na vezi. Imamo nova očitanja vibracija u dubinskom sektoru. Operativno zapovjedništvo preuzima koordinaciju Faze II.
 
-Kael: Bile?
+Kael: Preuzima?
 
-Maren: Šaljemo tim za izviđanje.
+Maren: Moja služba više nije jedina koja donosi odluke. Trebam tvoju procjenu prije nego što naprave sljedeći korak.
 
-Maren: Diskretno.
+<<set $knowsOperationalCommand = true>>
+// OTKRIĆE: Operativno zapovjedništvo preuzima koordinaciju Faze II.
 
-Maren: Nastavi komunikaciju.
-
-Maren: Drži ih mirnima dok tim ne završi posao.
-
-Kael: Koliko ljudi šaljete?
-
-Maren: Vorn...
-
-Kael: Koliko?
-
-Maren: To više nije moja odluka.
-
-Kael: Rekli ste da ćete poslati izviđače.
-
-Maren: To je bio plan.
-
-Kael: Bio?
-
-Narrator: Maren ne odgovara.
-
-Kael: Tko je dobio karte?
-
-Maren: Operativno zapovjedništvo.
-
-Kael: Dali ste ih vojsci.
-
-Maren: Nisam imala izbor.
-
-Kael: Svi mi stalno govorite da nemate izbor...
-
-Kael: dok od mene tražite da biram umjesto vas.
-
-Narrator: Na drugom terminalu pojavljuje se Dhorn signal.
-
-<<radio_static AudioManager>>
-Dhorn: Gornji-koji-sluša.
-
-Dhorn: Hodi toru dubina.
-
-Kael: Površina se kreće prema podzemlju.
-
-Kael: Oni znaju.
-
-Kael: Ne znam kako.
-
-Kael: Ali znaju.
-
-Dhorn: Mnogo ruka.
-
-Dhorn: Vatra ruka.
-
-Dhorn: Nem-svjetlost.
-
-Kael: Mnogo ljudi.
-
-Kael: Oružje.
-
-Kael: Bez znanja.
-
-Kael: To nije izviđački tim.
-
-Narrator: Na vladinom terminalu kratko se pojavi operativna obavijest.
-
-Narrator: JEDINICA ČETRNAEST — ULAZAK ODOBREN.
-
-Narrator: PRAVILA SUKOBA AKTIVNA.
-
-Kael: Pravila sukoba?
-
-Kael: Maren!
-
-<<notification_beep AudioManager>>
-Maren: Nisam to odobrila.
-
-Kael: Ali moje karte jesu.
-
-Maren: Vorn, slušaj me.
-
-Maren: Ako ih sada upozoriš, zapovjedništvo će znati da si ti izvor.
-
-Kael: Ako ih ne upozorim...
-
-Kael: možda više neće biti nikoga koga možemo pitati.
-
-Dhorn: Zna Dhorn.
-
-Dhorn: Tah-put, kael-vorn.
-
-Kael: Kael-vorn.
-
-Kael: Spojili su ih u jednu riječ.
-
-Kael.
-
-Kael: Vorn.
-
-Kael: Kao da su oduvijek pripadale zajedno.
-
--> Upozori Dhorn i prekrši Marenin nalog
-    <<set $betrayedSurface = true>>
-    <<set $dhornTrust += 2>>
-    <<set $marenSuspicion += 3>>
-    <<jump Session05B_Warn>>
--> Šuti i dopusti da operacija nastavi
-    <<set $dhornTrust -= 3>>
-    <<jump Session05B_Silent>>
+<<jump Session5_CrisisCheck>>
 ===
 
-
-title: Session05B_Warn
+title: Session5_CrisisCheck
 ---
-Narrator: Kael otvara kanal prema Dhornu.
+Kael: Imam nekoliko minuta prije sljedećeg izvještaja. Mogu provjeriti samo jednu stvar.
 
-Narrator: Time izdaje nalog površine.
-
-Narrator: Ali prvi put govori bez prikrivanja.
-
-Kael: Morate se maknuti.
-
-Kael: Ne dolaze razgovarati.
-
-Kael: Dolaze s oružjem.
-
-<<radio_static AudioManager>>
-Dhorn: Vel-ahn.
-
-Dhorn: Zna sada Dhorn.
-
-Dhorn: Zna kael-vorn.
-
-Kael: Možda sam prekasno rekao istinu.
-
-Kael: Ali barem je ovaj put nisam preveo u nešto bezopasno.
-
-Narrator: Na vladinom terminalu pojavljuje se upozorenje.
-
-Narrator: NEOVLAŠTENA KOMUNIKACIJA OTKRIVENA.
-
-Narrator: IDENTIFIKACIJA KORISNIKA U TIJEKU.
-
-<<notification_beep AudioManager>>
-Maren: Što si učinio?
-
-Kael: Ono što vi niste mogli.
-
-Maren: Moramo te izvući iz zgrade.
-
-Kael: Zašto?
-
-Maren: Jer više nisi samo prevoditelj.
-
-Maren: Sada si dokaz.
-
-Narrator: Dhorn šalje kratku datoteku.
-
-Narrator: Fotografija starog metalnog predmeta.
-
-Narrator: Na njemu je površinska oznaka:
-
-Narrator: V-27.
-
-Narrator: I Dhorn riječ:
-
-Narrator: Vorn.
-
-Kael: Ovo je bilo dolje dvadeset sedam godina.
-
-<<jump Session05_SharedDiscovery>>
+-> Usporedi vibracije s radom Vatre-7.
+    <<jump Session5_CheckVibrations>>
+-> Provjeri što Operativno zapovjedništvo mijenja u Fazi II.
+    <<jump Session5_CheckCommand>>
+-> Provjeri stabilnost 7-G i Dhorn signala.
+    <<jump Session5_CheckSignal>>
+-> Ne gubi vrijeme. Razgovaraj s Dhornima.
+    <<jump Session5_DhornRequest>>
 ===
 
-
-title: Session05B_Silent
+title: Session5_CheckVibrations
 ---
-Narrator: Kael ne šalje upozorenje.
+Kael: Uspoređujem vrijeme posljednja tri skoka vibracija s telemetrijom Vatre-7. Poklapaju se s povećanjem kapaciteta, ali korelacija nije dokaz uzroka.
 
-Narrator: Operacija se nastavlja.
+<<set $knowsVatra7Correlation = true>>
+// OTKRIĆE: Vibracije vremenski prate povećanje kapaciteta Vatre-7, ali uzročna veza još nije dokazana.
+// CLUE_UNLOCK: C22_VATRA7_CORRELATION
 
-Kael: Ako šutim...
+Kael: Dovoljno da znam da Dhorn upozorenje ne mogu odbaciti kao slučajnost. Nedovoljno da kažem da sam dokazao što ih ruši.
 
-Kael: možda sve ostane pod kontrolom.
-
-Kael: Ako šutim...
-
-Kael: možda nitko neće znati što sam učinio.
-
-Kael: Ako šutim...
-
-Narrator: Terminal ostaje otvoren.
-
-Kael: Ali ja ću znati.
-
-Narrator: Na zaslonu se pojavljuju položaji jedinice Četrnaest.
-
-Narrator: Jedna oznaka ulazi u prvi prolaz.
-
-Narrator: Zatim druga.
-
-Narrator: Zatim treća.
-
-<<radio_static AudioManager>>
-Dhorn: Nem-ahn.
-
-Dhorn: Dhorn zna.
-
-Dhorn: Skriva kael.
-
-Kael: Naravno da znaju.
-
-Kael: Samo sam ja još pokušavao vjerovati da mogu sakriti prijevod.
-
-Narrator: Veza se ispuni smetnjama.
-
-Narrator: U pozadini se čuje dubok udarac.
-
-Narrator: Jedna oznaka jedinice Četrnaest nestaje.
-
-Narrator: Zatim se cijela karta zacrveni.
-
-Narrator: KONTAKT IZGUBLJEN.
-
-Kael: Ne.
-
-<<notification_beep AudioManager>>
-Maren: Tim se ne javlja.
-
-Kael: Što ste poslali dolje?
-
-Maren: Nisam znala da će ih biti toliko.
-
-Kael: Niste znali ništa.
-
-Kael: A ja sam vam dao put.
-
-Narrator: Prije prekida Dhorn šalje jednu sliku.
-
-Narrator: Stari metalni odašiljač s površine.
-
-Narrator: Na njemu je oznaka V-27.
-
-Narrator: I riječ urezana Dhorn pismom.
-
-Narrator: Vorn.
-
-Kael: Netko je prije dvadeset sedam godina već bio tamo.
-
-<<jump Session05_SharedDiscovery>>
+<<jump Session5_DhornRequest>>
 ===
 
-
-title: Session5C_Start
+title: Session5_CheckCommand
 ---
-Narrator: Dva sata i četrdeset minuta do punog kapaciteta Vatre-7.
+Kael: Novi sigurnosni dodatak Fazi II. Nakon otkrivanja sustavnih podzemnih struktura operativna kontrola prebačena je iz Marenina odjela na Operativno zapovjedništvo.
 
-Narrator: Obje strane sumnjaju.
+<<set $knowsPhase2SecurityControl = true>>
+// OTKRIĆE: Kontrola Faze II prebačena je Operativnom zapovjedništvu nakon otkrivanja sustavnih podzemnih struktura.
+// CLUE_UNLOCK: C23_PHASE2_SECURITY_CONTROL
 
-Narrator: Kael nije pomogao nikome.
+Kael: Dakle nisu pronašli samo anomalije. Pronašli su strukture dovoljno pravilne da uključe sigurnosni lanac.
 
-Narrator: Ponekad neutralnost izgleda kao izdaja objema stranama.
+<<jump Session5_DhornRequest>>
+===
 
-Kael: Nisam im dao planove.
+title: Session5_CheckSignal
+---
+Kael: Kanal 7-G je nestabilniji nego inače. Smjernice signala osciliraju u istom dubinskom sektoru, ali iz komunikacijskih podataka ne mogu zaključiti što se fizički događa.
 
-Kael: Nisam im dao karte.
+<<set $knowsSignalInstabilityS5 = true>>
 
-Kael: Nisam spasio nikoga.
+Kael: Znam samo da veza postaje lošija baš kada mi treba najviše.
 
-Kael: Samo sam odgodio trenutak kada će svi shvatiti da stojim između njih.
+<<jump Session5_DhornRequest>>
+===
 
-Narrator: Kael pokušava pronaći treći put.
-
-Narrator: Ponovno otvara arhivu incidenta od prije dvadeset sedam godina.
-
-Narrator: Pristup odbijen.
-
-Kael: Ne ovaj put.
-
-Narrator: Koristi kanal 7-G kao ulaznu točku.
-
-Narrator: Sustav kratko zastane.
-
-Narrator: Jedna izbrisana datoteka vraća se u privremenu memoriju.
-
-Narrator: IZVJEŠTAJ V-27.
-
-Narrator: OŠTEĆENI PODACI.
-
-Narrator: AUTOR: LINGVISTIČKI POSREDNIK — V.
-
-Kael: V.
-
-Narrator: Prije nego što uspije otvoriti datoteku, Dhorn se javlja.
-
+title: Session5_DhornRequest
+---
 <<radio_static AudioManager>>
-Dhorn: Nem-ahn, Gornji-koji-sluša?
 
-Kael: Ne razumiješ, Gornji-koji-sluša?
+Dhorn: Kael-vorn. Vatra put treba. Toru plan daje? Dh'orn vidi gdje vatra hodi.
 
-Dhorn: Ili nem-govor.
+Kael: Traže put Vatre. Plan kojim Površina vodi operaciju kroz dubinu. Želim li prvo razjasniti što namjeravaju napraviti s tim planovima?
 
-Dhorn: Skriva kael.
+-> "Zašto vam trebaju planovi?"
+    Kael: Ako dam put Vatre, Dh'orn radi što?
+    Dhorn: Čuva moran. Zatvara put gdje može. Nem-rat ako nem-treba.
+    Kael: Tvrde da žele zaštititi svoj prostor i zatvoriti prolaz projekta, ne napasti Površinu. To je njihova namjera kako je sada opisuju.
+    <<set $dhornClaimsDefensiveIntent = true>>
+-> "Hoćete li napasti ljude s Površine?"
+    Kael: Dh'orn napada toru ako dobije plan?
+    Dhorn: Nem. Dh'orn čuva. Ako toru ulazi, Dh'orn zaustavlja.
+    Kael: Ne obećavaju pasivnost. Kažu da će zaustaviti ulazak ako do njega dođe.
+    <<set $dhornClaimsDefensiveIntent = true>>
+-> "Što se trenutno ruši?"
+    Kael: Zid-moran. Što pada?
+    Dhorn: Put. Strop. Mjesto gdje mali spavaju. Moran nije jedan zid.
+    Kael: Opisuju fizičku štetu, ali i šire mjesto zajednice. To i dalje dolazi samo iz njihove poruke.
+    <<set $dhornClaimsCollapseNow = true>>
+-> Ne pitaj. Zadrži kanal otvoren.
+    Kael: Nemam dovoljno vremena da svaku riječ pretvorim u saslušanje.
 
-Kael: Ili ne govoriš.
+Dhorn: Kael-vorn. Plan vatra. Nem-dugo.
 
-Kael: Kael skriva.
+<<jump Session5_MarenRequest>>
+===
 
-Kael: Skriva.
-
-Kael: Sakriti nešto.
-
-Kael: Ne pokazati istinu.
-
-Kael: Ili lagati.
-
-<<add_word NotebookPanel "skriva" "skrivati / sakriti / lagati">>
-
-Kael: Opet ta riječ.
-
-Kael: Kael.
-
-Kael: Ovaj put zvuči kao optužba.
-
+title: Session5_MarenRequest
+---
 <<notification_beep AudioManager>>
-Maren: Vorn.
 
-Maren: Nisi nam dostavio ništa korisno.
+<<if $marenSuspicion >= 7>>
+    Maren: Kael. Zapovjedništvo traži procjenu pristupnih pravaca prema izvoru 7-G. I tvoji pristupi sustavu su pod dodatnim nadzorom, zato mi nemoj prešutjeti kontekst koji može promijeniti operativnu odluku.
+<<else>>
+    Maren: Kael. Zapovjedništvo traži procjenu pristupnih pravaca prema izvoru 7-G. Oni žele lokacije Dhorn prolaza koje si mogao izvući iz dosadašnjih poruka.
+<<endif>>
 
-Maren: Zapovjedništvo će uskoro preuzeti cijeli projekt.
+Kael: Žele njihove prolaze?
 
-Maren: Imam dojam da igraš na dvije strane.
+Maren: Traže karte pristupa. Ja tražim da mi kažeš koliko je tvoj prijevod pouzdan prije nego što netko tu riječ pretvori u koordinatu.
 
-Maren: Imam pravo znati.
+Kael: Jesi li ti odobrila taj zahtjev?
 
-Maren: Jesi li još uvijek na našoj strani?
+Maren: Nisam ga pokrenula. I ne sviđa mi se brzina kojom se ovo mijenja. Ali zahtjev postoji.
 
-Kael: Našoj strani.
+<<set $marenLostExclusiveControl = true>>
+// OTKRIĆE: Maren nije pokrenula zahtjev za Dhorn pristupnim pravcima i više nema punu kontrolu nad operativnom reakcijom.
+// CLUE_UNLOCK: C24_MAREN_LOST_CONTROL
 
-Kael: Njihovoj strani.
+Kael: Što joj želim reći?
 
-Kael: Nitko me više ne pita što je istina.
-
--> Da, direktorice. Uvijek.
-    <<set $marenSuspicion -= 1>>
-    <<set $dhornTrust -= 1>>
-    <<jump Session05C_Lie>>
--> Situacija je kompleksnija nego što izgleda.
+-> "Dhorni traže naše planove Vatre-7."
+    <<set $reportedDhornPlanRequest = true>>
+    Kael: Traže put projekta kroz dubinu. Kažu da žele zaštititi moran i zatvoriti prolaze Vatre.
+    Maren: Kažu?
+    Kael: Da. To je njihova izjava, ne moja potvrda njihove namjere.
+    Maren: Dobro. Tako i napiši.
+-> "Traže način da zaustave Vatru-7."
+    <<set $reportedDhornPlanRequest = true>>
+    Kael: Traže planove kako bi zaustavili projekt gdje prolazi kroz njihov prostor.
+    Maren: To je već operativna namjera. Jesi li siguran?
+    Kael: Siguran sam da žele spriječiti prolazak. Nisam siguran kako će to napraviti.
+-> "Ne znam dovoljno da bih prijavio njihov zahtjev."
+    <<set $withheldDhornPlanRequest = true>>
     <<set $marenSuspicion += 1>>
-    <<jump Session05C_Complex>>
--> Šuti
-    <<jump Session05C_Silent>>
+    Kael: Poruka je previše neprecizna.
+    Maren: Kael, upravo si proveo četiri dana tvrdeći da kontekst mijenja sve. Nemoj ga sada skrivati kad nam treba.
+-> "Neću vam dati njihove prolaze."
+    <<set $refusedDhornMapEarly = true>>
+    Kael: Neću pretvoriti njihove poruke u taktičku kartu za nekoga tko već preuzima kontrolu nad projektom.
+    Maren: Nisam ti rekla da je predaš bez procjene.
+    Kael: Ali netko drugi upravo to želi.
+    <<set $marenSuspicion += 1>>
+
+Maren: Imamo manje od četiri sata. Ako ovo pukne, nitko više neće imati luksuz savršenog prijevoda.
+
+Kael: To nije razlog da loš prijevod pretvorimo u naredbu.
+
+<<jump Session5_InterpretationCrisis>>
 ===
 
-
-title: Session05C_Lie
+title: Session5_InterpretationCrisis
 ---
-Narrator: Kael laže brzo.
+<<radio_static AudioManager>>
 
-Narrator: Gotovo automatski.
+Dhorn: Toru vatra ulazi. Dh'orn zatvara put. Ako toru ruka dolazi s vatra, Dh'orn zaustavlja ruku.
 
-Kael: Da, direktorice.
+Kael: "Ruka" smo prije koristili za pomoć i suradnju. Ovdje očito nije isto tako jednostavno. Kako ću prevesti poruku za Maren?
 
-Kael: Uvijek.
+-> "Ako ljudi Površine uđu s projektom, Dhorni će ih pokušati zaustaviti."
+    <<set $translatedCrisisPrecisely = true>>
+    <<set $translationAccuracy += 1>>
+    Kael: To je najbliže onome što tekst stvarno kaže. Ne zove ih vojskom i ne obećava napad, ali jasno najavljuje otpor ulasku.
+-> "Dhorni prijete napadom na Površinu."
+    <<set $framedDhornAsAttackers = true>>
+    <<set $escalation += 2>>
+    Kael: To je najopasniji mogući okvir. Poruka govori o zaustavljanju ulaska, ne o napadu prema gore.
+-> "Dhorni traže pregovore prije nastavka projekta."
+    <<set $softenedCrisisTranslation = true>>
+    Kael: To zvuči mirnije nego izvorna poruka. Oni traže da Vatra ne uđe i upozoravaju da će zaustaviti one koji dođu s njom.
+-> "Ne mogu dati pouzdan prijevod."
+    <<set $withheldCrisisTranslation = true>>
+    Kael: Mogu objasniti dijelove, ali ne želim jednu riječ pretvoriti u taktičku odluku.
 
-Maren: Dobro.
-
-Maren: Onda to i dokaži.
-
-Kael: Nisam siguran kome sam upravo lagao.
-
-Kael: Njoj.
-
-Kael: Njima.
-
-Kael: Ili sebi.
-
-Narrator: S druge strane veze Dhorn šuti.
-
-Narrator: Kael prvi put poželi da netko drugi prevede njega.
-
-Narrator: Iz privremene arhive otvara se dio izvještaja V-27.
-
-Narrator: „Subjekt odbija povratak na površinu.”
-
-Narrator: „Navodi da moran više nije iznad.”
-
-Kael: Subjekt?
-
-Kael: Tko se nije vratio?
-
-<<jump Session05C_ArchiveEnd>>
+<<jump Session5_ChoiceSetup>>
 ===
 
-
-title: Session05C_Complex
+title: Session5_ChoiceSetup
 ---
-Narrator: Kael ne govori cijelu istinu.
-
-Narrator: Ali više ne može ni jednostavno lagati.
-
-Kael: Situacija je kompleksnija nego što izgleda.
-
-Maren: Kompleksnija?
-
-Maren: Onda mi donesi nešto konkretno, Vorn.
-
-Kael: Imam oznaku iz starog izvještaja.
-
-Kael: Lingvistički posrednik — V.
-
-Narrator: Maren utihne.
-
-Kael: Znate što znači?
-
-Maren: Ne preko ovog kanala.
-
-Kael: Onda dođite ovamo.
-
-Maren: Ne mogu.
-
-Kael: Ne možete...
-
-Kael: ili vas netko promatra?
-
-Maren: Oboje.
-
-Narrator: Veza se prekida.
-
-Kael: Možda mi ne vjeruje.
-
-Kael: Ali prvi put me se boji netko tko nije Dhorn.
-
-Narrator: Iz privremene arhive otvara se dio izvještaja V-27.
-
-Narrator: „Posrednik tvrdi da poziv nije bio slučajan.”
-
-Narrator: „Dhorn je znao njegovo ime prije prvog kontakta.”
-
-Kael: Isto kao sa mnom.
-
-<<jump Session05C_ArchiveEnd>>
-===
-
-
-title: Session05C_Silent
----
-Narrator: Kael šuti.
-
-Maren: Razumijem.
-
-Narrator: To je najgori mogući odgovor.
-
-Kael: Ponekad šutnja kaže više nego prijevod.
-
-Kael: Ponekad kaže upravo ono što si pokušao sakriti.
-
-Narrator: Terminal se ne gasi.
-
-Narrator: Niti jedna strana ne prekida vezu.
-
-Narrator: Kao da obje čekaju da Kael prvi nestane.
-
-Narrator: Iz privremene arhive otvara se posljednji čitljivi dio izvještaja V-27.
-
-Narrator: „Ako ovo čita novi kael...”
-
-Narrator: „Ne vjeruj prijevodu koji ti daju.”
-
-Narrator: „Sjeti se riječi koju si čuo prije nego što si znao govoriti.”
-
-Kael: Prije nego što sam znao govoriti?
-
-<<jump Session05C_ArchiveEnd>>
-===
-
-
-title: Session05C_ArchiveEnd
----
-Narrator: Datoteka se počinje brisati.
-
-Kael: Ne.
-
-Kael: Ne još.
-
-Narrator: Kael kopira posljednji preostali fragment.
-
-Narrator: Nije tekst.
-
-Narrator: To je fotografija simbola urezanog u drvenu površinu.
-
-Kael: Poznajem taj simbol.
-
-Kael: Ali ne znam odakle.
-
-Narrator: Ispod simbola stoji jedna riječ.
-
-Narrator: Vorn.
-
-<<jump Session05_SharedDiscovery>>
-===
-
-
-title: Session05_SharedDiscovery
----
-Narrator: Odbrojavanje se nastavlja.
-
-Narrator: 01:17:42.
-
-Narrator: Kael promatra riječ Vorn.
-
-Narrator: Oznaku V-27.
-
-Narrator: Simbol koji mu je neobjašnjivo poznat.
-
-Kael: Prije dvadeset sedam godina postojao je još jedan kontakt.
-
-Kael: Netko je odgovorio.
-
-Kael: Netko je bio između površine i Dhorna.
-
-Kael: A Dhorn ga je zvao Vorn.
-
-Narrator: Kael povećava sliku simbola.
-
-Kael: Vidio sam ga.
-
-Kael: Ne u uredu.
-
-Kael: Ne u arhivi.
-
-Kael: Negdje prije toga.
-
-Narrator: Pokušava se prisjetiti.
-
-Narrator: Drvena kutija.
-
-Narrator: Tavan.
-
-Narrator: Stvari koje su ostale nakon bakine smrti.
-
-Kael: Kutija.
-
-Kael: Na tavanu.
-
-Narrator: Na oba terminala istovremeno stiže nova poruka.
-
 <<notification_beep AudioManager>>
-Maren: Vorn.
 
-Maren: Zapovjedništvo dolazi po tebe.
+Maren: Zapovjedništvo je poslalo konačni zahtjev. Ako imaš podatke o Dhorn prolazima, žele ih odmah.
 
 <<radio_static AudioManager>>
-Dhorn: Kael-vorn.
 
-Dhorn: Vrijeme nem-dugo.
+Dhorn: Kael-vorn. Put Vatre. Plan sada.
 
-Kael: Obje strane koriste istu riječ.
+Kael: Dvije strane. Dva zahtjeva. I obje traže nešto što druga strana ne zna da imam. Cijelo vrijeme sam si govorio da prevoditelj ne odlučuje. Da samo prenosi ono što je rečeno. Ali i ono što prenesem, i ono što prešutim, već je odluka.
 
-Kael: Vorn.
-
-Kael: I obje govore kao da pripada meni.
-
-Narrator: Kael uzima kaput.
-
-Narrator: Prvi put od početka kontakta napušta ured prije završetka smjene.
-
-Kael: Ako odgovor nije u njihovim arhivama...
-
-Kael: možda je cijelo vrijeme bio u mojoj.
-
-<<jump Session05_End>>
+<<jump Session5_MajorChoice>>
 ===
 
-
-title: Session05_End
+title: Session5_MajorChoice
 ---
-Narrator: Četrdeset pet minuta kasnije.
+Kael: Što ću napraviti?
 
-Narrator: Kael stiže pred vrata svog stana.
+-> Pošalji planove Vatre-7 Dhornima.
+    <<set $session5Route = "dhorn">>
+    <<set $sharedVatraPlansWithDhorn = true>>
+    <<set $dhornTrust += 5>>
+    <<set $governmentTrust -= 5>>
+    <<set $escalation += 1>>
+    Kael: Dat ću im rutu projekta, ne podatke o ljudima. Ako govore istinu, to im daje priliku zaštititi moran. Ako ne govore, upravo sam prešao granicu koju više ne mogu vratiti.
+    Dhorn: Kael-vorn daje put. Dh'orn čuva.
+    <<jump Session5_DhornRouteEnd>>
+-> Pošalji Maren podatke o Dhorn prolazima.
+    <<set $session5Route = "government">>
+    <<set $sharedDhornRoutesWithGovernment = true>>
+    <<set $governmentTrust += 5>>
+    <<set $dhornTrust -= 5>>
+    <<set $escalation += 1>>
+    Kael: Poslat ću samo ono što mogu opravdati kao pristupne pravce, ne pretpostavljene civilne lokacije. Ali znam da više ne kontroliram kako će ih Zapovjedništvo koristiti.
+    Maren: Primljeno. Označit ću stupanj pouzdanosti i pokušati zadržati podatke u procjeni, ne u naredbi.
+    <<jump Session5_GovernmentRouteEnd>>
+-> Odbij obje strane.
+    <<set $session5Route = "independent">>
+    <<set $refusedBothSidesS5 = true>>
+    <<set $marenSuspicion += 1>>
+    Kael: Neću dati Dhornima operativne planove. Neću ni njihove poruke pretvoriti u kartu za ulazak. Ako obje strane žele da biram bez dovoljno dokaza, moj odgovor je ne.
+    Maren: To neće zaustaviti Zapovjedništvo.
+    Dhorn: Kael-vorn nem-bira?
+    Kael: Biram. Samo ne ono što ste mi ponudili.
+    <<jump Session5_IndependentRouteEnd>>
+===
 
-<<jump Session06_Start>>
+title: Session5_DhornRouteEnd
+---
+Kael: Dokument odlazi kroz kanal 7-G. Ne cijeli projekt, nego tehnički pravac Faze II kroz dubinski sektor.
+
+<<if $warnedDhornFullS4>>
+    Dhorn: Kael prije dao vrijeme. Sada daje put. Dh'orn sprema.
+<<elseif $withheldVatraCountdownS4>>
+    Dhorn: Kael sada daje put. Prije čuvao vrijeme.
+    Kael: Pamte što sam prešutio.
+<<endif>>
+
+<<notification_beep AudioManager>>
+
+Maren: Kael, Zapovjedništvo upravo bilježi neautorizirani izlaz tehničkih podataka. Reci mi da to nisi ti.
+
+Kael: Ne odgovaram odmah.
+
+Maren: Ako si im dao planove, sljedeći potez više neće biti samo moj problem.
+
+Kael: Znam.
+
+<<set $marenSuspicion += 2>>
+
+Kael: Odbrojavanje: 03:37:08. Sad više ne prevodim samo poruke. Prevodim posljedice svojih odluka.
+
+<<jump Session6_Start>>
+===
+
+title: Session5_GovernmentRouteEnd
+---
+Kael: Šaljem procijenjene pravce i uz svaki dodajem stupanj sigurnosti. "Mogući prolaz" mora ostati mogući prolaz, ne cilj.
+
+<<notification_beep AudioManager>>
+
+Maren: Primljeno. Pokušat ću zadržati ih izvan operativnog naloga dok ne provjerimo podatke.
+
+Kael: Pokušat ćeš?
+
+Maren: Kael, više ti ne mogu obećati da će moja oznaka biti posljednja riječ.
+
+<<radio_static AudioManager>>
+
+Dhorn: Kael-vorn. Toru sada vidi put?
+
+Kael: Ne mogu znati kako su to shvatili. Ali ton je prvi put hladniji od samog šuma kanala.
+
+<<set $marenSuspicion += 0>>
+
+Kael: Odbrojavanje: 03:36:41. Dao sam Površini kartu koja možda nije karta. Sad moram saznati što će s njom napraviti.
+
+<<jump Session6_Start>>
+===
+
+title: Session5_IndependentRouteEnd
+---
+Kael: Oba kanala ostaju otvorena, ali nijedna strana ne dobiva ono što je tražila.
+
+<<notification_beep AudioManager>>
+
+Maren: Zapovjedništvo neće čekati. Ako nema tvojih podataka, napravit će vlastitu procjenu iz senzora.
+
+<<radio_static AudioManager>>
+
+Dhorn: Vatra hodi i bez Kael plana. Dh'orn bira sam.
+
+Kael: Odbio sam dati oružje jednoj strani i kartu drugoj. To ne znači da sam zaustavio išta.
+
+<<if $foundV27VatraTrace>>
+    Kael: Ostaje mi jedino ono što znam raditi bez dopuštenja. Tražiti vezu koju obje strane preskaču: V-27, stari sektor i ono što se sada događa ispod grada.
+<<else>>
+    Kael: Ako neću birati na slijepo, trebam novi dokaz prije nego što netko drugi donese odluku umjesto mene.
+<<endif>>
+
+Kael: Odbrojavanje: 03:35:59.
+
+<<jump Session6_Start>>
 ===

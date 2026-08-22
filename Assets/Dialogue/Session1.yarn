@@ -1,357 +1,1115 @@
-﻿title: Session01_Start
+﻿title: Session1
 ---
-Narrator: Kaelov ured.
-Narrator: 02:47.
-Narrator: Još jedna noćna smjena.
+Kael: Noćna smjena. Opet. Još četiri sata pregledavanja signala koje je sustav već označio kao beznačajne. Seizmički senzori, komunikacijski šum, stare rudarske frekvencije... Ako budem imao sreće, večeras neću morati prevesti ni jednu jedinu riječ. ... Čekaj. Upravo se pojavio novi signal. Nije automatski označen. Kanal 7-G? Taj kanal nije na aktivnom popisu. Signal se ponavlja. Što želim napraviti?
 
-Narrator: Treću noć zaredom radi prekovremeno.
+-> Otvori transmisiju.
+    Kael: Otvaram kanal.
+    <<jump FirstContact>>
+-> Provjeri podatke o kanalu 7-G.
+    <<jump ChannelData>>
+-> Analiziraj izvor signala.
+    <<jump AnalyzeSignalSource>>
+-> Prijavi anomaliju Maren.
+    <<jump ReportAnomaly>>
+-> Ignoriraj signal.
+    Kael: Vjerojatno još jedan kvar senzora. ... Signal se ponovno pojavio. Isti uzorak. ... Sad je jači. Dobro. Pogledat ću.
+    <<jump FirstContact>>
+===
 
-Kael: Trebao sam otići prije dva sata.
-Kael: Ali kad sustav jednom počne šaptati, teško je prestati slušati.
+title: ChannelData
+---
+<<set $knowsRestrictedChannel = true>>
+<<set $knowsLevelV = true>>
+// OTKRIĆE: Kanal 7-G ima ograničen pristup i autorizaciju Razina V.
+// CLUE_UNLOCK: C01_RESTRICTED_7G
 
-Narrator: Terminal kratko zatreperi.
-Narrator: Sustav bilježi anomaliju na kanalu 7-G.
+Kael: Provjeravam zapis kanala. Kanal 7-G... ograničen pristup. Posljednja aktivnost nije dostupna. Autorizacija... Razina V. Zašto bi neaktivan kanal imao ograničenu autorizaciju? Što želim napraviti?
 
-Kael: Kanal 7-G ne bi trebao imati promet.
-Kael: Ne noću.
-Kael: Ne ovako duboko u mreži.
+-> Pokušaj pristupiti arhivi.
+    Kael: Pokušavam otvoriti arhivirani zapis. ... Pristup odbijen. Naravno.
+    <<jump PreContactChoice>>
+-> Vrati se na signal.
+    <<jump PreContactChoice>>
+===
 
-Narrator: Kael pokreće dijagnostiku.
+title: AnalyzeSignalSource
+---
+<<set $analyzedSignalSource = true>>
 
-Narrator: Nema greške.
+Kael: Pokrećem analizu izvora. ... 2.8 kilometara ispod Površine? To ne može biti obična komunikacijska stanica. Sustav prepoznaje ponavljajuće jezične uzorke.
+// OTKRIĆE: Izvor signala nalazi se 2.8 kilometara ispod Površine i sadrži strukturirane jezične uzorke.
+// CLUE_UNLOCK: C02_DEEP_SIGNAL
 
-Narrator: Pokreće je ponovno.
+Kael: Netko pokušava komunicirati.
 
-Narrator: Isti rezultat.
+<<jump PreContactChoice>>
+===
 
-Kael: Dobro.
-Kael: Onda odakle dolaziš?
+title: ReportAnomaly
+---
+<<set $reportedAnomalyToMaren = true>>
+<<set $governmentTrust += 1>>
 
-Narrator: Kael provjerava izvor signala.
+Kael: Maren, imam anomaliju na kanalu 7-G.
 
-Narrator: Ne dolazi sa satelita.
+Maren: 7-G?
 
-Narrator: Ne dolazi ni s jednog poznatog odašiljača.
+Kael: Da.
 
-Narrator: Koordinate nemaju smisla.
+Maren: Ne diraj ništa dok ne provjerimo zapis.
 
-Kael: To nije moguće.
+Kael: Zašto?
 
-Narrator: Signal dolazi odozdo.
+Maren: Samo pričekaj.
 
-Narrator: Nije šum.
-Narrator: Nije greška.
-Narrator: Netko šalje.
+Kael: Signal je još aktivan.
 
-Narrator: Terminal ponovno zatreperi.
+<<jump PreContactChoice>>
+===
 
-<<radio_static AudioManager>>
-Dhorn: Vel-ahn toru, Gornji-koji-sluša.
+title: PreContactChoice
+---
+Kael: Signal je još aktivan. Što želim napraviti?
 
-Kael: Čujemo te, Gornji-koji-sluša.
+-> Otvori transmisiju.
+    Kael: Otvaram kanal.
+    <<jump FirstContact>>
+-> Provjeri podatke o kanalu 7-G. <<if $knowsRestrictedChannel == false>>
+    <<jump ChannelData>>
+-> Analiziraj izvor signala. <<if $analyzedSignalSource == false>>
+    <<jump AnalyzeSignalSource>>
+-> Prijavi anomaliju Maren. <<if $reportedAnomalyToMaren == false>>
+    <<jump ReportAnomaly>>
+===
 
-<<add_word NotebookPanel "vel-ahn" "razumijemo">>
+title: FirstContact
+---
+Kael: Otvaram prijam.
 
-Kael: Ne znam zašto sam to preveo baš tako.
-Kael: Kao da rečenica već postoji negdje u meni.
+Dhorn: Vel-ahn.
 
-Kael: Vel-ahn.
-Kael: Razumijemo.
+Kael: ...
 
-Kael: Ne.
-Kael: Ne razumijem.
+Dhorn: Vel-ahn.
 
-Kael: Samo znam.
+Kael: Ista poruka.
 
-Dhorn: Nem-dah skriva, nem-dah strah. Govorimo.
+Dhorn: Vel-ahn.
 
-Kael: Nema skrivanja, nema straha.
-Kael: Samo govorimo.
+Kael: Tri puta. Ista riječ ili izraz. Što znači "Vel-ahn"?
 
-<<add_word NotebookPanel "nem-dah" "bez straha">>
-<<add_word NotebookPanel "govor" "govoriti">>
+-> "Pozdrav."
+    <<set $velAhnTranslation = "greeting">>
+    <<set $translationAccuracy += 1>>
+    <<add_word NotebookPanel "vel-ahn" "pozdrav (?)">>
+    Kael: Možda pokušavaju uspostaviti kontakt.
+-> "Opasnost."
+    <<set $velAhnTranslation = "danger">>
+    <<add_word NotebookPanel "vel-ahn" "opasnost (?)">>
+    Kael: Moglo bi biti upozorenje.
+-> "Tko si?"
+    <<set $velAhnTranslation = "who_are_you">>
+    <<add_word NotebookPanel "vel-ahn" "tko si (?)">>
+    Kael: Možda očekuju odgovor.
+-> "Slušaj."
+    <<set $velAhnTranslation = "listen">>
+    <<add_word NotebookPanel "vel-ahn" "slušaj (?)">>
+    Kael: Mogla bi biti naredba.
+-> Nemam dovoljno konteksta.
+    <<set $velAhnTranslation = "unknown">>
+    <<add_word NotebookPanel "vel-ahn" "???">>
+    Kael: Jedan izraz nije dovoljan.
 
-Narrator: Kael zastaje nad riječju dah.
+Kael: Tri ponavljanja na početku kontakta i način na koji ga ponovno koriste daju mi dovoljno konteksta. "Vel-ahn" je pozdrav ili izraz za uspostavljanje kontakta.
 
-Narrator: Nije samo strah.
+<<set $velAhnTranslation = "greeting">>
+<<add_word NotebookPanel "vel-ahn" "pozdrav / uspostava kontakta [POTVRĐENO]">>
 
-Narrator: Bliže je hladnom kamenu u prsima.
+Kael: Kako želim odgovoriti?
 
-Kael: Kao da ovaj jezik nema jednu riječ za jednu stvar.
-Kael: Kao da svaka riječ nosi mjesto, osjećaj i sjećanje.
+-> Ponovi "Vel-ahn."
+    Kael: Vel-ahn.
+    Dhorn: Vel-ahn, toru.
+    <<jump ToruTranslation>>
+-> Pitaj: "Tko si?"
+    Kael: Tko si?
+    Dhorn: Vel-ahn, toru.
+    <<jump ToruTranslation>>
+-> Reci: "Čujem te."
+    Kael: Čujem te.
+    Dhorn: Vel-ahn, toru.
+    <<jump ToruTranslation>>
+-> Ostani tih.
+    Kael: ...
+    Dhorn: Vel-ahn... toru?
+    <<jump ToruTranslation>>
+-> Prekini kanal.
+    Kael: Prekidam vezu. ... Signal se ponovno aktivirao.
+    Dhorn: Vel-ahn, toru.
+    Kael: Uporni su.
+    <<jump ToruTranslation>>
+===
 
-Dhorn: Znate li koliko duboko ide dubina?
+title: ToruTranslation
+---
+Kael: "Toru." Nova riječ. Što znači "toru"?
 
-Kael: Znate li koliko daleko ide dubina?
+-> "Ja / osoba poput mene."
+    <<set $toruTranslation = "kael">>
+    <<add_word NotebookPanel "toru" "ja / osoba poput mene (?)">>
+    Kael: Možda se odnosi na mene.
+-> "Čovjek."
+    <<set $toruTranslation = "human">>
+    <<add_word NotebookPanel "toru" "čovjek (?)">>
+    Kael: Možda je riječ za čovjeka.
+-> "Površina / onaj odozgo."
+    <<set $toruTranslation = "surface">>
+    <<set $translationAccuracy += 1>>
+    <<add_word NotebookPanel "toru" "Površina / onaj odozgo (?)">>
+    Kael: Ako znaju odakle dolazi moj signal, možda označava nekoga s Površine.
+-> "Prijatelj."
+    <<set $toruTranslation = "friend">>
+    <<add_word NotebookPanel "toru" "prijatelj (?)">>
+    Kael: Moguće. Ali nemam dovoljno dokaza.
+-> Nisam siguran.
+    <<set $toruTranslation = "unknown">>
+    <<add_word NotebookPanel "toru" "???">>
+    Kael: Treba mi još konteksta.
 
-Kael: Dubina možda označava prostor.
-Kael: Ali možda i vrijeme.
+Dhorn: Toru govor?
 
-Kael: Nisam siguran.
+Kael: "Govor" je dovoljno blisko našem jeziku da mogu naslutiti značenje. Kako želim odgovoriti?
 
-Narrator: Kael zapisuje nekoliko riječi.
+-> Odgovori: "Da. Govorim."
+    Kael: Da. Govorim.
+    <<jump DhornIdentity>>
+-> Pitaj: "Tko si ti?"
+    Kael: Tko si ti?
+    <<jump DhornIdentity>>
+-> Pitaj što znači "toru".
+    Kael: Toru?
+    Dhorn: Toru gore. Dh'orn dubina.
+    Kael: Dobro. To mi daje više konteksta.
+    <<jump ToruContextCheck>>
+-> Pitaj odakle šalje signal.
+    Kael: Odakle šalješ signal?
+    Dhorn: Dh'orn dubina.
+    <<jump DhornIdentity>>
+-> Ostani tih.
+    Kael: ...
+    Dhorn: Dh'orn.
+    <<jump DhornIdentity>>
+===
 
-Narrator: Neke razumije.
 
-Narrator: Neke samo naslućuje.
+title: ToruContextCheck
+---
+<<if $toruTranslation == "surface">>
+    Kael: To se uklapa. "Toru" označava Površinu ili one koji pripadaju gornjem svijetu.
+    <<add_word NotebookPanel "toru" "Površina / oni gore [POTVRĐENO]">>
+    <<jump DhornIdentity>>
+<<else>>
+    Kael: Čekaj. Moj trenutni prijevod riječi "toru" ne uklapa se dobro u "Toru gore. Dh'orn dubina." Želim li promijeniti prijevod?
+    -> Promijeni prijevod.
+        <<jump ToruCorrection>>
+    -> Zadrži trenutni prijevod.
+        Kael: Ostavit ću ga zasad kao pretpostavku.
+        <<jump DhornIdentity>>
+    -> Ostavi riječ nepoznatom.
+        <<set $toruTranslation = "unknown">>
+        <<add_word NotebookPanel "toru" "???">>
+        <<jump DhornIdentity>>
+<<endif>>
+===
 
-Narrator: A neke mu djeluju poznato na način koji ne može objasniti.
+title: ToruCorrection
+---
+Kael: Kako sada želim prevesti "toru"?
 
-Kael: Čudno.
+-> "Površina / oni gore."
+    <<set $toruTranslation = "surface">>
+    <<add_word NotebookPanel "toru" "Površina / oni gore [POTVRĐENO]">>
+    Kael: Ovaj prijevod najbolje odgovara novom kontekstu.
+    <<jump DhornIdentity>>
+-> "Čovjek."
+    <<set $toruTranslation = "human">>
+    <<add_word NotebookPanel "toru" "čovjek (?)">>
+    Kael: Moguće, ali "toru gore" i dalje mi ne potvrđuje da riječ znači čovjek.
+    <<jump DhornIdentity>>
+-> "Ja / osoba poput mene."
+    <<set $toruTranslation = "kael">>
+    <<add_word NotebookPanel "toru" "ja / osoba poput mene (?)">>
+    Kael: Još uvijek je moguće da govore o meni, ali kontekst više upućuje na mjesto ili skupinu.
+    <<jump DhornIdentity>>
+-> Ostavi nepoznato.
+    <<set $toruTranslation = "unknown">>
+    <<add_word NotebookPanel "toru" "???">>
+    <<jump DhornIdentity>>
+===
 
-Kael: Nikada nisam čuo ovaj jezik.
+title: DhornIdentity
+---
+Dhorn: Dh'orn.
 
-Kael: Pa zašto imam osjećaj da sam nešto zaboravio?
+Kael: "Dh'orn." Što želim pitati?
 
-Narrator: Kaelov protokol je jasan.
-
-Narrator: Sve anomalije prijaviti nadređenima.
-
-Narrator: Protokol je uvijek bio jasan.
-
-Kael: Prevoditelj ne odlučuje.
-
-Kael: Prevoditelj prenosi.
-
-Kael: Barem bi tako trebalo biti.
-
--> Prijavi vladi odmah
-    <<set $dhornTrust -= 1>>
-    <<set $marenSuspicion = 0>>
-    <<jump Session01_Report>>
--> Odgovori sam, bez prijave
+-> "Je li Dh'orn tvoje ime?"
+    Kael: Dh'orn je tvoje ime?
+    Dhorn: Nem. Dh'orn mnogo.
+    <<add_word NotebookPanel "nem" "ne / negacija [POTVRĐENO]">>
+    <<set $knowsDhornPeople = true>>
+    // OTKRIĆE: Dh'orn nije ime jednog bića nego naziv naroda ili skupine.
+    // CLUE_UNLOCK: C03_DHORN_PEOPLE
+    Kael: "Nem" znači ne. A Dh'orn nije jedno biće. Više njih.
+-> "Je li Dh'orn vaš narod?"
+    Kael: Dh'orn... vi?
+    Dhorn: Dh'orn. Mnogo.
+    <<set $knowsDhornPeople = true>>
     <<set $dhornTrust += 1>>
-    <<set $kaelaIsolated = true>>
-    <<jump Session01_Alone>>
--> Ignoriraj signal, zatvori kanal
-    <<set $dhornTrust = 0>>
-    <<jump Session01_Ignore>>
+    // OTKRIĆE: Dh'orn je naziv njihova naroda.
+    // CLUE_UNLOCK: C03_DHORN_PEOPLE
+    Kael: Znači Dh'orn označava njih.
+-> "Je li Dh'orn mjesto?"
+    Kael: Dh'orn mjesto?
+    Dhorn: Nem. Dh'orn mnogo.
+    <<add_word NotebookPanel "nem" "ne / negacija [POTVRĐENO]">>
+    <<set $knowsDhornPeople = true>>
+    // OTKRIĆE: Dh'orn nije mjesto nego naziv naroda ili skupine.
+    // CLUE_UNLOCK: C03_DHORN_PEOPLE
+    Kael: "Nem" znači ne. Dh'orn je narod ili skupina.
+-> "Koliko vas ima?"
+    Kael: Koliko vas ima?
+    Dhorn: Mnogo Dh'orn.
+    <<set $knowsDhornPeople = true>>
+    // OTKRIĆE: Dh'orn označava više bića, ne jednu osobu.
+    // CLUE_UNLOCK: C03_DHORN_PEOPLE
+    Kael: Više nego što sam očekivao.
+-> Ne pitaj ništa. Nastavi slušati.
+    Kael: Nastavi.
+
+Dhorn: Toru hodi gore. Dh'orn hodi dubina.
+
+Kael: "Hodi" se pojavljuje u obje polovice rečenice. Što znači "hodi"?
+
+-> "Živjeti / biti."
+    <<set $hodiTranslation = "live">>
+    <<add_word NotebookPanel "hodi" "živjeti / biti (?)">>
+    Kael: Moguće, ali kasniji primjeri morat će potvrditi govori li o stanju ili kretanju.
+-> "Ići / kretati se."
+    <<set $hodiTranslation = "move">>
+    <<set $translationAccuracy += 1>>
+    <<add_word NotebookPanel "hodi" "ići / kretati se (?)">>
+    Kael: Ako "gore" i "dubina" označavaju smjer ili položaj, kretanje najbolje odgovara.
+-> "Govoriti."
+    <<set $hodiTranslation = "speak">>
+    <<add_word NotebookPanel "hodi" "govoriti (?)">>
+    Kael: Ne uklapa se baš najbolje.
+-> "Gledati."
+    <<set $hodiTranslation = "look">>
+    <<add_word NotebookPanel "hodi" "gledati (?)">>
+    Kael: Moguće, ali kontekst je slab.
+-> "Napasti."
+    <<set $hodiTranslation = "attack">>
+    <<add_word NotebookPanel "hodi" "napasti (?)">>
+    Kael: Ako je to točno, razgovor je upravo postao puno ozbiljniji.
+
+Kael: Želim li testirati svoj prijevod?
+
+-> Reci: "Dh'orn hodi gore?"
+    Kael: Dh'orn hodi gore?
+    Dhorn: Nem. Dh'orn hodi dubina.
+    <<add_word NotebookPanel "nem" "ne / negacija [POTVRĐENO]">>
+    Kael: "Nem" negira moju tvrdnju. Dobio sam novi kontekst za "hodi".
+    <<jump HodiContextCheck>>
+-> Reci: "Toru hodi dubina?"
+    Kael: Toru hodi dubina?
+    Dhorn: Nem. Toru hodi gore.
+    <<add_word NotebookPanel "nem" "ne / negacija [POTVRĐENO]">>
+    Kael: "Nem" znači ne. Gore i dubina su suprotni pojmovi. Ovo mi daje novi kontekst za "hodi".
+    <<jump HodiContextCheck>>
+-> Nemoj testirati.
+    Kael: Neću još donositi zaključke.
+    <<jump DhornQuestions>>
 ===
 
 
-title: Session01_Alone
+title: HodiContextCheck
 ---
-Kael: Čujem vas.
+<<if $hodiTranslation == "move">>
+    Kael: Moj prijevod se uklapa. "Hodi" povezuje Toru s gornjim prostorom, a Dhorne s dubinom.
+    <<add_word NotebookPanel "hodi" "ići / kretati se [POTVRĐENO]">>
+    <<jump DhornQuestions>>
+<<else>>
+    Kael: Moj trenutni prijevod riječi "hodi" ne objašnjava dobro ovaj novi primjer. Želim li ga promijeniti?
+    -> Promijeni prijevod.
+        <<jump HodiCorrection>>
+    -> Zadrži trenutni prijevod.
+        Kael: Ostavit ću ga kao nepotvrđenu pretpostavku.
+        <<jump DhornQuestions>>
+    -> Ostavi riječ nepoznatom.
+        <<set $hodiTranslation = "unknown">>
+        <<add_word NotebookPanel "hodi" "???">>
+        <<jump DhornQuestions>>
+<<endif>>
+===
 
-Kael: Tko ste?
+title: HodiCorrection
+---
+Kael: Kako sada želim prevesti "hodi"?
 
-Narrator: Dhorn odgovor dolazi brže nego prije.
+-> "Ići / kretati se."
+    <<set $hodiTranslation = "move">>
+    <<add_word NotebookPanel "hodi" "ići / kretati se [POTVRĐENO]">>
+    Kael: To najbolje odgovara svim primjerima koje imam.
+    <<jump DhornQuestions>>
+-> "Živjeti / biti."
+    <<set $hodiTranslation = "live">>
+    <<add_word NotebookPanel "hodi" "živjeti / biti (?)">>
+    Kael: Još nisam uvjeren da je to dovoljno precizno.
+    <<jump DhornQuestions>>
+-> "Govoriti."
+    <<set $hodiTranslation = "speak">>
+    <<add_word NotebookPanel "hodi" "govoriti (?)">>
+    Kael: Novi kontekst mi i dalje ne podržava ovaj prijevod.
+    <<jump DhornQuestions>>
+-> Ostavi nepoznato.
+    <<set $hodiTranslation = "unknown">>
+    <<add_word NotebookPanel "hodi" "???">>
+    <<jump DhornQuestions>>
+===
 
-Narrator: Kao da nisu čekali signal.
+title: DhornQuestions
+---
+Kael: Kontakt je stabilan. Ovo je prilika da saznam više. Što želim pitati Dhorne?
 
-Narrator: Kao da su čekali njega.
+-> "Koliko dugo ste u dubini?"
+    Kael: Koliko dugo ste u dubini?
+    Dhorn: Dh'orn hodi dubina. Dugo. Dugo.
+    Kael: Znači nisu se pojavili nedavno.
+    <<jump SecondDhornQuestion>>
+-> "Zašto ste kontaktirali Površinu?"
+    Kael: Zašto ste kontaktirali Površinu?
+    Dhorn: Moran čeka. Vatra hodi.
+    Kael: "Moran" ne razumijem. Ali "vatra" zvuči kao upozorenje.
+    <<jump MoranIntroduction>>
+-> "Kako znate za Površinu?"
+    Kael: Kako znate za Površinu?
+    Dhorn: Toru govor prije.
+    <<set $knowsPreviousContactHint = true>>
+    // OTKRIĆE: Dhorni tvrde da je prije Kaela već postojao kontakt s Površinom.
+    // CLUE_UNLOCK: C05_PREVIOUS_CONTACT
+    Kael: Prije? Znači možda već postoji povijest kontakta.
+    <<jump SecondDhornQuestion>>
+-> "Jeste li već razgovarali s nekim odozgo?"
+    Kael: Jeste li prije razgovarali s nekim poput mene?
+    Dhorn: Prije toru govor. Nem-dugo.
+    <<add_word NotebookPanel "nem" "ne / negacija [POTVRĐENO]">>
+    <<set $knowsPreviousContactHint = true>>
+    // OTKRIĆE: Netko s Površine već je ranije razgovarao s Dhornima.
+    // CLUE_UNLOCK: C05_PREVIOUS_CONTACT
+    Kael: Netko s Površine je već razgovarao s njima.
+    <<jump SecondDhornQuestion>>
+-> "Što želite od mene?"
+    Kael: Što želite od mene?
+    Dhorn: Sluša. Govor. Moran čeka.
+    Kael: Žele da slušam i govorim. Ali što je moran?
+    <<jump MoranIntroduction>>
+===
 
-<<radio_static AudioManager>>
-Dhorn: Zovemo se Dhorn. Hodi dubina.
+title: SecondDhornQuestion
+---
+Kael: Imam vremena za još jedno pitanje. Što želim saznati?
 
-Kael: Zovemo se Dhorn.
-Kael: Živimo u dubini ili podzemlju.
+-> "Zašto ste kontaktirali baš mene?"
+    Kael: Zašto mene?
+    Dhorn: Kael-vorn.
+    <<add_word NotebookPanel "kael" "???">>
+    // OTKRIĆE: Dhorni koriste riječ "kael" prije nego što im je Kael otkrio svoje ime.
+    Kael: ... Tu riječ još ne razumijem.
+    <<jump MoranIntroduction>>
+-> "Što je moran?"
+    Kael: Što znači moran?
+    Dhorn: Moran Dh'orn. Moran toru.
+    Kael: Dobro. Morat ću ga zaključiti iz konteksta.
+    <<jump MoranIntroduction>>
+-> "Što vam Površina radi?"
+    Kael: Što vam Površina radi?
+    Dhorn: Vatra hodi dubina. Moran nem-tah.
+    <<add_word NotebookPanel "nem" "ne / negacija [POTVRĐENO]">>
+    Kael: Ne razumijem sve, ali očito povezuju Površinu s nekom opasnošću.
+    <<jump MoranIntroduction>>
+-> "Tko je prije razgovarao s vama?"
+    Kael: Tko je prije razgovarao s vama?
+    Dhorn: Vorn.
+    <<set $knowsPreviousContactHint = true>>
+    // OTKRIĆE: Dhorni riječ "vorn" povezuju s osobom koja je prije razgovarala s njima.
+    Kael: Vorn. Još jedna nova riječ.
+    <<jump MoranIntroduction>>
+-> Ne postavljaj više pitanja.
+    Kael: Dosta za sada.
+    <<jump MoranIntroduction>>
+===
 
-Kael: Hodi nije samo živjeti.
+title: MoranIntroduction
+---
+Dhorn: Dh'orn moran. Toru moran gore.
 
-Kael: To je kretati se kroz mjesto koje te poznaje.
+Kael: "Moran" se pojavljuje u dva različita konteksta. Što znači "moran"?
 
-<<add_word NotebookPanel "hodi" "živjeti / kretati se">>
+-> "Dom."
+    <<set $moranTranslation = "home">>
+    <<set $translationAccuracy += 1>>
+    <<add_word NotebookPanel "moran" "dom (?)">>
+    Kael: Dh'orn imaju svoj dom. Toru imaju svoj gore. To bi moglo odgovarati.
+-> "Sigurnost."
+    <<set $moranTranslation = "safety">>
+    <<add_word NotebookPanel "moran" "sigurnost (?)">>
+    Kael: Možda govori o sigurnosti, ne o fizičkom mjestu.
+-> "Narod."
+    <<set $moranTranslation = "people">>
+    <<add_word NotebookPanel "moran" "narod / zajednica (?)">>
+    Kael: Možda označava zajednicu.
+-> "Mjesto."
+    <<set $moranTranslation = "place">>
+    <<add_word NotebookPanel "moran" "mjesto (?)">>
+    Kael: Mogla bi biti općenita riječ za mjesto.
+-> Nisam siguran.
+    <<set $moranTranslation = "unknown">>
+    <<add_word NotebookPanel "moran" "???">>
+    Kael: Trebam još primjera.
 
-Dhorn: Dugo čeka Dhorn. Dugo nem-govor.
+Dhorn: Moran dah. Dh'orn dah.
 
-Kael: Dugo je Dhorn čekao.
-Kael: Dugo bez govora.
+Kael: Sad se pojavljuje "dah". Što znači "dah"?
 
-<<add_word NotebookPanel "čeka" "čekati">>
+-> "Život / biti živ."
+    <<set $dahTranslation = "life">>
+    <<set $translationAccuracy += 1>>
+    <<add_word NotebookPanel "dah" "život / biti živ (?)">>
+    Kael: Moglo bi biti povezano sa životom.
+-> "Sigurnost."
+    <<set $dahTranslation = "safety">>
+    <<add_word NotebookPanel "dah" "sigurnost (?)">>
+    Kael: Možda opisuje stanje sigurnosti.
+-> "Zrak."
+    <<set $dahTranslation = "air">>
+    <<add_word NotebookPanel "dah" "zrak (?)">>
+    Kael: Dah... možda je značenje doslovnije nego što mislim.
+-> "Postojanje."
+    <<set $dahTranslation = "existence">>
+    <<add_word NotebookPanel "dah" "postojanje (?)">>
+    Kael: To bi odgovaralo široj ideji.
+-> "Smrt."
+    <<set $dahTranslation = "death">>
+    <<add_word NotebookPanel "dah" "smrt (?)">>
+    Kael: Ako je točno, potpuno mijenja smisao poruke.
 
-Dhorn: Danas govorimo.
+Dhorn: Sjeme dah. Stari nem-dah.
 
-Kael: Danas govorimo.
+<<add_word NotebookPanel "nem" "ne / negacija [POTVRĐENO]">>
 
-Narrator: Kael ne prijavljuje kontakt te noći.
+Kael: Sad imam novi kontekst. Kako tumačim "nem-dah"?
 
-Narrator: U bilježnici su prve riječi novog jezika.
-
-Kael: Vel-ahn.
-Kael: Nem-dah.
-Kael: Govor.
-Kael: Hodi.
-Kael: Čeka.
-
-Kael: Pet riječi.
-
-Kael: Prvih pet riječi novog jezika.
-
-Kael: Ili starog.
-
-Kael: Ne znam zašto mi ruka drhti.
-
-Kael: Možda zbog umora.
-
-Kael: Možda zato što sam upravo prekršio protokol.
-
-Kael: A možda zato što se prvi put nakon dugo vremena osjećam kao da me netko stvarno čuo.
-
-<<jump Session01_FinalSignal>>
+-> "Bez života / mrtav."
+    <<set $translationAccuracy += 1>>
+    Kael: Ako "nem" znači ne, onda "nem-dah" znači bez života.
+    <<jump DahContextCorrect>>
+-> "Bez zraka."
+    Kael: To bi imalo smisla samo ako je moj doslovni prijevod "dah = zrak" točan.
+    <<jump DahContextUnclear>>
+-> "Nije siguran."
+    Kael: To bi odgovaralo samo ako "dah" znači sigurnost.
+    <<jump DahContextUnclear>>
+-> Ne mogu još zaključiti.
+    Kael: Trebam još primjera.
+    <<jump NameMystery>>
 ===
 
 
-title: Session01_Report
+title: DahContextCorrect
 ---
-Narrator: Automatski protokol.
-
-Narrator: Kael šalje izvještaj o anomaliji.
-
-Narrator: U naslovu piše:
-
-Narrator: Kanal 7-G.
-Narrator: Nepoznati izvor.
-Narrator: Mogući lingvistički obrazac.
-
-Kael: Dovoljno neutralno.
-
-Kael: Dovoljno službeno.
-
-Kael: Dovoljno da više ne bude samo moj problem.
-
-Narrator: Sljedeće jutro.
-
-Narrator: Ured.
-
-<<notification_beep AudioManager>>
-Maren: Vorn.
-
-Maren: Ovaj signal koji si prijavio.
-
-Maren: Dobro je što si ga prijavio.
-
-Maren: Dalje ćemo mi.
-
-Kael: Dalje ćemo mi.
-
-Kael: To nikad ne znači da je stvar riješena.
-
-Kael: To znači da više nisi jedini koji zna.
-
--> Razumijem. Kakvi su sljedeći koraci?
-    <<jump Session01_Report_End>>
--> Molio bih da ostanem uključen. Moja struka može biti od koristi.
-    <<jump Session01_Report_End>>
+<<if $dahTranslation == "life">>
+    Kael: Dobro. "Dah" kao život sada se uklapa i u "nem-dah".
+    <<add_word NotebookPanel "dah" "život / biti živ [POTVRĐENO]">>
+    <<jump NameMystery>>
+<<else>>
+    Kael: Moj odgovor "bez života" ne odgovara prijevodu koji trenutno imam zapisan za "dah". To znači da moram preispitati riječ.
+    <<jump DahCorrection>>
+<<endif>>
 ===
 
-
-title: Session01_Report_End
+title: DahContextUnclear
 ---
-Maren: Zapravo...
+Kael: Ovaj odgovor mi još ne potvrđuje trenutačni prijevod riječi "dah". Želim li ga sada preispitati?
 
-Maren: Ostani na projektu.
-
-Maren: Trebamo nekog tko razumije lingvistiku signala.
-
-Maren: Tehničari čuju frekvenciju.
-
-Maren: Ti čuješ namjeru.
-
-Maren: Ali Vorn...
-
-Maren: Ovo ostaje interno.
-
-Maren: Razumijemo se?
-
-Kael: Razumijemo se.
-
-Kael: Nisam siguran da je to istina.
-
-<<jump Session01_FinalSignal>>
+-> Promijeni prijevod.
+    <<jump DahCorrection>>
+-> Zadrži trenutni prijevod.
+    Kael: Ostavit ću ga s upitnikom.
+    <<jump NameMystery>>
+-> Ostavi riječ nepoznatom.
+    <<set $dahTranslation = "unknown">>
+    <<add_word NotebookPanel "dah" "???">>
+    <<jump NameMystery>>
 ===
 
-
-title: Session01_Ignore
+title: DahCorrection
 ---
-Narrator: Kael zatvara kanal.
+Kael: Nakon "Moran dah. Dh'orn dah." i "Stari nem-dah", što najbolje znači "dah"?
 
-Narrator: Signal nestaje s ekrana.
-
-Narrator: Ali ne i iz njegove glave.
-
-Kael: Ako je ovo bila greška...
-
-Kael: Zašto se osjećam kao da sam upravo nekome zatvorio vrata?
-
-Narrator: Nekoliko sekundi kasnije terminal ponovno zatreperi.
-
-Narrator: Isti kanal.
-
-Narrator: Isti ritam.
-
-Narrator: Jači signal.
-
-Kael: Ne.
-
-Kael: Ne večeras.
-
-Narrator: Kael gasi monitor.
-
-Narrator: U mraku sobe ostaje samo odraz njegova lica na crnom ekranu.
-
-Narrator: Tri sekunde kasnije...
-
-Narrator: Monitor se sam ponovno pali.
-
-<<jump Session01_FinalSignal>>
+-> "Život / biti živ."
+    <<set $dahTranslation = "life">>
+    <<add_word NotebookPanel "dah" "život / biti živ [POTVRĐENO]">>
+    Kael: Ovo povezuje oba primjera bez dodavanja nepotrebnog značenja.
+    <<jump NameMystery>>
+-> "Zrak."
+    <<set $dahTranslation = "air">>
+    <<add_word NotebookPanel "dah" "zrak (?)">>
+    Kael: Moguće je doslovno, ali još uvijek ne objašnjava dobro sve primjere.
+    <<jump NameMystery>>
+-> "Sigurnost."
+    <<set $dahTranslation = "safety">>
+    <<add_word NotebookPanel "dah" "sigurnost (?)">>
+    Kael: Još uvijek nemam dovoljno dokaza za to značenje.
+    <<jump NameMystery>>
+-> Ostavi nepoznato.
+    <<set $dahTranslation = "unknown">>
+    <<add_word NotebookPanel "dah" "???">>
+    <<jump NameMystery>>
 ===
 
-
-title: Session01_FinalSignal
+title: NameMystery
 ---
-Narrator: Terminal ponovno zasvijetli.
+Dhorn: Kael-vorn.
 
-Narrator: Kael nije poslao ništa.
+<<add_word NotebookPanel "kael" "???">>
+// OTKRIĆE: "Kael" se pojavljuje kao Dhorn riječ i možda nije samo Kaelovo osobno ime.
+// CLUE_UNLOCK: C04_KAEL_NOT_NAME
 
-<<radio_static AudioManager>>
-Dhorn: Čeka moran. Čeka Gornji-koji-sluša.
+Kael: Upravo su rekli "Kael". Nisam im rekao svoje ime. Što želim pitati?
 
-Kael: Čeka...
+-> "Što znači kael?"
+    Kael: Kael?
+    Dhorn: Kael čeka. Kael poslije.
+    Kael: Ne zvuči kao da samo izgovaraju moje ime.
+    <<set $kaelTranslation = "unknown">>
+-> "Što znači vorn?"
+    Kael: Vorn?
+    Dhorn: Vorn sluša. Vorn govor.
+    Kael: Sluša i govori. Zapamtit ću to.
+-> "Kako znaš moje ime?"
+    Kael: Kako znaš moje ime?
+    Dhorn: Kael-vorn.
+    Kael: To mi ništa ne objašnjava.
+-> Nemoj ništa pitati.
+    Kael: Zapamtit ću izraz.
 
-Kael: Moran.
-
-Narrator: Kael ne zna što ta riječ znači.
-
-Narrator: Ali ne djeluje mu potpuno strano.
-
-Kael: Gdje sam to čuo?
-
-Narrator: Ne može se sjetiti.
-
-Narrator: Kael otvara podatke o poruci.
-
-Narrator: Zatim ih ponovno provjerava.
-
-Kael: Ne.
-
-Kael: To nije moguće.
-
-Narrator: Vrijeme slanja prethodi prvom Kaelovu odgovoru.
-
-Narrator: Poruka je već putovala mrežom...
-
-Narrator: prije nego što je Kael prvi put odgovorio Dhornu.
-
-Kael: Nisu čekali odgovor.
-
-Kael: Čekali su...
-
-Narrator: Kael ne dovršava rečenicu.
-
-Narrator: Terminal se gasi.
-
-Narrator: U bilježnici ostaje jedna nova riječ bez prijevoda.
-
-Kael: moran???
-
-<<jump Session01_End>>
+<<jump NameChoice>>
 ===
 
-
-title: Session01_End
+title: NameChoice
 ---
-Narrator: Sedam dana kasnije.
+Dhorn: Toru ime?
 
-<<jump Session02_Start>>
+Kael: Sad očito traže moje ime. Što ću im reći?
+
+-> Reci svoje pravo ime.
+    <<set $gaveKaelName = true>>
+    Kael: Kael.
+    Dhorn: Kael... Kael-vorn.
+    Kael: Opet.
+    <<jump VornIntroduction>>
+-> Daj lažno ime.
+    <<set $gaveKaelName = false>>
+    Kael: Aron.
+    Dhorn: Toru Aron. Nem-kael?
+    <<add_word NotebookPanel "nem" "ne / negacija [POTVRĐENO]">>
+    // OTKRIĆE: Nakon što Kael da lažno ime, Dhorni i dalje koriste riječ "kael"; riječ zato nije samo njegovo osobno ime.
+    // CLUE_UNLOCK: C04_KAEL_NOT_NAME
+    Kael: Dobro. Onda "kael" definitivno nije samo moje ime.
+    <<set $kaelTranslation = "unknown">>
+    <<jump VornIntroduction>>
+-> Odbij odgovoriti.
+    <<set $gaveKaelName = false>>
+    Kael: Ne.
+    Dhorn: Toru skriva.
+    Kael: Misle da nešto skrivam.
+    <<jump VornIntroduction>>
+-> Pitaj prvo za njihovo ime.
+    <<set $gaveKaelName = false>>
+    Kael: Prvo ti. Kako se zoveš?
+    Dhorn: Dh'orn.
+    Kael: To je vaš narod. Pitam za tebe.
+    Dhorn: Vorn.
+    Kael: Vorn je ime?
+    <<jump VornIntroduction>>
+===
+
+title: VornIntroduction
+---
+Dhorn: Vorn sluša. Vorn govor.
+
+Kael: Dobro. Imam barem dvije informacije o toj riječi. Što znači "vorn"?
+
+-> "Prevoditelj."
+    <<set $vornTranslation = "translator">>
+    <<set $translationAccuracy += 1>>
+    <<add_word NotebookPanel "vorn" "prevoditelj (?)">>
+    Kael: Netko tko sluša jednu stranu i govori drugoj. To ima smisla.
+-> "Slušatelj."
+    <<set $vornTranslation = "listener">>
+    <<add_word NotebookPanel "vorn" "slušatelj (?)">>
+    Kael: Možda je naglasak na slušanju.
+-> "Vođa."
+    <<set $vornTranslation = "leader">>
+    <<add_word NotebookPanel "vorn" "vođa (?)">>
+    Kael: Moguće, ali nemam dovoljno dokaza.
+-> "Ime osobe."
+    <<set $vornTranslation = "name">>
+    <<add_word NotebookPanel "vorn" "ime osobe (?)">>
+    Kael: Možda govore o određenoj osobi.
+-> Nisam siguran.
+    <<set $vornTranslation = "unknown">>
+    <<add_word NotebookPanel "vorn" "???">>
+    Kael: Premalo konteksta.
+
+Dhorn: Kael-vorn?
+
+Kael: Sad zvuči kao pitanje. Kako ću odgovoriti?
+
+-> "Možda."
+    Kael: Možda.
+    <<set $dhornTrust += 1>>
+    Dhorn: Vel-ahn.
+-> "Ja sam samo prevoditelj."
+    Kael: Ja samo prevodim.
+    Dhorn: Vorn govor između.
+-> "Nisam Vorn."
+    Kael: Nem-vorn.
+    <<add_word NotebookPanel "nem" "ne / negacija [POTVRĐENO]">>
+    Dhorn: Kael čeka.
+-> Pitaj ponovno što je Vorn.
+    Kael: Vorn što?
+    Dhorn: Vorn sluša toru. Vorn sluša Dh'orn. Vorn govor između.
+    // OTKRIĆE: Vorn sluša i Površinu i Dhorne te prenosi govor između dviju strana.
+    // CLUE_UNLOCK: C06_VORN_ROLE
+    Kael: Sluša obje strane i govori između njih.
+
+<<jump MarenIncoming>>
+===
+
+title: MarenIncoming
+---
+Maren: Kael, registrirali smo anomaliju na tvojoj stanici. Status?
+
+Kael: Evo je. Ne znam koliko Maren zna o ovome. Što ću joj reći?
+
+-> Reci cijelu istinu.
+    <<set $toldMarenAboutContact = true>>
+    Kael: Uspostavio sam kontakt s inteligentnom civilizacijom ispod Površine.
+    Maren: ... Prekini vezu.
+    <<jump MarenTruth>>
+-> Reci samo da postoji strukturirani signal.
+    Kael: Primam strukturirani signal. Još ga analiziram.
+    Maren: Jezični?
+    Kael: Vjerojatno.
+    Maren: Ne odgovaraj dok ne dobijem puni izvještaj.
+    <<jump MarenQuestions>>
+-> Sakrij kontakt.
+    <<set $liedToMaren = true>>
+    Kael: Samo anomalija. Ništa potvrđeno.
+    Maren: Pošalji mi log.
+    <<jump MarenLogChoice>>
+-> Reci samo za kanal 7-G.
+    Kael: Netko koristi kanal 7-G.
+    Maren: ... Jesi li otvorio kanal?
+    <<jump MarenQuestions>>
+-> Laži da je problem s opremom.
+    <<set $liedToMaren = true>>
+    Kael: Problem s prijamnikom. Rješavam ga.
+    Maren: Onda mi pošalji dijagnostički log.
+    <<jump MarenLogChoice>>
+===
+
+title: MarenTruth
+---
+Maren: Kael, prekini vezu. Odmah.
+
+Kael: Kako ću reagirati?
+
+-> Pitaj zašto.
+    Kael: Zašto?
+    Maren: Zato što ne znaš s kim razgovaraš.
+    Kael: A ti znaš?
+    <<jump MarenSlip>>
+-> Pitaj poznaje li Dhorne.
+    Kael: Poznajete Dhorne?
+    Maren: Nisam rekla da ih poznajemo.
+    // OTKRIĆE: Maren reagira kao da već ima određeno znanje o Dhornima.
+    <<jump MarenSlip>>
+-> Pitaj zašto je 7-G ograničen.
+    Kael: Zašto kanal 7-G ima ograničen pristup?
+    Maren: Gdje si to vidio?
+    <<set $marenSuspicion += 1>>
+    <<set $governmentTrust -= 1>>
+    <<jump MarenQuestions>>
+-> Poslušaj je.
+    Kael: U redu.
+    <<jump DualChannel>>
+-> Odbij prekinuti kontakt.
+    Kael: Ne dok ne saznam što žele.
+    <<set $marenSuspicion += 1>>
+    <<set $governmentTrust -= 1>>
+    <<set $dhornTrust += 1>>
+    <<jump DualChannel>>
+===
+
+title: MarenSlip
+---
+Maren: Kael, ovo nije rasprava.
+
+Kael: Nešto mi ne govori. Što ću je pitati?
+
+-> "Nisam rekao da su opasni."
+    Kael: Nisam rekao da su opasni.
+    Maren: Rekla sam prekini kontakt.
+    <<set $marenSuspicion += 1>>
+    <<set $governmentTrust -= 1>>
+-> "Znači ipak nešto znaš."
+    Kael: Znači ipak nešto znaš.
+    Maren: Znam da neovlašteni kontakt mora biti prijavljen.
+    <<set $marenSuspicion += 1>>
+    <<set $governmentTrust -= 1>>
+-> "Tko je prije koristio 7-G?"
+    Kael: Tko je prije koristio kanal 7-G?
+    Maren: Nije relevantno.
+    <<set $knowsPreviousContactHint = true>>
+    // OTKRIĆE: Marenin odgovor potvrđuje da je kanal 7-G bio korišten prije Kaela.
+    // CLUE_UNLOCK: C09_OLD_7G_ACTIVITY
+    Kael: Onda je netko koristio.
+-> Pusti temu.
+    Kael: U redu.
+
+<<jump DualChannel>>
+===
+
+title: MarenLogChoice
+---
+Maren: Čekam log.
+
+Kael: Što ću joj poslati?
+
+-> Pošalji cijeli log.
+    <<set $toldMarenAboutContact = true>>
+    <<set $liedToMaren = false>>
+    Kael: Šaljem sve.
+    <<set $governmentTrust += 2>>
+    Maren: ... Kael, prekini kontakt odmah.
+    <<jump MarenTruth>>
+-> Pošalji samo tehničke podatke.
+    Kael: Šaljem dijagnostiku.
+    Maren: Nedostaje komunikacijski zapis.
+    Kael: Nije se spremio.
+    <<set $marenSuspicion += 1>>
+    <<set $governmentTrust -= 1>>
+    <<jump DualChannel>>
+-> Izbriši Dhorn dio loga.
+    <<set $liedToMaren = true>>
+    Kael: Šaljem log.
+    Maren: Dobila sam ga.
+    <<set $marenSuspicion += 1>>
+    <<set $governmentTrust -= 1>>
+    <<jump DualChannel>>
+-> Reci da je log oštećen.
+    <<set $liedToMaren = true>>
+    Kael: Log je oštećen.
+    Maren: Naravno da jest.
+    <<set $marenSuspicion += 2>>
+    <<set $governmentTrust -= 2>>
+    <<jump DualChannel>>
+-> Priznaj da si lagao.
+    <<set $toldMarenAboutContact = true>>
+    <<set $liedToMaren = false>>
+    <<set $governmentTrust += 1>>
+    Kael: U redu. Lagao sam. Razgovaram s nekim.
+    Maren: Prekini kanal.
+    <<jump MarenTruth>>
+===
+
+title: MarenQuestions
+---
+<<if $knowsLevelV>>
+    Kael: I kanal nosi autorizaciju Razina V.
+    Maren: Gdje si to vidio?
+    Kael: Kako ću odgovoriti?
+    -> Pitaj što znači Razina V.
+        Kael: Što znači V?
+        Maren: Nije tvoja razina pristupa.
+        <<set $marenSuspicion += 1>>
+        <<set $governmentTrust -= 1>>
+    -> Reci da si vidio u metapodacima.
+        Kael: U metapodacima kanala.
+        Maren: Prestani kopati po sustavu.
+        <<set $marenSuspicion += 1>>
+        <<set $governmentTrust -= 1>>
+    -> Ne odgovori.
+        Kael: Nije važno.
+        Maren: Meni jest.
+<<endif>>
+
+<<if $knowsPreviousContactHint>>
+    Kael: Oni tvrde da su već razgovarali s Površinom.
+    Maren: Tvrde svašta.
+    Kael: Što ću je pitati?
+    -> "Znači postoji mogućnost da govore istinu?"
+        Kael: Znači postoji mogućnost da govore istinu?
+        Maren: Rekla sam da to nije potvrđeno.
+    -> "Ti nisi iznenađena."
+        Kael: Uopće ne zvučiš iznenađeno.
+        Maren: Kael...
+        <<set $marenSuspicion += 1>>
+        <<set $governmentTrust -= 1>>
+    -> Pusti temu.
+        Kael: Dobro.
+<<endif>>
+
+<<jump DualChannel>>
+===
+
+title: DualChannel
+---
+Dhorn: Kael-vorn. Toru skriva.
+
+Maren: Kael? Još si tamo?
+
+Kael: Oba kanala su aktivna. Kome ću odgovoriti?
+
+-> Odgovori Dhornu.
+    <<set $keptDhornChannelOpen = true>>
+    <<set $dhornTrust += 1>>
+    Kael: Tu sam.
+    <<jump DhornFinalQuestions>>
+-> Nastavi razgovor s Maren.
+    <<set $keptDhornChannelOpen = false>>
+    Kael: Tu sam, Maren.
+    Maren: Zatvori drugi kanal.
+    <<jump FinalMessage>>
+-> Pokušaj držati oba kanala otvorena.
+    <<set $keptDhornChannelOpen = true>>
+    Kael: Oboje me čujete.
+    Maren: Oboje?
+    Dhorn: Toru govor. Dh'orn sluša.
+    <<set $marenSuspicion += 1>>
+    <<set $governmentTrust -= 1>>
+    <<set $dhornTrust += 1>>
+    <<jump FinalMessage>>
+-> Prekini oba kanala.
+    <<set $keptDhornChannelOpen = false>>
+    Kael: Dosta. Prekidam vezu.
+    <<jump Session1Ending>>
+===
+
+title: DhornFinalQuestions
+---
+Kael: Imam vremena za još jedno pitanje. Što želim saznati?
+
+-> "Što Površina skriva?"
+    Kael: Toru skriva što?
+    Dhorn: Vatra. Moran. Prije vorn.
+    <<set $knowsPreviousContactHint = true>>
+    // OTKRIĆE: Dhorni povezuju ono što Površina skriva s Vatrom, moranom i prethodnim Vornom.
+    Kael: Vatra. Moran. I opet Vorn.
+-> "Što želite od mene?"
+    Kael: Što želite od mene?
+    Dhorn: Kael-vorn sluša. Kael-vorn govor. Moran čeka.
+    Kael: Žele da slušam i govorim između nas.
+-> "Tko je bio Vorn prije mene?"
+    Kael: Prije vorn... tko?
+    Dhorn: Toru vorn. Nem-sada.
+    <<add_word NotebookPanel "nem" "ne / negacija [POTVRĐENO]">>
+    <<set $knowsPreviousContactHint = true>>
+    // OTKRIĆE: Prije Kaela postojao je Vorn s Površine.
+    // CLUE_UNLOCK: C05_PREVIOUS_CONTACT
+    Kael: Postojao je Vorn s Površine.
+-> "Što je moran?"
+    Kael: Moran?
+    Dhorn: Moran nem zid. Moran Dh'orn.
+    <<add_word NotebookPanel "nem" "ne / negacija [POTVRĐENO]">>
+    Kael: Nije zid.
+    // OTKRIĆE: "Moran" ne označava samo fizičko mjesto ili građevinu.
+    Kael: Znači "dom" možda nije cijelo značenje.
+-> "Što dolazi?"
+    Kael: Vatra?
+    Dhorn: Vatra hodi dubina. Nem-dugo.
+    <<add_word NotebookPanel "nem" "ne / negacija [POTVRĐENO]">>
+    // OTKRIĆE: Dhorni upozoravaju da nešto s Površine uskoro dolazi u dubinu.
+    Kael: Nešto s Površine dolazi prema njima. Uskoro.
+
+<<jump FinalMessage>>
+===
+
+title: FinalMessage
+---
+Dhorn: Vatra hodi.
+Kael: Opet "vatra". I opet je Dhorni koriste kao nešto što dolazi.
+<<add_word NotebookPanel "vatra" "??? / nešto povezano s Površinom i dubinom (?)">>
+
+Dhorn: Kael-vorn. Moran čeka. Nem-dugo.
+
+<<add_word NotebookPanel "nem" "ne / negacija [POTVRĐENO]">>
+
+Kael: Moram pokušati prevesti cijelu poruku. Kako bih preveo "Kael-vorn. Moran čeka. Nem-dugo."?
+
+-> "Kael/Vorn. Moran čeka. Nema mnogo vremena."
+    <<set $translationAccuracy += 1>>
+    Kael: To je najbliže onome što zasad razumijem.
+-> "Kael mora doći u dubinu."
+    Kael: Možda me zovu k sebi.
+-> "Površina mora napustiti Dhorne."
+    Kael: Moguće, ali nedostaje mi kontekst.
+-> "Vorn je u opasnosti."
+    Kael: Možda govore o nekome drugome.
+-> Nisam siguran.
+    Kael: Ne želim izmišljati značenje koje još ne razumijem.
+
+Maren: Kael. Zatvori kanal.
+
+Dhorn: Kael-vorn?
+
+<<jump FinalDecision>>
+===
+
+title: FinalDecision
+---
+Kael: Maren želi da prekinem kontakt. Dhorni čekaju odgovor. Što ću napraviti?
+
+-> Poslušaj Maren i zatvori kanal.
+    <<set $keptDhornChannelOpen = false>>
+    <<set $governmentTrust += 2>>
+    Kael: Prekidam komunikaciju.
+    Dhorn: Kael...
+    <<jump Session1Ending>>
+-> Održi Dhorn kanal otvoren.
+    <<set $keptDhornChannelOpen = true>>
+    <<set $dhornTrust += 1>>
+    <<set $marenSuspicion += 1>>
+    <<set $governmentTrust -= 1>>
+    Kael: Ne još.
+    Maren: Kael.
+    Dhorn: Vel-ahn.
+    <<jump Session1Ending>>
+-> Kopiraj transmisije pa zatvori kanal.
+    <<set $copiedTransmission = true>>
+    <<set $keptDhornChannelOpen = false>>
+    <<set $governmentTrust += 1>>
+    Kael: Prvo spremam kopiju. Gotovo. Prekidam kanal.
+    <<jump Session1Ending>>
+-> Laži Maren da je kanal zatvoren.
+    <<set $liedToMaren = true>>
+    <<set $keptDhornChannelOpen = true>>
+    <<set $marenSuspicion += 1>>
+    <<set $governmentTrust -= 1>>
+    <<set $dhornTrust += 1>>
+    Kael: Kanal je zatvoren.
+    Maren: Dobro.
+    Dhorn: Kael-vorn...
+    <<jump Session1Ending>>
+-> Postavi Dhornima još jedno pitanje prije prekida.
+    <<set $keptDhornChannelOpen = true>>
+    <<jump LastQuestion>>
+===
+
+title: LastQuestion
+---
+Kael: Imam vremena za samo jedno pitanje. Što ću pitati?
+
+-> "Tko je Vorn?"
+    Kael: Vorn tko?
+    Dhorn: Vorn sluša toru. Vorn sluša Dh'orn. Vorn govor između.
+    Kael: Netko tko sluša obje strane.
+    // CLUE_UNLOCK: C06_VORN_ROLE
+    <<set $vornTranslation = "translator">>
+    <<set $translationAccuracy += 1>>
+    <<add_word NotebookPanel "vorn" "prevoditelj / posrednik (?)">>
+-> "Što je moran?"
+    Kael: Moran što?
+    Dhorn: Moran Dh'orn. Moran ostaje kada kamen pada.
+    Kael: Dom... ali očito ne samo fizičko mjesto.
+    <<if $moranTranslation == "home">>
+        <<add_word NotebookPanel "moran" "dom / nešto više od mjesta (?)">>
+    <<endif>>
+-> "Što dolazi?"
+    Kael: Vatra što?
+    Dhorn: Vatra toru. Vatra dubina. Nem-dugo.
+    <<add_word NotebookPanel "nem" "ne / negacija [POTVRĐENO]">>
+    Kael: Nešto s Površine dolazi prema njima.
+-> "Jeste li prije poznavali nekoga poput mene?"
+    Kael: Prije kael-vorn?
+    Dhorn: Prije vorn. Prije toru. Nem-sada.
+    <<add_word NotebookPanel "nem" "ne / negacija [POTVRĐENO]">>
+    <<set $knowsPreviousContactHint = true>>
+    // OTKRIĆE: Dhorni potvrđuju da je prije Kaela postojao prethodni Vorn s Površine.
+    // CLUE_UNLOCK: C05_PREVIOUS_CONTACT
+    Kael: Znači stvarno je postojao netko prije mene.
+
+Kael: Dosta.
+
+<<jump Session1Ending>>
+===
+
+title: Session1Ending
+---
+Kael: Signal slabi. Spremit ću ono što imam.
+
+<<if $copiedTransmission>>
+    Kael: Kopija transmisije je spremljena.
+<<endif>>
+
+<<if $knowsLevelV>>
+    Kael: Kanal 7-G. Ograničen pristup. Razina V.
+<<endif>>
+
+<<if $knowsPreviousContactHint>>
+    Kael: I ovo očito nije prvi kontakt između Površine i Dhorna.
+<<endif>>
+
+<<if $moranTranslation == "home">>
+    Kael: Moran... dom. Barem zasad.
+<<elseif $moranTranslation == "safety">>
+    Kael: Moran... sigurnost. Nisam potpuno uvjeren.
+<<elseif $moranTranslation == "people">>
+    Kael: Moran... možda zajednica.
+<<elseif $moranTranslation == "place">>
+    Kael: Moran... mjesto. Trebat će mi više konteksta.
+<<else>>
+    Kael: Moran i dalje ne razumijem.
+<<endif>>
+
+Kael: Vatra... još uvijek bez prijevoda. Znam samo da je povezuju s Površinom, dubinom i nečim što dolazi.
+
+<<if $vornTranslation == "translator">>
+    Kael: Vorn... prevoditelj. Ili nešto više od toga.
+<<elseif $vornTranslation == "listener">>
+    Kael: Vorn... slušatelj?
+<<elseif $vornTranslation == "leader">>
+    Kael: Vorn... možda vođa.
+<<elseif $vornTranslation == "name">>
+    Kael: Vorn... možda nečije ime.
+<<else>>
+    Kael: Vorn. Još jedna riječ bez jasnog odgovora.
+<<endif>>
+
+Kael: A onda "kael". Moje ime. Ili možda uopće nije moje ime. ...
+
+Dhorn: ...Vorn...
+
+Kael: Signal je nestao.
+
+<<if $knowsPreviousContactHint>>
+    Kael: Što god se nalazi ispod Površine... ...imalo je kontakt s Površinom prije mene.
+<<else>>
+    Kael: Što god se nalazi ispod Površine... ...znalo je kako uspostaviti kontakt.
+<<endif>>
+
+<<jump Session2>>
 ===

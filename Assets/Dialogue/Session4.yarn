@@ -1,450 +1,346 @@
 ﻿title: Session4_Start
 ---
-Narrator: Kaelov ured.
-
-Narrator: Do punog kapaciteta projekta Vatra-7 ostalo je manje od četiri sata.
-
-Narrator: Situacija više ne eskalira polako.
-
-Narrator: Sada puca.
-
-Narrator: Nova vibracija prolazi kroz zgradu.
-
-Narrator: Prašina pada sa stropa.
-
-Narrator: Na stolu se prevrće prazna šalica.
-
-Kael: Više mi se ne pričinjava.
-
-Kael: Pod se stvarno trese.
-
-Narrator: Na vladinom terminalu odbrojavanje se nastavlja.
-
-Narrator: 03:51:24.
-
-Narrator: 03:51:23.
-
-Narrator: 03:51:22.
-
-Kael: Četiri sata.
-
-Kael: Oni to zovu povećanjem kapaciteta.
-
-Kael: Dhorn to zove rušenjem doma.
-
-Kael: Vatra.
-
-Kael: Sada razumijem.
-
-Kael: Za Dhorn to nije samo energija.
-
-Kael: To je sila.
-
-Kael: Bušenje.
-
-Kael: A u pravom kontekstu...
-
-Kael: rat.
-
-<<add_word NotebookPanel "vatra" "energija / sila / bušenje / rat">>
-
-Narrator: Kanal 7-G otvara se bez Kaelova zahtjeva.
-
-Narrator: Signal je isprekidan.
-
-Narrator: Slabiji nego prije.
-
-<<radio_static AudioManager>>
-Dhorn: Gornji-koji-sluša.
-
-Dhorn: Pada.
-
-Dhorn: Pada sada.
-
-Kael: Pada.
-
-Kael: Ruši se.
-
-Kael: Ne govore više kao netko tko upozorava.
-
-Kael: Govore kao netko tko je već pod ruševinama.
-
-Dhorn: Zid-moran pada.
-
-Dhorn: Sjeme dah.
-
-Dhorn: Nem-dugo.
-
-Kael: Zidovi doma se ruše.
-
-Kael: Budućnost je u opasnosti.
-
-Kael: Nemaju još mnogo vremena.
-
-Narrator: Signal na trenutak nestaje.
-
-Kael: Dhorn?
-
-Narrator: Nekoliko sekundi nema odgovora.
-
-<<radio_static AudioManager>>
-Dhorn: Traži Dhorn, svjetlost toru.
-
-Kael: Svjetlost.
-
-Kael: Znanje.
-
-Kael: Istina.
-
-Kael: Ili samo pomoć.
-
--> znanje / istinu
-    <<set $translationAccuracy += 1>>
-    Kael: Bilježim prijevod: znanje i istinu.
-    <<add_word NotebookPanel "svjetlost" "znanje / istina">>
--> pomoć
-    Kael: Bilježim prijevod: pomoć.
-    <<add_word NotebookPanel "svjetlost" "pomoć">>
--> svjetlo / energiju
-    Kael: Bilježim prijevod: svjetlo ili energiju.
-    <<add_word NotebookPanel "svjetlost" "svjetlo / energija">>
-
-Kael: Traže informacije s površine.
-
-Kael: Žele znati što dolazi.
-
-Kael: I koliko će još trajati.
-
-Dhorn: Daje Dhorn, sjeme vel-moran toru.
-
-Kael: Sjeme.
-
-Kael: Budućnost, možda.
-
-Kael: Ili djeca.
-
-Kael: Nešto što se ne smije izgubiti.
-
-<<if $moranTranslation == "doma">>
-Narrator: Kael ponovno vidi riječ moran.
-
-Narrator: Ovaj put, uz pozitivni prefiks vel-.
-
-Kael: Vel-moran.
-
-Kael: Dobar dom.
-
-Kael: Siguran dom.
-
-Kael: Za njih to nije samo mjesto.
-
-Kael: To je ono što pokušavaju sačuvati.
-<<elseif $moranTranslation == "sigurnosti">>
-Narrator: Kael ponovno vidi riječ moran.
-
-Narrator: Ovaj put, uz pozitivni prefiks vel-.
-
-Kael: Vel-moran.
-
-Kael: Sigurnost.
-
-Kael: Ne traže pobjedu.
-
-Kael: Traže mjesto na kojem više neće osjećati kako se strop ruši.
-<<elseif $moranTranslation == "nade">>
-Narrator: Kael ponovno vidi riječ moran.
-
-Narrator: Ovaj put, uz pozitivni prefiks vel-.
-
-Kael: Vel-moran.
-
-Kael: Dobra nada.
-
-Kael: Još uvijek nisam siguran da je to pravi prijevod.
-
-Kael: Ali sada razumijem zašto sam ga izabrao.
-<<endif>>
-
--> budućnost / nadu
-    <<set $translationAccuracy += 1>>
-    Kael: Bilježim prijevod: budućnost i nada.
-    <<add_word NotebookPanel "sjeme" "budućnost / nada">>
--> resurse
-    Kael: Bilježim prijevod: resurse.
-    <<add_word NotebookPanel "sjeme" "resursi">>
--> djecu / naraštaj
-    Kael: Bilježim prijevod: djecu i naraštaj.
-    <<add_word NotebookPanel "sjeme" "djeca / naraštaj">>
-
-Narrator: Signal ponovno oslabi.
-
-Narrator: Kroz statiku se probija nova poruka.
-
-Dhorn: Vorn, nem-hodi dubina.
-
-Dhorn: Vorn, hodi toru.
-
-Dhorn: Kael, ostaje.
-
-Kael: Vorn.
-
-Kael: Kael.
-
-Kael: Iste rečenice.
-
-Kael: Različite uloge.
-
-Kael: Jedan više ne živi u dubini.
-
-Kael: Jedan odlazi na površinu.
-
-Kael: Jedan ostaje između.
-
-Narrator: Kael se sjeti datoteke od prije dvadeset sedam godina.
-
-Narrator: „Kontakt izgubljen nakon pokušaja odgovora.”
-
-Narrator: „Stari kael nije govorio.”
-
-Kael: Je li Vorn bio taj koji je odgovorio?
-
-Kael: Je li on bio prvi kael?
-
-Kael: Ili su to uvijek bile dvije različite osobe?
-
-Kael: Jedan koji odlazi.
-
-Kael: Jedan koji ostaje.
-
-Kael: Je li ovo povijest?
-
-Kael: Upozorenje?
-
-Kael: Ili uputa za ono što moram napraviti?
-
--> ostaje
-    <<set $translationAccuracy += 1>>
-    Kael: Bilježim prijevod: ostaje.
--> čeka
-    Kael: Bilježim prijevod: čeka.
--> pamti
-    Kael: Bilježim prijevod: pamti.
--> sluša
-    Kael: Bilježim prijevod: sluša.
-
-Narrator: U tom trenutku zazvoni drugi terminal.
+Kael: Sljedeća smjena. Nakon svega što sam pronašao o prethodnom Vornu, očekivao sam još jedan zaključani arhivski zapis. Umjesto toga, na službenom terminalu čeka novi zadatak.
 
 <<notification_beep AudioManager>>
-Maren: Vorn.
 
-Maren: Moramo razgovarati.
-
-Kael: Sada?
-
-Maren: Upravo sada.
-
-Kael: Do punog kapaciteta ostalo je manje od četiri sata.
-
-Maren: Znam.
-
-Kael: Onda ga zaustavite.
-
-Narrator: Maren ne odgovara.
-
-Kael: Direktorice?
-
-Maren: Ne mogu.
-
-Kael: Ne možete...
-
-Kael: ili ne želite?
-
-Maren: Fazu dva više ne nadzire moj odjel.
-
-Kael: Tko je nadzire?
-
-Maren: Operativno zapovjedništvo.
-
-Kael: Vojska.
-
-Maren: Nisam to rekla.
-
-Kael: Niste morali.
-
-Maren: Kad smo pronašli sustavne šupljine, projekt je prekategoriziran.
-
-Maren: Više se ne vodi kao energetsko istraživanje.
-
-Kael: Kako se vodi?
-
-Maren: Kao pitanje sigurnosti.
-
-Kael: Sigurnosti od ljudi za koje još jučer niste priznali da postoje?
-
-Maren: Vorn, slušaj me.
-
-Maren: Ako zapovjedništvo potvrdi da je ispod grada organizirana civilizacija...
-
-Maren: prestat će tražiti resurse.
-
-Maren: Počet će tražiti prijetnju.
-
-Kael: A vi ste im dali bušilice.
-
-Maren: Pokušavam dobiti vrijeme.
-
-Kael: I zato od mene tražite prijevode?
-
-Maren: Zato od tebe tražim nešto konkretnije.
-
-Maren: Naši geolozi pronašli su velike šupljine ispod grada.
-
-Maren: Sustavne prolaze.
-
-Maren: Zidove.
-
-Maren: Netko je tamo živio.
-
-Maren: Ili još živi.
-
-Kael: Znate da još žive.
-
-Maren: Ja imam sumnju.
-
-Maren: Zapovjedništvu trebaju dokazi.
-
-Maren: Znaš li nešto što im može potvrditi gdje se nalaze?
-
-Narrator: Kael shvaća što Maren zapravo traži.
-
-Narrator: Karte podzemnih prolaza.
-
-Narrator: Ulaze.
-
-Narrator: Put do Dhorna.
-
-Kael: A ako vam ih dam?
-
-Maren: Možda mogu poslati izviđački tim prije nego što pošalju nešto gore.
-
-Kael: „Možda.”
-
-Maren: To je jedino što imam.
-
-Kael: Dhorn traži planove bušenja.
-
-Kael: Vi tražite njihove prolaze.
-
-Kael: Obje strane traže od mene da im pokažem gdje je ona druga najranjivija.
-
-Maren: Ja pokušavam spriječiti katastrofu.
-
-Kael: I oni.
-
-Narrator: Veza ostaje otvorena.
-
-Narrator: Maren prvi put ne zvuči kao direktorica.
-
-Narrator: Zvuči kao netko tko je upravo izgubio kontrolu.
-
-Maren: Vorn...
-
-Maren: Postoji još nešto.
-
-Kael: Naravno da postoji.
-
-Maren: Datoteka koju si pokušao otvoriti.
-
-Maren: Incident od prije dvadeset sedam godina.
-
-Kael: Vi ste je izbrisali.
-
-Maren: Nisam.
-
-Kael: Tko onda jest?
-
-Maren: Netko tko je znao da ćeš je tražiti.
-
-Kael: Tko je pokušao odgovoriti Dhornu?
-
-Maren: U izvještaju nema imena.
-
-Kael: Lažete.
-
-Maren: Postoji samo oznaka.
-
-Maren: LINGVISTIČKI POSREDNIK — V.
-
-Kael: V.
-
-Kael: Vorn?
-
-Maren: Ne znam.
-
-Kael: Ali znate više nego što mi govorite.
-
-Maren: Znam da je nakon tog incidenta kanal 7-G zatvoren.
-
-Maren: Znam da je nekoliko dokumenata nestalo.
-
-Maren: I znam da se signal ponovno pojavio kada si ti sjeo za terminal.
-
-Kael: Mislite da to nije slučajnost.
-
-Maren: Mislim da više nemamo vremena za slučajnosti.
-
-Narrator: Na zidu odbrojavanje prelazi ispod tri sata.
-
-Narrator: 02:59:59.
-
-Narrator: 02:59:58.
-
-Narrator: 02:59:57.
-
-Narrator: Obje strane sada traže Kaelovu pomoć.
-
-Narrator: Dhorn traži planove bušenja kako bi zaštitio svoje domove.
-
-Narrator: Maren traži karte prolaza prije nego što zapovjedništvo pošalje vojsku.
-
-Kael: Ako pomognem Dhornu...
-
-Kael: izdajem površinu.
-
-Kael: Ako pomognem vladi...
-
-Kael: možda pokazujem vojsci put do njih.
-
-Kael: Ako odbijem obje strane...
-
-Kael: ostavljam ih da djeluju bez ikoga između.
-
-Kael: Prevoditelj ne odlučuje.
-
-Kael: To sam si govorio.
-
-Kael: Ali cijelo vrijeme samo sam odgađao odluku.
-
--> Pomozi Dhornu i pošalji planove bušenja
-    <<set $betrayedSurface = true>>
-    <<set $dhornTrust += 3>>
-    Kael: Poslat ću im planove.
-    Kael: Ako već ne mogu zaustaviti Vatru-7...
-    Kael: mogu im barem pokazati odakle dolazi.
-    <<jump Session5A_Start>>
--> Pomozi Maren i pošalji karte podzemnih prolaza
-    <<set $marenSuspicion -= 2>>
-    Kael: Poslat ću vam karte.
-    Kael: Ali ako ih zapovjedništvo iskoristi protiv Dhorna...
-    Maren: Razumijem.
-    Kael: Ne.
-    Kael: Mislim da nitko od nas više ne razumije što radi.
-    <<jump Session5B_Start>>
--> Odbij obje strane
-    <<set $kaelaIsolated = true>>
-    Kael: Neću vam dati njihove prolaze.
-    Kael: I njima neću dati vaše planove.
-    Maren: Onda što ćeš napraviti?
-    Kael: Pronaći odgovor koji ne počinje izdajom.
-    <<jump Session5C_Start>>
+Maren: Kael. Dodijeljen si procjeni jezičnog rizika za Projekt Vatra-7, Fazu II. Prije aktivacije trebam procjenu reakcije kontakata na 7-G.
+
+Kael: Vatra-7. Dhorni koriste riječ "vatra" od prvog kontakta. Ali isto ime nije dokaz da govore o ovom projektu.
+
+<<set $knowsVatra7Project = true>>
+// OTKRIĆE: Na Površini postoji službeni projekt pod nazivom Vatra-7.
+// CLUE_UNLOCK: C17_VATRA7_PROJECT
+
+Maren: Imaš ograničen pristup tehničkim podacima. Nemoj izlaziti iz opsega zadatka.
+
+Kael: Imam vremena provjeriti dvije stvari prije kontakta s Dhornima.
+
+<<set $session4ResearchCount = 0>>
+<<jump Session4_ResearchHub>>
+===
+
+title: Session4_ResearchHub
+---
+<<if $session4ResearchCount >= 2>>
+    <<jump Session4_MarenBriefing>>
+<<endif>>
+
+Kael: Što želim provjeriti?
+
+-> Tehnički opis Vatre-7. <<if $researchedVatraTechS4 == false>>
+    <<set $researchedVatraTechS4 = true>>
+    <<set $session4ResearchCount += 1>>
+    <<jump Session4_ResearchTech>>
+-> Koordinate Faze II. <<if $researchedVatraCoordinatesS4 == false>>
+    <<set $researchedVatraCoordinatesS4 = true>>
+    <<set $session4ResearchCount += 1>>
+    <<jump Session4_ResearchCoordinates>>
+-> Povijest projekta. <<if $researchedVatraHistoryS4 == false>>
+    <<set $researchedVatraHistoryS4 = true>>
+    <<set $session4ResearchCount += 1>>
+    <<jump Session4_ResearchHistory>>
+-> Potraži vezu između V-27 i područja projekta. <<if $researchedV27LinkS4 == false>>
+    <<set $researchedV27LinkS4 = true>>
+    <<set $session4ResearchCount += 1>>
+    <<jump Session4_ResearchV27>>
+-> Ne riskiraj više i kontaktiraj Maren.
+    <<jump Session4_MarenBriefing>>
+===
+
+title: Session4_ResearchTech
+---
+Kael: TEHNIČKI SAŽETAK. PROJEKT VATRA-7. Dubinska energetska ekstrakcija i stabilizacija podzemnog sustava. Faza II predviđa povećanje radne dubine i kapaciteta. Dakle nije naziv za oružje. Barem ne u službenoj dokumentaciji. To još uvijek ne govori kako ga Dhorni doživljavaju.
+
+<<set $knowsVatra7Phase2 = true>>
+// OTKRIĆE: Vatra-7 je službeno dubinski energetski projekt; Faza II ide dublje i povećava kapacitet.
+
+<<jump Session4_ResearchHub>>
+===
+
+title: Session4_ResearchCoordinates
+---
+Kael: Otvaram mapu radnog područja Faze II.
+
+<<if $knowsSurfaceExtraction>>
+    Kael: Prepoznajem sektor. Preklapa se s područjem geoloških radova koje sam već neovisno povezao sa signalom 7-G.
+    <<set $knowsVatra7Overlap = true>>
+    // OTKRIĆE: Koordinate Faze II preklapaju se s ranije potvrđenim radovima u području Dhorn signala.
+    // CLUE_UNLOCK: C18_VATRA7_OVERLAP
+<<elseif $dhornClaimsExtraction>>
+    Kael: Koordinate su duboko ispod grada, ali nemam neovisan podatak kojim ih mogu povezati s Dhorn prostorom. Za sada imam samo njihovu tvrdnju da Površina tamo nešto uzima.
+<<else>>
+    Kael: Brojevi sami po sebi ne znače dovoljno. Nemam prethodni dokaz s kojim ih mogu usporediti.
+<<endif>>
+
+<<jump Session4_ResearchHub>>
+===
+
+title: Session4_ResearchHistory
+---
+Kael: Projekt nije pokrenut nakon mog prvog kontakta. Pripremne operacije postojale su prije nego što sam otvorio 7-G. Znači Vatra-7 nije reakcija na mene. To je važno. Ali dokument ne kaže jesu li prije znali za Dhorne.
+
+<<set $knowsVatraPredatesKael = true>>
+// OTKRIĆE: Vatra-7 i pripremne dubinske operacije prethode Kaelovu kontaktu s Dhornima.
+
+<<jump Session4_ResearchHub>>
+===
+
+title: Session4_ResearchV27
+---
+<<if $knowsV27Designation || $foundIncidentReport || $knowsVornRemovedFromProgram>>
+    Kael: Pretražujem V-27, stari kontakt i sektor u kojem se danas izvodi Vatra-7.
+
+    <<if $knowsV27Designation && $knowsSurfaceExtraction>>
+        Kael: Nalazim stari tehnički indeks. V-27 je imao pristup izvještajima iz istog šireg dubinskog sektora. Dokument ne govori zašto.
+        <<set $foundV27VatraTrace = true>>
+        // OTKRIĆE: V-27 je u starom programu imao pristup tehničkim zapisima iz istog šireg dubinskog sektora.
+        // CLUE_UNLOCK: C19_V27_DEPTH_TRACE
+        Kael: To je veza, ali ne i uzrok. Još uvijek ne mogu tvrditi da je zbog toga uklonjen.
+    <<else>>
+        Kael: Nalazim nekoliko zaključanih referenci, ali ništa što mogu dokazivo povezati s današnjim projektom.
+    <<endif>>
+<<else>>
+    Kael: Nemam dovoljno konkretan trag o prethodnom posredniku da bih pretraživao ovu vezu bez nagađanja.
+<<endif>>
+
+<<jump Session4_ResearchHub>>
+===
+
+title: Session4_MarenBriefing
+---
+<<notification_beep AudioManager>>
+
+<<if $marenSuspicion >= 7>>
+    Maren: Vrijeme je. Zbog načina na koji si pristupao klasificiranim zapisima dobivaš samo operativni minimum. Faza II nije nova operacija, ali povećanje kapaciteta jest. Saznaj hoće li kontakti na 7-G reagirati na aktivaciju.
+    Kael: Dakle više mi ne vjeruješ ni s kontekstom.
+    Maren: Vjerujem ti kao prevoditelju. Ne vjerujem više da ćeš poštovati granice pristupa.
+<<elseif $marenSuspicion >= 4>>
+    Maren: Vrijeme je. Pratim koliko često izlaziš iz opsega zadatka, ali još uvijek trebam tvoju procjenu. Faza II povećava kapacitet. Saznaj hoće li kontakti na 7-G reagirati.
+<<else>>
+    Maren: Vrijeme je. Faza II nije nova operacija, ali povećanje kapaciteta jest. Trebam od tebe jednu stvar: saznaj hoće li kontakti na 7-G reagirati na aktivaciju.
+<<endif>>
+
+Kael: Što želim pitati?
+
+-> "Što točno radi Faza II?"
+    Kael: Koliko dublje ide?
+    Maren: Dovoljno da se područje rada promijeni. To je razlog zašto si uključen.
+    <<set $knowsVatra7Phase2 = true>>
+-> "Jeste li znali za Dhorne kada je projekt odobren?"
+    Kael: Jesu li ljudi koji su odobrili Vatru-7 znali da je dolje netko?
+    Maren: Znali su za anomalije i nepravilne strukture. To nije isto što i potvrđena civilizacija.
+    Kael: A sada?
+    Maren: Sada imamo kontakt. Zato te pitam za reakciju.
+    <<set $marenSuspicion += 1>>
+    <<set $governmentTrust -= 1>>
+-> "Ima li ovo veze s prethodnim Vornom?"
+    Kael: V-27. Stari kontakt. Isti dubinski sektor. Je li Vatra-7 nastavak nečega što je on otkrio?
+    <<if $knowsV27Designation || $foundIncidentReport>>
+        Maren: Povezuješ stari klasificirani program s današnjim projektom. Ako imaš dokaz, pošalji ga. Ako nemaš, ne pretvaraj vremensku blizinu u uzrok.
+    <<else>>
+        Maren: Ne znam na temelju čega postavljaš to pitanje.
+        <<set $marenSuspicion += 1>>
+        <<set $governmentTrust -= 1>>
+    <<endif>>
+-> "Zašto se projekt zove Vatra-7?"
+    Kael: Zašto baš "Vatra"?
+    Maren: Interna oznaka. Starija od tvog zadatka. Ne traži značenje tamo gdje možda postoji samo kodno ime.
+    Kael: Možda. Ali Dhorni tu riječ koriste bez pristupa našim kodnim imenima.
+-> Ne pitaj ništa više.
+    Kael: Razumijem zadatak.
+
+Maren: Ne treba mi teorija. Treba mi prijevod onoga što stvarno kažu.
+
+<<jump Session4_DhornContact>>
+===
+
+title: Session4_DhornContact
+---
+<<radio_static AudioManager>>
+
+Dhorn: Vel-ahn, kael-vorn.
+
+Kael: Vel-ahn. Slušam.
+
+Dhorn: Toru vatra hodi dubina. Vatra uzima kamen. Moran pada poslije.
+
+Kael: "Vatra" je opet u istoj strukturi. Površina. Dubina. Uzimanje. Moran poslije. Ali sada prvi put znam da na Površini postoji Projekt Vatra-7. Kako ću trenutno zapisati riječ "vatra"?
+
+-> "Projekt Vatra-7."
+    <<set $vatraInterpretation = "project_exact">>
+    Kael: To bi objasnilo podudaranje, ali Dhorni ne mogu znati naše kodno ime samo iz ovog razgovora. To je prejak zaključak.
+    <<add_word NotebookPanel "vatra" "Projekt Vatra-7 (?)">>
+-> "Dubinska aktivnost Površine."
+    <<set $vatraInterpretation = "surface_depth_activity">>
+    <<set $translationAccuracy += 1>>
+    Kael: To objašnjava sve dosadašnje kontekste bez pretpostavke da Dhorni znaju naziv našeg projekta.
+    <<add_word NotebookPanel "vatra" "aktivnost Površine u dubini (?)">>
+-> "Posljedica aktivnosti Površine."
+    <<set $vatraInterpretation = "consequence">>
+    Kael: Moguće. Ali u ovoj rečenici "vatra" nešto radi, ne samo da nastaje kao posljedica.
+    <<add_word NotebookPanel "vatra" "posljedica aktivnosti Površine (?)">>
+-> "Napad / rat."
+    <<set $vatraInterpretation = "attack">>
+    Kael: To je najopasniji prijevod. Dhorni su već prije razlikovali "uzima" od izravnog napada. Nemam dokaz da "vatra" znači rat.
+    <<add_word NotebookPanel "vatra" "napad / rat (?)">>
+-> Ostavi riječ nepoznatom.
+    <<set $vatraInterpretation = "unknown">>
+    Kael: Veza je sve jača, ali još uvijek neću pretpostavku pretvoriti u činjenicu.
+    <<add_word NotebookPanel "vatra" "??? / povezano s Površinom i dubinom">>
+
+Dhorn: Vatra bliže. Nem-dugo.
+
+Kael: Nešto se približava. I kažu da nema puno vremena.
+
+<<jump Session4_DhornQuestions>>
+===
+
+title: Session4_DhornQuestions
+---
+Kael: Mogu postaviti jedno pitanje prije nego što signal oslabi.
+
+-> "Je li Vatra isto što i ono što Površina uzima?"
+    Kael: Vatra isto kao uzima?
+    Dhorn: Nem. Toru uzima kamen. Vatra hodi poslije.
+    <<add_word NotebookPanel "nem" "ne / negacija [POTVRĐENO]">>
+    Kael: Dobro. "Vatra" nije isto što i "uzima". Dolazi nakon ili uz tu aktivnost.
+    <<set $knowsVatraNotExtractionWord = true>>
+-> "Dolazi li Vatra iz istog mjesta kao geološki radovi?"
+    Kael: Vatra hodi gdje toru uzima kamen?
+    Dhorn: Da. Ista dubina. Bliže sada.
+    <<set $dhornClaimsVatraSameArea = true>>
+    // OTKRIĆE: Dhorni tvrde da se "vatra" kreće kroz isto područje u kojem Površina uzima resurse.
+-> "Što će se dogoditi ako Vatra nastavi?"
+    Kael: Vatra hodi. Poslije što?
+    Dhorn: Moran pada. Dh'orn hodi dalje ako može.
+    Kael: Tvrde da će njihov prostor ili zajednica pretrpjeti posljedice. Još uvijek je to njihova tvrdnja, ne neovisan dokaz.
+    <<set $dhornClaimsVatraThreat = true>>
+-> "Je li Vatra napad?"
+    Kael: Vatra napad Dh'orn?
+    Dhorn: Nem-riječ. Toru možda nem-zna. Vatra ipak hodi.
+    <<add_word NotebookPanel "nem" "ne / negacija [POTVRĐENO]">>
+    Kael: Čak ni oni je ne opisuju jednostavno kao napad. Kažu da Površina možda ni ne zna što radi.
+    <<set $knowsVatraNotSimpleAttack = true>>
+-> Ne pitaj. Zadrži signal stabilnim.
+    Kael: Neću trošiti vezu na pitanje za koje još nemam dovoljno konteksta.
+
+<<jump Session4_ReportToMaren>>
+===
+
+title: Session4_ReportToMaren
+---
+<<notification_beep AudioManager>>
+
+Maren: Izvještaj.
+
+Kael: Kako ću prenijeti ono što znam?
+
+-> Precizno odvoji prijevod od zaključka.
+    <<set $reportedVatraLinkPrecisely = true>>
+    <<set $governmentTrust += 2>>
+    Kael: Dhorni riječ "vatra" povezuju s aktivnostima Površine u dubini. Projekt Vatra-7 je mogući konkretni izvor, posebno zbog vremena i područja, ali ne mogu tvrditi da oni znaju za naš naziv projekta.
+    Maren: Dobro. To je procjena koju mogu koristiti.
+-> Reci da Dhorni znaju za Projekt Vatra-7.
+    <<set $overstatedVatraKnowledge = true>>
+    <<set $marenSuspicion += 1>>
+    <<set $governmentTrust -= 1>>
+    Kael: Dhorni znaju za Vatru-7.
+    Maren: Kako bi znali klasificirano kodno ime?
+    Kael: Ne znam da ga znaju. Znam da koriste riječ "vatra".
+    Maren: Onda si mi upravo dao zaključak kao činjenicu. Nemoj to ponoviti.
+-> Ublaži i prijavi samo zabrinutost zbog geološke aktivnosti.
+    <<set $softenedVatraReportS4 = true>>
+    Kael: Reagiraju na dubinsku geološku aktivnost i zabrinuti su zbog posljedica.
+    Maren: A riječ koju ponavljaju?
+    Kael: Još nije dovoljno pouzdana za službeni prijevod.
+-> Sakrij vezu s Vatrom.
+    <<set $hidVatraLinkS4 = true>>
+    <<set $marenSuspicion += 1>>
+    <<set $governmentTrust -= 1>>
+    Kael: Nema dovoljno novih podataka o njihovoj namjeri.
+    Maren: To nije ono što pokazuje intenzitet 7-G. Ako nešto zadržavaš, saznat ću prije Faze II.
+
+Maren: U redu. Stiglo je ažuriranje rasporeda.
+
+<<jump Session4_Phase2Update>>
+===
+
+title: Session4_Phase2Update
+---
+Kael: PROJEKT VATRA-7. FAZA II ODOBRENA. POVEĆANJE RADNE DUBINE I KAPACITETA. AKTIVACIJA PUNOG KAPACITETA: 48:00:00.
+
+<<set $knowsVatra7Countdown = true>>
+<<set $knowsVatra7DepthIncrease = true>>
+// OTKRIĆE: Faza II Vatre-7 prelazi na povećanu dubinu i puni kapacitet za 48 sati.
+// CLUE_UNLOCK: C20_VATRA7_COUNTDOWN
+
+<<if $knowsVatra7Overlap>>
+    Kael: I sada znam da se to povećanje događa u području koje sam već povezao s 7-G. To je činjenica. Uzrok posljedica koje Dhorni opisuju još nije.
+<<elseif $dhornClaimsVatraSameArea>>
+    Kael: Dhorni tvrde da je to isto područje. Nemam neovisnu potvrdu, ali odbrojavanje je stvarno.
+<<else>>
+    Kael: Ne znam još preklapaju li se točno njihove lokacije i naše koordinate. Ali odbrojavanje je stvarno.
+<<endif>>
+
+<<radio_static AudioManager>>
+
+Dhorn: Kael-vorn. Vatra bliže. Moran čeka. Nem-dugo.
+
+Kael: Imam jednu priliku odgovoriti prije nego što se kanal zatvori.
+
+-> Reci im za puni rok od 48 sati.
+    <<set $warnedDhornFullS4 = true>>
+    <<set $dhornTrust += 2>>
+    Kael: Toru vatra raste. Puni hodi za četrdeset osam sati.
+    Dhorn: Dh'orn čuje. Dh'orn sprema.
+-> Reci samo da je nova faza odobrena.
+    <<set $warnedDhornPartialS4 = true>>
+    <<set $dhornTrust += 1>>
+    Kael: Toru vatra bliže. Nova faza hodi.
+    Dhorn: Koliko dugo?
+    Kael: Ne odgovaram brojkom.
+    Dhorn: Kael čuva dio govora.
+-> Nemoj im otkriti raspored.
+    <<set $withheldVatraCountdownS4 = true>>
+    <<set $dhornTrust -= 1>>
+    Kael: Još nemam dovoljno da im prenesem operativni raspored.
+    Dhorn: Vatra ipak hodi. Dh'orn osjeti.
+-> Pitaj što će napraviti ako se projekt ne zaustavi.
+    <<set $askedDhornResponseS4 = true>>
+    Kael: Ako vatra nem-stane, Dh'orn što radi?
+    Dhorn: Prvo čuva moran. Poslije bira put.
+    Kael: Ne daju mi prijetnju. Daju mi upozorenje da će reagirati ako moraju.
+
+<<jump Session4_Ending>>
+===
+
+title: Session4_Ending
+---
+Kael: Četrdeset osam sati. Dhorni su govorili "vatra" prije nego što sam znao da Projekt Vatra-7 postoji.
+
+<<if $vatraInterpretation == "surface_depth_activity">>
+    Kael: Najsigurnije što sada mogu reći jest da je "vatra" njihova riječ za neku aktivnost Površine koja prodire u dubinu. Vatra-7 se uklapa. Još nije isto što i dokaz.
+<<elseif $vatraInterpretation == "project_exact">>
+    Kael: Želio sam riječ odmah izjednačiti s projektom. Ali ime koje koristimo mi i pojam koji koriste oni nisu automatski ista stvar.
+<<elseif $vatraInterpretation == "attack">>
+    Kael: Nazvati je napadom bilo bi lakše. I opasnije. Ni Dhorni mi to nisu potvrdili.
+<<else>>
+    Kael: Još uvijek ne znam je li "vatra" njihova riječ za projekt, njegovu aktivnost ili posljedicu koju osjećaju.
+<<endif>>
+
+<<if $foundV27VatraTrace>>
+    Kael: A V-27 je prije dvadeset sedam godina već imao pristup zapisima iz istog šireg sektora. Ne znam zašto. Još.
+<<endif>>
+
+Kael: Za dva dana možda više neće biti važno kako nazivamo ono što dolazi. Bit će važno što napravi kad stigne.
+
+<<jump Session4_TimeSkip>>
+===
+
+title: Session4_TimeSkip
+---
+Kael: Četrdeset četiri sata kasnije.
+
+<<jump Session5_Start>>
 ===
