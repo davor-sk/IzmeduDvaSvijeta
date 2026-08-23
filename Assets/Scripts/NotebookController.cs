@@ -62,4 +62,33 @@ public class NotebookController : MonoBehaviour
 
         wordTranslations.Clear();
     }
+
+    public void GetEntries(List<string> words, List<string> translations)
+    {
+        words.Clear();
+        translations.Clear();
+
+        foreach (var pair in wordTranslations)
+        {
+            if (pair.Value == null) continue;
+
+            words.Add(pair.Key);
+            translations.Add(pair.Value.text);
+        }
+    }
+
+
+    public void RestoreEntries(List<string> words, List<string> translations)
+    {
+        if (words == null || translations == null) return;
+
+        ClearNotebook();
+
+        int count = Mathf.Min(words.Count, translations.Count);
+
+        for (int i = 0; i < count; i++)
+        {
+            AddWord(words[i], translations[i]);
+        }
+    }
 }

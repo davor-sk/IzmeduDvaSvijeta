@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
+using UnityEngine.Scripting;
 
 public class PauseMenuController : MonoBehaviour
 {
@@ -51,14 +52,14 @@ public class PauseMenuController : MonoBehaviour
             pauseMenuPanel.SetActive(false);
     }
 
-   
+    [Preserve]
     public void GoToMainMenu()
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene("MainMenu");
     }
 
-   
+    [Preserve]
     public void QuitGame()
     {
         Application.Quit();

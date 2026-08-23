@@ -1,6 +1,7 @@
  using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Scripting;
 using TMPro;
 using Yarn.Unity;
 
@@ -14,11 +15,17 @@ public class EndingCardController : MonoBehaviour
     public CanvasGroup canvasGroup;
     public DialogueRunner dialogueRunner;
 
+    private bool isLoadingMenu = false;
+
     [YarnCommand("show_ending")]
     public void ShowEnding(string quote)
     {
-        // Block the pause menu so Escape can't interrupt the ending sequence.
+        Debug.Log("EndingCardController.ShowEnding called: " + quote);
+
+        
         PauseMenuController.CanPause = false;
+
+        SaveSystem.Delete();
 
         endingCardPanel.SetActive(true);
 
@@ -49,10 +56,23 @@ public class EndingCardController : MonoBehaviour
         yield return new WaitForSeconds(2.5f);
 
         mainMenuButton.SetActive(true);
+
+        var btn = mainMenuButton.GetComponentInChildren<Button>();
+        if (btn != null)
+        {
+            btn.onClick.RemoveListener(GoToMainMenu);
+            btn.onClick.AddListener(GoToMainMenu);
+        }
     }
 
+    [Preserve]
     public void GoToMainMenu()
     {
-    UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
+       
+        if (isLoadingMenu) return;
+        isLoadingMenu = true;
+
+        Debug.Log("EndingCardController.GoToMainMenu -> loading MainMenu");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
     }
 }

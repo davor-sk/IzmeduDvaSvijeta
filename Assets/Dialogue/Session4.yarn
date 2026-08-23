@@ -109,6 +109,11 @@ Kael: Ili samo pomoć.
     Kael: Bilježim prijevod: svjetlo ili energiju.
     <<add_word NotebookPanel "svjetlost" "svjetlo / energija">>
 
+<<jump Session4_Part2>>
+===
+
+title: Session4_Part2
+---
 Kael: Traže informacije s površine.
 
 Kael: Žele znati što dolazi.
@@ -176,6 +181,11 @@ Kael: Ali sada razumijem zašto sam ga izabrao.
     Kael: Bilježim prijevod: djecu i naraštaj.
     <<add_word NotebookPanel "sjeme" "djeca / naraštaj">>
 
+<<jump Session4_Part3>>
+===
+
+title: Session4_Part3
+---
 Narrator: Signal ponovno oslabi.
 
 Narrator: Kroz statiku se probija nova poruka.
@@ -232,6 +242,11 @@ Kael: Ili uputa za ono što moram napraviti?
 -> sluša
     Kael: Bilježim prijevod: sluša.
 
+<<jump Session4_Part4>>
+===
+
+title: Session4_Part4
+---
 Narrator: U tom trenutku zazvoni drugi terminal.
 
 <<notification_beep AudioManager>>
