@@ -1,0 +1,299 @@
+﻿title: Session8_Start
+---
+Kael: Posljednje minute. Sve što sam preveo, prešutio, provjerio i pogrešno protumačio sada postoji u isto vrijeme.
+
+<<jump Session8_EndingRouter>>
+===
+
+title: Session8_EndingRouter
+---
+<<set $warTriggered = false>>
+
+<<if $escalation >= 6>>
+    <<set $warTriggered = true>>
+<<endif>>
+
+<<if $warTriggered>>
+    <<jump Session8_WarEnding>>
+<<elseif $finalChoice == "truth" && $truthReady>>
+    <<jump Session8_TruthEnding>>
+<<elseif $finalChoice == "dhorn">>
+    <<jump Session8_DhornEnding>>
+<<elseif $finalChoice == "government">>
+    <<jump Session8_GovernmentEnding>>
+<<else>>
+    Kael: Predugo sam čekao da odluka postane jasna sama od sebe. Nije.
+    <<set $warTriggered = true>>
+    <<jump Session8_WarEnding>>
+<<endif>>
+===
+
+title: Session8_DhornEnding
+---
+<<set $endingUnlockedDhorn = true>>
+
+Kael: Stari pristupni tunel završava pred vratima koja sam dosad poznavao samo kroz signal.
+
+<<if $dhornTrust >= 60>>
+    <<set $endingVariant = "strong">>
+    Dhorn: Kael-vorn. Moran otvara. Govor ostaje.
+    Kael: Otvaraju mi prolaz bez dodatnog pitanja. Ne zato što sam postao Dhorn, nego zato što sam kroz cijeli kontakt izgradio dovoljno povjerenja da me puste između svojih ljudi i onoga što dolazi s Površine.
+<<elseif $dhornTrust <= 40>>
+    <<set $endingVariant = "weak">>
+    Dhorn: Kael čeka. Dh'orn još ne zna Kael.
+    Kael: Ne puštaju me odmah. I imaju razlog. Povjerenje se ne dobiva zato što sam na kraju izabrao njihov put.
+<<else>>
+    <<set $endingVariant = "standard">>
+    Dhorn: Kael-vorn. Jedan put otvoren.
+    Kael: Dovoljno da uđem. Nedovoljno da zaboravim koliko toga još ne znam.
+<<endif>>
+
+<<radio_static AudioManager>>
+
+Maren: Kael, još se možeš vratiti.
+
+Kael: Ne idem zato što mislim da su Dhorni uvijek u pravu. Idem jer prvi susret licem u lice ne smije početi samo s Jedinicom Četrnaest i njihovim naredbama.
+
+Maren: Površina će to smatrati prelaskom na drugu stranu.
+
+Kael: Onda im reci da Vorn nije strana. Vorn je ono što ostane između njih kada obje strane prestanu slušati. Što ću posljednje poslati Maren?
+
+-> "Drži kanal otvoren."
+    <<set $dhornEndingFinalMessage = "keep_channel">>
+    Kael: Drži 7-G otvoren. Ako ga zatvore, sve ovo završava kao prije dvadeset sedam godina.
+    Maren: Pokušat ću.
+-> "Pošalji Zapovjedništvu originalne poruke."
+    <<set $dhornEndingFinalMessage = "send_originals">>
+    Kael: Ne šalji im moj sažetak. Pošalji original i označi što je prijevod, a što pretpostavka.
+    Maren: Razumijem.
+-> Ne šalji više ništa.
+    <<set $dhornEndingFinalMessage = "silence">>
+    Kael: Ponekad je bolje ne dodati još jednu rečenicu koju će netko pretvoriti u naredbu.
+
+<<jump Session8_DhornEpilogue>>
+===
+
+title: Session8_DhornEpilogue
+---
+Kael: Vatra-7 ulazi u privremenu obustavu dok Operativno zapovjedništvo procjenjuje što znači moja prisutnost u dubini.
+
+<<if $dhornEndingFinalMessage == "keep_channel">>
+    Kael: Maren uspijeva zadržati 7-G aktivnim. Površina i dalje ima kanal kojim može pitati prije nego djeluje.
+<<elseif $dhornEndingFinalMessage == "send_originals">>
+    Kael: Zapovjedništvo dobiva originale s jasno označenim stupnjem sigurnosti. Ne vjeruju mi svi, ali više ne gledaju samo jedan sažetak.
+<<else>>
+    Kael: Više ništa ne šaljem. Kanal ostaje tehnički otvoren, ali politička udaljenost prema Površini raste.
+<<endif>>
+
+<<if $grandfatherIsV27>>
+    Kael: Djed je jednom bio ovdje prije mene. Ali ovo nije njegov završetak koji samo ponavljam. Njegov trag mi je dao kontekst. Moj izbor je moj.
+<<endif>>
+
+Kael: Dhorni ne otvaraju sve prolaze. Površina ne povlači sve jedinice. Mir nije postignut. Ali govor nije prekinut. Za sada je to dovoljno.
+
+<<jump Session8_End>>
+===
+
+title: Session8_GovernmentEnding
+---
+<<set $endingUnlockedGovernment = true>>
+
+Kael: Vraćam se u kontrolni centar dok odbrojavanje ulazi u posljednje minute.
+
+<<if $governmentTrust >= 60 && $marenSuspicion < 7>>
+    <<set $endingVariant = "strong">>
+    Maren: Zapovjedništvo je pristalo da ostaneš službeni posrednik. Traže potpune originale i procjenu rizika.
+    Kael: Dobit će originale. Ali svaka procjena mora jasno odvojiti činjenicu, tvrdnju i hipotezu.
+    Maren: Zato sam te i htjela natrag ovdje.
+<<elseif $governmentTrust >= 60 && $marenSuspicion >= 7>>
+    <<set $endingVariant = "standard">>
+    Maren: Tvoj rad smatraju korisnim, ali pristup ostaje ograničen zbog svega što si radio izvan procedure.
+    Kael: Onda neka ograniče mene. Ne i originalni zapis.
+<<elseif $governmentTrust <= 40>>
+    <<set $endingVariant = "weak">>
+    Maren: Neće ti vratiti puni pristup. Previše si puta zaobišao proceduru.
+    Kael: Onda ću raditi bez privilegija. Kanal još uvijek trebate više nego moj sigurnosni status.
+    Maren: U tome se slažu čak i ljudi koji ti ne vjeruju.
+<<else>>
+    <<set $endingVariant = "standard">>
+    Maren: Ne znam hoćeš li ostati u programu nakon večeras.
+    Kael: Ime programa mi više nije najvažnije. Važno je da 7-G ne postane još jedan zaključani incident report.
+<<endif>>
+
+Maren: Zapovjedništvo traži posljednju preporuku prije aktivacije.
+
+Kael: Što ću preporučiti?
+
+-> Zaustavi Fazu II i otvori službene pregovore.
+    <<set $governmentEndingRecommendation = "pause_and_talk">>
+    <<set $escalation -= 1>>
+    Kael: Preporuka: privremena obustava Faze II, bez ulaska Jedinice Četrnaest i otvaranje službenog kanala s Dhornima.
+    Maren: To ću potpisati.
+-> Zadrži projekt, ali zaustavi ulazak jedinice.
+    <<set $governmentEndingRecommendation = "project_without_entry">>
+    Kael: Ako ne možete ugasiti projekt, barem ne spajajte ga s oružanim ulaskom dok ne razumijemo posljedice.
+    Maren: To je kompromis koji možda mogu progurati.
+-> Predaj samo originalne poruke i odbij dati političku preporuku.
+    <<set $governmentEndingRecommendation = "originals_only">>
+    Kael: Neću glumiti stratega. Dat ću im točan prijevod i sve izvore. Odluka neka ostane njihova, ali više ne mogu tvrditi da nisu znali što Dhorni govore.
+    Maren: Pošteno.
+
+<<jump Session8_GovernmentEpilogue>>
+===
+
+title: Session8_GovernmentEpilogue
+---
+<<if $governmentEndingRecommendation == "pause_and_talk">>
+    Kael: Faza II ulazi u privremenu obustavu. Jedinica Četrnaest ne ulazi, a Maren uspijeva otvoriti službeni pregovarački kanal. To nije mir, ali je odluka da se prvo razgovara.
+<<elseif $governmentEndingRecommendation == "project_without_entry">>
+    Kael: Vatra-7 ostaje na smanjenom kapacitetu, ali Jedinica Četrnaest ne ulazi. Projekt nije riješen; samo smo odvojili tehnički rizik od oružanog kontakta.
+<<else>>
+    Kael: Predao sam originale i odbio dati političku preporuku. Maren uspijeva izboriti kratku odgodu ulaska, ali status Faze II ostaje otvoren. Odluka je ostala njihova — samo više ne mogu tvrditi da nisu znali što Dhorni govore.
+<<endif>>
+
+Kael: Dhorni ne vjeruju Površini. Površina ne vjeruje Dhornima. Ništa od toga nije nestalo zato što sam se vratio. Ali prvi put originalna Dhorn poruka ostaje uz prijevod u službenom zapisu. Nijedna riječ više ne može nestati samo zato što je netko odlučio sačuvati sažetak.
+
+<<jump Session8_End>>
+===
+
+title: Session8_TruthEnding
+---
+<<set $endingUnlockedTruth = true>>
+
+Kael: Otvaram zajednički kanal. Maren na jednoj strani. Dhorni na drugoj. I treći zapis koji ne pripada ni jednom zatvorenom sustavu.
+
+Maren: Kael, što točno šalješ?
+
+Kael: Samo ono što mogu označiti. V-27 je postojao. Bio je lingvistički posrednik. Njegova oznaka pojavljuje se u tehničkim zapisima dubinskog sektora.
+
+<<if $foundIncidentReport>>
+    Kael: Službeni zapis kaže da je nakon prekida kontakta uklonjen iz programa.
+<<endif>>
+<<if $knowsVornSilenced>>
+    Kael: Dhorni isti događaj opisuju kao "utiša" — prekid govora i kontakta.
+<<endif>>
+<<if $v27SavedOriginals>>
+    Kael: Privatni zapis pokazuje da je V-27 namjerno čuvao originale izvan službenog kanala.
+<<endif>>
+<<if $knowsVatra7Correlation>>
+    Kael: Današnja očitanja pokazuju korelaciju između povećanja rada Vatre-7 i vibracija u dubinskom sektoru.
+<<endif>>
+
+Kael: A ovo ne mogu dokazati: ne znam je li Površina prije dvadeset sedam godina namjerno pokušala uništiti Dhorne. Ne znam je li moj djed bio u pravu u svakoj procjeni. Ne znam što će Dhorni učiniti ako ih se pritisne dalje. Zato svaki zapis dobiva jednu od tri oznake: ČINJENICA. TVRDNJA. HIPOTEZA.
+
+Dhorn: Govor oba.
+
+Maren: Zapovjedništvo traži da ugasiš vanjski zapis.
+
+Kael: Ne objavljujem koordinate ni taktičke podatke. Objavljujem činjenicu da kontakt postoji i da se original ne smije ponovno izgubiti. Što ću napraviti s djedovim pismom?
+
+-> Objavi ga, jasno označeno kao osobnu tvrdnju V-27.
+    <<set $truthEndingLetterChoice = "publish_as_claim">>
+    Kael: Njegovo pismo ide uz oznaku TVRDNJA. Obitelj nije dokaz, ali ni razlog za skrivanje izvora.
+-> Zadrži pismo privatnim i objavi samo provjerljive zapise.
+    <<set $truthEndingLetterChoice = "keep_private">>
+    Kael: Njegova osobna verzija ostaje moja. Javni zapis dobiva samo ono što drugi izvori mogu provjeriti.
+-> Predaj pismo objema stranama, ali ne javnosti.
+    <<set $truthEndingLetterChoice = "share_both_sides">>
+    Kael: Dhorni i Maren dobit će njegovu verziju. Javnost zasad dobiva samo provjerljive činjenice.
+
+<<jump Session8_TruthEpilogue>>
+===
+
+title: Session8_TruthEpilogue
+---
+<<if $truthEndingLetterChoice == "publish_as_claim">>
+    Kael: Djedovo pismo postaje dio javnog zapisa s oznakom TVRDNJA. Odmah izaziva spor, ali nitko ga ne može zamijeniti službenim sažetkom.
+<<elseif $truthEndingLetterChoice == "keep_private">>
+    Kael: Javni zapis ostaje uži, ali metodološki čišći. Djedova osobna priča ostaje izvan onoga što još ne mogu dokazati.
+<<else>>
+    Kael: Pismo dobivaju obje strane, ali ne i javnost. Postaje zajednički izvor za pregovore, bez pretvaranja privatne tvrdnje u javnu činjenicu.
+<<endif>>
+
+<<if $dhornTrust >= 60 && $governmentTrust >= 60>>
+    <<set $endingVariant = "strong">>
+    Kael: Nevjerojatno, obje strane ostaju na kanalu. Nitko nije zadovoljan, ali nitko ne prekida vezu. Možda je to prvi put da sam stvarno postao Vorn u punom smislu riječi.
+<<elseif $dhornTrust <= 40 || $governmentTrust <= 40>>
+    <<set $endingVariant = "weak">>
+    Kael: Jedna strana me već smatra izdajnikom, druga još ne zna može li mi vjerovati. Istina nije automatski stvorila povjerenje. Samo je otežala potpuno brisanje priče.
+<<else>>
+    <<set $endingVariant = "standard">>
+    Kael: Nitko nije zadovoljan. To je možda prvi znak da više nitko nema potpunu kontrolu nad verzijom događaja.
+<<endif>>
+
+Kael: Vatra-7 ulazi u privremenu obustavu. Pregovori još nisu mir. Ali rat također nije počeo. Pred nama je nešto sporije i teže od pobjede. Razgovor u kojem obje strane mogu provjeriti što je druga stvarno rekla. Između dva svijeta.
+
+<<jump Session8_End>>
+===
+
+title: Session8_WarEnding
+---
+<<set $endingUnlockedWar = true>>
+
+<<alarm_siren AudioManager>>
+
+Kael: 00:02:11.
+
+Maren: Jedinica Četrnaest je izgubila kontakt s prednjim timom.
+
+Dhorn: Vatra! Toru napada!
+
+Kael: Čekajte. Nemamo potvrdu tko je prvi pokrenuo sukob.
+
+Maren: Više nemamo vremena za to pitanje.
+
+Kael: Upravo zato smo ovdje.
+
+<<screen_shake ScreenEffects 0.6 0.8>>
+
+<<if $framedDhornAsAttackers || $framedUnit14AsAttack || $session7MediationStyle == "aggressive">>
+    Kael: I negdje putem riječ "napad" postala je sigurnija nego što su dokazi dopuštali. Jednom sam je možda i ja stavio tamo gdje nije bila.
+<<endif>>
+
+Kael: Kanal se puni preklapajućim signalima. Naredbama. Upozorenjima. Prekinutim Dhorn rečenicama.
+
+Dhorn: Moran pada. Nem-govor.
+
+Maren: Povuci ih natrag!
+
+Nepoznati operater: Povlačenje odbijeno. Nastavljamo prema protokolu.
+
+Kael: Što još mogu napraviti?
+
+-> Drži 7-G otvoren što je dulje moguće.
+    <<set $warEndingLastAction = "keep_channel">>
+    Kael: Ako više ništa ne mogu prevesti, barem neću prvi ugasiti kanal.
+-> Kopiraj sve originale izvan službenog sustava.
+    <<set $warEndingLastAction = "save_originals">>
+    Kael: Ako razgovor nestane, zapis neće. Ovaj put netko poslije mene neće morati tražiti četiri riječi u oštećenom fragmentu.
+-> Pokušaj još jednom poslati oboma poruku "stanite".
+    <<set $warEndingLastAction = "last_message">>
+    Kael: Toru stane. Dh'orn stane. Govor prvo.
+    Dhorn: Kael-vorn...
+    Maren: Čujem te. Ali više ne kontroliram sve jedinice.
+
+<<jump Session8_WarEpilogue>>
+===
+
+title: Session8_WarEpilogue
+---
+Kael: Vatra-7 se gasi tek nakon urušavanja dijela dubinskog sustava.
+
+<<if $warEndingLastAction == "keep_channel">>
+    Kael: 7-G ostaje aktivan nekoliko minuta dulje. Dovoljno da obje strane kasnije imaju zapis posljednjih upozorenja, ali ne dovoljno da zaustavi sukob.
+<<elseif $warEndingLastAction == "save_originals">>
+    Kael: Kopija originalnih transmisija preživljava izvan službenog sustava. Rat nije spriječen, ali sljedeći Vorn neće početi s četiri oštećene riječi.
+<<else>>
+    Kael: Moja posljednja poruka "stanite" ulazi u oba zapisa. Nitko ne reagira dovoljno brzo, ali nitko kasnije ne može tvrditi da pokušaja deeskalacije nije bilo.
+<<endif>>
+
+Kael: Površina zatvara javne informacije. Dhorni prekidaju 7-G. Broj stradalih ne postoji u jednoj verziji kojoj obje strane vjeruju. Najgore nije to što smo jednu riječ pogrešno preveli. Najgore je što smo prestali provjeravati prije nego što smo djelovali.
+
+<<jump Session8_End>>
+===
+
+title: Session8_End
+---
+Kael: Kanal ostaje otvoren još nekoliko sekundi. Dovoljno da čujem statiku. Dovoljno da znam da je s druge strane netko barem jednom slušao. Vel-ahn.
+
+===

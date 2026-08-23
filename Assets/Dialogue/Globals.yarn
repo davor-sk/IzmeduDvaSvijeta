@@ -1,10 +1,234 @@
 ﻿title: Globals
 ---
-<<declare $dhornTrust = 0>>
+// ============================================================
+// CORE / GLOBAL STATE
+// ============================================================
+
+<<declare $dhornTrust = 50>>
+<<declare $governmentTrust = 50>>
 <<declare $marenSuspicion = 0>>
 <<declare $translationAccuracy = 0>>
+<<declare $escalation = 0>>
+
 <<declare $betrayedSurface = false>>
 <<declare $kaelaIsolated = false>>
-<<declare $moranTranslation = "">> 
 <<declare $finalChoice = "">>
+<<declare $debugTarget = "">>
+
+
+// ============================================================
+// SESSION 1 — FIRST CONTACT
+// ============================================================
+
+<<declare $analyzedSignalSource = false>>
+
+<<declare $knowsRestrictedChannel = false>>
+<<declare $knowsLevelV = false>>
+<<declare $knowsDhornPeople = false>>
+<<declare $knowsPreviousContactHint = false>>
+
+<<declare $reportedAnomalyToMaren = false>>
+<<declare $toldMarenAboutContact = false>>
+<<declare $liedToMaren = false>>
+<<declare $gaveKaelName = false>>
+<<declare $keptDhornChannelOpen = false>>
+<<declare $copiedTransmission = false>>
+
+<<declare $velAhnTranslation = "unknown">>
+<<declare $toruTranslation = "unknown">>
+<<declare $hodiTranslation = "unknown">>
+<<declare $dahTranslation = "unknown">>
+<<declare $moranTranslation = "unknown">>
+<<declare $vornTranslation = "unknown">>
+<<declare $kaelTranslation = "unknown">>
+
+
+// ============================================================
+// SESSION 2 — SURFACE / DEPTH / EXTRACTION
+// ============================================================
+
+<<declare $uzimaTranslation = "unknown">>
+<<declare $kamenTranslation = "unknown">>
+<<declare $padaTranslation = "unknown">>
+<<declare $rukaTranslation = "unknown">>
+
+<<declare $dhornClaimsExtraction = false>>
+<<declare $knowsSurfaceExtraction = false>>
+<<declare $knowsOldSignalActivity = false>>
+<<declare $knowsOldContact = false>>
+<<declare $foundVornFragment = false>>
+
+<<declare $reportedFullTranslation = false>>
+<<declare $softenedTranslation = false>>
+<<declare $hidTranslation = false>>
+
+<<declare $session2ResearchCount = 0>>
+<<declare $researchedArchiveS2 = false>>
+<<declare $researchedVornS2 = false>>
+<<declare $researchedExtractionS2 = false>>
+<<declare $researchedTransmissionsS2 = false>>
+
+
+// ============================================================
+// SESSION 3 — PREVIOUS VORN / V-27
+// ============================================================
+
+<<declare $utisaTranslation = "unknown">>
+
+<<declare $knowsVornNotName = false>>
+<<declare $knowsVornSilenced = false>>
+
+<<declare $marenConfirmedPreviousContact = false>>
+<<declare $marenGaveOldContactVersion = false>>
+
+<<declare $knowsV27Designation = false>>
+<<declare $foundIncidentReport = false>>
+<<declare $knowsVornRemovedFromProgram = false>>
+<<declare $knowsVProgram = false>>
+
+<<declare $session3TrustStance = "undecided">>
+<<declare $session3Interpretation = "insufficient_evidence">>
+
+<<declare $reportedVornTheory = false>>
+<<declare $withheldVornTheory = false>>
+<<declare $correctedUtisaTranslation = false>>
+
+<<declare $session3ResearchCount = 0>>
+<<declare $researchedVornIdentityS3 = false>>
+<<declare $researchedIncidentS3 = false>>
+<<declare $researchedVDesignationS3 = false>>
+<<declare $researchedOldTransmissionS3 = false>>
+
+
+// ============================================================
+// SESSION 4 — PROJECT VATRA-7
+// ============================================================
+
+<<declare $knowsVatra7Project = false>>
+<<declare $knowsVatra7Phase2 = false>>
+<<declare $knowsVatra7Overlap = false>>
+<<declare $knowsVatraPredatesKael = false>>
+<<declare $foundV27VatraTrace = false>>
+
+<<declare $vatraInterpretation = "unknown">>
+<<declare $knowsVatraNotExtractionWord = false>>
+<<declare $dhornClaimsVatraSameArea = false>>
+<<declare $dhornClaimsVatraThreat = false>>
+<<declare $knowsVatraNotSimpleAttack = false>>
+
+<<declare $session4ResearchCount = 0>>
+<<declare $researchedVatraTechS4 = false>>
+<<declare $researchedVatraCoordinatesS4 = false>>
+<<declare $researchedVatraHistoryS4 = false>>
+<<declare $researchedV27LinkS4 = false>>
+
+<<declare $reportedVatraLinkPrecisely = false>>
+<<declare $overstatedVatraKnowledge = false>>
+<<declare $softenedVatraReportS4 = false>>
+<<declare $hidVatraLinkS4 = false>>
+
+<<declare $knowsVatra7Countdown = false>>
+<<declare $knowsVatra7DepthIncrease = false>>
+
+<<declare $warnedDhornFullS4 = false>>
+<<declare $warnedDhornPartialS4 = false>>
+<<declare $withheldVatraCountdownS4 = false>>
+<<declare $askedDhornResponseS4 = false>>
+
+
+// ============================================================
+// SESSION 5 — VATRA-7 CRISIS / FIRST MAJOR CHOICE
+// ============================================================
+
+<<declare $dhornClaimsCollapseNow = false>>
+<<declare $knowsOperationalCommand = false>>
+<<declare $knowsVatra7Correlation = false>>
+<<declare $knowsPhase2SecurityControl = false>>
+<<declare $knowsSignalInstabilityS5 = false>>
+<<declare $dhornClaimsDefensiveIntent = false>>
+
+<<declare $marenLostExclusiveControl = false>>
+
+<<declare $reportedDhornPlanRequest = false>>
+<<declare $withheldDhornPlanRequest = false>>
+<<declare $refusedDhornMapEarly = false>>
+
+<<declare $translatedCrisisPrecisely = false>>
+<<declare $framedDhornAsAttackers = false>>
+<<declare $softenedCrisisTranslation = false>>
+<<declare $withheldCrisisTranslation = false>>
+
+<<declare $session5Route = "none">>
+<<declare $sharedVatraPlansWithDhorn = false>>
+<<declare $sharedDhornRoutesWithGovernment = false>>
+<<declare $refusedBothSidesS5 = false>>
+
+
+// Session 6 - consequences, V-27 convergence, symbol
+<<declare $dhornUsedPlansDefensively = false>>
+<<declare $alteredSurfaceDataS6 = false>>
+<<declare $warnedDhornTacticallyS6 = false>>
+<<declare $refusedFurtherDhornHelpS6 = false>>
+
+<<declare $unit14EntryApproved = false>>
+<<declare $marenDidNotAuthorizeUnit14 = false>>
+<<declare $warnedDhornAboutUnit14 = false>>
+<<declare $framedUnit14AsAttack = false>>
+<<declare $withheldUnit14Warning = false>>
+<<declare $marenOpposedUnit14 = false>>
+
+<<declare $foundV27ArchiveTrace = false>>
+<<declare $recognizedV27Symbol = false>>
+<<declare $knowsV27PrivateTransmitter = false>>
+<<declare $rememberedSymbolAtHome = false>>
+
+<<declare $session6ResearchCount = 0>>
+<<declare $researchedV27TechnicalS6 = false>>
+<<declare $researchedMaintenanceMarksS6 = false>>
+<<declare $researchedPrivateSignalS6 = false>>
+<<declare $researchedSectorHistoryS6 = false>>
+
+// Session 6 v2 - additional branch interaction flags
+<<declare $verifiedDhornV27DocumentS6 = false>>
+<<declare $askedDhornDocumentOriginS6 = false>>
+<<declare $comparedV27RecordsS6 = false>>
+<<declare $inspectedV27SymbolS6 = false>>
+
+<<declare $checkedCommandV27PullS6 = false>>
+<<declare $askedMarenAboutSymbolS6 = false>>
+<<declare $comparedV27IncidentS6 = false>>
+<<declare $checkedV27PrivateCommsS6 = false>>
+
+// Session 7 - grandfather reveal, truth evaluation, final choice
+<<declare $session7BoxCount = 0>>
+<<declare $foundGrandfatherPhotoS7 = false>>
+<<declare $foundGrandfatherNotebookS7 = false>>
+<<declare $foundGrandfatherTransmitterS7 = false>>
+<<declare $foundGrandfatherLetterS7 = false>>
+
+<<declare $grandfatherIsV27 = false>>
+<<declare $kaelMeaningConfirmed = false>>
+<<declare $v27SavedOriginals = false>>
+<<declare $v27ClaimsRemovedForRefusal = false>>
+
+<<declare $toldDhornGrandfatherTruth = false>>
+<<declare $withheldGrandfatherLinkFromDhorn = false>>
+<<declare $dismissedGrandfatherLink = false>>
+
+<<declare $session7MediationStyle = "unknown">>
+<<declare $truthReady = false>>
+
+// Session 8 - endings
+<<declare $warTriggered = false>>
+<<declare $endingVariant = "standard">>
+
+<<declare $endingUnlockedDhorn = false>>
+<<declare $endingUnlockedGovernment = false>>
+<<declare $endingUnlockedTruth = false>>
+<<declare $endingUnlockedWar = false>>
+
+<<declare $dhornEndingFinalMessage = "none">>
+<<declare $governmentEndingRecommendation = "none">>
+<<declare $truthEndingLetterChoice = "none">>
+<<declare $warEndingLastAction = "none">>
 ===
