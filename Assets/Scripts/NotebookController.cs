@@ -56,6 +56,37 @@ public class NotebookController : MonoBehaviour
         );
     }
 
+    // Vraca sve rijeci iz biljeznice, redoslijedom dodavanja, za spremanje igre
+    public List<NotebookWordEntry> GetAllWords()
+    {
+        var result = new List<NotebookWordEntry>();
+
+        foreach (var pair in wordTranslations)
+        {
+            result.Add(new NotebookWordEntry
+            {
+                dhornWord = pair.Key,
+                translation = pair.Value.text
+            });
+        }
+
+        return result;
+    }
+
+    // Ponovno gradi biljeznicu iz spremljene igre
+    public void RestoreWords(List<NotebookWordEntry> words)
+    {
+        ClearNotebook();
+
+        if (words == null)
+            return;
+
+        foreach (var word in words)
+        {
+            AddWord(word.dhornWord, word.translation);
+        }
+    }
+
     public void ClearNotebook()
     {
         foreach (Transform child in wordListContent)

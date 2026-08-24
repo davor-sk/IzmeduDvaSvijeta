@@ -1,10 +1,15 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
+using TMPro;
 
 public class PauseMenuController : MonoBehaviour
 {
     public GameObject pauseMenuPanel;
+
+    // Spremanje igre
+    public GameSaveManager saveManager;
+    public TextMeshProUGUI saveFeedbackText;
 
     
     public static bool CanPause = true;
@@ -18,6 +23,12 @@ public class PauseMenuController : MonoBehaviour
         CanPause = true;
         if (pauseMenuPanel != null)
             pauseMenuPanel.SetActive(false);
+
+        if (saveManager == null)
+            saveManager = FindFirstObjectByType<GameSaveManager>();
+
+        if (saveFeedbackText != null)
+            saveFeedbackText.text = "";
     }
 
     void Update()
@@ -40,6 +51,25 @@ public class PauseMenuController : MonoBehaviour
         Time.timeScale = 0f;
         if (pauseMenuPanel != null)
             pauseMenuPanel.SetActive(true);
+
+        // svaki put kad se otvori pauza, poruka o spremanju krece prazna
+        if (saveFeedbackText != null)
+            saveFeedbackText.text = "";
+    }
+
+    // Poziva ga SaveButton u PauseMenuPanelu
+    public void SaveGame()
+    {
+        if (saveManager == null)
+        {
+            Debug.LogError("PauseMenu: nema GameSaveManagera.");
+            return;
+        }
+
+        saveManager.SaveGame();
+
+        if (saveFeedbackText != null)
+            saveFeedbackText.text = "Igra spremljena.";
     }
 
     
