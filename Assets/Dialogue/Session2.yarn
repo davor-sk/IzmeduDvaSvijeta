@@ -169,7 +169,7 @@ Kael: Kako želim započeti razgovor?
     Dhorn: Prije. Vorn. Dugo prije.
     <<set $knowsPreviousContactHint = true>>
     // OTKRIĆE: Dhorni potvrđuju da su prije Kaela razgovarali s nekim s Površine.
-    // CLUE_UNLOCK: C05_PREVIOUS_CONTACT
+    <<unlock_clue "C05_PREVIOUS_CONTACT">>
     Kael: Dobro. To je puno jasnije nego prošli put.
     <<jump SurfaceMessage>>
 -> Pitaj što žele od Površine.
@@ -421,7 +421,7 @@ Kael: Ali važnija riječ je opet "moran".
 <<endif>>
 
 Kael: Sada imam više primjera: "Moran dah", "Moran stoji kada zid pada" i "Pada zid, moran."
-// CLUE_UNLOCK: C07_DEPTH_THREAT
+<<unlock_clue "C07_DEPTH_THREAT">>
 
 Kael: Kako sada razumijem "moran"?
 
@@ -528,7 +528,7 @@ Kael: Opet Vorn. Što želim pitati?
     Dhorn: Da. Toru-vorn. Prije.
     <<set $knowsPreviousContactHint = true>>
     // OTKRIĆE: Prethodni Vorn bio je netko s Površine.
-    // CLUE_UNLOCK: C05_PREVIOUS_CONTACT
+    <<unlock_clue "C05_PREVIOUS_CONTACT">>
     Kael: Znači prethodni Vorn bio je s Površine.
     <<jump ReportDecision>>
 -> "Što se dogodilo Vornu?"
@@ -542,7 +542,7 @@ Kael: Opet Vorn. Što želim pitati?
     Kael: Vorn prevodi?
     Dhorn: Vorn sluša toru. Vorn sluša Dh'orn. Vorn daje govor.
     Kael: Prevoditelj je blizu... ali još uvijek nije cijelo značenje.
-    // CLUE_UNLOCK: C06_VORN_ROLE
+    <<unlock_clue "C06_VORN_ROLE">>
     <<add_word NotebookPanel "vorn" "prevoditelj / posrednik (?)">>
     <<jump ReportDecision>>
 -> "Je li Vorn ime?"
@@ -843,13 +843,13 @@ Kael: Otvaram arhivu 7-G. Pristup odbijen. Očekivano. Ali možda mogu vidjeti s
     <<set $knowsOldContact = true>>
     <<set $knowsPreviousContactHint = true>>
     // OTKRIĆE: Najstariji pronađeni zapis povezan s kanalom 7-G star je 27 godina.
-    // CLUE_UNLOCK: C10_27_YEAR_RECORD
+    <<unlock_clue "C10_27_YEAR_RECORD">>
 -> Pokušaj otvoriti najstariju datoteku.
     Kael: Otvaram najstariji zapis. Pristup odbijen. Ali datum se pojavio prije nego što se prozor zatvorio. Dvadeset sedam godina.
     <<set $knowsOldContact = true>>
     <<set $knowsPreviousContactHint = true>>
     // OTKRIĆE: Najstariji pronađeni zapis povezan s kanalom 7-G star je 27 godina.
-    // CLUE_UNLOCK: C10_27_YEAR_RECORD
+    <<unlock_clue "C10_27_YEAR_RECORD">>
     <<set $marenSuspicion += 1>>
     <<set $governmentTrust -= 1>>
 -> Kopiraj metapodatke.
@@ -857,7 +857,7 @@ Kael: Otvaram arhivu 7-G. Pristup odbijen. Očekivano. Ali možda mogu vidjeti s
     <<set $knowsOldContact = true>>
     <<set $knowsPreviousContactHint = true>>
     // OTKRIĆE: Najstariji pronađeni zapis povezan s kanalom 7-G star je 27 godina.
-    // CLUE_UNLOCK: C10_27_YEAR_RECORD
+    <<unlock_clue "C10_27_YEAR_RECORD">>
 -> Odustani prije nego sustav zabilježi pristup.
     Kael: Ne još.
 
@@ -870,7 +870,7 @@ Kael: Pretražujem "Vorn". Ništa u službenom rječniku. Ali postoji jedan ošt
 
 <<set $foundVornFragment = true>>
 // OTKRIĆE: U starom oštećenom zapisu zajedno se pojavljuju riječi "vorn", "toru" i "moran".
-// CLUE_UNLOCK: C11_OLD_VORN_FRAGMENT
+<<unlock_clue "C11_OLD_VORN_FRAGMENT">>
 
 Kael: Što mislim da fragment govori?
 
@@ -894,7 +894,7 @@ Kael: Pretražujem geološke operacije ispod grada. Većina podataka je rutinska
 
 <<set $knowsSurfaceExtraction = true>>
 // OTKRIĆE: Površina provodi geološke operacije gotovo na istim koordinatama s kojih dolazi Dhorn signal.
-// CLUE_UNLOCK: C08_SURFACE_OPERATIONS
+<<unlock_clue "C08_SURFACE_OPERATIONS">>
 
 Kael: Dakle, barem jedan dio njihove poruke odgovara stvarnosti. Površina stvarno nešto uzima iz dubine.
 
@@ -907,7 +907,7 @@ Kael: Pregledavam stare anomalije. Većina je označena kao seizmički šum. Ali
 
 <<set $knowsOldSignalActivity = true>>
 // OTKRIĆE: Stare anomalije pokazuju da se slična aktivnost na 7-G pojavljuje još prije Kaelova dolaska u odjel.
-// CLUE_UNLOCK: C09_OLD_7G_ACTIVITY
+<<unlock_clue "C09_OLD_7G_ACTIVITY">>
 
 Kael: Aktivnost na 7-G nije počela prošli tjedan. Ali to još ne dokazuje da je tada netko razgovarao s Dhornima.
 

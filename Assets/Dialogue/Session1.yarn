@@ -21,7 +21,7 @@ title: ChannelData
 <<set $knowsRestrictedChannel = true>>
 <<set $knowsLevelV = true>>
 // OTKRIĆE: Kanal 7-G ima ograničen pristup i autorizaciju Razina V.
-// CLUE_UNLOCK: C01_RESTRICTED_7G
+<<unlock_clue "C01_RESTRICTED_7G">>
 
 Kael: Provjeravam zapis kanala. Kanal 7-G... ograničen pristup. Posljednja aktivnost nije dostupna. Autorizacija... Razina V. Zašto bi neaktivan kanal imao ograničenu autorizaciju? Što želim napraviti?
 
@@ -38,7 +38,7 @@ title: AnalyzeSignalSource
 
 Kael: Pokrećem analizu izvora. ... 2.8 kilometara ispod Površine? To ne može biti obična komunikacijska stanica. Sustav prepoznaje ponavljajuće jezične uzorke.
 // OTKRIĆE: Izvor signala nalazi se 2.8 kilometara ispod Površine i sadrži strukturirane jezične uzorke.
-// CLUE_UNLOCK: C02_DEEP_SIGNAL
+<<unlock_clue "C02_DEEP_SIGNAL">>
 
 Kael: Netko pokušava komunicirati.
 
@@ -259,7 +259,7 @@ Kael: "Dh'orn." Što želim pitati?
     <<add_word NotebookPanel "nem" "ne / negacija [POTVRĐENO]">>
     <<set $knowsDhornPeople = true>>
     // OTKRIĆE: Dh'orn nije ime jednog bića nego naziv naroda ili skupine.
-    // CLUE_UNLOCK: C03_DHORN_PEOPLE
+    <<unlock_clue "C03_DHORN_PEOPLE">>
     Kael: "Nem" znači ne. A Dh'orn nije jedno biće. Više njih.
 -> "Je li Dh'orn vaš narod?"
     Kael: Dh'orn... vi?
@@ -267,7 +267,7 @@ Kael: "Dh'orn." Što želim pitati?
     <<set $knowsDhornPeople = true>>
     <<set $dhornTrust += 1>>
     // OTKRIĆE: Dh'orn je naziv njihova naroda.
-    // CLUE_UNLOCK: C03_DHORN_PEOPLE
+    <<unlock_clue "C03_DHORN_PEOPLE">>
     Kael: Znači Dh'orn označava njih.
 -> "Je li Dh'orn mjesto?"
     Kael: Dh'orn mjesto?
@@ -275,14 +275,14 @@ Kael: "Dh'orn." Što želim pitati?
     <<add_word NotebookPanel "nem" "ne / negacija [POTVRĐENO]">>
     <<set $knowsDhornPeople = true>>
     // OTKRIĆE: Dh'orn nije mjesto nego naziv naroda ili skupine.
-    // CLUE_UNLOCK: C03_DHORN_PEOPLE
+    <<unlock_clue "C03_DHORN_PEOPLE">>
     Kael: "Nem" znači ne. Dh'orn je narod ili skupina.
 -> "Koliko vas ima?"
     Kael: Koliko vas ima?
     Dhorn: Mnogo Dh'orn.
     <<set $knowsDhornPeople = true>>
     // OTKRIĆE: Dh'orn označava više bića, ne jednu osobu.
-    // CLUE_UNLOCK: C03_DHORN_PEOPLE
+    <<unlock_clue "C03_DHORN_PEOPLE">>
     Kael: Više nego što sam očekivao.
 -> Ne pitaj ništa. Nastavi slušati.
     Kael: Nastavi.
@@ -397,7 +397,7 @@ Kael: Kontakt je stabilan. Ovo je prilika da saznam više. Što želim pitati Dh
     Dhorn: Toru govor prije.
     <<set $knowsPreviousContactHint = true>>
     // OTKRIĆE: Dhorni tvrde da je prije Kaela već postojao kontakt s Površinom.
-    // CLUE_UNLOCK: C05_PREVIOUS_CONTACT
+    <<unlock_clue "C05_PREVIOUS_CONTACT">>
     Kael: Prije? Znači možda već postoji povijest kontakta.
     <<jump SecondDhornQuestion>>
 -> "Jeste li već razgovarali s nekim odozgo?"
@@ -406,7 +406,7 @@ Kael: Kontakt je stabilan. Ovo je prilika da saznam više. Što želim pitati Dh
     <<add_word NotebookPanel "nem" "ne / negacija [POTVRĐENO]">>
     <<set $knowsPreviousContactHint = true>>
     // OTKRIĆE: Netko s Površine već je ranije razgovarao s Dhornima.
-    // CLUE_UNLOCK: C05_PREVIOUS_CONTACT
+    <<unlock_clue "C05_PREVIOUS_CONTACT">>
     Kael: Netko s Površine je već razgovarao s njima.
     <<jump SecondDhornQuestion>>
 -> "Što želite od mene?"
@@ -584,7 +584,7 @@ Dhorn: Kael-vorn.
 
 <<add_word NotebookPanel "kael" "???">>
 // OTKRIĆE: "Kael" se pojavljuje kao Dhorn riječ i možda nije samo Kaelovo osobno ime.
-// CLUE_UNLOCK: C04_KAEL_NOT_NAME
+<<unlock_clue "C04_KAEL_NOT_NAME">>
 
 Kael: Upravo su rekli "Kael". Nisam im rekao svoje ime. Što želim pitati?
 
@@ -625,7 +625,7 @@ Kael: Sad očito traže moje ime. Što ću im reći?
     Dhorn: Toru Aron. Nem-kael?
     <<add_word NotebookPanel "nem" "ne / negacija [POTVRĐENO]">>
     // OTKRIĆE: Nakon što Kael da lažno ime, Dhorni i dalje koriste riječ "kael"; riječ zato nije samo njegovo osobno ime.
-    // CLUE_UNLOCK: C04_KAEL_NOT_NAME
+    <<unlock_clue "C04_KAEL_NOT_NAME">>
     Kael: Dobro. Onda "kael" definitivno nije samo moje ime.
     <<set $kaelTranslation = "unknown">>
     <<jump VornIntroduction>>
@@ -692,7 +692,7 @@ Kael: Sad zvuči kao pitanje. Kako ću odgovoriti?
     Kael: Vorn što?
     Dhorn: Vorn sluša toru. Vorn sluša Dh'orn. Vorn govor između.
     // OTKRIĆE: Vorn sluša i Površinu i Dhorne te prenosi govor između dviju strana.
-    // CLUE_UNLOCK: C06_VORN_ROLE
+    <<unlock_clue "C06_VORN_ROLE">>
     Kael: Sluša obje strane i govori između njih.
 
 <<jump MarenIncoming>>
@@ -785,7 +785,7 @@ Kael: Nešto mi ne govori. Što ću je pitati?
     Maren: Nije relevantno.
     <<set $knowsPreviousContactHint = true>>
     // OTKRIĆE: Marenin odgovor potvrđuje da je kanal 7-G bio korišten prije Kaela.
-    // CLUE_UNLOCK: C09_OLD_7G_ACTIVITY
+    <<unlock_clue "C09_OLD_7G_ACTIVITY">>
     Kael: Onda je netko koristio.
 -> Pusti temu.
     Kael: U redu.
@@ -929,7 +929,7 @@ Kael: Imam vremena za još jedno pitanje. Što želim saznati?
     <<add_word NotebookPanel "nem" "ne / negacija [POTVRĐENO]">>
     <<set $knowsPreviousContactHint = true>>
     // OTKRIĆE: Prije Kaela postojao je Vorn s Površine.
-    // CLUE_UNLOCK: C05_PREVIOUS_CONTACT
+    <<unlock_clue "C05_PREVIOUS_CONTACT">>
     Kael: Postojao je Vorn s Površine.
 -> "Što je moran?"
     Kael: Moran?
@@ -1027,7 +1027,7 @@ Kael: Imam vremena za samo jedno pitanje. Što ću pitati?
     Kael: Vorn tko?
     Dhorn: Vorn sluša toru. Vorn sluša Dh'orn. Vorn govor između.
     Kael: Netko tko sluša obje strane.
-    // CLUE_UNLOCK: C06_VORN_ROLE
+    <<unlock_clue "C06_VORN_ROLE">>
     <<set $vornTranslation = "translator">>
     <<set $translationAccuracy += 1>>
     <<add_word NotebookPanel "vorn" "prevoditelj / posrednik (?)">>
@@ -1049,7 +1049,7 @@ Kael: Imam vremena za samo jedno pitanje. Što ću pitati?
     <<add_word NotebookPanel "nem" "ne / negacija [POTVRĐENO]">>
     <<set $knowsPreviousContactHint = true>>
     // OTKRIĆE: Dhorni potvrđuju da je prije Kaela postojao prethodni Vorn s Površine.
-    // CLUE_UNLOCK: C05_PREVIOUS_CONTACT
+    <<unlock_clue "C05_PREVIOUS_CONTACT">>
     Kael: Znači stvarno je postojao netko prije mene.
 
 Kael: Dosta.
