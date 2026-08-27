@@ -8,6 +8,7 @@ public class ClueLogController : MonoBehaviour
     public Transform clueListContent;
     public GameObject clueEntryPrefab;
     public TMP_FontAsset clueFont;
+    public ClueUnlockPopupController popupController;
 
     private HashSet<string> unlockedClues = new HashSet<string>();
 
@@ -28,6 +29,11 @@ public class ClueLogController : MonoBehaviour
             text.text = clueText;
             text.font = clueFont;
         }
+
+        if (popupController != null)
+    {
+        popupController.Enqueue(clueText);
+    }
 
         Debug.Log("Novi trag otključan: " + clueId);
     }

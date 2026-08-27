@@ -2,6 +2,8 @@
 ---
 Kael: TEST MENU — svaki preset prvo resetira Yarn state.
 
+   <<add_clue RightPanel "TEST02" "Ovo je drugi testni trag za provjeru popupa.">>
+
 -> Testiraj Session 1
     <<set $debugTarget = "s1">>
     <<jump Debug_ResetState>>

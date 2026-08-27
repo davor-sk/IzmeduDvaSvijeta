@@ -65,13 +65,13 @@ title: Session7_Notebook
 Kael: Bilježnica je mješavina Dhorn riječi, hrvatskih bilješki i tehničkih oznaka. Netko je radio isto što i ja: pokušavao uhvatiti značenje bez pretvaranja svake riječi u sigurnu činjenicu. Jedna definicija je podcrtana nekoliko puta. "Vorn — onaj koji sluša obje strane i prenosi govor između njih."
 
 <<set $vornTranslation = "mediator">>
-<<add_word NotebookPanel "vorn" "prevoditelj / posrednik između strana [POTVRĐENO]">>
+<<add_word RightPanel "vorn" "prevoditelj / posrednik između strana [POTVRĐENO]">>
 
 Kael: Ispod toga druga riječ. "Kael — onaj koji dolazi poslije i nastavlja prekinuti govor."
 
 <<set $kaelTranslation = "continues">>
 <<set $kaelMeaningConfirmed = true>>
-<<add_word NotebookPanel "kael" "onaj poslije / onaj koji nastavlja [POTVRĐENO]">>
+<<add_word RightPanel "kael" "onaj poslije / onaj koji nastavlja [POTVRĐENO]">>
 // OTKRIĆE: Bilješka V-27 potvrđuje da "kael" označava onoga koji nastavlja ulogu nakon prethodnog prekida.
 // CLUE_UNLOCK: C31_KAEL_MEANING
 

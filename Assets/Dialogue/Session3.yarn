@@ -104,7 +104,7 @@ title: Session3VornRefinement
 ---
 <<if $knowsVornNotName == false>>
     Dhorn: Vorn nem-ime. Vorn uloga.
-    <<add_word NotebookPanel "nem" "ne / negacija [POTVRĐENO]">>
+    <<add_word RightPanel "nem" "ne / negacija [POTVRĐENO]">>
     <<set $knowsVornNotName = true>>
     // OTKRIĆE: Vorn nije osobno ime nego uloga.
     // CLUE_UNLOCK: C06_VORN_ROLE
@@ -116,24 +116,24 @@ Kael: Ovo nije prvi put da pokušavam prevesti "vorn". Ali sada imam više konte
 
 -> "Prevoditelj."
     <<set $vornTranslation = "translator">>
-    <<add_word NotebookPanel "vorn" "prevoditelj (?)">>
+    <<add_word RightPanel "vorn" "prevoditelj (?)">>
     <<jump Session3VornFinalCheck>>
 -> "Posrednik između dviju strana."
     <<set $vornTranslation = "mediator">>
     <<set $translationAccuracy += 1>>
-    <<add_word NotebookPanel "vorn" "prevoditelj / posrednik između strana [POTVRĐENO]">>
+    <<add_word RightPanel "vorn" "prevoditelj / posrednik između strana [POTVRĐENO]">>
     <<jump Session3VornFinalCheck>>
 -> "Predstavnik Površine."
     <<set $vornTranslation = "representative">>
-    <<add_word NotebookPanel "vorn" "predstavnik Površine (?)">>
+    <<add_word RightPanel "vorn" "predstavnik Površine (?)">>
     <<jump Session3VornFinalCheck>>
 -> "Glasnik."
     <<set $vornTranslation = "messenger">>
-    <<add_word NotebookPanel "vorn" "glasnik (?)">>
+    <<add_word RightPanel "vorn" "glasnik (?)">>
     <<jump Session3VornFinalCheck>>
 -> Još ne zaključuj.
     <<set $vornTranslation = "unknown">>
-    <<add_word NotebookPanel "vorn" "uloga između Površine i Dhorna (?)">>
+    <<add_word RightPanel "vorn" "uloga između Površine i Dhorna (?)">>
     <<jump Session3VornFinalCheck>>
 ===
 
@@ -141,35 +141,35 @@ title: Session3VornFinalCheck
 ---
 <<if $vornTranslation == "mediator">>
     Kael: To se uklapa u sve primjere. Vorn sluša obje strane i nosi govor između njih. Ovo mogu smatrati potvrđenim prijevodom.
-    <<add_word NotebookPanel "vorn" "prevoditelj / posrednik između strana [POTVRĐENO]">>
+    <<add_word RightPanel "vorn" "prevoditelj / posrednik između strana [POTVRĐENO]">>
     <<jump Session3AfterVornCheck>>
 <<elseif $vornTranslation == "translator">>
     Kael: "Prevoditelj" nije pogrešno, ali više nije dovoljno precizno. Dhorni opisuju osobu koja sluša obje strane i posreduje između njih. Želim li usavršiti prijevod?
     -> Promijeni u "posrednik između dviju strana".
         <<set $vornTranslation = "mediator">>
         <<set $translationAccuracy += 1>>
-        <<add_word NotebookPanel "vorn" "prevoditelj / posrednik između strana [POTVRĐENO]">>
+        <<add_word RightPanel "vorn" "prevoditelj / posrednik između strana [POTVRĐENO]">>
         <<jump Session3AfterVornCheck>>
     -> Zadrži "prevoditelj" kao nepotpun prijevod.
-        <<add_word NotebookPanel "vorn" "prevoditelj (?)">>
+        <<add_word RightPanel "vorn" "prevoditelj (?)">>
         <<jump Session3AfterVornCheck>>
     -> Ostavi riječ nepoznatom.
         <<set $vornTranslation = "unknown">>
-        <<add_word NotebookPanel "vorn" "???">>
+        <<add_word RightPanel "vorn" "???">>
         <<jump Session3AfterVornCheck>>
 <<else>>
     Kael: Ovaj prijevod ne objašnjava dovoljno dobro činjenicu da Vorn sluša i Toru i Dhorne te prenosi govor između njih. Želim li ga promijeniti?
     -> Promijeni u "posrednik između dviju strana".
         <<set $vornTranslation = "mediator">>
         <<set $translationAccuracy += 1>>
-        <<add_word NotebookPanel "vorn" "prevoditelj / posrednik između strana [POTVRĐENO]">>
+        <<add_word RightPanel "vorn" "prevoditelj / posrednik između strana [POTVRĐENO]">>
         <<jump Session3AfterVornCheck>>
     -> Zadrži trenutni prijevod kao pretpostavku.
         Kael: Ostavit ću ga s upitnikom.
         <<jump Session3AfterVornCheck>>
     -> Ostavi riječ nepoznatom.
         <<set $vornTranslation = "unknown">>
-        <<add_word NotebookPanel "vorn" "???">>
+        <<add_word RightPanel "vorn" "???">>
         <<jump Session3AfterVornCheck>>
 <<endif>>
 ===
@@ -187,7 +187,7 @@ Kael: Prethodni Vorn više ne govori. Što želim pitati?
 -> "Je li umro?"
     Kael: Stari vorn nem-dah?
     Dhorn: Nem-znamo. Toru utiša vorn.
-    <<add_word NotebookPanel "nem" "ne / negacija [POTVRĐENO]">>
+    <<add_word RightPanel "nem" "ne / negacija [POTVRĐENO]">>
     Kael: Ne znaju je li mrtav. To je važno.
     <<jump Session3Utisa>>
 -> "Je li Površina prekinula njegov kontakt?"
@@ -198,7 +198,7 @@ Kael: Prethodni Vorn više ne govori. Što želim pitati?
 -> "Je li Vorn izdao Dhorne?"
     Kael: Vorn izdaja Dh'orn?
     Dhorn: Nem. Vorn govor. Toru utiša.
-    <<add_word NotebookPanel "nem" "ne / negacija [POTVRĐENO]">>
+    <<add_word RightPanel "nem" "ne / negacija [POTVRĐENO]">>
     <<set $dhornTrust += 1>>
     Kael: Dhorni ne krive njega.
     <<jump Session3Utisa>>
@@ -210,25 +210,25 @@ Kael: "Utiša." Nova riječ. Što znači "utiša" u rečenici "Toru utiša vorn"
 
 -> "Ubiti."
     <<set $utisaTranslation = "kill">>
-    <<add_word NotebookPanel "utiša" "ubiti (?)">>
+    <<add_word RightPanel "utiša" "ubiti (?)">>
     Kael: Ako je to točno, Dhorni optužuju Površinu za ubojstvo.
 -> "Prekinuti komunikaciju."
     <<set $utisaTranslation = "silence_contact">>
     <<set $translationAccuracy += 1>>
-    <<add_word NotebookPanel "utiša" "prekinuti komunikaciju / ušutkati (?)">>
+    <<add_word RightPanel "utiša" "prekinuti komunikaciju / ušutkati (?)">>
     Kael: To se izravno uklapa u "poslije nem-govor".
 -> "Zabraniti govor."
     <<set $utisaTranslation = "forbid_speech">>
     <<set $translationAccuracy += 1>>
-    <<add_word NotebookPanel "utiša" "zabraniti govor / ušutkati (?)">>
+    <<add_word RightPanel "utiša" "zabraniti govor / ušutkati (?)">>
     Kael: I to bi objasnilo zašto je govor prestao.
 -> "Ukloniti / zatvoriti."
     <<set $utisaTranslation = "remove">>
-    <<add_word NotebookPanel "utiša" "ukloniti / zatvoriti (?)">>
+    <<add_word RightPanel "utiša" "ukloniti / zatvoriti (?)">>
     Kael: Moguće, ali ne znam govori li riječ o mjestu, ulozi ili samom govoru.
 -> Nisam siguran.
     <<set $utisaTranslation = "unknown">>
-    <<add_word NotebookPanel "utiša" "???">>
+    <<add_word RightPanel "utiša" "???">>
     Kael: Neću jednu Dhorn riječ pretvoriti u činjenicu.
 
 <<set $knowsVornSilenced = true>>
@@ -537,7 +537,7 @@ Kael: "Uklonjen iz programa." Ovaj dokument daje mi novi kontekst za riječ "uti
 <<if $utisaTranslation == "silence_contact" || $utisaTranslation == "forbid_speech">>
     Kael: Moj prijevod se uklapa u ono što sada znam: kontakt je prekinut, a posrednik uklonjen iz programa. To još uvijek ne govori što se s osobom dogodilo nakon toga.
     <<set $utisaTranslation = "silence_contact">>
-    <<add_word NotebookPanel "utiša" "ušutkati / prekinuti komunikaciju [POTVRĐENO]">>
+    <<add_word RightPanel "utiša" "ušutkati / prekinuti komunikaciju [POTVRĐENO]">>
 <<else>>
     <<if $utisaTranslation == "kill">>
         Kael: Dokument ne potvrđuje moj prijevod "ubiti". Možda je Vorn kasnije umro, ali sama riječ "utiša" očito ne znači nužno smrt.
@@ -551,13 +551,13 @@ Kael: "Uklonjen iz programa." Ovaj dokument daje mi novi kontekst za riječ "uti
         <<set $utisaTranslation = "silence_contact">>
         <<set $correctedUtisaTranslation = true>>
         <<set $translationAccuracy += 1>>
-        <<add_word NotebookPanel "utiša" "ušutkati / prekinuti komunikaciju [POTVRĐENO]">>
+        <<add_word RightPanel "utiša" "ušutkati / prekinuti komunikaciju [POTVRĐENO]">>
         Kael: Ovo opisuje ono što tekst stvarno potvrđuje bez nagađanja o njegovoj smrti.
     -> Zadrži trenutni prijevod kao pretpostavku.
         Kael: Neću ga još označiti potvrđenim.
     -> Ostavi riječ nepoznatom.
         <<set $utisaTranslation = "unknown">>
-        <<add_word NotebookPanel "utiša" "???">>
+        <<add_word RightPanel "utiša" "???">>
 <<endif>>
 
 <<if $knowsSurfaceExtraction>>
@@ -664,7 +664,7 @@ Dhorn: Kael nastavlja.
 Kael: Opet. "Kael nastavlja."
 
 <<set $kaelTranslation = "continues">>
-<<add_word NotebookPanel "kael" "nastavlja / onaj koji nastavlja (?)">>
+<<add_word RightPanel "kael" "nastavlja / onaj koji nastavlja (?)">>
 // OTKRIĆE: "Kael" je povezan s nastavljanjem prethodne uloge, ali značenje još nije potpuno potvrđeno.
 
 Kael: Još nije dovoljno da riječ nazovem "nasljednik". Ali više nije samo moje ime.
@@ -724,7 +724,7 @@ Kael: I ostala je još jedna riječ koju nisam riješio: "vatra". Dhorni je kori
 <<else>>
     Kael: Još uvijek nemam dovoljno konteksta da znam na što se odnosi.
 <<endif>>
-<<add_word NotebookPanel "vatra" "??? / povezano s Površinom i dubinom; značenje još nepotvrđeno">>
+<<add_word RightPanel "vatra" "??? / povezano s Površinom i dubinom; značenje još nepotvrđeno">>
 
 Kael: A "kael"... ...još uvijek znači samo nešto blizu "onaj koji nastavlja". Ne znam tko je bio prethodni Vorn. Ne znam zašto je nestao. I još ne znam jesu li njegov nestanak i ono što se događa u dubini povezani. Ali sada znam što moram otkriti sljedeće.
 
