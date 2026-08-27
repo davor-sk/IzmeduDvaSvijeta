@@ -11,6 +11,7 @@ public class DhornPresenter : DialoguePresenterBase
     public TextMeshProUGUI speakerNameText;
     public TextMeshProUGUI dialogueText;
     public Image avatarImage;
+    public Button nextButton;
 
     [System.Serializable]
     public class SpeakerVisual
@@ -39,67 +40,64 @@ public class DhornPresenter : DialoguePresenterBase
     }
 
     public override async YarnTask RunLineAsync(LocalizedLine line, LineCancellationToken token)
+{
+    string speaker = line.CharacterName ?? "";
+    string text = line.TextWithoutCharacterName.Text;
+
+    speakerNameText.text = speaker;
+    dialogueText.text = text;
+
+    var visual = speakerVisuals?.Find(v => v.speakerName == speaker);
+
+    if (visual != null)
     {
-        string speaker = line.CharacterName ?? "";
-        string text = line.TextWithoutCharacterName.Text;
+        speakerNameText.color = visual.speakerNameColor;
+        dialogueText.color = visual.dialogueColor;
+        if (visual.dialogueFont != null) dialogueText.font = visual.dialogueFont;
+        if (visual.speakerNameFont != null) speakerNameText.font = visual.speakerNameFont;
 
-        speakerNameText.text = speaker;
-        dialogueText.text = text;
-
-        var visual = speakerVisuals?.Find(v => v.speakerName == speaker);
-
-        if (visual != null)
+        if (visual.avatarSprite != null)
         {
-            speakerNameText.color = visual.speakerNameColor;
-            dialogueText.color = visual.dialogueColor;
-            if (visual.dialogueFont != null) dialogueText.font = visual.dialogueFont;
-            if (visual.speakerNameFont != null) speakerNameText.font = visual.speakerNameFont;
-            if (visual.avatarSprite != null)
-            {
-                avatarImage.gameObject.SetActive(true);
-                avatarImage.sprite = visual.avatarSprite;
-                if (visual.avatarOnRight)
-                    avatarImage.transform.SetAsLastSibling();
-                else
-                    avatarImage.transform.SetAsFirstSibling();
-            }
+            avatarImage.gameObject.SetActive(true);
+            avatarImage.sprite = visual.avatarSprite;
+            if (visual.avatarOnRight)
+                avatarImage.transform.SetAsLastSibling();
             else
-            {
-                avatarImage.gameObject.SetActive(false);
-            }
+                avatarImage.transform.SetAsFirstSibling();
         }
         else
         {
-            speakerNameText.color = DefaultColor;
-            dialogueText.color = DefaultColor;
             avatarImage.gameObject.SetActive(false);
         }
-
-        float autoAdvanceDelay = 3.5f;
-        float elapsed = 0f;
-        bool advanced = false;
-
-        while (!advanced)
-        {
-            if (Keyboard.current != null && (
-                Keyboard.current.enterKey.wasPressedThisFrame ||
-                Keyboard.current.spaceKey.wasPressedThisFrame))
-            {
-                advanced = true;
-            }
-            else if (Mouse.current != null && Mouse.current.leftButton.wasPressedThisFrame)
-            {
-                advanced = true;
-            }
-            else if (elapsed >= autoAdvanceDelay)
-            {
-                advanced = true;
-            }
-
-            elapsed += Time.deltaTime;
-            await YarnTask.Yield();
-        }
     }
+    else
+    {
+        speakerNameText.color = DefaultColor;
+        dialogueText.color = DefaultColor;
+        avatarImage.gameObject.SetActive(false);
+    }
+
+    bool advanced = false;
+    void OnNextClicked() => advanced = true;
+
+    nextButton.onClick.AddListener(OnNextClicked);
+    nextButton.gameObject.SetActive(true);
+
+    while (!advanced)
+    {
+        if (Keyboard.current != null && (
+            Keyboard.current.enterKey.wasPressedThisFrame ||
+            Keyboard.current.spaceKey.wasPressedThisFrame))
+        {
+            advanced = true;
+        }
+
+        await YarnTask.Yield();
+    }
+
+    nextButton.onClick.RemoveListener(OnNextClicked);
+    nextButton.gameObject.SetActive(false);
+}
 
     [System.Obsolete]
     public override YarnTask<DialogueOption> RunOptionsAsync(
