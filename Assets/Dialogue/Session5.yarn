@@ -12,7 +12,7 @@ Kael: Oni više ne govore o onome što će se dogoditi. Govore o onome što se v
 
 <<set $dhornClaimsCollapseNow = true>>
 // OTKRIĆE: Dhorni tvrde da se njihov prostor već urušava tijekom približavanja punog kapaciteta Vatre-7.
-// CLUE_UNLOCK: C21_DHORN_COLLAPSE_NOW
+<<unlock_clue "C21_DHORN_COLLAPSE_NOW">>
 
 <<notification_beep AudioManager>>
 
@@ -48,7 +48,7 @@ Kael: Uspoređujem vrijeme posljednja tri skoka vibracija s telemetrijom Vatre-7
 
 <<set $knowsVatra7Correlation = true>>
 // OTKRIĆE: Vibracije vremenski prate povećanje kapaciteta Vatre-7, ali uzročna veza još nije dokazana.
-// CLUE_UNLOCK: C22_VATRA7_CORRELATION
+<<unlock_clue "C22_VATRA7_CORRELATION">>
 
 Kael: Dovoljno da znam da Dhorn upozorenje ne mogu odbaciti kao slučajnost. Nedovoljno da kažem da sam dokazao što ih ruši.
 
@@ -61,7 +61,7 @@ Kael: Novi sigurnosni dodatak Fazi II. Nakon otkrivanja sustavnih podzemnih stru
 
 <<set $knowsPhase2SecurityControl = true>>
 // OTKRIĆE: Kontrola Faze II prebačena je Operativnom zapovjedništvu nakon otkrivanja sustavnih podzemnih struktura.
-// CLUE_UNLOCK: C23_PHASE2_SECURITY_CONTROL
+<<unlock_clue "C23_PHASE2_SECURITY_CONTROL">>
 
 Kael: Dakle nisu pronašli samo anomalije. Pronašli su strukture dovoljno pravilne da uključe sigurnosni lanac.
 
@@ -130,7 +130,7 @@ Maren: Nisam ga pokrenula. I ne sviđa mi se brzina kojom se ovo mijenja. Ali za
 
 <<set $marenLostExclusiveControl = true>>
 // OTKRIĆE: Maren nije pokrenula zahtjev za Dhorn pristupnim pravcima i više nema punu kontrolu nad operativnom reakcijom.
-// CLUE_UNLOCK: C24_MAREN_LOST_CONTROL
+<<unlock_clue "C24_MAREN_LOST_CONTROL">>
 
 Kael: Što joj želim reći?
 

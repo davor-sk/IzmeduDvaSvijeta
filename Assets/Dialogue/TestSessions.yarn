@@ -2,7 +2,7 @@
 ---
 Kael: TEST MENU — svaki preset prvo resetira Yarn state.
 
-   <<add_clue RightPanel "TEST02" "Ovo je drugi testni trag za provjeru popupa.">>
+   <<unlock_clue "C06_VORN_ROLE">>
 
 -> Testiraj Session 1
     <<set $debugTarget = "s1">>

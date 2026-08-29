@@ -10,7 +10,7 @@ Kael: Vatra-7. Dhorni koriste riječ "vatra" od prvog kontakta. Ali isto ime nij
 
 <<set $knowsVatra7Project = true>>
 // OTKRIĆE: Na Površini postoji službeni projekt pod nazivom Vatra-7.
-// CLUE_UNLOCK: C17_VATRA7_PROJECT
+<<unlock_clue "C17_VATRA7_PROJECT">>
 
 Maren: Imaš ograničen pristup tehničkim podacima. Nemoj izlaziti iz opsega zadatka.
 
@@ -66,7 +66,7 @@ Kael: Otvaram mapu radnog područja Faze II.
     Kael: Prepoznajem sektor. Preklapa se s područjem geoloških radova koje sam već neovisno povezao sa signalom 7-G.
     <<set $knowsVatra7Overlap = true>>
     // OTKRIĆE: Koordinate Faze II preklapaju se s ranije potvrđenim radovima u području Dhorn signala.
-    // CLUE_UNLOCK: C18_VATRA7_OVERLAP
+    <<unlock_clue "C18_VATRA7_OVERLAP">>
 <<elseif $dhornClaimsExtraction>>
     Kael: Koordinate su duboko ispod grada, ali nemam neovisan podatak kojim ih mogu povezati s Dhorn prostorom. Za sada imam samo njihovu tvrdnju da Površina tamo nešto uzima.
 <<else>>
@@ -95,7 +95,7 @@ title: Session4_ResearchV27
         Kael: Nalazim stari tehnički indeks. V-27 je imao pristup izvještajima iz istog šireg dubinskog sektora. Dokument ne govori zašto.
         <<set $foundV27VatraTrace = true>>
         // OTKRIĆE: V-27 je u starom programu imao pristup tehničkim zapisima iz istog šireg dubinskog sektora.
-        // CLUE_UNLOCK: C19_V27_DEPTH_TRACE
+        <<unlock_clue "C19_V27_DEPTH_TRACE">>
         Kael: To je veza, ali ne i uzrok. Još uvijek ne mogu tvrditi da je zbog toga uklonjen.
     <<else>>
         Kael: Nalazim nekoliko zaključanih referenci, ali ništa što mogu dokazivo povezati s današnjim projektom.
@@ -273,7 +273,7 @@ Kael: PROJEKT VATRA-7. FAZA II ODOBRENA. POVEĆANJE RADNE DUBINE I KAPACITETA. A
 <<set $knowsVatra7Countdown = true>>
 <<set $knowsVatra7DepthIncrease = true>>
 // OTKRIĆE: Faza II Vatre-7 prelazi na povećanu dubinu i puni kapacitet za 48 sati.
-// CLUE_UNLOCK: C20_VATRA7_COUNTDOWN
+<<unlock_clue "C20_VATRA7_COUNTDOWN">>
 
 <<if $knowsVatra7Overlap>>
     Kael: I sada znam da se to povećanje događa u području koje sam već povezao s 7-G. To je činjenica. Uzrok posljedica koje Dhorni opisuju još nije.
