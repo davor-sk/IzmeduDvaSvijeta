@@ -12,6 +12,7 @@ public class DhornPresenter : DialoguePresenterBase
     public TextMeshProUGUI dialogueText;
     public Image avatarImage;
     public Button nextButton;
+    public CharacterExpressionController expressionController;
 
     [System.Serializable]
     public class SpeakerVisual
@@ -56,16 +57,30 @@ public class DhornPresenter : DialoguePresenterBase
         if (visual.dialogueFont != null) dialogueText.font = visual.dialogueFont;
         if (visual.speakerNameFont != null) speakerNameText.font = visual.speakerNameFont;
 
-        if (visual.avatarSprite != null)
-        {
-            avatarImage.gameObject.SetActive(true);
-            avatarImage.sprite = visual.avatarSprite;
-            if (visual.avatarOnRight)
-                avatarImage.transform.SetAsLastSibling();
+            Sprite expressionSprite = null;
+
+            if (expressionController != null)
+            {
+                expressionSprite =
+                    expressionController.GetCurrentExpression(speaker);
+            }
+
+            Sprite spriteToUse =
+                expressionSprite != null
+                    ? expressionSprite
+                    : visual.avatarSprite;
+
+            if (spriteToUse != null)
+            {
+                avatarImage.gameObject.SetActive(true);
+                avatarImage.sprite = spriteToUse;
+
+                if (visual.avatarOnRight)
+                    avatarImage.transform.SetAsLastSibling();
+                else
+                    avatarImage.transform.SetAsFirstSibling();
+            }
             else
-                avatarImage.transform.SetAsFirstSibling();
-        }
-        else
         {
             avatarImage.gameObject.SetActive(false);
         }
