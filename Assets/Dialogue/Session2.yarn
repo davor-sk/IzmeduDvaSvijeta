@@ -58,8 +58,8 @@ title: Session2TranslationReview
 Kael: Prije novog kontakta moram provjeriti nekoliko starih bilješki. Sedam dana je dovoljno vremena da neke pretpostavke usporedim s onim što sam već čuo.
 
 <<set $velAhnTranslation = "greeting">>
-<<add_word NotebookPanel "vel-ahn" "pozdrav / uspostava kontakta [POTVRĐENO]">>
-<<add_word NotebookPanel "nem" "ne / negacija [POTVRĐENO]">>
+<<add_word RightPanel "vel-ahn" "pozdrav / uspostava kontakta [POTVRĐENO]">>
+<<add_word RightPanel "nem" "ne / negacija [POTVRĐENO]">>
 
 <<jump Session2ReviewToru>>
 ===
@@ -68,13 +68,13 @@ title: Session2ReviewToru
 ---
 <<if $toruTranslation == "surface">>
     Kael: "Toru" se stalno pojavljuje uz "gore" i nasuprot Dhorn dubini. To je dovoljno da ga potvrdim.
-    <<add_word NotebookPanel "toru" "Površina / oni gore [POTVRĐENO]">>
+    <<add_word RightPanel "toru" "Površina / oni gore [POTVRĐENO]">>
     <<jump Session2ReviewHodi>>
 <<else>>
     Kael: Za "toru" još uvijek nemam dobar zapis. U staroj transmisiji imam: "Toru gore. Dh'orn dubina." Kako sada želim zapisati "toru"?
     -> "Površina / oni gore."
         <<set $toruTranslation = "surface">>
-        <<add_word NotebookPanel "toru" "Površina / oni gore [POTVRĐENO]">>
+        <<add_word RightPanel "toru" "Površina / oni gore [POTVRĐENO]">>
         Kael: Ovo najbolje odgovara kontekstu.
         <<jump Session2ReviewHodi>>
     -> Zadrži trenutni prijevod.
@@ -82,7 +82,7 @@ title: Session2ReviewToru
         <<jump Session2ReviewHodi>>
     -> Ostavi riječ nepoznatom.
         <<set $toruTranslation = "unknown">>
-        <<add_word NotebookPanel "toru" "???">>
+        <<add_word RightPanel "toru" "???">>
         <<jump Session2ReviewHodi>>
 <<endif>>
 ===
@@ -91,13 +91,13 @@ title: Session2ReviewHodi
 ---
 <<if $hodiTranslation == "move">>
     Kael: "Toru hodi gore. Dh'orn hodi dubina." "Hodi" kao ići ili kretati se i dalje najbolje objašnjava oba primjera.
-    <<add_word NotebookPanel "hodi" "ići / kretati se [POTVRĐENO]">>
+    <<add_word RightPanel "hodi" "ići / kretati se [POTVRĐENO]">>
     <<jump Session2ReviewDah>>
 <<else>>
     Kael: "Hodi" mi je ostao nepotvrđen. Vraćam se na: "Toru hodi gore. Dh'orn hodi dubina." Kako ga sada želim prevesti?
     -> "Ići / kretati se."
         <<set $hodiTranslation = "move">>
-        <<add_word NotebookPanel "hodi" "ići / kretati se [POTVRĐENO]">>
+        <<add_word RightPanel "hodi" "ići / kretati se [POTVRĐENO]">>
         Kael: Ovaj prijevod povezuje oba dijela rečenice.
         <<jump Session2ReviewDah>>
     -> Zadrži trenutni prijevod.
@@ -105,7 +105,7 @@ title: Session2ReviewHodi
         <<jump Session2ReviewDah>>
     -> Ostavi riječ nepoznatom.
         <<set $hodiTranslation = "unknown">>
-        <<add_word NotebookPanel "hodi" "???">>
+        <<add_word RightPanel "hodi" "???">>
         <<jump Session2ReviewDah>>
 <<endif>>
 ===
@@ -114,13 +114,13 @@ title: Session2ReviewDah
 ---
 <<if $dahTranslation == "life">>
     Kael: "Moran dah. Dh'orn dah. Stari nem-dah." "Dah" kao život uklapa se u sve primjere.
-    <<add_word NotebookPanel "dah" "život / biti živ [POTVRĐENO]">>
+    <<add_word RightPanel "dah" "život / biti živ [POTVRĐENO]">>
     <<jump Session2Signal>>
 <<else>>
     Kael: Moj zapis za "dah" još uvijek ne objašnjava dobro "Stari nem-dah". Ako "nem" znači ne, moram ponovno pogledati cijelu konstrukciju. Kako sada želim prevesti "dah"?
     -> "Život / biti živ."
         <<set $dahTranslation = "life">>
-        <<add_word NotebookPanel "dah" "život / biti živ [POTVRĐENO]">>
+        <<add_word RightPanel "dah" "život / biti živ [POTVRĐENO]">>
         Kael: "Nem-dah" tada znači bez života. To se uklapa.
         <<jump Session2Signal>>
     -> Zadrži trenutni prijevod.
@@ -128,7 +128,7 @@ title: Session2ReviewDah
         <<jump Session2Signal>>
     -> Ostavi riječ nepoznatom.
         <<set $dahTranslation = "unknown">>
-        <<add_word NotebookPanel "dah" "???">>
+        <<add_word RightPanel "dah" "???">>
         <<jump Session2Signal>>
 <<endif>>
 ===
@@ -150,7 +150,7 @@ Dhorn: Vel-ahn, kael-vorn.
 <<endif>>
 
 <<set $velAhnTranslation = "greeting">>
-<<add_word NotebookPanel "vel-ahn" "pozdrav / uspostava kontakta [POTVRĐENO]">>
+<<add_word RightPanel "vel-ahn" "pozdrav / uspostava kontakta [POTVRĐENO]">>
 
 Kael: Kako želim započeti razgovor?
 
@@ -193,48 +193,48 @@ Kael: Dobro. Dvije riječi koje trebam riješiti: "uzima" i "kamen". Što znači
 -> "Uzimati."
     <<set $uzimaTranslation = "take">>
     <<set $translationAccuracy += 1>>
-    <<add_word NotebookPanel "uzima" "uzimati (?)">>
+    <<add_word RightPanel "uzima" "uzimati (?)">>
     Kael: Površina nešto uzima iz dubine.
 -> "Oduzimati / uzimati nekome."
     <<set $uzimaTranslation = "take_away">>
     <<set $translationAccuracy += 1>>
-    <<add_word NotebookPanel "uzima" "uzimati / oduzimati (?)">>
+    <<add_word RightPanel "uzima" "uzimati / oduzimati (?)">>
     Kael: To zvuči puno više kao optužba.
 -> "Davati."
     <<set $uzimaTranslation = "give">>
-    <<add_word NotebookPanel "uzima" "davati (?)">>
+    <<add_word RightPanel "uzima" "davati (?)">>
     Kael: Moguće, ali red riječi mi ne odgovara.
 -> "Tražiti."
     <<set $uzimaTranslation = "search">>
-    <<add_word NotebookPanel "uzima" "tražiti (?)">>
+    <<add_word RightPanel "uzima" "tražiti (?)">>
     Kael: Možda Površina nešto traži u dubini.
 -> Nisam siguran.
     <<set $uzimaTranslation = "unknown">>
-    <<add_word NotebookPanel "uzima" "???">>
+    <<add_word RightPanel "uzima" "???">>
     Kael: Trebam ostatak rečenice.
 
 Kael: A "kamen"? Što znači "kamen" u ovoj poruci?
 
 -> "Doslovno kamen."
     <<set $kamenTranslation = "stone">>
-    <<add_word NotebookPanel "kamen" "kamen (?)">>
+    <<add_word RightPanel "kamen" "kamen (?)">>
     Kael: Možda zaista govore o stijeni.
 -> "Resurs / materijal."
     <<set $kamenTranslation = "resource">>
     <<set $translationAccuracy += 1>>
-    <<add_word NotebookPanel "kamen" "kamen / resurs (?)">>
+    <<add_word RightPanel "kamen" "kamen / resurs (?)">>
     Kael: Ako Površina nešto vadi iz dubine, ovo ima smisla.
 -> "Njihov dom."
     <<set $kamenTranslation = "home">>
-    <<add_word NotebookPanel "kamen" "dom (?)">>
+    <<add_word RightPanel "kamen" "dom (?)">>
     Kael: Moguće ako izraz nije doslovan.
 -> "Oružje."
     <<set $kamenTranslation = "weapon">>
-    <<add_word NotebookPanel "kamen" "oružje (?)">>
+    <<add_word RightPanel "kamen" "oružje (?)">>
     Kael: Ako je ovo oružje, situacija je puno ozbiljnija.
 -> Nisam siguran.
     <<set $kamenTranslation = "unknown">>
-    <<add_word NotebookPanel "kamen" "???">>
+    <<add_word RightPanel "kamen" "???">>
     Kael: Neću još zaključiti.
 
 Kael: Sad moram spojiti poruku. Kako tumačim "Uzima toru, kamen dubine"?
@@ -281,9 +281,9 @@ Kael: Ako ih već mogu pitati, trebam iskoristiti priliku. Što želim saznati?
 -> "Je li Površina napala Dhorne?"
     Kael: Toru napada Dh'orn?
     Dhorn: Nem. Toru uzima. Vatra poslije.
-    <<add_word NotebookPanel "nem" "ne / negacija [POTVRĐENO]">>
+    <<add_word RightPanel "nem" "ne / negacija [POTVRĐENO]">>
     Kael: Ne nazivaju to izravno napadom. Ali opet spominju Vatru. Isti obrazac: Površina nešto uzima, a Vatra dolazi poslije. Možda je posljedica. Možda nešto što Površina pokreće. Još uvijek nemam dovoljno za prijevod.
-    <<add_word NotebookPanel "vatra" "??? / dolazi nakon aktivnosti Površine (?)">>
+    <<add_word RightPanel "vatra" "??? / dolazi nakon aktivnosti Površine (?)">>
     <<jump SurfaceWordEvidence>>
 -> "Kako znate što Površina radi?"
     Kael: Kako znate toru?
@@ -307,24 +307,24 @@ title: UzimaContextCheck
 ---
 <<if $uzimaTranslation == "take" || $uzimaTranslation == "take_away">>
     Kael: "Uzima" očito opisuje nešto što Površina uklanja iz dubine.
-    <<add_word NotebookPanel "uzima" "uzimati / oduzimati [POTVRĐENO]">>
+    <<add_word RightPanel "uzima" "uzimati / oduzimati [POTVRĐENO]">>
     <<jump KamenContextCheck>>
 <<else>>
     Kael: Moj trenutni prijevod riječi "uzima" ne objašnjava dobro "Kamen odlazi." Želim li ga promijeniti?
     -> "Uzimati."
         <<set $uzimaTranslation = "take">>
-        <<add_word NotebookPanel "uzima" "uzimati / oduzimati [POTVRĐENO]">>
+        <<add_word RightPanel "uzima" "uzimati / oduzimati [POTVRĐENO]">>
         <<jump KamenContextCheck>>
     -> "Oduzimati / uzimati nekome."
         <<set $uzimaTranslation = "take_away">>
-        <<add_word NotebookPanel "uzima" "uzimati / oduzimati [POTVRĐENO]">>
+        <<add_word RightPanel "uzima" "uzimati / oduzimati [POTVRĐENO]">>
         <<jump KamenContextCheck>>
     -> Zadrži trenutni prijevod.
         Kael: Ostavit ću ga kao pretpostavku.
         <<jump KamenContextCheck>>
     -> Ostavi riječ nepoznatom.
         <<set $uzimaTranslation = "unknown">>
-        <<add_word NotebookPanel "uzima" "???">>
+        <<add_word RightPanel "uzima" "???">>
         <<jump KamenContextCheck>>
 <<endif>>
 ===
@@ -333,20 +333,20 @@ title: KamenContextCheck
 ---
 <<if $kamenTranslation == "stone" || $kamenTranslation == "resource">>
     Kael: "Kamen" je doslovno kamen ili materijal, ali ovdje očito funkcionira kao resurs iz dubine.
-    <<add_word NotebookPanel "kamen" "kamen / materijal / resurs [POTVRĐENO]">>
+    <<add_word RightPanel "kamen" "kamen / materijal / resurs [POTVRĐENO]">>
     <<jump MoranContext>>
 <<else>>
     Kael: "Kamen odlazi" i veza s dubinom ne podržavaju dobro moj trenutni prijevod. Kako ga sada želim zapisati?
     -> "Kamen / materijal / resurs."
         <<set $kamenTranslation = "resource">>
-        <<add_word NotebookPanel "kamen" "kamen / materijal / resurs [POTVRĐENO]">>
+        <<add_word RightPanel "kamen" "kamen / materijal / resurs [POTVRĐENO]">>
         <<jump MoranContext>>
     -> Zadrži trenutni prijevod.
         Kael: Ostavit ću ga kao nepotvrđenu pretpostavku.
         <<jump MoranContext>>
     -> Ostavi riječ nepoznatom.
         <<set $kamenTranslation = "unknown">>
-        <<add_word NotebookPanel "kamen" "???">>
+        <<add_word RightPanel "kamen" "???">>
         <<jump MoranContext>>
 <<endif>>
 ===
@@ -360,23 +360,23 @@ Kael: "Pada". Što znači "pada" u ovom kontekstu?
 -> "Rušiti se / propadati."
     <<set $padaTranslation = "collapse">>
     <<set $translationAccuracy += 1>>
-    <<add_word NotebookPanel "pada" "rušiti se / propadati (?)">>
+    <<add_word RightPanel "pada" "rušiti se / propadati (?)">>
     Kael: Zid se ruši. To ima smisla.
 -> "Silaziti."
     <<set $padaTranslation = "descend">>
-    <<add_word NotebookPanel "pada" "silaziti (?)">>
+    <<add_word RightPanel "pada" "silaziti (?)">>
     Kael: Možda govori o kretanju prema dolje.
 -> "Napadati."
     <<set $padaTranslation = "attack">>
-    <<add_word NotebookPanel "pada" "napadati (?)">>
+    <<add_word RightPanel "pada" "napadati (?)">>
     Kael: Ne uklapa se potpuno uz zid.
 -> "Nestajati."
     <<set $padaTranslation = "disappear">>
-    <<add_word NotebookPanel "pada" "nestajati (?)">>
+    <<add_word RightPanel "pada" "nestajati (?)">>
     Kael: Možda je značenje figurativno.
 -> Nisam siguran.
     <<set $padaTranslation = "unknown">>
-    <<add_word NotebookPanel "pada" "???">>
+    <<add_word RightPanel "pada" "???">>
     Kael: Trebam još konteksta.
 
 <<jump PadaContextCheck>>
@@ -386,20 +386,20 @@ title: PadaContextCheck
 ---
 <<if $padaTranslation == "collapse">>
     Kael: "Pada zid" i "Dugo pada" potvrđuju da se nešto ruši ili propada.
-    <<add_word NotebookPanel "pada" "padati / rušiti se / propadati [POTVRĐENO]">>
+    <<add_word RightPanel "pada" "padati / rušiti se / propadati [POTVRĐENO]">>
     <<jump MoranRefinementS2>>
 <<else>>
     Kael: Moj trenutni prijevod riječi "pada" ne odgovara dobro onome što se događa sa zidom. Želim li ga promijeniti?
     -> "Padati / rušiti se / propadati."
         <<set $padaTranslation = "collapse">>
-        <<add_word NotebookPanel "pada" "padati / rušiti se / propadati [POTVRĐENO]">>
+        <<add_word RightPanel "pada" "padati / rušiti se / propadati [POTVRĐENO]">>
         <<jump MoranRefinementS2>>
     -> Zadrži trenutni prijevod.
         Kael: Ostavit ću ga s upitnikom.
         <<jump MoranRefinementS2>>
     -> Ostavi riječ nepoznatom.
         <<set $padaTranslation = "unknown">>
-        <<add_word NotebookPanel "pada" "???">>
+        <<add_word RightPanel "pada" "???">>
         <<jump MoranRefinementS2>>
 <<endif>>
 ===
@@ -428,23 +428,23 @@ Kael: Kako sada razumijem "moran"?
 -> "Dom / zajednica / ono što mora opstati."
     <<set $moranTranslation = "concept">>
     <<set $translationAccuracy += 1>>
-    <<add_word NotebookPanel "moran" "dom / zajednica / ono što mora opstati [POTVRĐENO]">>
+    <<add_word RightPanel "moran" "dom / zajednica / ono što mora opstati [POTVRĐENO]">>
     Kael: Nije samo mjesto. Riječ povezuje prostor, ljude i njihov opstanak.
 -> "Dom."
     <<set $moranTranslation = "home">>
-    <<add_word NotebookPanel "moran" "dom (?)">>
+    <<add_word RightPanel "moran" "dom (?)">>
     Kael: To objašnjava dio značenja, ali možda ne cijeli koncept.
 -> "Sigurnost / ono što zid štiti."
     <<set $moranTranslation = "safety">>
-    <<add_word NotebookPanel "moran" "dom / sigurnost (?)">>
+    <<add_word RightPanel "moran" "dom / sigurnost (?)">>
     Kael: Moguće, ali riječ se odnosi na više od same sigurnosti.
 -> "Zajednica."
     <<set $moranTranslation = "community">>
-    <<add_word NotebookPanel "moran" "dom / zajednica (?)">>
+    <<add_word RightPanel "moran" "dom / zajednica (?)">>
     Kael: Blizu, ali možda uključuje i mjesto kojem pripadaju.
 -> Još uvijek nisam siguran.
     <<set $moranTranslation = "unknown">>
-    <<add_word NotebookPanel "moran" "???">>
+    <<add_word RightPanel "moran" "???">>
     Kael: Još neću zaključati prijevod.
 
 <<jump CooperationMessage>>
@@ -455,31 +455,31 @@ title: CooperationMessage
 Dhorn: Dh'orn daje ruku toru. Nem-vatra. Govor.
 
 Kael: "Nem-vatra. Govor." Opet suprotstavljaju Vatru razgovoru. Ne znam znači li Vatra događaj, posljedicu ili nešto što Površina radi, ali riječ očito nije slučajna.
-<<add_word NotebookPanel "vatra" "??? / povezano s aktivnostima Površine; suprotstavljeno govoru (?)">>
+<<add_word RightPanel "vatra" "??? / povezano s aktivnostima Površine; suprotstavljeno govoru (?)">>
 
 Kael: "Daje ruku". To ne zvuči doslovno. Što znači "ruka" u ovom kontekstu?
 
 -> "Suradnja / pomoć."
     <<set $rukaTranslation = "cooperation">>
     <<set $translationAccuracy += 1>>
-    <<add_word NotebookPanel "ruka" "suradnja / pomoć (?)">>
+    <<add_word RightPanel "ruka" "suradnja / pomoć (?)">>
     Kael: Nude suradnju Površini.
 -> "Savez."
     <<set $rukaTranslation = "alliance">>
     <<set $translationAccuracy += 1>>
-    <<add_word NotebookPanel "ruka" "savez (?)">>
+    <<add_word RightPanel "ruka" "savez (?)">>
     Kael: Možda nude nešto snažnije od obične pomoći.
 -> "Oružje."
     <<set $rukaTranslation = "weapon">>
-    <<add_word NotebookPanel "ruka" "oružje (?)">>
+    <<add_word RightPanel "ruka" "oružje (?)">>
     Kael: Ako je ovo oružje, poruka zvuči prijeteće.
 -> "Radnik."
     <<set $rukaTranslation = "worker">>
-    <<add_word NotebookPanel "ruka" "radnik (?)">>
+    <<add_word RightPanel "ruka" "radnik (?)">>
     Kael: Moguće, ali kontekst mi ne odgovara.
 -> Nisam siguran.
     <<set $rukaTranslation = "unknown">>
-    <<add_word NotebookPanel "ruka" "???">>
+    <<add_word RightPanel "ruka" "???">>
     Kael: Neću nagađati.
 
 <<jump RukaContextCheck>>
@@ -490,17 +490,17 @@ title: RukaContextCheck
 <<if $rukaTranslation == "cooperation" || $rukaTranslation == "alliance">>
     Kael: U izrazu "daje ruku" fizičko značenje nema smisla. Ideja je pomoć ili suradnja.
     <<set $rukaTranslation = "cooperation">>
-    <<add_word NotebookPanel "ruka" "ruka; pomoć / suradnja [POTVRĐENO]">>
+    <<add_word RightPanel "ruka" "ruka; pomoć / suradnja [POTVRĐENO]">>
     <<jump VornContextS2>>
 <<else>>
     Kael: Moj trenutni prijevod ne odgovara dobro izrazu "daje ruku". Želim li ga promijeniti?
     -> "Pomoć / suradnja."
         <<set $rukaTranslation = "cooperation">>
-        <<add_word NotebookPanel "ruka" "ruka; pomoć / suradnja [POTVRĐENO]">>
+        <<add_word RightPanel "ruka" "ruka; pomoć / suradnja [POTVRĐENO]">>
         <<jump VornContextS2>>
     -> "Savez."
         <<set $rukaTranslation = "cooperation">>
-        <<add_word NotebookPanel "ruka" "ruka; pomoć / suradnja [POTVRĐENO]">>
+        <<add_word RightPanel "ruka" "ruka; pomoć / suradnja [POTVRĐENO]">>
         Kael: "Savez" je možda prejak izraz, ali smjer značenja je suradnja.
         <<jump VornContextS2>>
     -> Zadrži trenutni prijevod.
@@ -508,7 +508,7 @@ title: RukaContextCheck
         <<jump VornContextS2>>
     -> Ostavi riječ nepoznatom.
         <<set $rukaTranslation = "unknown">>
-        <<add_word NotebookPanel "ruka" "???">>
+        <<add_word RightPanel "ruka" "???">>
         <<jump VornContextS2>>
 <<endif>>
 ===
@@ -534,7 +534,7 @@ Kael: Opet Vorn. Što želim pitati?
 -> "Što se dogodilo Vornu?"
     Kael: Vorn... što poslije?
     Dhorn: Vorn nem-govor. Toru skriva.
-    <<add_word NotebookPanel "nem" "ne / negacija [POTVRĐENO]">>
+    <<add_word RightPanel "nem" "ne / negacija [POTVRĐENO]">>
     // OTKRIĆE: Dhorni tvrde da je prethodni Vorn prestao govoriti ili da mu je komunikacija bila zaustavljena.
     Kael: Vorn je prestao govoriti. Ili mu je govor zaustavljen.
     <<jump ReportDecision>>
@@ -543,14 +543,14 @@ Kael: Opet Vorn. Što želim pitati?
     Dhorn: Vorn sluša toru. Vorn sluša Dh'orn. Vorn daje govor.
     Kael: Prevoditelj je blizu... ali još uvijek nije cijelo značenje.
     <<unlock_clue "C06_VORN_ROLE">>
-    <<add_word NotebookPanel "vorn" "prevoditelj / posrednik (?)">>
+    <<add_word RightPanel "vorn" "prevoditelj / posrednik (?)">>
     <<jump ReportDecision>>
 -> "Je li Vorn ime?"
     Kael: Vorn ime?
     Dhorn: Nem. Vorn uloga.
-    <<add_word NotebookPanel "nem" "ne / negacija [POTVRĐENO]">>
+    <<add_word RightPanel "nem" "ne / negacija [POTVRĐENO]">>
     <<set $knowsVornNotName = true>>
-    <<add_word NotebookPanel "vorn" "uloga / prevoditelj / posrednik (?)">>
+    <<add_word RightPanel "vorn" "uloga / prevoditelj / posrednik (?)">>
     // OTKRIĆE: Vorn nije osobno ime, nego uloga.
     Kael: Dobro. Vorn nije ime.
     <<jump ReportDecision>>

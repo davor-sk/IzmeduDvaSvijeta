@@ -170,24 +170,24 @@ Kael: "Vatra" je opet u istoj strukturi. Površina. Dubina. Uzimanje. Moran posl
 -> "Projekt Vatra-7."
     <<set $vatraInterpretation = "project_exact">>
     Kael: To bi objasnilo podudaranje, ali Dhorni ne mogu znati naše kodno ime samo iz ovog razgovora. To je prejak zaključak.
-    <<add_word NotebookPanel "vatra" "Projekt Vatra-7 (?)">>
+    <<add_word RightPanel "vatra" "Projekt Vatra-7 (?)">>
 -> "Dubinska aktivnost Površine."
     <<set $vatraInterpretation = "surface_depth_activity">>
     <<set $translationAccuracy += 1>>
     Kael: To objašnjava sve dosadašnje kontekste bez pretpostavke da Dhorni znaju naziv našeg projekta.
-    <<add_word NotebookPanel "vatra" "aktivnost Površine u dubini (?)">>
+    <<add_word RightPanel "vatra" "aktivnost Površine u dubini (?)">>
 -> "Posljedica aktivnosti Površine."
     <<set $vatraInterpretation = "consequence">>
     Kael: Moguće. Ali u ovoj rečenici "vatra" nešto radi, ne samo da nastaje kao posljedica.
-    <<add_word NotebookPanel "vatra" "posljedica aktivnosti Površine (?)">>
+    <<add_word RightPanel "vatra" "posljedica aktivnosti Površine (?)">>
 -> "Napad / rat."
     <<set $vatraInterpretation = "attack">>
     Kael: To je najopasniji prijevod. Dhorni su već prije razlikovali "uzima" od izravnog napada. Nemam dokaz da "vatra" znači rat.
-    <<add_word NotebookPanel "vatra" "napad / rat (?)">>
+    <<add_word RightPanel "vatra" "napad / rat (?)">>
 -> Ostavi riječ nepoznatom.
     <<set $vatraInterpretation = "unknown">>
     Kael: Veza je sve jača, ali još uvijek neću pretpostavku pretvoriti u činjenicu.
-    <<add_word NotebookPanel "vatra" "??? / povezano s Površinom i dubinom">>
+    <<add_word RightPanel "vatra" "??? / povezano s Površinom i dubinom">>
 
 Dhorn: Vatra bliže. Nem-dugo.
 
@@ -203,7 +203,7 @@ Kael: Mogu postaviti jedno pitanje prije nego što signal oslabi.
 -> "Je li Vatra isto što i ono što Površina uzima?"
     Kael: Vatra isto kao uzima?
     Dhorn: Nem. Toru uzima kamen. Vatra hodi poslije.
-    <<add_word NotebookPanel "nem" "ne / negacija [POTVRĐENO]">>
+    <<add_word RightPanel "nem" "ne / negacija [POTVRĐENO]">>
     Kael: Dobro. "Vatra" nije isto što i "uzima". Dolazi nakon ili uz tu aktivnost.
     <<set $knowsVatraNotExtractionWord = true>>
 -> "Dolazi li Vatra iz istog mjesta kao geološki radovi?"
@@ -219,7 +219,7 @@ Kael: Mogu postaviti jedno pitanje prije nego što signal oslabi.
 -> "Je li Vatra napad?"
     Kael: Vatra napad Dh'orn?
     Dhorn: Nem-riječ. Toru možda nem-zna. Vatra ipak hodi.
-    <<add_word NotebookPanel "nem" "ne / negacija [POTVRĐENO]">>
+    <<add_word RightPanel "nem" "ne / negacija [POTVRĐENO]">>
     Kael: Čak ni oni je ne opisuju jednostavno kao napad. Kažu da Površina možda ni ne zna što radi.
     <<set $knowsVatraNotSimpleAttack = true>>
 -> Ne pitaj. Zadrži signal stabilnim.

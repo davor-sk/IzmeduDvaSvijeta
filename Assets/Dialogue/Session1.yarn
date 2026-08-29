@@ -101,29 +101,29 @@ Kael: Tri puta. Ista riječ ili izraz. Što znači "Vel-ahn"?
 -> "Pozdrav."
     <<set $velAhnTranslation = "greeting">>
     <<set $translationAccuracy += 1>>
-    <<add_word NotebookPanel "vel-ahn" "pozdrav (?)">>
+    <<add_word RightPanel "vel-ahn" "pozdrav (?)">>
     Kael: Možda pokušavaju uspostaviti kontakt.
 -> "Opasnost."
     <<set $velAhnTranslation = "danger">>
-    <<add_word NotebookPanel "vel-ahn" "opasnost (?)">>
+    <<add_word RightPanel "vel-ahn" "opasnost (?)">>
     Kael: Moglo bi biti upozorenje.
 -> "Tko si?"
     <<set $velAhnTranslation = "who_are_you">>
-    <<add_word NotebookPanel "vel-ahn" "tko si (?)">>
+    <<add_word RightPanel "vel-ahn" "tko si (?)">>
     Kael: Možda očekuju odgovor.
 -> "Slušaj."
     <<set $velAhnTranslation = "listen">>
-    <<add_word NotebookPanel "vel-ahn" "slušaj (?)">>
+    <<add_word RightPanel "vel-ahn" "slušaj (?)">>
     Kael: Mogla bi biti naredba.
 -> Nemam dovoljno konteksta.
     <<set $velAhnTranslation = "unknown">>
-    <<add_word NotebookPanel "vel-ahn" "???">>
+    <<add_word RightPanel "vel-ahn" "???">>
     Kael: Jedan izraz nije dovoljan.
 
 Kael: Tri ponavljanja na početku kontakta i način na koji ga ponovno koriste daju mi dovoljno konteksta. "Vel-ahn" je pozdrav ili izraz za uspostavljanje kontakta.
 
 <<set $velAhnTranslation = "greeting">>
-<<add_word NotebookPanel "vel-ahn" "pozdrav / uspostava kontakta [POTVRĐENO]">>
+<<add_word RightPanel "vel-ahn" "pozdrav / uspostava kontakta [POTVRĐENO]">>
 
 Kael: Kako želim odgovoriti?
 
@@ -156,24 +156,24 @@ Kael: "Toru." Nova riječ. Što znači "toru"?
 
 -> "Ja / osoba poput mene."
     <<set $toruTranslation = "kael">>
-    <<add_word NotebookPanel "toru" "ja / osoba poput mene (?)">>
+    <<add_word RightPanel "toru" "ja / osoba poput mene (?)">>
     Kael: Možda se odnosi na mene.
 -> "Čovjek."
     <<set $toruTranslation = "human">>
-    <<add_word NotebookPanel "toru" "čovjek (?)">>
+    <<add_word RightPanel "toru" "čovjek (?)">>
     Kael: Možda je riječ za čovjeka.
 -> "Površina / onaj odozgo."
     <<set $toruTranslation = "surface">>
     <<set $translationAccuracy += 1>>
-    <<add_word NotebookPanel "toru" "Površina / onaj odozgo (?)">>
+    <<add_word RightPanel "toru" "Površina / onaj odozgo (?)">>
     Kael: Ako znaju odakle dolazi moj signal, možda označava nekoga s Površine.
 -> "Prijatelj."
     <<set $toruTranslation = "friend">>
-    <<add_word NotebookPanel "toru" "prijatelj (?)">>
+    <<add_word RightPanel "toru" "prijatelj (?)">>
     Kael: Moguće. Ali nemam dovoljno dokaza.
 -> Nisam siguran.
     <<set $toruTranslation = "unknown">>
-    <<add_word NotebookPanel "toru" "???">>
+    <<add_word RightPanel "toru" "???">>
     Kael: Treba mi još konteksta.
 
 Dhorn: Toru govor?
@@ -206,7 +206,7 @@ title: ToruContextCheck
 ---
 <<if $toruTranslation == "surface">>
     Kael: To se uklapa. "Toru" označava Površinu ili one koji pripadaju gornjem svijetu.
-    <<add_word NotebookPanel "toru" "Površina / oni gore [POTVRĐENO]">>
+    <<add_word RightPanel "toru" "Površina / oni gore [POTVRĐENO]">>
     <<jump DhornIdentity>>
 <<else>>
     Kael: Čekaj. Moj trenutni prijevod riječi "toru" ne uklapa se dobro u "Toru gore. Dh'orn dubina." Želim li promijeniti prijevod?
@@ -217,7 +217,7 @@ title: ToruContextCheck
         <<jump DhornIdentity>>
     -> Ostavi riječ nepoznatom.
         <<set $toruTranslation = "unknown">>
-        <<add_word NotebookPanel "toru" "???">>
+        <<add_word RightPanel "toru" "???">>
         <<jump DhornIdentity>>
 <<endif>>
 ===
@@ -228,22 +228,22 @@ Kael: Kako sada želim prevesti "toru"?
 
 -> "Površina / oni gore."
     <<set $toruTranslation = "surface">>
-    <<add_word NotebookPanel "toru" "Površina / oni gore [POTVRĐENO]">>
+    <<add_word RightPanel "toru" "Površina / oni gore [POTVRĐENO]">>
     Kael: Ovaj prijevod najbolje odgovara novom kontekstu.
     <<jump DhornIdentity>>
 -> "Čovjek."
     <<set $toruTranslation = "human">>
-    <<add_word NotebookPanel "toru" "čovjek (?)">>
+    <<add_word RightPanel "toru" "čovjek (?)">>
     Kael: Moguće, ali "toru gore" i dalje mi ne potvrđuje da riječ znači čovjek.
     <<jump DhornIdentity>>
 -> "Ja / osoba poput mene."
     <<set $toruTranslation = "kael">>
-    <<add_word NotebookPanel "toru" "ja / osoba poput mene (?)">>
+    <<add_word RightPanel "toru" "ja / osoba poput mene (?)">>
     Kael: Još uvijek je moguće da govore o meni, ali kontekst više upućuje na mjesto ili skupinu.
     <<jump DhornIdentity>>
 -> Ostavi nepoznato.
     <<set $toruTranslation = "unknown">>
-    <<add_word NotebookPanel "toru" "???">>
+    <<add_word RightPanel "toru" "???">>
     <<jump DhornIdentity>>
 ===
 
@@ -256,7 +256,7 @@ Kael: "Dh'orn." Što želim pitati?
 -> "Je li Dh'orn tvoje ime?"
     Kael: Dh'orn je tvoje ime?
     Dhorn: Nem. Dh'orn mnogo.
-    <<add_word NotebookPanel "nem" "ne / negacija [POTVRĐENO]">>
+    <<add_word RightPanel "nem" "ne / negacija [POTVRĐENO]">>
     <<set $knowsDhornPeople = true>>
     // OTKRIĆE: Dh'orn nije ime jednog bića nego naziv naroda ili skupine.
     <<unlock_clue "C03_DHORN_PEOPLE">>
@@ -272,7 +272,7 @@ Kael: "Dh'orn." Što želim pitati?
 -> "Je li Dh'orn mjesto?"
     Kael: Dh'orn mjesto?
     Dhorn: Nem. Dh'orn mnogo.
-    <<add_word NotebookPanel "nem" "ne / negacija [POTVRĐENO]">>
+    <<add_word RightPanel "nem" "ne / negacija [POTVRĐENO]">>
     <<set $knowsDhornPeople = true>>
     // OTKRIĆE: Dh'orn nije mjesto nego naziv naroda ili skupine.
     <<unlock_clue "C03_DHORN_PEOPLE">>
@@ -293,24 +293,24 @@ Kael: "Hodi" se pojavljuje u obje polovice rečenice. Što znači "hodi"?
 
 -> "Živjeti / biti."
     <<set $hodiTranslation = "live">>
-    <<add_word NotebookPanel "hodi" "živjeti / biti (?)">>
+    <<add_word RightPanel "hodi" "živjeti / biti (?)">>
     Kael: Moguće, ali kasniji primjeri morat će potvrditi govori li o stanju ili kretanju.
 -> "Ići / kretati se."
     <<set $hodiTranslation = "move">>
     <<set $translationAccuracy += 1>>
-    <<add_word NotebookPanel "hodi" "ići / kretati se (?)">>
+    <<add_word RightPanel "hodi" "ići / kretati se (?)">>
     Kael: Ako "gore" i "dubina" označavaju smjer ili položaj, kretanje najbolje odgovara.
 -> "Govoriti."
     <<set $hodiTranslation = "speak">>
-    <<add_word NotebookPanel "hodi" "govoriti (?)">>
+    <<add_word RightPanel "hodi" "govoriti (?)">>
     Kael: Ne uklapa se baš najbolje.
 -> "Gledati."
     <<set $hodiTranslation = "look">>
-    <<add_word NotebookPanel "hodi" "gledati (?)">>
+    <<add_word RightPanel "hodi" "gledati (?)">>
     Kael: Moguće, ali kontekst je slab.
 -> "Napasti."
     <<set $hodiTranslation = "attack">>
-    <<add_word NotebookPanel "hodi" "napasti (?)">>
+    <<add_word RightPanel "hodi" "napasti (?)">>
     Kael: Ako je to točno, razgovor je upravo postao puno ozbiljniji.
 
 Kael: Želim li testirati svoj prijevod?
@@ -318,13 +318,13 @@ Kael: Želim li testirati svoj prijevod?
 -> Reci: "Dh'orn hodi gore?"
     Kael: Dh'orn hodi gore?
     Dhorn: Nem. Dh'orn hodi dubina.
-    <<add_word NotebookPanel "nem" "ne / negacija [POTVRĐENO]">>
+    <<add_word RightPanel "nem" "ne / negacija [POTVRĐENO]">>
     Kael: "Nem" negira moju tvrdnju. Dobio sam novi kontekst za "hodi".
     <<jump HodiContextCheck>>
 -> Reci: "Toru hodi dubina?"
     Kael: Toru hodi dubina?
     Dhorn: Nem. Toru hodi gore.
-    <<add_word NotebookPanel "nem" "ne / negacija [POTVRĐENO]">>
+    <<add_word RightPanel "nem" "ne / negacija [POTVRĐENO]">>
     Kael: "Nem" znači ne. Gore i dubina su suprotni pojmovi. Ovo mi daje novi kontekst za "hodi".
     <<jump HodiContextCheck>>
 -> Nemoj testirati.
@@ -337,7 +337,7 @@ title: HodiContextCheck
 ---
 <<if $hodiTranslation == "move">>
     Kael: Moj prijevod se uklapa. "Hodi" povezuje Toru s gornjim prostorom, a Dhorne s dubinom.
-    <<add_word NotebookPanel "hodi" "ići / kretati se [POTVRĐENO]">>
+    <<add_word RightPanel "hodi" "ići / kretati se [POTVRĐENO]">>
     <<jump DhornQuestions>>
 <<else>>
     Kael: Moj trenutni prijevod riječi "hodi" ne objašnjava dobro ovaj novi primjer. Želim li ga promijeniti?
@@ -348,7 +348,7 @@ title: HodiContextCheck
         <<jump DhornQuestions>>
     -> Ostavi riječ nepoznatom.
         <<set $hodiTranslation = "unknown">>
-        <<add_word NotebookPanel "hodi" "???">>
+        <<add_word RightPanel "hodi" "???">>
         <<jump DhornQuestions>>
 <<endif>>
 ===
@@ -359,22 +359,22 @@ Kael: Kako sada želim prevesti "hodi"?
 
 -> "Ići / kretati se."
     <<set $hodiTranslation = "move">>
-    <<add_word NotebookPanel "hodi" "ići / kretati se [POTVRĐENO]">>
+    <<add_word RightPanel "hodi" "ići / kretati se [POTVRĐENO]">>
     Kael: To najbolje odgovara svim primjerima koje imam.
     <<jump DhornQuestions>>
 -> "Živjeti / biti."
     <<set $hodiTranslation = "live">>
-    <<add_word NotebookPanel "hodi" "živjeti / biti (?)">>
+    <<add_word RightPanel "hodi" "živjeti / biti (?)">>
     Kael: Još nisam uvjeren da je to dovoljno precizno.
     <<jump DhornQuestions>>
 -> "Govoriti."
     <<set $hodiTranslation = "speak">>
-    <<add_word NotebookPanel "hodi" "govoriti (?)">>
+    <<add_word RightPanel "hodi" "govoriti (?)">>
     Kael: Novi kontekst mi i dalje ne podržava ovaj prijevod.
     <<jump DhornQuestions>>
 -> Ostavi nepoznato.
     <<set $hodiTranslation = "unknown">>
-    <<add_word NotebookPanel "hodi" "???">>
+    <<add_word RightPanel "hodi" "???">>
     <<jump DhornQuestions>>
 ===
 
@@ -403,7 +403,7 @@ Kael: Kontakt je stabilan. Ovo je prilika da saznam više. Što želim pitati Dh
 -> "Jeste li već razgovarali s nekim odozgo?"
     Kael: Jeste li prije razgovarali s nekim poput mene?
     Dhorn: Prije toru govor. Nem-dugo.
-    <<add_word NotebookPanel "nem" "ne / negacija [POTVRĐENO]">>
+    <<add_word RightPanel "nem" "ne / negacija [POTVRĐENO]">>
     <<set $knowsPreviousContactHint = true>>
     // OTKRIĆE: Netko s Površine već je ranije razgovarao s Dhornima.
     <<unlock_clue "C05_PREVIOUS_CONTACT">>
@@ -423,7 +423,7 @@ Kael: Imam vremena za još jedno pitanje. Što želim saznati?
 -> "Zašto ste kontaktirali baš mene?"
     Kael: Zašto mene?
     Dhorn: Kael-vorn.
-    <<add_word NotebookPanel "kael" "???">>
+    <<add_word RightPanel "kael" "???">>
     // OTKRIĆE: Dhorni koriste riječ "kael" prije nego što im je Kael otkrio svoje ime.
     Kael: ... Tu riječ još ne razumijem.
     <<jump MoranIntroduction>>
@@ -435,7 +435,7 @@ Kael: Imam vremena za još jedno pitanje. Što želim saznati?
 -> "Što vam Površina radi?"
     Kael: Što vam Površina radi?
     Dhorn: Vatra hodi dubina. Moran nem-tah.
-    <<add_word NotebookPanel "nem" "ne / negacija [POTVRĐENO]">>
+    <<add_word RightPanel "nem" "ne / negacija [POTVRĐENO]">>
     Kael: Ne razumijem sve, ali očito povezuju Površinu s nekom opasnošću.
     <<jump MoranIntroduction>>
 -> "Tko je prije razgovarao s vama?"
@@ -459,23 +459,23 @@ Kael: "Moran" se pojavljuje u dva različita konteksta. Što znači "moran"?
 -> "Dom."
     <<set $moranTranslation = "home">>
     <<set $translationAccuracy += 1>>
-    <<add_word NotebookPanel "moran" "dom (?)">>
+    <<add_word RightPanel "moran" "dom (?)">>
     Kael: Dh'orn imaju svoj dom. Toru imaju svoj gore. To bi moglo odgovarati.
 -> "Sigurnost."
     <<set $moranTranslation = "safety">>
-    <<add_word NotebookPanel "moran" "sigurnost (?)">>
+    <<add_word RightPanel "moran" "sigurnost (?)">>
     Kael: Možda govori o sigurnosti, ne o fizičkom mjestu.
 -> "Narod."
     <<set $moranTranslation = "people">>
-    <<add_word NotebookPanel "moran" "narod / zajednica (?)">>
+    <<add_word RightPanel "moran" "narod / zajednica (?)">>
     Kael: Možda označava zajednicu.
 -> "Mjesto."
     <<set $moranTranslation = "place">>
-    <<add_word NotebookPanel "moran" "mjesto (?)">>
+    <<add_word RightPanel "moran" "mjesto (?)">>
     Kael: Mogla bi biti općenita riječ za mjesto.
 -> Nisam siguran.
     <<set $moranTranslation = "unknown">>
-    <<add_word NotebookPanel "moran" "???">>
+    <<add_word RightPanel "moran" "???">>
     Kael: Trebam još primjera.
 
 Dhorn: Moran dah. Dh'orn dah.
@@ -485,28 +485,28 @@ Kael: Sad se pojavljuje "dah". Što znači "dah"?
 -> "Život / biti živ."
     <<set $dahTranslation = "life">>
     <<set $translationAccuracy += 1>>
-    <<add_word NotebookPanel "dah" "život / biti živ (?)">>
+    <<add_word RightPanel "dah" "život / biti živ (?)">>
     Kael: Moglo bi biti povezano sa životom.
 -> "Sigurnost."
     <<set $dahTranslation = "safety">>
-    <<add_word NotebookPanel "dah" "sigurnost (?)">>
+    <<add_word RightPanel "dah" "sigurnost (?)">>
     Kael: Možda opisuje stanje sigurnosti.
 -> "Zrak."
     <<set $dahTranslation = "air">>
-    <<add_word NotebookPanel "dah" "zrak (?)">>
+    <<add_word RightPanel "dah" "zrak (?)">>
     Kael: Dah... možda je značenje doslovnije nego što mislim.
 -> "Postojanje."
     <<set $dahTranslation = "existence">>
-    <<add_word NotebookPanel "dah" "postojanje (?)">>
+    <<add_word RightPanel "dah" "postojanje (?)">>
     Kael: To bi odgovaralo široj ideji.
 -> "Smrt."
     <<set $dahTranslation = "death">>
-    <<add_word NotebookPanel "dah" "smrt (?)">>
+    <<add_word RightPanel "dah" "smrt (?)">>
     Kael: Ako je točno, potpuno mijenja smisao poruke.
 
 Dhorn: Sjeme dah. Stari nem-dah.
 
-<<add_word NotebookPanel "nem" "ne / negacija [POTVRĐENO]">>
+<<add_word RightPanel "nem" "ne / negacija [POTVRĐENO]">>
 
 Kael: Sad imam novi kontekst. Kako tumačim "nem-dah"?
 
@@ -530,7 +530,7 @@ title: DahContextCorrect
 ---
 <<if $dahTranslation == "life">>
     Kael: Dobro. "Dah" kao život sada se uklapa i u "nem-dah".
-    <<add_word NotebookPanel "dah" "život / biti živ [POTVRĐENO]">>
+    <<add_word RightPanel "dah" "život / biti živ [POTVRĐENO]">>
     <<jump NameMystery>>
 <<else>>
     Kael: Moj odgovor "bez života" ne odgovara prijevodu koji trenutno imam zapisan za "dah". To znači da moram preispitati riječ.
@@ -549,7 +549,7 @@ Kael: Ovaj odgovor mi još ne potvrđuje trenutačni prijevod riječi "dah". Že
     <<jump NameMystery>>
 -> Ostavi riječ nepoznatom.
     <<set $dahTranslation = "unknown">>
-    <<add_word NotebookPanel "dah" "???">>
+    <<add_word RightPanel "dah" "???">>
     <<jump NameMystery>>
 ===
 
@@ -559,22 +559,22 @@ Kael: Nakon "Moran dah. Dh'orn dah." i "Stari nem-dah", što najbolje znači "da
 
 -> "Život / biti živ."
     <<set $dahTranslation = "life">>
-    <<add_word NotebookPanel "dah" "život / biti živ [POTVRĐENO]">>
+    <<add_word RightPanel "dah" "život / biti živ [POTVRĐENO]">>
     Kael: Ovo povezuje oba primjera bez dodavanja nepotrebnog značenja.
     <<jump NameMystery>>
 -> "Zrak."
     <<set $dahTranslation = "air">>
-    <<add_word NotebookPanel "dah" "zrak (?)">>
+    <<add_word RightPanel "dah" "zrak (?)">>
     Kael: Moguće je doslovno, ali još uvijek ne objašnjava dobro sve primjere.
     <<jump NameMystery>>
 -> "Sigurnost."
     <<set $dahTranslation = "safety">>
-    <<add_word NotebookPanel "dah" "sigurnost (?)">>
+    <<add_word RightPanel "dah" "sigurnost (?)">>
     Kael: Još uvijek nemam dovoljno dokaza za to značenje.
     <<jump NameMystery>>
 -> Ostavi nepoznato.
     <<set $dahTranslation = "unknown">>
-    <<add_word NotebookPanel "dah" "???">>
+    <<add_word RightPanel "dah" "???">>
     <<jump NameMystery>>
 ===
 
@@ -582,7 +582,7 @@ title: NameMystery
 ---
 Dhorn: Kael-vorn.
 
-<<add_word NotebookPanel "kael" "???">>
+<<add_word RightPanel "kael" "???">>
 // OTKRIĆE: "Kael" se pojavljuje kao Dhorn riječ i možda nije samo Kaelovo osobno ime.
 <<unlock_clue "C04_KAEL_NOT_NAME">>
 
@@ -623,7 +623,7 @@ Kael: Sad očito traže moje ime. Što ću im reći?
     <<set $gaveKaelName = false>>
     Kael: Aron.
     Dhorn: Toru Aron. Nem-kael?
-    <<add_word NotebookPanel "nem" "ne / negacija [POTVRĐENO]">>
+    <<add_word RightPanel "nem" "ne / negacija [POTVRĐENO]">>
     // OTKRIĆE: Nakon što Kael da lažno ime, Dhorni i dalje koriste riječ "kael"; riječ zato nije samo njegovo osobno ime.
     <<unlock_clue "C04_KAEL_NOT_NAME">>
     Kael: Dobro. Onda "kael" definitivno nije samo moje ime.
@@ -654,23 +654,23 @@ Kael: Dobro. Imam barem dvije informacije o toj riječi. Što znači "vorn"?
 -> "Prevoditelj."
     <<set $vornTranslation = "translator">>
     <<set $translationAccuracy += 1>>
-    <<add_word NotebookPanel "vorn" "prevoditelj (?)">>
+    <<add_word RightPanel "vorn" "prevoditelj (?)">>
     Kael: Netko tko sluša jednu stranu i govori drugoj. To ima smisla.
 -> "Slušatelj."
     <<set $vornTranslation = "listener">>
-    <<add_word NotebookPanel "vorn" "slušatelj (?)">>
+    <<add_word RightPanel "vorn" "slušatelj (?)">>
     Kael: Možda je naglasak na slušanju.
 -> "Vođa."
     <<set $vornTranslation = "leader">>
-    <<add_word NotebookPanel "vorn" "vođa (?)">>
+    <<add_word RightPanel "vorn" "vođa (?)">>
     Kael: Moguće, ali nemam dovoljno dokaza.
 -> "Ime osobe."
     <<set $vornTranslation = "name">>
-    <<add_word NotebookPanel "vorn" "ime osobe (?)">>
+    <<add_word RightPanel "vorn" "ime osobe (?)">>
     Kael: Možda govore o određenoj osobi.
 -> Nisam siguran.
     <<set $vornTranslation = "unknown">>
-    <<add_word NotebookPanel "vorn" "???">>
+    <<add_word RightPanel "vorn" "???">>
     Kael: Premalo konteksta.
 
 Dhorn: Kael-vorn?
@@ -686,7 +686,7 @@ Kael: Sad zvuči kao pitanje. Kako ću odgovoriti?
     Dhorn: Vorn govor između.
 -> "Nisam Vorn."
     Kael: Nem-vorn.
-    <<add_word NotebookPanel "nem" "ne / negacija [POTVRĐENO]">>
+    <<add_word RightPanel "nem" "ne / negacija [POTVRĐENO]">>
     Dhorn: Kael čeka.
 -> Pitaj ponovno što je Vorn.
     Kael: Vorn što?
@@ -926,7 +926,7 @@ Kael: Imam vremena za još jedno pitanje. Što želim saznati?
 -> "Tko je bio Vorn prije mene?"
     Kael: Prije vorn... tko?
     Dhorn: Toru vorn. Nem-sada.
-    <<add_word NotebookPanel "nem" "ne / negacija [POTVRĐENO]">>
+    <<add_word RightPanel "nem" "ne / negacija [POTVRĐENO]">>
     <<set $knowsPreviousContactHint = true>>
     // OTKRIĆE: Prije Kaela postojao je Vorn s Površine.
     <<unlock_clue "C05_PREVIOUS_CONTACT">>
@@ -934,14 +934,14 @@ Kael: Imam vremena za još jedno pitanje. Što želim saznati?
 -> "Što je moran?"
     Kael: Moran?
     Dhorn: Moran nem zid. Moran Dh'orn.
-    <<add_word NotebookPanel "nem" "ne / negacija [POTVRĐENO]">>
+    <<add_word RightPanel "nem" "ne / negacija [POTVRĐENO]">>
     Kael: Nije zid.
     // OTKRIĆE: "Moran" ne označava samo fizičko mjesto ili građevinu.
     Kael: Znači "dom" možda nije cijelo značenje.
 -> "Što dolazi?"
     Kael: Vatra?
     Dhorn: Vatra hodi dubina. Nem-dugo.
-    <<add_word NotebookPanel "nem" "ne / negacija [POTVRĐENO]">>
+    <<add_word RightPanel "nem" "ne / negacija [POTVRĐENO]">>
     // OTKRIĆE: Dhorni upozoravaju da nešto s Površine uskoro dolazi u dubinu.
     Kael: Nešto s Površine dolazi prema njima. Uskoro.
 
@@ -952,11 +952,11 @@ title: FinalMessage
 ---
 Dhorn: Vatra hodi.
 Kael: Opet "vatra". I opet je Dhorni koriste kao nešto što dolazi.
-<<add_word NotebookPanel "vatra" "??? / nešto povezano s Površinom i dubinom (?)">>
+<<add_word RightPanel "vatra" "??? / nešto povezano s Površinom i dubinom (?)">>
 
 Dhorn: Kael-vorn. Moran čeka. Nem-dugo.
 
-<<add_word NotebookPanel "nem" "ne / negacija [POTVRĐENO]">>
+<<add_word RightPanel "nem" "ne / negacija [POTVRĐENO]">>
 
 Kael: Moram pokušati prevesti cijelu poruku. Kako bih preveo "Kael-vorn. Moran čeka. Nem-dugo."?
 
@@ -1030,23 +1030,23 @@ Kael: Imam vremena za samo jedno pitanje. Što ću pitati?
     <<unlock_clue "C06_VORN_ROLE">>
     <<set $vornTranslation = "translator">>
     <<set $translationAccuracy += 1>>
-    <<add_word NotebookPanel "vorn" "prevoditelj / posrednik (?)">>
+    <<add_word RightPanel "vorn" "prevoditelj / posrednik (?)">>
 -> "Što je moran?"
     Kael: Moran što?
     Dhorn: Moran Dh'orn. Moran ostaje kada kamen pada.
     Kael: Dom... ali očito ne samo fizičko mjesto.
     <<if $moranTranslation == "home">>
-        <<add_word NotebookPanel "moran" "dom / nešto više od mjesta (?)">>
+        <<add_word RightPanel "moran" "dom / nešto više od mjesta (?)">>
     <<endif>>
 -> "Što dolazi?"
     Kael: Vatra što?
     Dhorn: Vatra toru. Vatra dubina. Nem-dugo.
-    <<add_word NotebookPanel "nem" "ne / negacija [POTVRĐENO]">>
+    <<add_word RightPanel "nem" "ne / negacija [POTVRĐENO]">>
     Kael: Nešto s Površine dolazi prema njima.
 -> "Jeste li prije poznavali nekoga poput mene?"
     Kael: Prije kael-vorn?
     Dhorn: Prije vorn. Prije toru. Nem-sada.
-    <<add_word NotebookPanel "nem" "ne / negacija [POTVRĐENO]">>
+    <<add_word RightPanel "nem" "ne / negacija [POTVRĐENO]">>
     <<set $knowsPreviousContactHint = true>>
     // OTKRIĆE: Dhorni potvrđuju da je prije Kaela postojao prethodni Vorn s Površine.
     <<unlock_clue "C05_PREVIOUS_CONTACT">>
