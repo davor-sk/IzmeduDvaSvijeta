@@ -58,7 +58,7 @@ Kael: Na kanalu se pojavljuje stari sken. Površinski tehnički dokument. Oznaka
 
 <<set $foundV27ArchiveTrace = true>>
 // OTKRIĆE: Dhorni posjeduju stari površinski tehnički dokument povezan s oznakom V-27.
-// CLUE_UNLOCK: C25_V27_ARCHIVE_TRACE
+<<unlock_clue "C25_V27_ARCHIVE_TRACE">>
 
 Kael: Prije nego zaključim što gledam, mogu provjeriti jednu stvar.
 
@@ -82,7 +82,7 @@ Kael: U kutu dokumenta stoji simbol. Krug prekinut jednom kosom crtom. Znam taj 
 
 <<set $recognizedV27Symbol = true>>
 // OTKRIĆE: Kael osobno prepoznaje simbol povezan s V-27, ali još ne zna odakle.
-// CLUE_UNLOCK: C26_RECOGNIZED_SYMBOL
+<<unlock_clue "C26_RECOGNIZED_SYMBOL">>
 
 Kael: Ne mogu se sjetiti gdje sam ga vidio. Ali nisam ga prvi put vidio večeras.
 
@@ -102,8 +102,8 @@ Maren: Pokušala sam. Nisam odobrila ovu eskalaciju.
 <<set $unit14EntryApproved = true>>
 <<set $marenDidNotAuthorizeUnit14 = true>>
 // OTKRIĆE: Jedinica Četrnaest dobila je odobrenje za ulazak; Maren kaže da nije odobrila eskalaciju.
-// CLUE_UNLOCK: C27_UNIT14_ENTRY
-// CLUE_UNLOCK: C28_MAREN_DID_NOT_AUTHORIZE
+<<unlock_clue "C27_UNIT14_ENTRY">>
+<<unlock_clue "C28_MAREN_DID_NOT_AUTHORIZE">>
 
 Kael: Pravila?
 
@@ -145,7 +145,7 @@ Kael: V-27.
 
 <<set $foundV27ArchiveTrace = true>>
 // OTKRIĆE: V-27 se pojavljuje u starom površinskom tehničkom registru vezanom uz isti dubinski sektor.
-// CLUE_UNLOCK: C25_V27_ARCHIVE_TRACE
+<<unlock_clue "C25_V27_ARCHIVE_TRACE">>
 
 Kael: Imam vremena provjeriti jednu stvar prije nego Jedinica Četrnaest krene.
 
@@ -170,13 +170,13 @@ Kael: Imam vremena provjeriti jednu stvar prije nego Jedinica Četrnaest krene.
     Kael: Jedna servisna napomena spominje nestandardni komunikacijski uređaj registriran uz V-27. Detalji su zaključani, ali trag postoji.
     <<set $knowsV27PrivateTransmitter = true>>
     // OTKRIĆE: U registru postoji trag nestandardnog komunikacijskog uređaja povezanog s V-27.
-    // CLUE_UNLOCK: C29_V27_PRIVATE_TRANSMITTER
+    <<unlock_clue "C29_V27_PRIVATE_TRANSMITTER">>
 
 Kael: Uz oznaku postoji rukom nacrtan simbol. Krug prekinut kosom crtom. Znam ga.
 
 <<set $recognizedV27Symbol = true>>
 // OTKRIĆE: Kael osobno prepoznaje simbol povezan s V-27, ali još ne zna odakle.
-// CLUE_UNLOCK: C26_RECOGNIZED_SYMBOL
+<<unlock_clue "C26_RECOGNIZED_SYMBOL">>
 
 <<jump Session6_CommonSymbol>>
 ===
@@ -223,7 +223,7 @@ Kael: Stari tehnički indeks. V-27. Pristup dubinskim kartama, komunikacijskom t
 
 <<set $foundV27ArchiveTrace = true>>
 // OTKRIĆE: V-27 je imao tehnički pristup istom širem dubinskom sektoru i komunikaciji 7-G.
-// CLUE_UNLOCK: C25_V27_ARCHIVE_TRACE
+<<unlock_clue "C25_V27_ARCHIVE_TRACE">>
 
 Kael: To i dalje ne govori zašto je uklonjen. Ali više nije samo lingvistički posrednik bez veze s terenom.
 
@@ -236,7 +236,7 @@ Kael: Na nekoliko starih papira pojavljuje se isti rukom nacrtan znak. Krug prek
 
 <<set $recognizedV27Symbol = true>>
 // OTKRIĆE: Kael prepoznaje privatni simbol povezan s V-27.
-// CLUE_UNLOCK: C26_RECOGNIZED_SYMBOL
+<<unlock_clue "C26_RECOGNIZED_SYMBOL">>
 
 Kael: Ne u sustavu. Negdje drugdje. Negdje osobno.
 
@@ -249,7 +249,7 @@ Kael: Jedan servisni zapis nije vezan uz službeni terminal. PRIVATNI ODAŠILJA�
 
 <<set $knowsV27PrivateTransmitter = true>>
 // OTKRIĆE: V-27 koristio je privatni odašiljač na 7-G izvan standardne procedure.
-// CLUE_UNLOCK: C29_V27_PRIVATE_TRANSMITTER
+<<unlock_clue "C29_V27_PRIVATE_TRANSMITTER">>
 
 Kael: Netko je održavao vezu i izvan službenog sustava. To bi objasnilo kako su dijelovi komunikacije preživjeli gašenje programa.
 
@@ -277,14 +277,14 @@ title: Session6_IndependentAfterResearch
     Kael: Još mi nedostaje nešto osobno. Nešto što ovaj zapis veže uz osobu, ne samo oznaku. Na dnu jednog dokumenta primjećujem rukom nacrtan znak. Krug prekinut kosom crtom. Znam ga.
     <<set $recognizedV27Symbol = true>>
     // OTKRIĆE: Kael prepoznaje privatni simbol povezan s V-27.
-    // CLUE_UNLOCK: C26_RECOGNIZED_SYMBOL
+    <<unlock_clue "C26_RECOGNIZED_SYMBOL">>
 <<endif>>
 
 <<if $foundV27ArchiveTrace == false>>
     Kael: Oznaka V-27 pojavljuje se u starom tehničkom indeksu sektora. Dovoljno da znam da je bio povezan s ovim mjestom, ali ne i zašto.
     <<set $foundV27ArchiveTrace = true>>
     // OTKRIĆE: V-27 se pojavljuje u starom tehničkom zapisu dubinskog sektora.
-    // CLUE_UNLOCK: C25_V27_ARCHIVE_TRACE
+    <<unlock_clue "C25_V27_ARCHIVE_TRACE">>
 <<endif>>
 
 Kael: Simbol nije iz sustava. Znam ga iz života prije 7-G.

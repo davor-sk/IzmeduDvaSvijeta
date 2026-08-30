@@ -49,7 +49,7 @@ Dhorn: Dugo prije. Toru-vorn. Da.
 Kael: Njihovo sjećanje podudara se s arhivskim tragom.
 <<set $knowsPreviousContactHint = true>>
 // OTKRIĆE: Dhorni povezuju prethodnog Vorna s razdobljem starog zapisa na 7-G.
-// CLUE_UNLOCK: C05_PREVIOUS_CONTACT
+<<unlock_clue "C05_PREVIOUS_CONTACT">>
 <<jump Session3VornRefinement>>
 ===
 
@@ -62,7 +62,7 @@ Dhorn: Stari vorn govor toru. Stari vorn govor Dh'orn. Moran čeka.
 Kael: Fragment se stvarno odnosi na prethodnog posrednika i njegov razgovor s obje strane.
 <<set $knowsPreviousContactHint = true>>
 // OTKRIĆE: Stari fragment "vorn — toru — moran" odnosi se na prethodnog Vorna.
-// CLUE_UNLOCK: C05_PREVIOUS_CONTACT
+<<unlock_clue "C05_PREVIOUS_CONTACT">>
 <<jump Session3VornRefinement>>
 ===
 
@@ -75,7 +75,7 @@ Dhorn: Toru-vorn. Stari vorn.
 Kael: Prethodni Vorn bio je s Površine.
 <<set $knowsPreviousContactHint = true>>
 // OTKRIĆE: Dhorni tvrde da je prethodni Vorn bio netko s Površine.
-// CLUE_UNLOCK: C05_PREVIOUS_CONTACT
+<<unlock_clue "C05_PREVIOUS_CONTACT">>
 <<jump Session3VornRefinement>>
 ===
 
@@ -107,7 +107,7 @@ title: Session3VornRefinement
     <<add_word RightPanel "nem" "ne / negacija [POTVRĐENO]">>
     <<set $knowsVornNotName = true>>
     // OTKRIĆE: Vorn nije osobno ime nego uloga.
-    // CLUE_UNLOCK: C06_VORN_ROLE
+    <<unlock_clue "C06_VORN_ROLE">>
 <<endif>>
 
 Dhorn: Vorn sluša toru. Vorn sluša Dh'orn. Vorn nosi govor između.
@@ -233,7 +233,7 @@ Kael: "Utiša." Nova riječ. Što znači "utiša" u rečenici "Toru utiša vorn"
 
 <<set $knowsVornSilenced = true>>
 // OTKRIĆE: Dhorni tvrde da je Površina "utišala" prethodnog Vorna i da je nakon toga prestao govoriti.
-// CLUE_UNLOCK: C12_SILENCED_VORN
+<<unlock_clue "C12_SILENCED_VORN">>
 
 Dhorn: Kael-vorn?
 
@@ -395,7 +395,7 @@ Maren: Dobro. Postojao je raniji pokušaj kontakta.
 <<set $marenConfirmedPreviousContact = true>>
 <<set $marenGaveOldContactVersion = true>>
 // OTKRIĆE: Maren potvrđuje raniji pokušaj kontakta s Dhornima.
-// CLUE_UNLOCK: C05_PREVIOUS_CONTACT
+<<unlock_clue "C05_PREVIOUS_CONTACT">>
 
 Kael: Što se dogodilo?
 
@@ -510,7 +510,7 @@ Kael: Pretražujem kadrovske zapise povezane sa 7-G. Većina imena je uklonjena.
 
 <<set $knowsV27Designation = true>>
 // OTKRIĆE: U starom programu postoji klasificirani lingvistički posrednik označen kao V-27.
-// CLUE_UNLOCK: C13_V27
+<<unlock_clue "C13_V27">>
 
 <<if $knowsOldContact>>
     Kael: Broj 27 podudara se s podatkom o starosti najstarijeg zapisa. Možda označava godinu kontakta. Možda nešto sasvim drugo.
@@ -530,7 +530,7 @@ Kael: Pretražujem izvještaje o incidentima vezanim uz 7-G. Jedan rezultat. CON
 <<set $foundIncidentReport = true>>
 <<set $knowsVornRemovedFromProgram = true>>
 // OTKRIĆE: Službeni dokument kaže da je nakon prekida kontakta posrednik uklonjen iz programa.
-// CLUE_UNLOCK: C14_REMOVED_FROM_PROGRAM
+<<unlock_clue "C14_REMOVED_FROM_PROGRAM">>
 
 Kael: "Uklonjen iz programa." Ovaj dokument daje mi novi kontekst za riječ "utiša".
 
@@ -563,7 +563,7 @@ Kael: "Uklonjen iz programa." Ovaj dokument daje mi novi kontekst za riječ "uti
 <<if $knowsSurfaceExtraction>>
     Kael: Prethodni Vorn, klasificirani program i radovi u dubini. Još nemam dokaz da su povezani. Ali sada znam koje pitanje trebam postaviti.
     // OTKRIĆE: Kael počinje sumnjati da prekid starog kontakta možda ima veze s aktivnostima Površine u dubini.
-    // CLUE_UNLOCK: C16_VORN_DEPTH_LINK
+    <<unlock_clue "C16_VORN_DEPTH_LINK">>
 <<elseif $dhornClaimsExtraction>>
     Kael: Dhorni tvrde da Površina nešto uzima iz dubine. Ako je stari Vorn znao za istu tvrdnju, možda je to važno.
 <<endif>>
@@ -577,7 +577,7 @@ Kael: Pretražujem stare jezične programe po oznaci "V-". V-11 — STATUS: CLOS
 
 <<set $knowsVProgram = true>>
 // OTKRIĆE: U starim sustavima postoji više oznaka oblika V-broj; V-27 nije jedini takav zapis.
-// CLUE_UNLOCK: C15_V_PROGRAM
+<<unlock_clue "C15_V_PROGRAM">>
 
 Kael: Znači V-27 možda nije jedinstvena oznaka jednog slučaja. Postojao je cijeli niz V-zapisa. Jesu li svi bili posrednici? Sustav mi ne daje odgovor.
 

@@ -53,7 +53,7 @@ Kael: Fotografija muškarca ispred tunelskog ulaza. Datum je star dvadeset sedam
 
 <<set $grandfatherIsV27 = true>>
 // OTKRIĆE: Fotografija potvrđuje da je Kaelov djed bio V-27.
-// CLUE_UNLOCK: C30_GRANDFATHER_IS_V27
+<<unlock_clue "C30_GRANDFATHER_IS_V27">>
 
 Kael: Dakle nije više hipoteza. V-27 je moj djed.
 
@@ -73,7 +73,7 @@ Kael: Ispod toga druga riječ. "Kael — onaj koji dolazi poslije i nastavlja pr
 <<set $kaelMeaningConfirmed = true>>
 <<add_word RightPanel "kael" "onaj poslije / onaj koji nastavlja [POTVRĐENO]">>
 // OTKRIĆE: Bilješka V-27 potvrđuje da "kael" označava onoga koji nastavlja ulogu nakon prethodnog prekida.
-// CLUE_UNLOCK: C31_KAEL_MEANING
+<<unlock_clue "C31_KAEL_MEANING">>
 
 Kael: Zato su me zvali kael-vorn. Ne zato što su nekako znali moje ime. Vidjeli su u meni nekoga tko nastavlja ulogu prethodnog Vorna. To nije sudbina. To je njihova procjena moje uloge.
 
@@ -92,7 +92,7 @@ Kael: Memorijski modul još radi. Jedna spremljena poruka. "Ako službeni kanal 
 
 <<set $v27SavedOriginals = true>>
 // OTKRIĆE: V-27 je namjerno čuvao originalne poruke izvan službenog sustava.
-// CLUE_UNLOCK: C32_V27_SAVED_ORIGINALS
+<<unlock_clue "C32_V27_SAVED_ORIGINALS">>
 
 Kael: To objašnjava zašto je dio komunikacije preživio uklanjanje iz programa.
 
@@ -105,7 +105,7 @@ Kael: Pismo je napisano običnim jezikom. Nema šifre, nema Dhorn riječi. "Ako 
 
 <<set $v27ClaimsRemovedForRefusal = true>>
 // OTKRIĆE: V-27 tvrdi da je uklonjen nakon što nije htio potvrditi da Dhorni predstavljaju prijetnju.
-// CLUE_UNLOCK: C33_V27_REFUSED_THREAT_LABEL
+<<unlock_clue "C33_V27_REFUSED_THREAT_LABEL">>
 
 Kael: To je njegova verzija. Važna, ali i dalje samo njegova dok je ne mogu potvrditi drugim izvorom. Zadnja rečenica. "Ako ikad dobiješ priliku koju ja nisam imao, natjeraj obje strane da čuju isti original."
 

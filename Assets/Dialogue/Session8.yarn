@@ -31,6 +31,7 @@ title: Session8_EndingRouter
 title: Session8_DhornEnding
 ---
 <<set $endingUnlockedDhorn = true>>
+<<unlock_ending "dhorn">>
 
 Kael: Stari pristupni tunel završava pred vratima koja sam dosad poznavao samo kroz signal.
 
@@ -97,6 +98,7 @@ Kael: Dhorni ne otvaraju sve prolaze. Površina ne povlači sve jedinice. Mir ni
 title: Session8_GovernmentEnding
 ---
 <<set $endingUnlockedGovernment = true>>
+<<unlock_ending "government">>
 
 Kael: Vraćam se u kontrolni centar dok odbrojavanje ulazi u posljednje minute.
 
@@ -159,6 +161,7 @@ Kael: Dhorni ne vjeruju Površini. Površina ne vjeruje Dhornima. Ništa od toga
 title: Session8_TruthEnding
 ---
 <<set $endingUnlockedTruth = true>>
+<<unlock_ending "truth">>
 
 Kael: Otvaram zajednički kanal. Maren na jednoj strani. Dhorni na drugoj. I treći zapis koji ne pripada ni jednom zatvorenom sustavu.
 
@@ -229,6 +232,7 @@ Kael: Vatra-7 ulazi u privremenu obustavu. Pregovori još nisu mir. Ali rat tako
 title: Session8_WarEnding
 ---
 <<set $endingUnlockedWar = true>>
+<<unlock_ending "war">>
 
 <<alarm_siren AudioManager>>
 
