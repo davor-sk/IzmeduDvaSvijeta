@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 // Popup koji se pojavi kad se otkljuca achievement ili otkrice.
@@ -13,7 +14,12 @@ public class AchievementPopup : MonoBehaviour
     public CanvasGroup canvasGroup;
     public TextMeshProUGUI titleText;
     public TextMeshProUGUI descriptionText;
+    public Image badgeIcon;                    
     public GameAudioManager audioManager;
+
+    [Header("Bedzevi")]
+    public Sprite achievementBadge;             
+    public Sprite clueBadge;                    
 
     [Header("Trajanje")]
     public float fadeInDuration = 0.4f;
@@ -24,8 +30,8 @@ public class AchievementPopup : MonoBehaviour
     public bool showCluePopups = true;
     public string clueTitle = "NOVO OTKRICE";
 
-    private readonly Queue<(string title, string description)> queue =
-        new Queue<(string, string)>();
+    private readonly Queue<(string title, string description, Sprite badge)> queue =
+        new Queue<(string, string, Sprite)>();
 
     private bool isShowing = false;
 
@@ -43,21 +49,18 @@ public class AchievementPopup : MonoBehaviour
 
     void Awake()
     {
-        // Ako polja nisu rucno povezana u Inspectoru, pokusaj ih naci sam.
         if (popupPanel == null)
             popupPanel = gameObject;
 
         if (canvasGroup == null)
             canvasGroup = GetComponent<CanvasGroup>();
 
-        // CanvasGroup je nuzan za fade - ako ga nema, dodaj ga.
         if (canvasGroup == null)
             canvasGroup = gameObject.AddComponent<CanvasGroup>();
 
         if (audioManager == null)
             audioManager = FindFirstObjectByType<GameAudioManager>();
 
-        // Ako tekstovi nisu povezani, uzmi ih iz djece.
         var texts = GetComponentsInChildren<TextMeshProUGUI>(true);
 
         if (titleText == null && texts.Length > 0)
@@ -71,9 +74,6 @@ public class AchievementPopup : MonoBehaviour
     {
         canvasGroup.alpha = 0f;
 
-        // Ako je panel isti objekt na kojem je skripta, NE gasimo ga -
-        // time bi se ugasila i skripta pa popup nikad ne bi radio.
-        // Dovoljno je da je proziran i da ne hvata klikove.
         if (popupPanel != gameObject)
             popupPanel.SetActive(false);
         else
@@ -90,7 +90,8 @@ public class AchievementPopup : MonoBehaviour
     {
         Enqueue(
             "ACHIEVEMENT: " + AchievementManager.GetDisplayName(id),
-            AchievementManager.GetDescription(id)
+            AchievementManager.GetDescription(id),
+            achievementBadge
         );
     }
 
@@ -101,13 +102,14 @@ public class AchievementPopup : MonoBehaviour
 
         Enqueue(
             clueTitle + " (" + ClueManager.GetProgressText() + ")",
-            ClueManager.GetDescription(clueId)
+            ClueManager.GetDescription(clueId),
+            clueBadge
         );
     }
 
-    private void Enqueue(string title, string description)
+    private void Enqueue(string title, string description, Sprite badge)
     {
-        queue.Enqueue((title, description));
+        queue.Enqueue((title, description, badge));
 
         if (!isShowing)
             StartCoroutine(ShowQueue());
@@ -120,13 +122,13 @@ public class AchievementPopup : MonoBehaviour
         while (queue.Count > 0)
         {
             var item = queue.Dequeue();
-            yield return StartCoroutine(ShowOne(item.title, item.description));
+            yield return StartCoroutine(ShowOne(item.title, item.description, item.badge));
         }
 
         isShowing = false;
     }
 
-    private IEnumerator ShowOne(string title, string description)
+    private IEnumerator ShowOne(string title, string description, Sprite badge)
     {
         if (popupPanel == null || canvasGroup == null)
             yield break;
@@ -136,6 +138,9 @@ public class AchievementPopup : MonoBehaviour
 
         if (descriptionText != null)
             descriptionText.text = description;
+
+        if (badgeIcon != null && badge != null)
+            badgeIcon.sprite = badge;
 
         if (popupPanel != gameObject)
             popupPanel.SetActive(true);
