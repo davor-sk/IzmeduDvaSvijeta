@@ -8,9 +8,16 @@ public class SceneTransitionController : MonoBehaviour
     [SerializeField] private float fadeDuration = 0.5f;
     [Header("Yarn")]
     [SerializeField] private DialogueRunner dialogueRunner;
+    [System.Serializable]
+    public class SessionBackground
+    {
+        public string sessionName;
+        public Sprite background;
+    }
+
     [Header("Background")]
     [SerializeField] private UnityEngine.UI.Image backgroundImage;
-    [SerializeField] private Sprite session2Background;
+    [SerializeField] private SessionBackground[] sessionBackgrounds;
 
     private Coroutine fadeCoroutine;
 
@@ -42,9 +49,13 @@ public class SceneTransitionController : MonoBehaviour
         yield return FadeRoutine(1f);
 
         // Promijeni background dok je ekran crn
-        if (nextSession == "Session2" && session2Background != null)
+        foreach (var item in sessionBackgrounds)
         {
-            backgroundImage.sprite = session2Background;
+            if (item.sessionName == nextSession && item.background != null)
+            {
+                backgroundImage.sprite = item.background;
+                break;
+            }
         }
 
         // Pokreni sljedeći session

@@ -2632,7 +2632,21 @@ MonoBehaviour:
   fadeDuration: 1.5
   dialogueRunner: {fileID: 1946953126}
   backgroundImage: {fileID: 729769868}
-  session2Background: {fileID: 21300000, guid: 89f43ee6b51b54d45841f4f3863de480, type: 3}
+  sessionBackgrounds:
+  - sessionName: Session2
+    background: {fileID: 21300000, guid: 89f43ee6b51b54d45841f4f3863de480, type: 3}
+  - sessionName: Session3
+    background: {fileID: 21300000, guid: 5b902fab7abaa7e42ae97d14255c7687, type: 3}
+  - sessionName: Session4_Start
+    background: {fileID: 21300000, guid: 91d39e0dfa0d46840b92d10bf6e3ded2, type: 3}
+  - sessionName: Session5_Start
+    background: {fileID: 21300000, guid: 845a1c0b20373094180bacd4304a8929, type: 3}
+  - sessionName: Session6_Start
+    background: {fileID: 21300000, guid: 5b902fab7abaa7e42ae97d14255c7687, type: 3}
+  - sessionName: Session7_Start
+    background: {fileID: 21300000, guid: 25485844190e34740bf32f1df15aa6e2, type: 3}
+  - sessionName: Session8_Start
+    background: {fileID: 21300000, guid: 9f13da8415732e6468e2adca7f1cfe68, type: 3}
 --- !u!4 &553994494
 Transform:
   m_ObjectHideFlags: 0
@@ -4400,7 +4414,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8309902628685535410, guid: 52571f68872914e24837210513edea1d, type: 3}
       propertyPath: startNode
-      value: Session1
+      value: Session3
       objectReference: {fileID: 0}
     - target: {fileID: 8309902628685535410, guid: 52571f68872914e24837210513edea1d, type: 3}
       propertyPath: yarnProject
@@ -6957,6 +6971,7 @@ MonoBehaviour:
   avatarImage: {fileID: 1510604738}
   nextButton: {fileID: 1122345818}
   expressionController: {fileID: 1468603767}
+  charactersPerSecond: 40
   speakerVisuals:
   - speakerName: Dhorn
     speakerNameColor:

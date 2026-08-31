@@ -970,5 +970,5 @@ Kael: Opet ta riječ.
     Kael: Znam da im ta riječ znači više od običnog prijevoda. Ali još uvijek ne znam koliko daleko njezina priča seže.
 <<endif>>
 
-<<jump Session3>>
+<<session_transition SceneTransitionController Session3>>
 ===

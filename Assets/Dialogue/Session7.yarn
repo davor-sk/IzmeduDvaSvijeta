@@ -359,5 +359,5 @@ title: Session7_Ending
 ---
 Kael: Odbrojavanje se nastavlja. Deset minuta. Manje od toga možda. Sada znam tko je bio V-27. Znam zašto su me zvali kael-vorn. Znam i da nijedna od tih stvari ne odlučuje umjesto mene. Ono što sam pronašao daje mi kontekst. Ono što napravim sljedeće dat će priči završetak.
 
-<<jump Session8_Start>>
+<<session_transition SceneTransitionController Session8_Start>>
 ===

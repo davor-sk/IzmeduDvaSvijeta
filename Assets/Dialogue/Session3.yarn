@@ -728,5 +728,5 @@ Kael: I ostala je još jedna riječ koju nisam riješio: "vatra". Dhorni je kori
 
 Kael: A "kael"... ...još uvijek znači samo nešto blizu "onaj koji nastavlja". Ne znam tko je bio prethodni Vorn. Ne znam zašto je nestao. I još ne znam jesu li njegov nestanak i ono što se događa u dubini povezani. Ali sada znam što moram otkriti sljedeće.
 
-<<jump Session4_Start>>
+<<session_transition SceneTransitionController Session4_Start>>
 ===
