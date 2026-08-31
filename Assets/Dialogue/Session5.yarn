@@ -263,7 +263,7 @@ Kael: Znam.
 
 Kael: Odbrojavanje: 03:37:08. Sad više ne prevodim samo poruke. Prevodim posljedice svojih odluka.
 
-<<jump Session6_Start>>
+<<session_transition SceneTransitionController Session6_Start>>
 ===
 
 title: Session5_GovernmentRouteEnd
@@ -288,7 +288,7 @@ Kael: Ne mogu znati kako su to shvatili. Ali ton je prvi put hladniji od samog �
 
 Kael: Odbrojavanje: 03:36:41. Dao sam Površini kartu koja možda nije karta. Sad moram saznati što će s njom napraviti.
 
-<<jump Session6_Start>>
+<<session_transition SceneTransitionController Session6_Start>>
 ===
 
 title: Session5_IndependentRouteEnd
@@ -313,5 +313,5 @@ Kael: Odbio sam dati oružje jednoj strani i kartu drugoj. To ne znači da sam z
 
 Kael: Odbrojavanje: 03:35:59.
 
-<<jump Session6_Start>>
+<<session_transition SceneTransitionController Session6_Start>>
 ===

@@ -342,5 +342,5 @@ title: Session4_TimeSkip
 ---
 Kael: Četrdeset četiri sata kasnije.
 
-<<jump Session5_Start>>
+<<session_transition SceneTransitionController Session5_Start>>
 ===

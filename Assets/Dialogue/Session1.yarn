@@ -1,6 +1,8 @@
 ﻿title: Session1
 ---
-Kael: Noćna smjena. Opet. Još četiri sata pregledavanja signala koje je sustav već označio kao beznačajne. Seizmički senzori, komunikacijski šum, stare rudarske frekvencije... Ako budem imao sreće, večeras neću morati prevesti ni jednu jedinu riječ. ... Čekaj. Upravo se pojavio novi signal. Nije automatski označen. Kanal 7-G? Taj kanal nije na aktivnom popisu. Signal se ponavlja. Što želim napraviti?
+Kael: Noćna smjena. Opet. Još četiri sata pregledavanja signala koje je sustav već označio kao beznačajne. Seizmički senzori, komunikacijski šum, stare rudarske frekvencije... Ako budem imao sreće, večeras neću morati prevesti ni jednu jedinu riječ.
+<<expression DialogueController Kael doubtful>>
+Kael: Čekaj. Upravo se pojavio novi signal. Nije automatski označen. Kanal 7-G? Taj kanal nije na aktivnom popisu. Signal se ponavlja. Što želim napraviti?
 
 -> Otvori transmisiju.
     Kael: Otvaram kanal.
@@ -16,12 +18,15 @@ Kael: Noćna smjena. Opet. Još četiri sata pregledavanja signala koje je susta
     <<jump FirstContact>>
 ===
 
+
 title: ChannelData
 ---
 <<set $knowsRestrictedChannel = true>>
 <<set $knowsLevelV = true>>
 // OTKRIĆE: Kanal 7-G ima ograničen pristup i autorizaciju Razina V.
 <<unlock_clue "C01_RESTRICTED_7G">>
+
+<<expression DialogueController Kael neutral>>
 
 Kael: Provjeravam zapis kanala. Kanal 7-G... ograničen pristup. Posljednja aktivnost nije dostupna. Autorizacija... Razina V. Zašto bi neaktivan kanal imao ograničenu autorizaciju? Što želim napraviti?
 
@@ -35,6 +40,7 @@ Kael: Provjeravam zapis kanala. Kanal 7-G... ograničen pristup. Posljednja akti
 title: AnalyzeSignalSource
 ---
 <<set $analyzedSignalSource = true>>
+<<expression DialogueController Kael neutral>>
 
 Kael: Pokrećem analizu izvora. ... 2.8 kilometara ispod Površine? To ne može biti obična komunikacijska stanica. Sustav prepoznaje ponavljajuće jezične uzorke.
 // OTKRIĆE: Izvor signala nalazi se 2.8 kilometara ispod Površine i sadrži strukturirane jezične uzorke.
@@ -49,19 +55,25 @@ title: ReportAnomaly
 ---
 <<set $reportedAnomalyToMaren = true>>
 <<set $governmentTrust += 1>>
+<<expression DialogueController Kael neutral>>
 
 Kael: Maren, imam anomaliju na kanalu 7-G.
 
+<<expression DialogueController Maren surprised>>
 Maren: 7-G?
 
 Kael: Da.
 
+<<expression DialogueController Maren angry>>
 Maren: Ne diraj ništa dok ne provjerimo zapis.
 
+<<expression DialogueController Kael surprised>>
 Kael: Zašto?
 
+<<expression DialogueController Maren neutral>>
 Maren: Samo pričekaj.
 
+<<expression DialogueController Kael neutral>>
 Kael: Signal je još aktivan.
 
 <<jump PreContactChoice>>
@@ -84,16 +96,21 @@ Kael: Signal je još aktivan. Što želim napraviti?
 
 title: FirstContact
 ---
+
+<<expression DialogueController Kael neutral>>
 Kael: Otvaram prijam.
 
+<<expression DialogueController Dhorn neutral>>
 Dhorn: Vel-ahn.
 
 Kael: ...
 
+<<expression DialogueController Dhorn doubtful>>
 Dhorn: Vel-ahn.
 
 Kael: Ista poruka.
 
+<<expression DialogueController Dhorn surprised>>
 Dhorn: Vel-ahn.
 
 Kael: Tri puta. Ista riječ ili izraz. Što znači "Vel-ahn"?
@@ -1111,5 +1128,5 @@ Kael: Signal je nestao.
     Kael: Što god se nalazi ispod Površine... ...znalo je kako uspostaviti kontakt.
 <<endif>>
 
-<<jump Session2>>
+<<session_transition SceneTransitionController Session2>>
 ===

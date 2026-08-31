@@ -335,5 +335,5 @@ Kael: Odbrojavanje nastavlja bez mene. Vatra-7 neće stati zato što sam pronaš
 
 Kael: Djedova kutija. V-27. Stari Vorn. Vrijeme je da otvorim nešto što je zatvoreno puno dulje od kanala 7-G.
 
-<<jump Session7_Start>>
+<<session_transition SceneTransitionController Session7_Start>>
 ===
