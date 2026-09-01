@@ -14,6 +14,13 @@ public class DhornPresenter : DialoguePresenterBase
     public Button nextButton;
     public CharacterExpressionController expressionController;
 
+    [Header("Auto Advance")]
+    public Button autoAdvanceToggle;
+    public TextMeshProUGUI autoAdvanceToggleText;
+    public float autoAdvanceDelay = 3.5f;
+
+    private static bool autoAdvanceEnabled = false;
+
     [Header("Typewriter")]
     [Min(1f)]
     public float charactersPerSecond = 40f;
@@ -45,6 +52,32 @@ public class DhornPresenter : DialoguePresenterBase
         return YarnTask.CompletedTask;
     }
 
+    void Start()
+    {
+        if (autoAdvanceToggle != null)
+        {
+            autoAdvanceToggle.onClick.AddListener(ToggleAutoAdvance);
+            UpdateToggleVisual();
+        }
+    }
+
+    void ToggleAutoAdvance()
+    {
+        autoAdvanceEnabled = !autoAdvanceEnabled;
+        UpdateToggleVisual();
+    }
+
+    void UpdateToggleVisual()
+    {
+        if (autoAdvanceToggleText != null)
+        {
+            autoAdvanceToggleText.text = autoAdvanceEnabled ? "AUTO: ON" : "AUTO: OFF";
+            autoAdvanceToggleText.color = autoAdvanceEnabled
+                ? new Color32(76, 175, 80, 255)
+                : new Color32(180, 180, 180, 255);
+        }
+    }
+
     public override async YarnTask RunLineAsync(
         LocalizedLine line,
         LineCancellationToken token)
@@ -52,14 +85,11 @@ public class DhornPresenter : DialoguePresenterBase
         string speaker = line.CharacterName ?? "";
         string text = line.TextWithoutCharacterName.Text;
 
-        // Speaker
         speakerNameText.text = speaker;
 
-        // Postavi cijeli tekst, ali ga na početku sakrij.
         dialogueText.text = text;
         dialogueText.maxVisibleCharacters = 0;
 
-        // Pronađi vizualne postavke za trenutnog govornika.
         var visual = speakerVisuals?.Find(
             v => v.speakerName == speaker
         );
@@ -110,7 +140,6 @@ public class DhornPresenter : DialoguePresenterBase
             avatarImage.gameObject.SetActive(false);
         }
 
-        // TMP mora prvo izračunati stvaran broj znakova.
         dialogueText.ForceMeshUpdate();
 
         int totalCharacters = dialogueText.textInfo.characterCount;
@@ -118,25 +147,45 @@ public class DhornPresenter : DialoguePresenterBase
         bool isTyping = true;
         bool skipTypewriter = false;
         bool advanced = false;
+        bool listenerAdded = false;
 
         void OnNextClicked()
         {
             if (isTyping)
             {
-                // Prvi klik tijekom typewritera:
-                // odmah prikaži cijelu repliku.
                 skipTypewriter = true;
             }
             else
             {
-                // Klik nakon što je cijeli tekst prikazan:
-                // idi na sljedeću repliku.
                 advanced = true;
             }
         }
 
-        nextButton.onClick.AddListener(OnNextClicked);
-        nextButton.gameObject.SetActive(true);
+        // NOVO — pomoćne funkcije koje garantiraju točno stanje gumba
+        void EnsureButtonShown()
+        {
+            if (!listenerAdded)
+            {
+                nextButton.onClick.AddListener(OnNextClicked);
+                listenerAdded = true;
+            }
+            nextButton.gameObject.SetActive(true);
+        }
+
+        void EnsureButtonHidden()
+        {
+            if (listenerAdded)
+            {
+                nextButton.onClick.RemoveListener(OnNextClicked);
+                listenerAdded = false;
+            }
+            nextButton.gameObject.SetActive(false);
+        }
+
+        if (autoAdvanceEnabled)
+            EnsureButtonHidden();
+        else
+            EnsureButtonShown();
 
         float visibleCharacters = 0f;
 
@@ -152,8 +201,6 @@ public class DhornPresenter : DialoguePresenterBase
                 break;
             }
 
-            // Enter ili Space tijekom typewritera
-            // također odmah prikažu cijelu repliku.
             if (Keyboard.current != null &&
                 (Keyboard.current.enterKey.wasPressedThisFrame ||
                  Keyboard.current.spaceKey.wasPressedThisFrame))
@@ -174,34 +221,59 @@ public class DhornPresenter : DialoguePresenterBase
             await YarnTask.Yield();
         }
 
-        // Osiguraj da je cijela replika prikazana.
         dialogueText.maxVisibleCharacters = totalCharacters;
 
         isTyping = false;
 
-        // Jedan frame pauze kako isti Enter/Space koji je
-        // preskočio typewriter ne bi odmah preskočio i repliku.
         await YarnTask.Yield();
 
         // =========================
-        // ČEKANJE NA "DALJE"
+        // ČEKANJE NA "DALJE" (ili auto-advance)
         // =========================
 
-        while (!advanced)
+        // NOVO — ponovno provjeri stanje OVDJE, jer se moglo promijeniti
+        // dok je typewriter bio u tijeku (uključen ili isključen usred linije).
+        if (autoAdvanceEnabled)
         {
-            if (Keyboard.current != null &&
-                (Keyboard.current.enterKey.wasPressedThisFrame ||
-                 Keyboard.current.spaceKey.wasPressedThisFrame))
+            EnsureButtonHidden();
+
+            float waitElapsed = 0f;
+
+            while (!advanced)
             {
-                advanced = true;
+                if (Keyboard.current != null &&
+                    (Keyboard.current.enterKey.wasPressedThisFrame ||
+                     Keyboard.current.spaceKey.wasPressedThisFrame))
+                {
+                    advanced = true;
+                }
+                else if (waitElapsed >= autoAdvanceDelay)
+                {
+                    advanced = true;
+                }
+
+                waitElapsed += Time.deltaTime;
+                await YarnTask.Yield();
+            }
+        }
+        else
+        {
+            EnsureButtonShown();
+
+            while (!advanced)
+            {
+                if (Keyboard.current != null &&
+                    (Keyboard.current.enterKey.wasPressedThisFrame ||
+                     Keyboard.current.spaceKey.wasPressedThisFrame))
+                {
+                    advanced = true;
+                }
+
+                await YarnTask.Yield();
             }
 
-            await YarnTask.Yield();
+            EnsureButtonHidden();
         }
-
-        // Cleanup
-        nextButton.onClick.RemoveListener(OnNextClicked);
-        nextButton.gameObject.SetActive(false);
     }
 
     [System.Obsolete]
