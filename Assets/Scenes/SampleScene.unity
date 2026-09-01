@@ -7815,7 +7815,7 @@ MonoBehaviour:
   expressionController: {fileID: 1468603767}
   autoAdvanceToggle: {fileID: 732767343}
   autoAdvanceToggleText: {fileID: 685598598}
-  autoAdvanceDelay: 3.5
+  autoAdvanceDelay: 0.5
   charactersPerSecond: 40
   speakerVisuals:
   - speakerName: Dhorn
