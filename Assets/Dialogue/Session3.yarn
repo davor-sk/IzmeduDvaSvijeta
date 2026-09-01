@@ -1,5 +1,6 @@
 ﻿title: Session3
 ---
+<<expression DialogueController Kael doubtful>>
 Kael: Treća smjena otkad je kanal 7-G prestao biti samo anomalija.
 
 <<if $knowsOldContact>>
@@ -43,9 +44,13 @@ Kael: Večeras želim povezati tragove, ne samo skupljati nove riječi. Što že
 title: Session3Ask27
 ---
 <<radio_static AudioManager>>
+<<expression DialogueController Dhorn neutral>>
 Dhorn: Vel-ahn, kael-vorn.
+<<expression DialogueController Kael doubtful>>
 Kael: Imam datum iz naše arhive. Prije dvadeset sedam godina. Toru-vorn?
+<<expression DialogueController Dhorn sad>>
 Dhorn: Dugo prije. Toru-vorn. Da.
+<<expression DialogueController Kael surprised>>
 Kael: Njihovo sjećanje podudara se s arhivskim tragom.
 <<set $knowsPreviousContactHint = true>>
 // OTKRIĆE: Dhorni povezuju prethodnog Vorna s razdobljem starog zapisa na 7-G.
@@ -56,6 +61,7 @@ Kael: Njihovo sjećanje podudara se s arhivskim tragom.
 title: Session3AskFragment
 ---
 <<radio_static AudioManager>>
+<<expression DialogueController Dhorn neutral>>
 Dhorn: Vel-ahn, kael-vorn.
 Kael: Stari toru zapis. Vorn. Moran.
 Dhorn: Stari vorn govor toru. Stari vorn govor Dh'orn. Moran čeka.
@@ -69,6 +75,7 @@ Kael: Fragment se stvarno odnosi na prethodnog posrednika i njegov razgovor s ob
 title: Session3AskPreviousVorn
 ---
 <<radio_static AudioManager>>
+<<expression DialogueController Dhorn neutral>>
 Dhorn: Vel-ahn, kael-vorn.
 Kael: Prije vorn. Tko?
 Dhorn: Toru-vorn. Stari vorn.
@@ -82,9 +89,13 @@ Kael: Prethodni Vorn bio je s Površine.
 title: Session3AskKaelVorn
 ---
 <<radio_static AudioManager>>
+<<expression DialogueController Dhorn neutral>>
 Dhorn: Vel-ahn, kael-vorn.
+<<expression DialogueController Kael doubtful>>
 Kael: Zašto kael-vorn? Zašto ja?
+<<expression DialogueController Dhorn neutral>>
 Dhorn: Vorn sluša. Vorn nosi govor. Kael nastavlja.
+<<expression DialogueController Kael surprised>>
 Kael: "Kael nastavlja." Dakle riječ "kael" očito nije samo moje ime.
 // OTKRIĆE: Dhorni povezuju riječ "kael" s nastavljanjem nečega što je bilo prije.
 <<jump Session3VornRefinement>>
@@ -93,6 +104,7 @@ Kael: "Kael nastavlja." Dakle riječ "kael" očito nije samo moje ime.
 title: Session3NeutralContact
 ---
 <<radio_static AudioManager>>
+<<expression DialogueController Dhorn neutral>>
 Dhorn: Vel-ahn, kael-vorn.
 Kael: Slušam.
 Dhorn: Vorn sluša toru. Vorn sluša Dh'orn. Vorn nosi govor između.
@@ -176,12 +188,15 @@ title: Session3VornFinalCheck
 
 title: Session3AfterVornCheck
 ---
+<<expression DialogueController Dhorn sad>>
 Dhorn: Stari vorn nem-govor.
 
+<<expression DialogueController Kael doubtful>>
 Kael: Prethodni Vorn više ne govori. Što želim pitati?
 
 -> "Što mu se dogodilo?"
     Kael: Stari vorn. Što poslije?
+    <<expression DialogueController Dhorn sad>>
     Dhorn: Toru utiša vorn.
     <<jump Session3Utisa>>
 -> "Je li umro?"
@@ -211,6 +226,7 @@ Kael: "Utiša." Nova riječ. Što znači "utiša" u rečenici "Toru utiša vorn"
 -> "Ubiti."
     <<set $utisaTranslation = "kill">>
     <<add_word RightPanel "utiša" "ubiti (?)">>
+    <<expression DialogueController Kael surprised>>
     Kael: Ako je to točno, Dhorni optužuju Površinu za ubojstvo.
 -> "Prekinuti komunikaciju."
     <<set $utisaTranslation = "silence_contact">>
@@ -235,6 +251,7 @@ Kael: "Utiša." Nova riječ. Što znači "utiša" u rečenici "Toru utiša vorn"
 // OTKRIĆE: Dhorni tvrde da je Površina "utišala" prethodnog Vorna i da je nakon toga prestao govoriti.
 <<unlock_clue "C12_SILENCED_VORN">>
 
+<<expression DialogueController Dhorn doubtful>>
 Dhorn: Kael-vorn?
 
 Kael: Pitaju prihvaćam li ulogu koju još uvijek pokušavam razumjeti.
@@ -264,6 +281,7 @@ Kael: Pitaju prihvaćam li ulogu koju još uvijek pokušavam razumjeti.
 title: Session3MarenOpening
 ---
 <<notification_beep AudioManager>>
+<<expression DialogueController Maren neutral>>
 Maren: Kael. Trebam ažuriranje o 7-G.
 
 <<if $reportedFullTranslation>>
@@ -312,6 +330,7 @@ Kael: Što želim napraviti?
 title: Session3MarenContact
 ---
 <<notification_beep AudioManager>>
+<<expression DialogueController Maren neutral>>
 Maren: Kael. Trebam ažurirani izvještaj.
 
 <<if $reportedFullTranslation>>
@@ -354,6 +373,7 @@ Kael: Što ću joj reći?
 
 title: Session3MarenUtisaReaction
 ---
+<<expression DialogueController Maren doubtful>>
 Maren: "Utišala"? To je tvoj prijevod?
 
 <<if $utisaTranslation == "kill">>
@@ -389,6 +409,7 @@ Maren: "Utišala"? To je tvoj prijevod?
 
 title: Session3MarenEvidencePressure
 ---
+<<expression DialogueController Maren doubtful>>
 Maren: Dobro. Postojao je raniji pokušaj kontakta.
 
 <<set $knowsPreviousContactHint = true>>
@@ -397,12 +418,14 @@ Maren: Dobro. Postojao je raniji pokušaj kontakta.
 // OTKRIĆE: Maren potvrđuje raniji pokušaj kontakta s Dhornima.
 <<unlock_clue "C05_PREVIOUS_CONTACT">>
 
+<<expression DialogueController Kael surprised>>
 Kael: Što se dogodilo?
 
 Maren: Kontakt je procijenjen kao neodrživ i prekinut.
 
 Kael: A Vorn?
 
+<<expression DialogueController Maren angry>>
 Maren: Ne mogu ti dati identitet osobe iz klasificiranog programa.
 
 Kael: Što želim pitati dalje?
@@ -427,6 +450,7 @@ Kael: Što želim pitati dalje?
 -> Pusti temu.
     Kael: U redu.
 
+<<expression DialogueController Maren angry>>
 Maren: Nastavi prevoditi. I nemoj pretvoriti dvije nepotpune priče u jednu sigurnu činjenicu. Laku noć.
 
 <<jump Session3InterpretationChoice>>
@@ -434,6 +458,7 @@ Maren: Nastavi prevoditi. I nemoj pretvoriti dvije nepotpune priče u jednu sigu
 
 title: Session3NoMarenVersion
 ---
+<<expression DialogueController Kael doubtful>>
 Kael: Maren mi nije dala svoju verziju starog kontakta.
 
 <<if $knowsVornSilenced>>
@@ -506,6 +531,7 @@ Kael: Što želim istražiti?
 
 title: ResearchVornIdentityS3
 ---
+<<expression DialogueController Kael surprised>>
 Kael: Pretražujem kadrovske zapise povezane sa 7-G. Većina imena je uklonjena. Jedan zapis ipak ostaje. SUBJECT: V-27. ROLE: LINGUISTIC INTERMEDIARY. NAME: CLASSIFIED.
 
 <<set $knowsV27Designation = true>>
@@ -525,6 +551,7 @@ Kael: V možda znači Vorn. Ali još uvijek je samo hipoteza.
 
 title: ResearchIncidentS3
 ---
+<<expression DialogueController Kael surprised>>
 Kael: Pretražujem izvještaje o incidentima vezanim uz 7-G. Jedan rezultat. CONTACT TERMINATED. INTERMEDIARY REMOVED FROM PROGRAM.
 
 <<set $foundIncidentReport = true>>
@@ -607,6 +634,7 @@ Kael: Otvaram oštećeni komunikacijski fragment. "...vorn... toru... moran... n
 
 title: Session3AfterResearch
 ---
+<<expression DialogueController Kael doubtful>>
 Kael: Dosta.
 
 <<if $knowsV27Designation>>
@@ -637,8 +665,10 @@ Kael: Dosta.
 title: Session3FinalContact
 ---
 <<radio_static AudioManager>>
+<<expression DialogueController Dhorn sad>>
 Dhorn: Kael-vorn. Prije vorn nem-govor. Novi vorn čeka.
 
+<<expression DialogueController Kael doubtful>>
 Kael: Prethodni Vorn više ne govori. Novi Vorn čeka. Kako ću odgovoriti?
 
 -> "Nastavit ću razgovor."
@@ -659,8 +689,10 @@ Kael: Prethodni Vorn više ne govori. Novi Vorn čeka. Kako ću odgovoriti?
 -> Ne odgovori.
     Kael: ...
 
+<<expression DialogueController Dhorn happy>>
 Dhorn: Kael nastavlja.
 
+<<expression DialogueController Kael surprised>>
 Kael: Opet. "Kael nastavlja."
 
 <<set $kaelTranslation = "continues">>
@@ -674,6 +706,7 @@ Kael: Još nije dovoljno da riječ nazovem "nasljednik". Ali više nije samo moj
 
 title: Session3Ending
 ---
+<<expression DialogueController Kael sad>>
 Kael: Do večeras sam dobio više pitanja nego odgovora.
 
 <<if $knowsOldContact>>
@@ -706,6 +739,7 @@ Kael: Dhorni kažu "utišan".
     Kael: Dokument kaže "uklonjen iz programa".
 <<endif>>
 
+<<expression DialogueController Kael doubtful>>
 Kael: Tri formulacije mogu opisivati isti događaj. Ili tri potpuno različite priče.
 
 <<if $vornTranslation == "mediator">>
@@ -726,6 +760,7 @@ Kael: I ostala je još jedna riječ koju nisam riješio: "vatra". Dhorni je kori
 <<endif>>
 <<add_word RightPanel "vatra" "??? / povezano s Površinom i dubinom; značenje još nepotvrđeno">>
 
+<<expression DialogueController Kael neutral>>
 Kael: A "kael"... ...još uvijek znači samo nešto blizu "onaj koji nastavlja". Ne znam tko je bio prethodni Vorn. Ne znam zašto je nestao. I još ne znam jesu li njegov nestanak i ono što se događa u dubini povezani. Ali sada znam što moram otkriti sljedeće.
 
 <<session_transition SceneTransitionController Session4_Start>>
