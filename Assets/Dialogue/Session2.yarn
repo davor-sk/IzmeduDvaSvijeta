@@ -1,5 +1,6 @@
 ﻿title: Session2
 ---
+<<expression DialogueController Kael doubtful>>
 Kael: Sedam dana. Sedam dana otkad sam prvi put otvorio kanal 7-G. Bilježnica više nije prazna.
 
 <<if $velAhnTranslation == "greeting">>
@@ -135,8 +136,10 @@ title: Session2ReviewDah
 
 title: Session2Signal
 ---
+<<expression DialogueController Kael surprised>>
 Kael: 02:47. Točno na vrijeme.
 
+<<expression DialogueController Dhorn neutral>>
 Dhorn: Vel-ahn, kael-vorn.
 
 <<if $velAhnTranslation == "greeting">>
@@ -162,10 +165,12 @@ Kael: Kako želim započeti razgovor?
 -> Pitaj zašto te zovu "kael-vorn".
     Kael: Kael-vorn. Zašto ja?
     Dhorn: Vorn sluša. Kael nastavlja.
+    <<expression DialogueController Kael doubtful>>
     Kael: "Nastavlja"... Opet zvuči kao da "kael" nije moje ime.
     <<jump SurfaceMessage>>
 -> Pitaj jesu li prije razgovarali s Površinom.
     Kael: Prije mene... toru govor?
+    <<expression DialogueController Dhorn neutral>>
     Dhorn: Prije. Vorn. Dugo prije.
     <<set $knowsPreviousContactHint = true>>
     // OTKRIĆE: Dhorni potvrđuju da su prije Kaela razgovarali s nekim s Površine.
@@ -199,6 +204,7 @@ Kael: Dobro. Dvije riječi koje trebam riješiti: "uzima" i "kamen". Što znači
     <<set $uzimaTranslation = "take_away">>
     <<set $translationAccuracy += 1>>
     <<add_word RightPanel "uzima" "uzimati / oduzimati (?)">>
+    <<expression DialogueController Kael doubtful>>
     Kael: To zvuči puno više kao optužba.
 -> "Davati."
     <<set $uzimaTranslation = "give">>
@@ -231,6 +237,7 @@ Kael: A "kamen"? Što znači "kamen" u ovoj poruci?
 -> "Oružje."
     <<set $kamenTranslation = "weapon">>
     <<add_word RightPanel "kamen" "oružje (?)">>
+    <<expression DialogueController Kael surprised>>
     Kael: Ako je ovo oružje, situacija je puno ozbiljnija.
 -> Nisam siguran.
     <<set $kamenTranslation = "unknown">>
@@ -261,6 +268,7 @@ Kael: Ako ih već mogu pitati, trebam iskoristiti priliku. Što želim saznati?
 
 -> "Što Površina uzima?"
     Kael: Toru uzima što?
+    <<expression DialogueController Dhorn doubtful>>
     Dhorn: Kamen. Dubina dah. Moran dah.
     Kael: Povezuju taj "kamen" sa životom dubine i morana.
     // OTKRIĆE: Dhorni tvrde da Površina uzima nešto iz dubine što je povezano s njihovim opstankom.
@@ -279,7 +287,9 @@ Kael: Ako ih već mogu pitati, trebam iskoristiti priliku. Što želim saznati?
     // OTKRIĆE: Dhorni tvrde da Površina uzima nešto iz dubine što je povezano s njihovim opstankom.
     <<jump SurfaceWordEvidence>>
 -> "Je li Površina napala Dhorne?"
+    <<expression DialogueController Kael doubtful>>
     Kael: Toru napada Dh'orn?
+    <<expression DialogueController Dhorn angry>>
     Dhorn: Nem. Toru uzima. Vatra poslije.
     <<add_word RightPanel "nem" "ne / negacija [POTVRĐENO]">>
     Kael: Ne nazivaju to izravno napadom. Ali opet spominju Vatru. Isti obrazac: Površina nešto uzima, a Vatra dolazi poslije. Možda je posljedica. Možda nešto što Površina pokreće. Još uvijek nemam dovoljno za prijevod.
@@ -296,6 +306,7 @@ Kael: Ako ih već mogu pitati, trebam iskoristiti priliku. Što želim saznati?
 
 title: SurfaceWordEvidence
 ---
+<<expression DialogueController Dhorn sad>>
 Dhorn: Kamen odlazi. Zid pada.
 
 Kael: Dobro. Sada imam jasniji kontekst za "uzima" i "kamen".
@@ -353,6 +364,7 @@ title: KamenContextCheck
 
 title: MoranContext
 ---
+<<expression DialogueController Dhorn sad>>
 Dhorn: Pada zid, moran. Dugo pada.
 
 Kael: "Pada". Što znači "pada" u ovom kontekstu?
@@ -452,8 +464,10 @@ Kael: Kako sada razumijem "moran"?
 
 title: CooperationMessage
 ---
+<<expression DialogueController Dhorn doubtful>>
 Dhorn: Dh'orn daje ruku toru. Nem-vatra. Govor.
 
+<<expression DialogueController Kael doubtful>>
 Kael: "Nem-vatra. Govor." Opet suprotstavljaju Vatru razgovoru. Ne znam znači li Vatra događaj, posljedicu ili nešto što Površina radi, ali riječ očito nije slučajna.
 <<add_word RightPanel "vatra" "??? / povezano s aktivnostima Površine; suprotstavljeno govoru (?)">>
 
@@ -515,6 +529,7 @@ title: RukaContextCheck
 
 title: VornContextS2
 ---
+<<expression DialogueController Dhorn sad>>
 Dhorn: Stari dubina pamti vorn.
 
 <<set $knowsPreviousContactHint = true>>
@@ -536,6 +551,7 @@ Kael: Opet Vorn. Što želim pitati?
     Dhorn: Vorn nem-govor. Toru skriva.
     <<add_word RightPanel "nem" "ne / negacija [POTVRĐENO]">>
     // OTKRIĆE: Dhorni tvrde da je prethodni Vorn prestao govoriti ili da mu je komunikacija bila zaustavljena.
+    <<expression DialogueController Kael surprised>>
     Kael: Vorn je prestao govoriti. Ili mu je govor zaustavljen.
     <<jump ReportDecision>>
 -> "Je li Vorn bio prevoditelj?"
@@ -561,6 +577,7 @@ Kael: Opet Vorn. Što želim pitati?
 
 title: ReportDecision
 ---
+<<expression DialogueController Kael doubtful>>
 Kael: Maren očekuje izvještaj. Ali ovo više nije samo lingvistika. Ako pošaljem prijevod, šaljem i vlastitu interpretaciju. Što ću joj poslati?
 
 -> Pošalji sve onako kako si razumio.
@@ -598,6 +615,7 @@ Kael: Maren očekuje izvještaj. Ali ovo više nije samo lingvistika. Ako pošal
 
 title: MarenFullReport
 ---
+<<expression DialogueController Maren doubtful>>
 Maren: Površina uzima resurse. Zidovi propadaju. Nude suradnju. To je tvoj prijevod?
 
 Kael: Da.
@@ -607,10 +625,12 @@ Maren: Koliko si siguran?
 Kael: Kako ću odgovoriti?
 
 -> "Dovoljno da reagiramo."
+    <<expression DialogueController Kael doubtful>>
     Kael: Dovoljno da ovo ne ignoriramo.
     Maren: To nije isto što i točan prijevod.
 -> "Nisam potpuno siguran."
     Kael: Nisam potpuno siguran.
+    <<expression DialogueController Maren angry>>
     Maren: Onda nemoj pretvarati pretpostavku u činjenicu.
 -> "Siguran sam samo u dijelove."
     Kael: Neke riječi razumijem. Namjeru još pokušavam razumjeti.
@@ -624,6 +644,7 @@ Kael: Kako ću odgovoriti?
 
 title: MarenSoftReport
 ---
+<<expression DialogueController Maren neutral>>
 Maren: "Zabrinuti su zbog aktivnosti Površine i žele razgovor." To je sve?
 
 Kael: Kako ću odgovoriti?
@@ -646,12 +667,14 @@ Kael: Kako ću odgovoriti?
 
 title: MarenHiddenReport
 ---
+<<expression DialogueController Maren doubtful>>
 Maren: Lingvistički napredak. Ništa o njihovoj namjeri?
 
 Kael: Što ću joj reći?
 
 -> "Nisu rekli ništa dovoljno jasno."
     Kael: Ne želim izmišljati značenje.
+    <<expression DialogueController Maren angry>>
     Maren: Ili ga skrivaš.
     <<set $marenSuspicion += 1>>
     <<set $governmentTrust -= 1>>
@@ -673,12 +696,15 @@ Kael: Što ću joj reći?
 
 title: MarenUncertainReport
 ---
+<<expression DialogueController Maren angry>>
 Maren: "Prijevod nije dovoljno pouzdan." Kael, treba mi više od toga.
 
 Kael: Što ću odgovoriti?
 
 -> "Onda mi daj kontekst."
+    <<expression DialogueController Kael angry>>
     Kael: Ne mogu prevoditi civilizaciju o kojoj mi ništa ne govorite.
+    <<expression DialogueController Maren angry>>
     Maren: Tvoj posao je jezik.
     Kael: Jezik bez konteksta ne postoji.
 -> "Dajte mi podatke o aktivnostima ispod grada."
@@ -698,20 +724,24 @@ Kael: Što ću odgovoriti?
 
 title: MarenInvestigation
 ---
+<<expression DialogueController Maren neutral>>
 Maren: Još nešto?
 
 Kael: Ovo je prilika da je pitam ono što me muči. Što želim pitati Maren?
 
 -> "Koliko dugo znate da nešto postoji u dubini?"
     Kael: Koliko dugo znate za anomalije?
+    <<expression DialogueController Maren doubtful>>
     Maren: Dovoljno dugo.
     Kael: To nije odgovor.
+    <<expression DialogueController Maren angry>>
     Maren: To je odgovor koji dobivaš.
     <<set $marenSuspicion += 1>>
     <<set $governmentTrust -= 1>>
     <<jump MarenSecondQuestion>>
 -> "Je li ovo prvi kontakt?"
     Kael: Je li moj kontakt prvi?
+    <<expression DialogueController Maren doubtful>>
     Maren: Tvoj je prvi potvrđeni kontakt u ovom programu.
     Kael: "U ovom programu"?
     <<set $knowsPreviousContactHint = true>>
@@ -720,14 +750,17 @@ Kael: Ovo je prilika da je pitam ono što me muči. Što želim pitati Maren?
     <<jump MarenSecondQuestion>>
 -> "Što Površina uzima iz dubine?"
     Kael: Postoje li operacije vađenja ispod grada?
+    <<expression DialogueController Maren surprised>>
     Maren: Otkud ti to?
     Kael: Od Dhorna.
+    <<expression DialogueController Maren doubtful>>
     Maren: Postoje geološki projekti.
     <<set $knowsSurfaceExtraction = true>>
     // OTKRIĆE: Maren potvrđuje da Površina provodi geološke projekte u dubini.
     <<jump MarenSecondQuestion>>
 -> "Znaš li što znači Vorn?"
     Kael: Vorn. Poznaješ tu riječ?
+    <<expression DialogueController Maren doubtful>>
     Maren: ... Ne.
     Kael: Predugo si čekala prije odgovora.
     <<set $marenSuspicion += 1>>
@@ -750,9 +783,11 @@ Kael: Imam još jedno pitanje prije nego što prekine vezu. Što želim pitati?
     <<set $governmentTrust -= 1>>
 -> "Što znači Razina V?"
     <<if $knowsLevelV>>
+        <<expression DialogueController Kael doubtful>>
         Kael: Što je Razina V?
         Maren: Gdje si to ponovno vidio?
         Kael: U kanalu.
+        <<expression DialogueController Maren angry>>
         Maren: Prestani kopati.
         <<set $marenSuspicion += 1>>
         <<set $governmentTrust -= 1>>
@@ -763,8 +798,10 @@ Kael: Imam još jedno pitanje prije nego što prekine vezu. Što želim pitati?
 -> "Tko je bio prije mene?"
     <<if $knowsPreviousContactHint>>
         Kael: Dhorni kažu da je postojao Vorn prije mene.
+        <<expression DialogueController Maren doubtful>>
         Maren: Kael...
         Kael: Tko je bio?
+        <<expression DialogueController Maren sad>>
         Maren: Nemam odgovor koji ti mogu dati.
         <<set $marenSuspicion += 1>>
         <<set $governmentTrust -= 1>>
@@ -776,12 +813,14 @@ Kael: Imam još jedno pitanje prije nego što prekine vezu. Što želim pitati?
     Kael: Svaki put kad spomenem Vorn, reagiraš kao da znaš više nego što govoriš.
     Maren: Zato što iz premalo podataka izvodiš previše zaključaka.
     Kael: To nije poricanje.
+    <<expression DialogueController Maren angry>>
     Maren: Dosta.
     <<set $marenSuspicion += 1>>
     <<set $governmentTrust -= 1>>
 -> Pusti je.
     Kael: U redu.
 
+<<expression DialogueController Maren angry>>
 Maren: Dosta za večeras. Pošalji mi sve što možeš odvojiti od vlastitih pretpostavki.
 
 Kael: A ostalo?
@@ -790,8 +829,10 @@ Maren: Ostalo nije tvoj zadatak.
 
 Kael: ...
 
+<<expression DialogueController Maren neutral>>
 Maren: Laku noć.
 
+<<expression DialogueController Kael sad>>
 Kael: Prekinula je vezu.
 
 <<jump ResearchDecision>>
@@ -799,6 +840,7 @@ Kael: Prekinula je vezu.
 
 title: ResearchDecision
 ---
+<<expression DialogueController Kael doubtful>>
 Kael: Dhorni čekaju sljedeći kontakt. Maren očekuje sljedeći izvještaj. Ali ja još uvijek nemam odgovor na osnovno pitanje. Što se ovdje događalo prije mene? Imam vremena za dvije stvari prije kraja smjene.
 
 <<set $session2ResearchCount = 0>>
@@ -839,6 +881,7 @@ title: ResearchArchive
 Kael: Otvaram arhivu 7-G. Pristup odbijen. Očekivano. Ali možda mogu vidjeti samo metapodatke. Što želim pokušati?
 
 -> Pregledaj datum prvog zapisa.
+    <<expression DialogueController Kael surprised>>
     Kael: Pretražujem samo zaglavlja datoteka. ... Prvi zabilježeni signal... Ne. Dvadeset sedam godina?
     <<set $knowsOldContact = true>>
     <<set $knowsPreviousContactHint = true>>
@@ -866,6 +909,7 @@ Kael: Otvaram arhivu 7-G. Pristup odbijen. Očekivano. Ali možda mogu vidjeti s
 
 title: ResearchVorn
 ---
+<<expression DialogueController Kael surprised>>
 Kael: Pretražujem "Vorn". Ništa u službenom rječniku. Ali postoji jedan oštećeni fragment. "...vorn... toru... moran..." Samo tri riječi.
 
 <<set $foundVornFragment = true>>
@@ -890,12 +934,14 @@ Kael: Spremam fragment.
 
 title: ResearchExtraction
 ---
+<<expression DialogueController Kael surprised>>
 Kael: Pretražujem geološke operacije ispod grada. Većina podataka je rutinska. Bušenje. Ispitivanje slojeva. Vađenje materijala. ... Koordinate. Ovo područje je gotovo isto kao izvor Dhorn signala.
 
 <<set $knowsSurfaceExtraction = true>>
 // OTKRIĆE: Površina provodi geološke operacije gotovo na istim koordinatama s kojih dolazi Dhorn signal.
 <<unlock_clue "C08_SURFACE_OPERATIONS">>
 
+<<expression DialogueController Kael doubtful>>
 Kael: Dakle, barem jedan dio njihove poruke odgovara stvarnosti. Površina stvarno nešto uzima iz dubine.
 
 <<jump ResearchHub>>
@@ -916,6 +962,7 @@ Kael: Aktivnost na 7-G nije počela prošli tjedan. Ali to još ne dokazuje da j
 
 title: Session2Ending
 ---
+<<expression DialogueController Kael doubtful>>
 Kael: Dosta za jednu noć.
 
 <<if $knowsSurfaceExtraction>>
@@ -958,11 +1005,14 @@ Kael: Dosta za jednu noć.
 
 Kael: ...
 
+<<expression DialogueController Dhorn neutral>>
 Dhorn: Vorn.
 
+<<expression DialogueController Kael surprised>>
 Kael: Opet ta riječ.
 
 <<if $knowsOldContact || $marenConfirmedPreviousContact>>
+    <<expression DialogueController Kael doubtful>>
     Kael: Sada imam i neovisne tragove da je netko bio između ova dva svijeta prije mene. Pitanje je samo... ...što mu se dogodilo?
 <<elseif $knowsPreviousContactHint>>
     Kael: Ako dobro razumijem Dhorne, prije mene je postojao još jedan Vorn. Još ne znam mogu li njihovu tvrdnju potvrditi.

@@ -1,5 +1,6 @@
 ﻿title: Session8_Start
 ---
+<<expression DialogueController Kael doubtful>>
 Kael: Posljednje minute. Sve što sam preveo, prešutio, provjerio i pogrešno protumačio sada postoji u isto vrijeme.
 
 <<jump Session8_EndingRouter>>
@@ -33,6 +34,7 @@ title: Session8_DhornEnding
 <<set $endingUnlockedDhorn = true>>
 <<unlock_ending "dhorn">>
 
+<<expression DialogueController Kael surprised>>
 Kael: Stari pristupni tunel završava pred vratima koja sam dosad poznavao samo kroz signal.
 
 <<if $dhornTrust >= 60>>
@@ -51,12 +53,16 @@ Kael: Stari pristupni tunel završava pred vratima koja sam dosad poznavao samo 
 
 <<radio_static AudioManager>>
 
+<<expression DialogueController Maren sad>>
 Maren: Kael, još se možeš vratiti.
 
+<<expression DialogueController Kael neutral>>
 Kael: Ne idem zato što mislim da su Dhorni uvijek u pravu. Idem jer prvi susret licem u lice ne smije početi samo s Jedinicom Četrnaest i njihovim naredbama.
 
+<<expression DialogueController Maren doubtful>>
 Maren: Površina će to smatrati prelaskom na drugu stranu.
 
+<<expression DialogueController Kael doubtful>>
 Kael: Onda im reci da Vorn nije strana. Vorn je ono što ostane između njih kada obje strane prestanu slušati. Što ću posljednje poslati Maren?
 
 -> "Drži kanal otvoren."
@@ -90,6 +96,7 @@ Kael: Vatra-7 ulazi u privremenu obustavu dok Operativno zapovjedništvo procjen
     Kael: Djed je jednom bio ovdje prije mene. Ali ovo nije njegov završetak koji samo ponavljam. Njegov trag mi je dao kontekst. Moj izbor je moj.
 <<endif>>
 
+<<expression DialogueController Kael happy>>
 Kael: Dhorni ne otvaraju sve prolaze. Površina ne povlači sve jedinice. Mir nije postignut. Ali govor nije prekinut. Za sada je to dovoljno.
 
 <<jump Session8_End>>
@@ -100,6 +107,7 @@ title: Session8_GovernmentEnding
 <<set $endingUnlockedGovernment = true>>
 <<unlock_ending "government">>
 
+<<expression DialogueController Kael doubtful>>
 Kael: Vraćam se u kontrolni centar dok odbrojavanje ulazi u posljednje minute.
 
 <<if $governmentTrust >= 60 && $marenSuspicion < 7>>
@@ -122,8 +130,10 @@ Kael: Vraćam se u kontrolni centar dok odbrojavanje ulazi u posljednje minute.
     Kael: Ime programa mi više nije najvažnije. Važno je da 7-G ne postane još jedan zaključani incident report.
 <<endif>>
 
+<<expression DialogueController Maren doubtful>>
 Maren: Zapovjedništvo traži posljednju preporuku prije aktivacije.
 
+<<expression DialogueController Kael doubtful>>
 Kael: Što ću preporučiti?
 
 -> Zaustavi Fazu II i otvori službene pregovore.
@@ -163,8 +173,10 @@ title: Session8_TruthEnding
 <<set $endingUnlockedTruth = true>>
 <<unlock_ending "truth">>
 
+<<expression DialogueController Kael neutral>>
 Kael: Otvaram zajednički kanal. Maren na jednoj strani. Dhorni na drugoj. I treći zapis koji ne pripada ni jednom zatvorenom sustavu.
 
+<<expression DialogueController Maren surprised>>
 Maren: Kael, što točno šalješ?
 
 Kael: Samo ono što mogu označiti. V-27 je postojao. Bio je lingvistički posrednik. Njegova oznaka pojavljuje se u tehničkim zapisima dubinskog sektora.
@@ -182,12 +194,16 @@ Kael: Samo ono što mogu označiti. V-27 je postojao. Bio je lingvistički posre
     Kael: Današnja očitanja pokazuju korelaciju između povećanja rada Vatre-7 i vibracija u dubinskom sektoru.
 <<endif>>
 
+<<expression DialogueController Kael sad>>
 Kael: A ovo ne mogu dokazati: ne znam je li Površina prije dvadeset sedam godina namjerno pokušala uništiti Dhorne. Ne znam je li moj djed bio u pravu u svakoj procjeni. Ne znam što će Dhorni učiniti ako ih se pritisne dalje. Zato svaki zapis dobiva jednu od tri oznake: ČINJENICA. TVRDNJA. HIPOTEZA.
 
+<<expression DialogueController Dhorn neutral>>
 Dhorn: Govor oba.
 
+<<expression DialogueController Maren angry>>
 Maren: Zapovjedništvo traži da ugasiš vanjski zapis.
 
+<<expression DialogueController Kael doubtful>>
 Kael: Ne objavljujem koordinate ni taktičke podatke. Objavljujem činjenicu da kontakt postoji i da se original ne smije ponovno izgubiti. Što ću napraviti s djedovim pismom?
 
 -> Objavi ga, jasno označeno kao osobnu tvrdnju V-27.
@@ -224,6 +240,7 @@ title: Session8_TruthEpilogue
     Kael: Nitko nije zadovoljan. To je možda prvi znak da više nitko nema potpunu kontrolu nad verzijom događaja.
 <<endif>>
 
+<<expression DialogueController Kael happy>>
 Kael: Vatra-7 ulazi u privremenu obustavu. Pregovori još nisu mir. Ali rat također nije počeo. Pred nama je nešto sporije i teže od pobjede. Razgovor u kojem obje strane mogu provjeriti što je druga stvarno rekla. Između dva svijeta.
 
 <<jump Session8_End>>
@@ -236,16 +253,22 @@ title: Session8_WarEnding
 
 <<alarm_siren AudioManager>>
 
+<<expression DialogueController Kael doubtful>>
 Kael: 00:02:11.
 
+<<expression DialogueController Maren surprised>>
 Maren: Jedinica Četrnaest je izgubila kontakt s prednjim timom.
 
+<<expression DialogueController Dhorn angry>>
 Dhorn: Vatra! Toru napada!
 
+<<expression DialogueController Kael surprised>>
 Kael: Čekajte. Nemamo potvrdu tko je prvi pokrenuo sukob.
 
+<<expression DialogueController Maren angry>>
 Maren: Više nemamo vremena za to pitanje.
 
+<<expression DialogueController Kael angry>>
 Kael: Upravo zato smo ovdje.
 
 <<screen_shake ScreenEffects 0.6 0.8>>
@@ -254,14 +277,18 @@ Kael: Upravo zato smo ovdje.
     Kael: I negdje putem riječ "napad" postala je sigurnija nego što su dokazi dopuštali. Jednom sam je možda i ja stavio tamo gdje nije bila.
 <<endif>>
 
+<<expression DialogueController Kael surprised>>
 Kael: Kanal se puni preklapajućim signalima. Naredbama. Upozorenjima. Prekinutim Dhorn rečenicama.
 
+<<expression DialogueController Dhorn sad>>
 Dhorn: Moran pada. Nem-govor.
 
+<<expression DialogueController Maren angry>>
 Maren: Povuci ih natrag!
 
 Nepoznati operater: Povlačenje odbijeno. Nastavljamo prema protokolu.
 
+<<expression DialogueController Kael sad>>
 Kael: Što još mogu napraviti?
 
 -> Drži 7-G otvoren što je dulje moguće.
@@ -281,6 +308,7 @@ Kael: Što još mogu napraviti?
 
 title: Session8_WarEpilogue
 ---
+<<expression DialogueController Kael sad>>
 Kael: Vatra-7 se gasi tek nakon urušavanja dijela dubinskog sustava.
 
 <<if $warEndingLastAction == "keep_channel">>
@@ -291,6 +319,7 @@ Kael: Vatra-7 se gasi tek nakon urušavanja dijela dubinskog sustava.
     Kael: Moja posljednja poruka "stanite" ulazi u oba zapisa. Nitko ne reagira dovoljno brzo, ali nitko kasnije ne može tvrditi da pokušaja deeskalacije nije bilo.
 <<endif>>
 
+<<expression DialogueController Kael sad>>
 Kael: Površina zatvara javne informacije. Dhorni prekidaju 7-G. Broj stradalih ne postoji u jednoj verziji kojoj obje strane vjeruju. Najgore nije to što smo jednu riječ pogrešno preveli. Najgore je što smo prestali provjeravati prije nego što smo djelovali.
 
 <<jump Session8_End>>
@@ -298,6 +327,7 @@ Kael: Površina zatvara javne informacije. Dhorni prekidaju 7-G. Broj stradalih 
 
 title: Session8_End
 ---
+<<expression DialogueController Kael sad>>
 Kael: Kanal ostaje otvoren još nekoliko sekundi. Dovoljno da čujem statiku. Dovoljno da znam da je s druge strane netko barem jednom slušao. Vel-ahn.
 
 ===

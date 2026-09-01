@@ -1,5 +1,6 @@
 ﻿title: Session6_Start
 ---
+<<expression DialogueController Kael doubtful>>
 Kael: Tri sata i nešto sitno do punog kapaciteta. Nakon odluke koju sam donio, više ne postoji neutralna verzija ove priče.
 
 <<if $session5Route == "dhorn">>
@@ -18,15 +19,19 @@ title: Session6_DhornRoute
 ---
 <<radio_static AudioManager>>
 
+<<expression DialogueController Dhorn neutral>>
 Dhorn: Kael-vorn. Put Vatre znamo. Zatvorili smo tri prolaza. Moran diše još.
 
+<<expression DialogueController Kael doubtful>>
 Kael: Koristili su planove obrambeno, barem prema onome što sada tvrde.
 
 <<set $dhornUsedPlansDefensively = true>>
 // OTKRIĆE: Dhorni tvrde da su podatke o Vatri-7 koristili za zatvaranje prolaza i zaštitu morana.
 
+<<expression DialogueController Dhorn doubtful>>
 Dhorn: Toru traži drugi put. Kael-vorn sakrije ulaz?
 
+<<expression DialogueController Kael doubtful>>
 Kael: Sad traže sljedeći korak: da im pomognem sakriti ulaze. Što ću napraviti?
 
 -> Promijeni podatke koje Površina vidi.
@@ -52,8 +57,10 @@ Kael: Sad traže sljedeći korak: da im pomognem sakriti ulaze. Što ću napravi
     Dhorn: Nem-još. Put zatvoren prije toru.
     Kael: Za sada tvrde da nije bilo izravnog sukoba.
 
+<<expression DialogueController Dhorn doubtful>>
 Dhorn: Stari toru papir. Vorn znak. Kael-vorn vidi?
 
+<<expression DialogueController Kael surprised>>
 Kael: Na kanalu se pojavljuje stari sken. Površinski tehnički dokument. Oznaka V-27.
 
 <<set $foundV27ArchiveTrace = true>>
@@ -78,12 +85,14 @@ Kael: Prije nego zaključim što gledam, mogu provjeriti jednu stvar.
     <<set $inspectedV27SymbolS6 = true>>
     Kael: U kutu je znak koji nije dio službenog obrasca. Netko ga je nacrtao rukom.
 
+<<expression DialogueController Kael surprised>>
 Kael: U kutu dokumenta stoji simbol. Krug prekinut jednom kosom crtom. Znam taj simbol.
 
 <<set $recognizedV27Symbol = true>>
 // OTKRIĆE: Kael osobno prepoznaje simbol povezan s V-27, ali još ne zna odakle.
 <<unlock_clue "C26_RECOGNIZED_SYMBOL">>
 
+<<expression DialogueController Kael doubtful>>
 Kael: Ne mogu se sjetiti gdje sam ga vidio. Ali nisam ga prvi put vidio večeras.
 
 <<jump Session6_CommonSymbol>>
@@ -93,10 +102,13 @@ title: Session6_GovernmentRoute
 ---
 <<notification_beep AudioManager>>
 
+<<expression DialogueController Maren sad>>
 Maren: Kael, tvoje procijenjene rute završile su u operativnom paketu. Zapovjedništvo je odobrilo ulazak Jedinice Četrnaest u dubinski sektor.
 
+<<expression DialogueController Kael angry>>
 Kael: Rekla si da ćeš ih pokušati zadržati izvan operativnog naloga.
 
+<<expression DialogueController Maren sad>>
 Maren: Pokušala sam. Nisam odobrila ovu eskalaciju.
 
 <<set $unit14EntryApproved = true>>
@@ -105,12 +117,15 @@ Maren: Pokušala sam. Nisam odobrila ovu eskalaciju.
 <<unlock_clue "C27_UNIT14_ENTRY">>
 <<unlock_clue "C28_MAREN_DID_NOT_AUTHORIZE">>
 
+<<expression DialogueController Kael surprised>>
 Kael: Pravila?
 
+<<expression DialogueController Maren doubtful>>
 Maren: Rules of Engagement su aktivna. Ne znači da će pucati prvi. Znači da je mogućnost sukoba sada ugrađena u proceduru.
 
 <<set $escalation += 2>>
 
+<<expression DialogueController Kael doubtful>>
 Kael: Imam nekoliko minuta prije ulaska. Što ću napraviti?
 
 -> Precizno upozori Dhorne na Jedinicu Četrnaest.
@@ -139,8 +154,10 @@ Kael: Imam nekoliko minuta prije ulaska. Što ću napraviti?
     Kael: Onda napravi to.
     Maren: Već jesam.
 
+<<expression DialogueController Maren doubtful>>
 Maren: Prije nego veza pukne, nešto ti šaljem. Stari registar pristupa koji je Zapovjedništvo upravo povuklo zbog sektora.
 
+<<expression DialogueController Kael surprised>>
 Kael: V-27.
 
 <<set $foundV27ArchiveTrace = true>>
@@ -172,6 +189,7 @@ Kael: Imam vremena provjeriti jednu stvar prije nego Jedinica Četrnaest krene.
     // OTKRIĆE: U registru postoji trag nestandardnog komunikacijskog uređaja povezanog s V-27.
     <<unlock_clue "C29_V27_PRIVATE_TRANSMITTER">>
 
+<<expression DialogueController Kael surprised>>
 Kael: Uz oznaku postoji rukom nacrtan simbol. Krug prekinut kosom crtom. Znam ga.
 
 <<set $recognizedV27Symbol = true>>
@@ -183,6 +201,7 @@ Kael: Uz oznaku postoji rukom nacrtan simbol. Krug prekinut kosom crtom. Znam ga
 
 title: Session6_IndependentRoute
 ---
+<<expression DialogueController Kael doubtful>>
 Kael: Ako neću vjerovati ni jednoj strani bez provjere, onda mi ostaje arhiv. V-27. Stari sektor. Kanal 7-G. Imam vremena za dvije provjere prije nego Vatra-7 dođe do sljedeće razine.
 
 <<set $session6ResearchCount = 0>>
@@ -219,12 +238,14 @@ Kael: Što ću provjeriti?
 
 title: Session6_ResearchV27Technical
 ---
+<<expression DialogueController Kael surprised>>
 Kael: Stari tehnički indeks. V-27. Pristup dubinskim kartama, komunikacijskom terminalu 7-G i geološkim zapisima sektora.
 
 <<set $foundV27ArchiveTrace = true>>
 // OTKRIĆE: V-27 je imao tehnički pristup istom širem dubinskom sektoru i komunikaciji 7-G.
 <<unlock_clue "C25_V27_ARCHIVE_TRACE">>
 
+<<expression DialogueController Kael doubtful>>
 Kael: To i dalje ne govori zašto je uklonjen. Ali više nije samo lingvistički posrednik bez veze s terenom.
 
 <<jump Session6_IndependentHub>>
@@ -232,12 +253,14 @@ Kael: To i dalje ne govori zašto je uklonjen. Ali više nije samo lingvistički
 
 title: Session6_ResearchMarks
 ---
+<<expression DialogueController Kael surprised>>
 Kael: Na nekoliko starih papira pojavljuje se isti rukom nacrtan znak. Krug prekinut kosom crtom. Nije službena oznaka programa. Vidio sam to prije.
 
 <<set $recognizedV27Symbol = true>>
 // OTKRIĆE: Kael prepoznaje privatni simbol povezan s V-27.
 <<unlock_clue "C26_RECOGNIZED_SYMBOL">>
 
+<<expression DialogueController Kael doubtful>>
 Kael: Ne u sustavu. Negdje drugdje. Negdje osobno.
 
 <<jump Session6_IndependentHub>>
@@ -245,12 +268,14 @@ Kael: Ne u sustavu. Negdje drugdje. Negdje osobno.
 
 title: Session6_ResearchPrivateSignal
 ---
+<<expression DialogueController Kael surprised>>
 Kael: Jedan servisni zapis nije vezan uz službeni terminal. PRIVATNI ODAŠILJAČ — 7-G — AUTORIZACIJA V-27.
 
 <<set $knowsV27PrivateTransmitter = true>>
 // OTKRIĆE: V-27 koristio je privatni odašiljač na 7-G izvan standardne procedure.
 <<unlock_clue "C29_V27_PRIVATE_TRANSMITTER">>
 
+<<expression DialogueController Kael doubtful>>
 Kael: Netko je održavao vezu i izvan službenog sustava. To bi objasnilo kako su dijelovi komunikacije preživjeli gašenje programa.
 
 <<jump Session6_IndependentHub>>
@@ -287,6 +312,7 @@ title: Session6_IndependentAfterResearch
     <<unlock_clue "C25_V27_ARCHIVE_TRACE">>
 <<endif>>
 
+<<expression DialogueController Kael surprised>>
 Kael: Simbol nije iz sustava. Znam ga iz života prije 7-G.
 
 <<jump Session6_CommonSymbol>>
@@ -294,10 +320,12 @@ Kael: Simbol nije iz sustava. Znam ga iz života prije 7-G.
 
 title: Session6_CommonSymbol
 ---
+<<expression DialogueController Kael surprised>>
 Kael: Krug prekinut kosom crtom. Sad se sjećam gdje sam ga vidio. Na staroj drvenoj kutiji kod kuće. Djedovoj kutiji. Stajala je na tavanu otkad sam bio dijete.
 
 <<set $rememberedSymbolAtHome = true>>
 
+<<expression DialogueController Kael sad>>
 Kael: Nikad nisam znao što znak znači. Samo da mi je rečeno da kutiju ne diram.
 
 <<if $knowsV27Designation>>
@@ -306,16 +334,21 @@ Kael: Nikad nisam znao što znak znači. Samo da mi je rečeno da kutiju ne dira
     Kael: Stari Vorn. Oznaka V-27 koju sam sada ponovno pronašao. I simbol s djedove kutije.
 <<endif>>
 
+<<expression DialogueController Kael doubtful>>
 Kael: To još nije dokaz da je V-27 bio moj djed. Ali prvi put imam trag koji ne vodi dublje u arhiv. Vodi kući.
 
 <<notification_beep AudioManager>>
 
+<<expression DialogueController Maren surprised>>
 Maren: Kael, gdje ideš?
 
+<<expression DialogueController Kael neutral>>
 Kael: Trebam provjeriti nešto što nije u sustavu.
 
+<<expression DialogueController Maren doubtful>>
 Maren: Imamo manje od tri sata.
 
+<<expression DialogueController Kael sad>>
 Kael: Znam.
 
 <<jump Session6_Ending>>
@@ -323,6 +356,7 @@ Kael: Znam.
 
 title: Session6_Ending
 ---
+<<expression DialogueController Kael sad>>
 Kael: Odbrojavanje nastavlja bez mene. Vatra-7 neće stati zato što sam pronašao simbol.
 
 <<if $session5Route == "dhorn">>
@@ -333,6 +367,7 @@ Kael: Odbrojavanje nastavlja bez mene. Vatra-7 neće stati zato što sam pronaš
     Kael: Odbio sam obje strane jer nisam imao dovoljno dokaza. Ako je taj simbol stvarno povezan s V-27, možda napokon imam nešto što nije ničija verzija priče.
 <<endif>>
 
+<<expression DialogueController Kael doubtful>>
 Kael: Djedova kutija. V-27. Stari Vorn. Vrijeme je da otvorim nešto što je zatvoreno puno dulje od kanala 7-G.
 
 <<session_transition SceneTransitionController Session7_Start>>

@@ -8,6 +8,7 @@ Kael: Kuća je tiša nego što je pamtim. Vatra-7 i dalje odbrojava negdje ispod
     Kael: Znam samo da me stari trag vodi prema djedovoj kutiji.
 <<endif>>
 
+<<expression DialogueController Kael surprised>>
 Kael: Kutija je još uvijek iza stare police. Drvo je potamnilo, metalni rubovi su zahrđali, a simbol na poklopcu izgleda potpuno isto kao na dokumentu. Ovo više nije arhiva. Ovo je obitelj. Što prvo pregledavam?
 
 <<set $session7BoxCount = 0>>
@@ -75,6 +76,7 @@ Kael: Ispod toga druga riječ. "Kael — onaj koji dolazi poslije i nastavlja pr
 // OTKRIĆE: Bilješka V-27 potvrđuje da "kael" označava onoga koji nastavlja ulogu nakon prethodnog prekida.
 <<unlock_clue "C31_KAEL_MEANING">>
 
+<<expression DialogueController Kael doubtful>>
 Kael: Zato su me zvali kael-vorn. Ne zato što su nekako znali moje ime. Vidjeli su u meni nekoga tko nastavlja ulogu prethodnog Vorna. To nije sudbina. To je njihova procjena moje uloge.
 
 <<jump Session7_BoxHub>>
@@ -82,12 +84,14 @@ Kael: Zato su me zvali kael-vorn. Ne zato što su nekako znali moje ime. Vidjeli
 
 title: Session7_Transmitter
 ---
+<<expression DialogueController Kael surprised>>
 Kael: Odašiljač ima istu oznaku V-27 kao servisni zapis iz arhive.
 
 <<if $knowsV27PrivateTransmitter>>
     Kael: To potvrđuje trag koji sam već pronašao. Privatni uređaj nije bio teorija.
 <<endif>>
 
+<<expression DialogueController Kael doubtful>>
 Kael: Memorijski modul još radi. Jedna spremljena poruka. "Ako službeni kanal utihne, sačuvaj original. Prijevod nije isto što i dokaz."
 
 <<set $v27SavedOriginals = true>>
@@ -156,6 +160,7 @@ title: Session7_MarenCall
     <<set $escalation += 1>>
 <<endif>>
 
+<<expression DialogueController Kael surprised>>
 Kael: Znam tko je bio V-27.
 
 Maren: Tko?
@@ -166,6 +171,7 @@ Maren: ...
 
 Kael: I imam njegove originalne bilješke.
 
+<<expression DialogueController Maren doubtful>>
 Maren: Kael, ako su autentične, to mijenja dosta stvari. Ali ne mogu zaustaviti Zapovjedništvo samo na temelju obiteljskog pisma.
 
 Kael: Nisam ni rekao da trebaš.
@@ -185,12 +191,14 @@ title: Session7_DhornContact
 ---
 <<radio_static AudioManager>>
 
+<<expression DialogueController Dhorn sad>>
 Dhorn: Kael-vorn.
 
 Kael: Slušam.
 
 Dhorn: Stari vorn krv Kael?
 
+<<expression DialogueController Kael doubtful>>
 Kael: Oni pitaju jesam li povezan s prethodnim Vornom. Kako ću odgovoriti?
 
 -> "Da. V-27 je bio moj djed."
@@ -208,6 +216,7 @@ Kael: Oni pitaju jesam li povezan s prethodnim Vornom. Kako ću odgovoriti?
     Kael: Krv nije argument. Govor sada je važniji.
     Dhorn: Vorn dobro kaže. Ali stari trag još živi.
 
+<<expression DialogueController Dhorn doubtful>>
 Dhorn: Vatra sada skoro puna. Toru ruka dolazi. Govor sada ili rat poslije.
 
 Kael: To više nije jezična vježba.
@@ -257,6 +266,7 @@ Kael: Kako ću ga prevesti?
 
 title: Session7_TruthCheck
 ---
+<<expression DialogueController Kael surprised>>
 Kael: Ako želim treći put, ne smije se oslanjati samo na djedovo pismo. Trebam dovoljno neovisnih dijelova priče.
 
 <<set $truthReady = false>>
@@ -280,6 +290,7 @@ Kael: Ako želim treći put, ne smije se oslanjati samo na djedovo pismo. Trebam
 
 title: Session7_FinalChoiceTruth
 ---
+<<expression DialogueController Kael doubtful>>
 Kael: Ovo je zadnja odluka prije nego Vatra-7 pređe granicu nakon koje nema jednostavnog povratka.
 
 -> Otvori zajednički kanal i iznesi dokaze objema stranama.
@@ -315,6 +326,7 @@ Maren: Ako to napraviš, Zapovjedništvo te može ukloniti iz sustava.
 
 Kael: Onda će ovaj put original ostati izvan sustava.
 
+<<expression DialogueController Dhorn sad>>
 Dhorn: Kael-vorn između.
 
 Kael: Da. Između.
@@ -350,6 +362,7 @@ Kael: Ne vraćam se u ured. Idem prema starom pristupu dubini.
     Kael: Ne vjeruju mi potpuno. Ali možda upravo zato trebam doći bez oružja i bez laži.
 <<endif>>
 
+<<expression DialogueController Kael surprised>>
 Kael: Ne idem zato što mi je djed tamo otišao. Idem zato što sada mogu spriječiti da prvi susret licem u lice počne pogrešnim prijevodom i oružjem.
 
 <<jump Session7_Ending>> 

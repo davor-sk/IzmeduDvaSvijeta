@@ -1,13 +1,16 @@
 ﻿title: Session5_Start
 ---
+<<expression DialogueController Kael doubtful>>
 Kael: Četrdeset četiri sata kasnije. Na ekranu odbrojavanje više ne izgleda kao upozorenje. 03:51:24 do punog kapaciteta Vatre-7. Zgrada zadrhti prije nego što stignem sjesti.
 
 <<set $escalation += 1>>
 
 <<radio_static AudioManager>>
 
+<<expression DialogueController Dhorn sad>>
 Dhorn: Kael-vorn. Vatra sada. Zid-moran pada. Dh'orn čuva.
 
+<<expression DialogueController Kael surprised>>
 Kael: Oni više ne govore o onome što će se dogoditi. Govore o onome što se već događa.
 
 <<set $dhornClaimsCollapseNow = true>>
@@ -16,10 +19,12 @@ Kael: Oni više ne govore o onome što će se dogoditi. Govore o onome što se v
 
 <<notification_beep AudioManager>>
 
+<<expression DialogueController Maren doubtful>>
 Maren: Kael, ostani na vezi. Imamo nova očitanja vibracija u dubinskom sektoru. Operativno zapovjedništvo preuzima koordinaciju Faze II.
 
 Kael: Preuzima?
 
+<<expression DialogueController Maren sad>>
 Maren: Moja služba više nije jedina koja donosi odluke. Trebam tvoju procjenu prije nego što naprave sljedeći korak.
 
 <<set $knowsOperationalCommand = true>>
@@ -30,6 +35,7 @@ Maren: Moja služba više nije jedina koja donosi odluke. Trebam tvoju procjenu 
 
 title: Session5_CrisisCheck
 ---
+<<expression DialogueController Kael doubtful>>
 Kael: Imam nekoliko minuta prije sljedećeg izvještaja. Mogu provjeriti samo jednu stvar.
 
 -> Usporedi vibracije s radom Vatre-7.
@@ -44,6 +50,7 @@ Kael: Imam nekoliko minuta prije sljedećeg izvještaja. Mogu provjeriti samo je
 
 title: Session5_CheckVibrations
 ---
+<<expression DialogueController Kael doubtful>>
 Kael: Uspoređujem vrijeme posljednja tri skoka vibracija s telemetrijom Vatre-7. Poklapaju se s povećanjem kapaciteta, ali korelacija nije dokaz uzroka.
 
 <<set $knowsVatra7Correlation = true>>
@@ -63,6 +70,7 @@ Kael: Novi sigurnosni dodatak Fazi II. Nakon otkrivanja sustavnih podzemnih stru
 // OTKRIĆE: Kontrola Faze II prebačena je Operativnom zapovjedništvu nakon otkrivanja sustavnih podzemnih struktura.
 <<unlock_clue "C23_PHASE2_SECURITY_CONTROL">>
 
+<<expression DialogueController Kael surprised>>
 Kael: Dakle nisu pronašli samo anomalije. Pronašli su strukture dovoljno pravilne da uključe sigurnosni lanac.
 
 <<jump Session5_DhornRequest>>
@@ -74,6 +82,7 @@ Kael: Kanal 7-G je nestabilniji nego inače. Smjernice signala osciliraju u isto
 
 <<set $knowsSignalInstabilityS5 = true>>
 
+<<expression DialogueController Kael sad>>
 Kael: Znam samo da veza postaje lošija baš kada mi treba najviše.
 
 <<jump Session5_DhornRequest>>
@@ -83,13 +92,15 @@ title: Session5_DhornRequest
 ---
 <<radio_static AudioManager>>
 
+<<expression DialogueController Dhorn doubtful>>
 Dhorn: Kael-vorn. Vatra put treba. Toru plan daje? Dh'orn vidi gdje vatra hodi.
 
 Kael: Traže put Vatre. Plan kojim Površina vodi operaciju kroz dubinu. Želim li prvo razjasniti što namjeravaju napraviti s tim planovima?
 
 -> "Zašto vam trebaju planovi?"
     Kael: Ako dam put Vatre, Dh'orn radi što?
-    Dhorn: Čuva moran. Zatvara put gdje može. Nem-rat ako nem-treba.
+    <<expression DialogueController Dhorn neutral>>
+Dhorn: Čuva moran. Zatvara put gdje može. Nem-rat ako nem-treba.
     Kael: Tvrde da žele zaštititi svoj prostor i zatvoriti prolaz projekta, ne napasti Površinu. To je njihova namjera kako je sada opisuju.
     <<set $dhornClaimsDefensiveIntent = true>>
 -> "Hoćete li napasti ljude s Površine?"
@@ -99,12 +110,14 @@ Kael: Traže put Vatre. Plan kojim Površina vodi operaciju kroz dubinu. Želim 
     <<set $dhornClaimsDefensiveIntent = true>>
 -> "Što se trenutno ruši?"
     Kael: Zid-moran. Što pada?
-    Dhorn: Put. Strop. Mjesto gdje mali spavaju. Moran nije jedan zid.
+    <<expression DialogueController Dhorn sad>>
+Dhorn: Put. Strop. Mjesto gdje mali spavaju. Moran nije jedan zid.
     Kael: Opisuju fizičku štetu, ali i šire mjesto zajednice. To i dalje dolazi samo iz njihove poruke.
     <<set $dhornClaimsCollapseNow = true>>
 -> Ne pitaj. Zadrži kanal otvoren.
     Kael: Nemam dovoljno vremena da svaku riječ pretvorim u saslušanje.
 
+<<expression DialogueController Dhorn doubtful>>
 Dhorn: Kael-vorn. Plan vatra. Nem-dugo.
 
 <<jump Session5_MarenRequest>>
@@ -120,12 +133,14 @@ title: Session5_MarenRequest
     Maren: Kael. Zapovjedništvo traži procjenu pristupnih pravaca prema izvoru 7-G. Oni žele lokacije Dhorn prolaza koje si mogao izvući iz dosadašnjih poruka.
 <<endif>>
 
+<<expression DialogueController Kael surprised>>
 Kael: Žele njihove prolaze?
 
 Maren: Traže karte pristupa. Ja tražim da mi kažeš koliko je tvoj prijevod pouzdan prije nego što netko tu riječ pretvori u koordinatu.
 
 Kael: Jesi li ti odobrila taj zahtjev?
 
+<<expression DialogueController Maren doubtful>>
 Maren: Nisam ga pokrenula. I ne sviđa mi se brzina kojom se ovo mijenja. Ali zahtjev postoji.
 
 <<set $marenLostExclusiveControl = true>>
@@ -149,16 +164,20 @@ Kael: Što joj želim reći?
     <<set $withheldDhornPlanRequest = true>>
     <<set $marenSuspicion += 1>>
     Kael: Poruka je previše neprecizna.
-    Maren: Kael, upravo si proveo četiri dana tvrdeći da kontekst mijenja sve. Nemoj ga sada skrivati kad nam treba.
+    <<expression DialogueController Maren angry>>
+Maren: Kael, upravo si proveo četiri dana tvrdeći da kontekst mijenja sve. Nemoj ga sada skrivati kad nam treba.
 -> "Neću vam dati njihove prolaze."
     <<set $refusedDhornMapEarly = true>>
-    Kael: Neću pretvoriti njihove poruke u taktičku kartu za nekoga tko već preuzima kontrolu nad projektom.
+    <<expression DialogueController Kael angry>>
+Kael: Neću pretvoriti njihove poruke u taktičku kartu za nekoga tko već preuzima kontrolu nad projektom.
     Maren: Nisam ti rekla da je predaš bez procjene.
     Kael: Ali netko drugi upravo to želi.
     <<set $marenSuspicion += 1>>
 
+<<expression DialogueController Maren doubtful>>
 Maren: Imamo manje od četiri sata. Ako ovo pukne, nitko više neće imati luksuz savršenog prijevoda.
 
+<<expression DialogueController Kael angry>>
 Kael: To nije razlog da loš prijevod pretvorimo u naredbu.
 
 <<jump Session5_InterpretationCrisis>>
@@ -168,8 +187,10 @@ title: Session5_InterpretationCrisis
 ---
 <<radio_static AudioManager>>
 
+<<expression DialogueController Dhorn angry>>
 Dhorn: Toru vatra ulazi. Dh'orn zatvara put. Ako toru ruka dolazi s vatra, Dh'orn zaustavlja ruku.
 
+<<expression DialogueController Kael doubtful>>
 Kael: "Ruka" smo prije koristili za pomoć i suradnju. Ovdje očito nije isto tako jednostavno. Kako ću prevesti poruku za Maren?
 
 -> "Ako ljudi Površine uđu s projektom, Dhorni će ih pokušati zaustaviti."
@@ -194,12 +215,15 @@ title: Session5_ChoiceSetup
 ---
 <<notification_beep AudioManager>>
 
+<<expression DialogueController Maren doubtful>>
 Maren: Zapovjedništvo je poslalo konačni zahtjev. Ako imaš podatke o Dhorn prolazima, žele ih odmah.
 
 <<radio_static AudioManager>>
 
+<<expression DialogueController Dhorn doubtful>>
 Dhorn: Kael-vorn. Put Vatre. Plan sada.
 
+<<expression DialogueController Kael sad>>
 Kael: Dvije strane. Dva zahtjeva. I obje traže nešto što druga strana ne zna da imam. Cijelo vrijeme sam si govorio da prevoditelj ne odlučuje. Da samo prenosi ono što je rečeno. Ali i ono što prenesem, i ono što prešutim, već je odluka.
 
 <<jump Session5_MajorChoice>>
@@ -207,6 +231,7 @@ Kael: Dvije strane. Dva zahtjeva. I obje traže nešto što druga strana ne zna 
 
 title: Session5_MajorChoice
 ---
+<<expression DialogueController Kael doubtful>>
 Kael: Što ću napraviti?
 
 -> Pošalji planove Vatre-7 Dhornima.
@@ -216,7 +241,8 @@ Kael: Što ću napraviti?
     <<set $governmentTrust -= 5>>
     <<set $escalation += 1>>
     Kael: Dat ću im rutu projekta, ne podatke o ljudima. Ako govore istinu, to im daje priliku zaštititi moran. Ako ne govore, upravo sam prešao granicu koju više ne mogu vratiti.
-    Dhorn: Kael-vorn daje put. Dh'orn čuva.
+    <<expression DialogueController Dhorn happy>>
+Dhorn: Kael-vorn daje put. Dh'orn čuva.
     <<jump Session5_DhornRouteEnd>>
 -> Pošalji Maren podatke o Dhorn prolazima.
     <<set $session5Route = "government">>
@@ -225,15 +251,18 @@ Kael: Što ću napraviti?
     <<set $dhornTrust -= 5>>
     <<set $escalation += 1>>
     Kael: Poslat ću samo ono što mogu opravdati kao pristupne pravce, ne pretpostavljene civilne lokacije. Ali znam da više ne kontroliram kako će ih Zapovjedništvo koristiti.
-    Maren: Primljeno. Označit ću stupanj pouzdanosti i pokušati zadržati podatke u procjeni, ne u naredbi.
+    <<expression DialogueController Maren neutral>>
+Maren: Primljeno. Označit ću stupanj pouzdanosti i pokušati zadržati podatke u procjeni, ne u naredbi.
     <<jump Session5_GovernmentRouteEnd>>
 -> Odbij obje strane.
     <<set $session5Route = "independent">>
     <<set $refusedBothSidesS5 = true>>
     <<set $marenSuspicion += 1>>
     Kael: Neću dati Dhornima operativne planove. Neću ni njihove poruke pretvoriti u kartu za ulazak. Ako obje strane žele da biram bez dovoljno dokaza, moj odgovor je ne.
-    Maren: To neće zaustaviti Zapovjedništvo.
-    Dhorn: Kael-vorn nem-bira?
+    <<expression DialogueController Maren sad>>
+Maren: To neće zaustaviti Zapovjedništvo.
+    <<expression DialogueController Dhorn doubtful>>
+Dhorn: Kael-vorn nem-bira?
     Kael: Biram. Samo ne ono što ste mi ponudili.
     <<jump Session5_IndependentRouteEnd>>
 ===
@@ -251,8 +280,10 @@ Kael: Dokument odlazi kroz kanal 7-G. Ne cijeli projekt, nego tehnički pravac F
 
 <<notification_beep AudioManager>>
 
+<<expression DialogueController Maren angry>>
 Maren: Kael, Zapovjedništvo upravo bilježi neautorizirani izlaz tehničkih podataka. Reci mi da to nisi ti.
 
+<<expression DialogueController Kael sad>>
 Kael: Ne odgovaram odmah.
 
 Maren: Ako si im dao planove, sljedeći potez više neće biti samo moj problem.
@@ -276,12 +307,15 @@ Maren: Primljeno. Pokušat ću zadržati ih izvan operativnog naloga dok ne prov
 
 Kael: Pokušat ćeš?
 
+<<expression DialogueController Maren sad>>
 Maren: Kael, više ti ne mogu obećati da će moja oznaka biti posljednja riječ.
 
 <<radio_static AudioManager>>
 
+<<expression DialogueController Dhorn sad>>
 Dhorn: Kael-vorn. Toru sada vidi put?
 
+<<expression DialogueController Kael sad>>
 Kael: Ne mogu znati kako su to shvatili. Ali ton je prvi put hladniji od samog šuma kanala.
 
 <<set $marenSuspicion += 0>>
@@ -301,8 +335,10 @@ Maren: Zapovjedništvo neće čekati. Ako nema tvojih podataka, napravit će vla
 
 <<radio_static AudioManager>>
 
+<<expression DialogueController Dhorn angry>>
 Dhorn: Vatra hodi i bez Kael plana. Dh'orn bira sam.
 
+<<expression DialogueController Kael sad>>
 Kael: Odbio sam dati oružje jednoj strani i kartu drugoj. To ne znači da sam zaustavio išta.
 
 <<if $foundV27VatraTrace>>

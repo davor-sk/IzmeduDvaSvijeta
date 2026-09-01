@@ -1,19 +1,24 @@
 ﻿title: Session4_Start
 ---
+<<expression DialogueController Kael doubtful>>
 Kael: Sljedeća smjena. Nakon svega što sam pronašao o prethodnom Vornu, očekivao sam još jedan zaključani arhivski zapis. Umjesto toga, na službenom terminalu čeka novi zadatak.
 
 <<notification_beep AudioManager>>
 
+<<expression DialogueController Maren neutral>>
 Maren: Kael. Dodijeljen si procjeni jezičnog rizika za Projekt Vatra-7, Fazu II. Prije aktivacije trebam procjenu reakcije kontakata na 7-G.
 
+<<expression DialogueController Kael surprised>>
 Kael: Vatra-7. Dhorni koriste riječ "vatra" od prvog kontakta. Ali isto ime nije dokaz da govore o ovom projektu.
 
 <<set $knowsVatra7Project = true>>
 // OTKRIĆE: Na Površini postoji službeni projekt pod nazivom Vatra-7.
 <<unlock_clue "C17_VATRA7_PROJECT">>
 
+<<expression DialogueController Maren doubtful>>
 Maren: Imaš ograničen pristup tehničkim podacima. Nemoj izlaziti iz opsega zadatka.
 
+<<expression DialogueController Kael doubtful>>
 Kael: Imam vremena provjeriti dvije stvari prije kontakta s Dhornima.
 
 <<set $session4ResearchCount = 0>>
@@ -50,6 +55,7 @@ Kael: Što želim provjeriti?
 
 title: Session4_ResearchTech
 ---
+<<expression DialogueController Kael doubtful>>
 Kael: TEHNIČKI SAŽETAK. PROJEKT VATRA-7. Dubinska energetska ekstrakcija i stabilizacija podzemnog sustava. Faza II predviđa povećanje radne dubine i kapaciteta. Dakle nije naziv za oružje. Barem ne u službenoj dokumentaciji. To još uvijek ne govori kako ga Dhorni doživljavaju.
 
 <<set $knowsVatra7Phase2 = true>>
@@ -60,10 +66,12 @@ Kael: TEHNIČKI SAŽETAK. PROJEKT VATRA-7. Dubinska energetska ekstrakcija i sta
 
 title: Session4_ResearchCoordinates
 ---
+<<expression DialogueController Kael neutral>>
 Kael: Otvaram mapu radnog područja Faze II.
 
 <<if $knowsSurfaceExtraction>>
-    Kael: Prepoznajem sektor. Preklapa se s područjem geoloških radova koje sam već neovisno povezao sa signalom 7-G.
+    <<expression DialogueController Kael surprised>>
+Kael: Prepoznajem sektor. Preklapa se s područjem geoloških radova koje sam već neovisno povezao sa signalom 7-G.
     <<set $knowsVatra7Overlap = true>>
     // OTKRIĆE: Koordinate Faze II preklapaju se s ranije potvrđenim radovima u području Dhorn signala.
     <<unlock_clue "C18_VATRA7_OVERLAP">>
@@ -78,6 +86,7 @@ Kael: Otvaram mapu radnog područja Faze II.
 
 title: Session4_ResearchHistory
 ---
+<<expression DialogueController Kael doubtful>>
 Kael: Projekt nije pokrenut nakon mog prvog kontakta. Pripremne operacije postojale su prije nego što sam otvorio 7-G. Znači Vatra-7 nije reakcija na mene. To je važno. Ali dokument ne kaže jesu li prije znali za Dhorne.
 
 <<set $knowsVatraPredatesKael = true>>
@@ -89,10 +98,12 @@ Kael: Projekt nije pokrenut nakon mog prvog kontakta. Pripremne operacije postoj
 title: Session4_ResearchV27
 ---
 <<if $knowsV27Designation || $foundIncidentReport || $knowsVornRemovedFromProgram>>
-    Kael: Pretražujem V-27, stari kontakt i sektor u kojem se danas izvodi Vatra-7.
+    <<expression DialogueController Kael doubtful>>
+Kael: Pretražujem V-27, stari kontakt i sektor u kojem se danas izvodi Vatra-7.
 
     <<if $knowsV27Designation && $knowsSurfaceExtraction>>
-        Kael: Nalazim stari tehnički indeks. V-27 je imao pristup izvještajima iz istog šireg dubinskog sektora. Dokument ne govori zašto.
+        <<expression DialogueController Kael surprised>>
+Kael: Nalazim stari tehnički indeks. V-27 je imao pristup izvještajima iz istog šireg dubinskog sektora. Dokument ne govori zašto.
         <<set $foundV27VatraTrace = true>>
         // OTKRIĆE: V-27 je u starom programu imao pristup tehničkim zapisima iz istog šireg dubinskog sektora.
         <<unlock_clue "C19_V27_DEPTH_TRACE">>
@@ -112,13 +123,18 @@ title: Session4_MarenBriefing
 <<notification_beep AudioManager>>
 
 <<if $marenSuspicion >= 7>>
-    Maren: Vrijeme je. Zbog načina na koji si pristupao klasificiranim zapisima dobivaš samo operativni minimum. Faza II nije nova operacija, ali povećanje kapaciteta jest. Saznaj hoće li kontakti na 7-G reagirati na aktivaciju.
-    Kael: Dakle više mi ne vjeruješ ni s kontekstom.
-    Maren: Vjerujem ti kao prevoditelju. Ne vjerujem više da ćeš poštovati granice pristupa.
+    <<expression DialogueController Maren angry>>
+Maren: Vrijeme je. Zbog načina na koji si pristupao klasificiranim zapisima dobivaš samo operativni minimum. Faza II nije nova operacija, ali povećanje kapaciteta jest. Saznaj hoće li kontakti na 7-G reagirati na aktivaciju.
+    <<expression DialogueController Kael doubtful>>
+Kael: Dakle više mi ne vjeruješ ni s kontekstom.
+    <<expression DialogueController Maren doubtful>>
+Maren: Vjerujem ti kao prevoditelju. Ne vjerujem više da ćeš poštovati granice pristupa.
 <<elseif $marenSuspicion >= 4>>
-    Maren: Vrijeme je. Pratim koliko često izlaziš iz opsega zadatka, ali još uvijek trebam tvoju procjenu. Faza II povećava kapacitet. Saznaj hoće li kontakti na 7-G reagirati.
+    <<expression DialogueController Maren doubtful>>
+Maren: Vrijeme je. Pratim koliko često izlaziš iz opsega zadatka, ali još uvijek trebam tvoju procjenu. Faza II povećava kapacitet. Saznaj hoće li kontakti na 7-G reagirati.
 <<else>>
-    Maren: Vrijeme je. Faza II nije nova operacija, ali povećanje kapaciteta jest. Trebam od tebe jednu stvar: saznaj hoće li kontakti na 7-G reagirati na aktivaciju.
+    <<expression DialogueController Maren neutral>>
+Maren: Vrijeme je. Faza II nije nova operacija, ali povećanje kapaciteta jest. Trebam od tebe jednu stvar: saznaj hoće li kontakti na 7-G reagirati na aktivaciju.
 <<endif>>
 
 Kael: Što želim pitati?
@@ -150,6 +166,7 @@ Kael: Što želim pitati?
 -> Ne pitaj ništa više.
     Kael: Razumijem zadatak.
 
+<<expression DialogueController Maren neutral>>
 Maren: Ne treba mi teorija. Treba mi prijevod onoga što stvarno kažu.
 
 <<jump Session4_DhornContact>>
@@ -159,12 +176,14 @@ title: Session4_DhornContact
 ---
 <<radio_static AudioManager>>
 
+<<expression DialogueController Dhorn neutral>>
 Dhorn: Vel-ahn, kael-vorn.
 
 Kael: Vel-ahn. Slušam.
 
 Dhorn: Toru vatra hodi dubina. Vatra uzima kamen. Moran pada poslije.
 
+<<expression DialogueController Kael surprised>>
 Kael: "Vatra" je opet u istoj strukturi. Površina. Dubina. Uzimanje. Moran poslije. Ali sada prvi put znam da na Površini postoji Projekt Vatra-7. Kako ću trenutno zapisati riječ "vatra"?
 
 -> "Projekt Vatra-7."
@@ -189,8 +208,10 @@ Kael: "Vatra" je opet u istoj strukturi. Površina. Dubina. Uzimanje. Moran posl
     Kael: Veza je sve jača, ali još uvijek neću pretpostavku pretvoriti u činjenicu.
     <<add_word RightPanel "vatra" "??? / povezano s Površinom i dubinom">>
 
+<<expression DialogueController Dhorn doubtful>>
 Dhorn: Vatra bliže. Nem-dugo.
 
+<<expression DialogueController Kael doubtful>>
 Kael: Nešto se približava. I kažu da nema puno vremena.
 
 <<jump Session4_DhornQuestions>>
@@ -213,7 +234,8 @@ Kael: Mogu postaviti jedno pitanje prije nego što signal oslabi.
     // OTKRIĆE: Dhorni tvrde da se "vatra" kreće kroz isto područje u kojem Površina uzima resurse.
 -> "Što će se dogoditi ako Vatra nastavi?"
     Kael: Vatra hodi. Poslije što?
-    Dhorn: Moran pada. Dh'orn hodi dalje ako može.
+    <<expression DialogueController Dhorn sad>>
+Dhorn: Moran pada. Dh'orn hodi dalje ako može.
     Kael: Tvrde da će njihov prostor ili zajednica pretrpjeti posljedice. Još uvijek je to njihova tvrdnja, ne neovisan dokaz.
     <<set $dhornClaimsVatraThreat = true>>
 -> "Je li Vatra napad?"
@@ -232,6 +254,7 @@ title: Session4_ReportToMaren
 ---
 <<notification_beep AudioManager>>
 
+<<expression DialogueController Maren neutral>>
 Maren: Izvještaj.
 
 Kael: Kako ću prenijeti ono što znam?
@@ -240,7 +263,8 @@ Kael: Kako ću prenijeti ono što znam?
     <<set $reportedVatraLinkPrecisely = true>>
     <<set $governmentTrust += 2>>
     Kael: Dhorni riječ "vatra" povezuju s aktivnostima Površine u dubini. Projekt Vatra-7 je mogući konkretni izvor, posebno zbog vremena i područja, ali ne mogu tvrditi da oni znaju za naš naziv projekta.
-    Maren: Dobro. To je procjena koju mogu koristiti.
+    <<expression DialogueController Maren happy>>
+Maren: Dobro. To je procjena koju mogu koristiti.
 -> Reci da Dhorni znaju za Projekt Vatra-7.
     <<set $overstatedVatraKnowledge = true>>
     <<set $marenSuspicion += 1>>
@@ -248,7 +272,8 @@ Kael: Kako ću prenijeti ono što znam?
     Kael: Dhorni znaju za Vatru-7.
     Maren: Kako bi znali klasificirano kodno ime?
     Kael: Ne znam da ga znaju. Znam da koriste riječ "vatra".
-    Maren: Onda si mi upravo dao zaključak kao činjenicu. Nemoj to ponoviti.
+    <<expression DialogueController Maren angry>>
+Maren: Onda si mi upravo dao zaključak kao činjenicu. Nemoj to ponoviti.
 -> Ublaži i prijavi samo zabrinutost zbog geološke aktivnosti.
     <<set $softenedVatraReportS4 = true>>
     Kael: Reagiraju na dubinsku geološku aktivnost i zabrinuti su zbog posljedica.
@@ -259,7 +284,8 @@ Kael: Kako ću prenijeti ono što znam?
     <<set $marenSuspicion += 1>>
     <<set $governmentTrust -= 1>>
     Kael: Nema dovoljno novih podataka o njihovoj namjeri.
-    Maren: To nije ono što pokazuje intenzitet 7-G. Ako nešto zadržavaš, saznat ću prije Faze II.
+    <<expression DialogueController Maren angry>>
+Maren: To nije ono što pokazuje intenzitet 7-G. Ako nešto zadržavaš, saznat ću prije Faze II.
 
 Maren: U redu. Stiglo je ažuriranje rasporeda.
 
@@ -268,6 +294,7 @@ Maren: U redu. Stiglo je ažuriranje rasporeda.
 
 title: Session4_Phase2Update
 ---
+<<expression DialogueController Kael surprised>>
 Kael: PROJEKT VATRA-7. FAZA II ODOBRENA. POVEĆANJE RADNE DUBINE I KAPACITETA. AKTIVACIJA PUNOG KAPACITETA: 48:00:00.
 
 <<set $knowsVatra7Countdown = true>>
@@ -285,6 +312,7 @@ Kael: PROJEKT VATRA-7. FAZA II ODOBRENA. POVEĆANJE RADNE DUBINE I KAPACITETA. A
 
 <<radio_static AudioManager>>
 
+<<expression DialogueController Dhorn sad>>
 Dhorn: Kael-vorn. Vatra bliže. Moran čeka. Nem-dugo.
 
 Kael: Imam jednu priliku odgovoriti prije nego što se kanal zatvori.
@@ -293,14 +321,16 @@ Kael: Imam jednu priliku odgovoriti prije nego što se kanal zatvori.
     <<set $warnedDhornFullS4 = true>>
     <<set $dhornTrust += 2>>
     Kael: Toru vatra raste. Puni hodi za četrdeset osam sati.
-    Dhorn: Dh'orn čuje. Dh'orn sprema.
+    <<expression DialogueController Dhorn neutral>>
+Dhorn: Dh'orn čuje. Dh'orn sprema.
 -> Reci samo da je nova faza odobrena.
     <<set $warnedDhornPartialS4 = true>>
     <<set $dhornTrust += 1>>
     Kael: Toru vatra bliže. Nova faza hodi.
     Dhorn: Koliko dugo?
     Kael: Ne odgovaram brojkom.
-    Dhorn: Kael čuva dio govora.
+    <<expression DialogueController Dhorn doubtful>>
+Dhorn: Kael čuva dio govora.
 -> Nemoj im otkriti raspored.
     <<set $withheldVatraCountdownS4 = true>>
     <<set $dhornTrust -= 1>>
@@ -317,6 +347,7 @@ Kael: Imam jednu priliku odgovoriti prije nego što se kanal zatvori.
 
 title: Session4_Ending
 ---
+<<expression DialogueController Kael doubtful>>
 Kael: Četrdeset osam sati. Dhorni su govorili "vatra" prije nego što sam znao da Projekt Vatra-7 postoji.
 
 <<if $vatraInterpretation == "surface_depth_activity">>
@@ -333,6 +364,7 @@ Kael: Četrdeset osam sati. Dhorni su govorili "vatra" prije nego što sam znao 
     Kael: A V-27 je prije dvadeset sedam godina već imao pristup zapisima iz istog šireg sektora. Ne znam zašto. Još.
 <<endif>>
 
+<<expression DialogueController Kael sad>>
 Kael: Za dva dana možda više neće biti važno kako nazivamo ono što dolazi. Bit će važno što napravi kad stigne.
 
 <<jump Session4_TimeSkip>>
