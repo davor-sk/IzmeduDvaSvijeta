@@ -32,22 +32,56 @@ public class SaveData
 
 public static class SaveSystem
 {
-    private const string FileName = "savegame.json";
+   
+    public const int SlotCount = 3;
 
-    private static string FilePath => Path.Combine(Application.persistentDataPath, FileName);
-
-    public static bool HasSave()
+    private static string FilePathFor(int slot)
     {
-        return File.Exists(FilePath);
+        return Path.Combine(Application.persistentDataPath, "savegame" + slot + ".json");
     }
 
-    public static void Save(SaveData data)
+
+    private static string LegacyFilePath => Path.Combine(Application.persistentDataPath, "savegame.json");
+
+    public static bool IsValidSlot(int slot)
     {
+        return slot >= 1 && slot <= SlotCount;
+    }
+
+    public static bool HasSave(int slot)
+    {
+        if (!IsValidSlot(slot))
+            return false;
+
+        MigrateLegacySaveIfNeeded();
+        return File.Exists(FilePathFor(slot));
+    }
+
+    
+    public static bool HasAnySave()
+    {
+        for (int slot = 1; slot <= SlotCount; slot++)
+        {
+            if (HasSave(slot))
+                return true;
+        }
+
+        return false;
+    }
+
+    public static void Save(SaveData data, int slot)
+    {
+        if (!IsValidSlot(slot))
+        {
+            Debug.LogError("Save: nevaljan slot " + slot);
+            return;
+        }
+
         try
         {
             string json = JsonUtility.ToJson(data, true);
-            File.WriteAllText(FilePath, json);
-            Debug.Log("Igra spremljena: " + FilePath);
+            File.WriteAllText(FilePathFor(slot), json);
+            Debug.Log("Igra spremljena u slot " + slot + ": " + FilePathFor(slot));
         }
         catch (System.Exception e)
         {
@@ -55,29 +89,71 @@ public static class SaveSystem
         }
     }
 
-    public static SaveData Load()
+    public static SaveData Load(int slot)
     {
-        if (!HasSave())
+        if (!HasSave(slot))
             return null;
 
         try
         {
-            string json = File.ReadAllText(FilePath);
+            string json = File.ReadAllText(FilePathFor(slot));
             return JsonUtility.FromJson<SaveData>(json);
         }
         catch (System.Exception e)
         {
-            Debug.LogError("Učitavanje nije uspjelo: " + e.Message);
+            Debug.LogError("Ucitavanje nije uspjelo: " + e.Message);
             return null;
         }
     }
 
-    public static void DeleteSave()
+    public static void DeleteSave(int slot)
     {
-        if (HasSave())
+        if (HasSave(slot))
         {
-            File.Delete(FilePath);
-            Debug.Log("Spremljena igra obrisana.");
+            File.Delete(FilePathFor(slot));
+            Debug.Log("Slot " + slot + " obrisan.");
+        }
+    }
+
+    public static string GetSlotLabel(int slot)
+    {
+        if (!HasSave(slot))
+            return slot + " - prazno";
+
+        var data = Load(slot);
+
+        if (data == null || string.IsNullOrEmpty(data.savedAtDisplay))
+            return slot + " - spremljeno";
+
+        return slot + " - " + data.savedAtDisplay;
+    }
+
+   
+    private static bool legacyChecked = false;
+
+    private static void MigrateLegacySaveIfNeeded()
+    {
+        if (legacyChecked)
+            return;
+
+        legacyChecked = true;
+
+        try
+        {
+            if (!File.Exists(LegacyFilePath))
+                return;
+
+            string slot1 = FilePathFor(1);
+
+            if (!File.Exists(slot1))
+            {
+                File.Move(LegacyFilePath, slot1);
+                Debug.Log("Stari savegame.json prebacen u slot 1.");
+            }
+        }
+        catch (System.Exception e)
+        {
+            Debug.LogWarning("Migracija starog savea nije uspjela: " + e.Message);
         }
     }
 }

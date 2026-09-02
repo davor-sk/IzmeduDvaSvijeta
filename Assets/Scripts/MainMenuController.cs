@@ -5,10 +5,16 @@ using TMPro;
 
 public class MainMenuController : MonoBehaviour
 {
-    // Gumb "Nastavi igru" - sakriva se ako nema spremljene igre
+   
     public GameObject continueButton;
 
-    // Neobavezno: prikaz kada je igra spremljena
+   
+    public GameObject[] slotButtons;
+
+   
+    public TextMeshProUGUI[] slotLabels;
+
+  
     public TextMeshProUGUI saveInfoText;
 
     void Start()
@@ -18,45 +24,66 @@ public class MainMenuController : MonoBehaviour
 
     private void RefreshContinueButton()
     {
-        bool hasSave = SaveSystem.HasSave();
+        bool hasAnySave = SaveSystem.HasAnySave();
 
         if (continueButton != null)
-            continueButton.SetActive(hasSave);
+            continueButton.SetActive(hasAnySave);
+
+       
+        for (int i = 0; i < SaveSystem.SlotCount; i++)
+        {
+            bool slotHasSave = SaveSystem.HasSave(i + 1);
+
+            if (slotLabels != null && i < slotLabels.Length && slotLabels[i] != null)
+                slotLabels[i].text = "NASTAVI " + SaveSystem.GetSlotLabel(i + 1);
+
+            if (slotButtons != null && i < slotButtons.Length && slotButtons[i] != null)
+                slotButtons[i].SetActive(slotHasSave);
+        }
 
         if (saveInfoText != null)
-        {
-            if (hasSave)
-            {
-                var data = SaveSystem.Load();
-                saveInfoText.text = data != null && !string.IsNullOrEmpty(data.savedAtDisplay)
-                    ? "Spremljeno: " + data.savedAtDisplay
-                    : "";
-            }
-            else
-            {
-                saveInfoText.text = "";
-            }
-        }
+            saveInfoText.text = "";
     }
 
     public void StartNewGame()
     {
-        // nova igra uvijek krece od pocetka, ne od spremljenog nodea
+        
         GameSaveManager.ShouldLoadOnStart = false;
         SceneManager.LoadScene("SampleScene");
     }
 
-    // Poziva ga ContinueButton
+
+    public void ContinueSlot1() { ContinueGame(1); }
+    public void ContinueSlot2() { ContinueGame(2); }
+    public void ContinueSlot3() { ContinueGame(3); }
+
+   
     public void ContinueGame()
     {
-        if (!SaveSystem.HasSave())
+        for (int slot = 1; slot <= SaveSystem.SlotCount; slot++)
         {
-            Debug.LogWarning("Nema spremljene igre.");
+            if (SaveSystem.HasSave(slot))
+            {
+                ContinueGame(slot);
+                return;
+            }
+        }
+
+        Debug.LogWarning("Nema spremljene igre.");
+        RefreshContinueButton();
+    }
+
+    public void ContinueGame(int slot)
+    {
+        if (!SaveSystem.HasSave(slot))
+        {
+            Debug.LogWarning("Slot " + slot + " je prazan.");
             RefreshContinueButton();
             return;
         }
 
         GameSaveManager.ShouldLoadOnStart = true;
+        GameSaveManager.SlotToLoad = slot;
         SceneManager.LoadScene("SampleScene");
     }
 
