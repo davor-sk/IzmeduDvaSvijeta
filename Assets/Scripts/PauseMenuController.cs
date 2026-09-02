@@ -11,6 +11,8 @@ public class PauseMenuController : MonoBehaviour
     public GameSaveManager saveManager;
     public TextMeshProUGUI saveFeedbackText;
 
+    public TextMeshProUGUI[] slotLabels;
+
     
     public static bool CanPause = true;
 
@@ -52,13 +54,18 @@ public class PauseMenuController : MonoBehaviour
         if (pauseMenuPanel != null)
             pauseMenuPanel.SetActive(true);
 
-        // svaki put kad se otvori pauza, poruka o spremanju krece prazna
+        
         if (saveFeedbackText != null)
             saveFeedbackText.text = "";
+
+        RefreshSlotLabels();
     }
 
-    // Poziva ga SaveButton u PauseMenuPanelu
-    public void SaveGame()
+    public void SaveToSlot1() { SaveToSlot(1); }
+    public void SaveToSlot2() { SaveToSlot(2); }
+    public void SaveToSlot3() { SaveToSlot(3); }
+
+    public void SaveToSlot(int slot)
     {
         if (saveManager == null)
         {
@@ -66,10 +73,25 @@ public class PauseMenuController : MonoBehaviour
             return;
         }
 
-        saveManager.SaveGame();
+        saveManager.SaveGame(slot);
 
         if (saveFeedbackText != null)
-            saveFeedbackText.text = "Igra spremljena.";
+            saveFeedbackText.text = "Spremljeno u slot " + slot + ".";
+
+        RefreshSlotLabels();
+    }
+
+    
+    public void RefreshSlotLabels()
+    {
+        if (slotLabels == null)
+            return;
+
+        for (int i = 0; i < slotLabels.Length; i++)
+        {
+            if (slotLabels[i] != null)
+                slotLabels[i].text = "Spremi " + SaveSystem.GetSlotLabel(i + 1);
+        }
     }
 
     

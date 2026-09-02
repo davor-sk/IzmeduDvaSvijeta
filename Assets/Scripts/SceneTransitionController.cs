@@ -37,6 +37,21 @@ public class SceneTransitionController : MonoBehaviour
         StartFade(0f);
     }
 
+    public void ApplyBackgroundForSession(string sessionName)
+    {
+        if (string.IsNullOrEmpty(sessionName) || backgroundImage == null || sessionBackgrounds == null)
+            return;
+
+        foreach (var item in sessionBackgrounds)
+        {
+            if (item != null && item.sessionName == sessionName && item.background != null)
+            {
+                backgroundImage.sprite = item.background;
+                return;
+            }
+        }
+    }
+
     [YarnCommand("session_transition")]
     public void SessionTransition(string nextSession)
     {
