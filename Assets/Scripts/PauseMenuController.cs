@@ -11,7 +11,6 @@ public class PauseMenuController : MonoBehaviour
     public GameSaveManager saveManager;
     public TextMeshProUGUI saveFeedbackText;
 
-
     public TextMeshProUGUI[] slotLabels;
 
     
@@ -61,7 +60,6 @@ public class PauseMenuController : MonoBehaviour
 
         RefreshSlotLabels();
     }
-
 
     public void SaveToSlot1() { SaveToSlot(1); }
     public void SaveToSlot2() { SaveToSlot(2); }

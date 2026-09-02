@@ -1,14 +1,9 @@
 using UnityEngine;
 using TMPro;
 
-// Brisanje trajnog napretka iz izbornika.
-// Manageri su staticne klase pa ih Unity gumb ne moze zvati izravno;
-// ova komponenta ih omotava u obicne metode koje se mogu spojiti na OnClick.
 public class ProgressResetController : MonoBehaviour
 {
     [Header("Osvjezavanje prikaza (neobavezno)")]
-    // U MainMenu sceni obje sjede na ProgressPanelu.
-    // AchievementsMenuDisplay prikazuje i otkrica i achievemente.
     public AchievementsMenuDisplay achievementsDisplay;
     public EndingsMenuDisplay endingsDisplay;
 
@@ -68,7 +63,6 @@ public class ProgressResetController : MonoBehaviour
         SetFeedback("Sav napredak obrisan.");
     }
 
-    // Brise i spremljene igre (slotove), uz sve ostalo.
     public void ResetEverythingIncludingSaves()
     {
         if (!Confirm("all_saves", "Obrisati napredak I spremljene igre? Klikni ponovno za potvrdu."))
@@ -85,7 +79,6 @@ public class ProgressResetController : MonoBehaviour
         SetFeedback("Sve obrisano, ukljucujuci spremljene igre.");
     }
 
-    // Vraca true kad akciju treba stvarno izvrsiti.
     private bool Confirm(string action, string question)
     {
         if (!requireConfirmation)
@@ -104,8 +97,6 @@ public class ProgressResetController : MonoBehaviour
 
     private void RefreshAll()
     {
-        // Ako polja nisu spojena, nadu se sami - panel je cesto neaktivan
-        // pa se trazi i medu neaktivnima.
         if (achievementsDisplay == null)
             achievementsDisplay = FindFirstObjectByType<AchievementsMenuDisplay>(FindObjectsInactive.Include);
 

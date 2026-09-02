@@ -3,22 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using Yarn.Unity;
 
-
-// Izvrsava se nakon DialogueRunnera (veci broj = kasnije), da se ucitani
-// dijalog pokrene tek kad je Runner vec odradio svoj autoStart.
 [DefaultExecutionOrder(100)]
 public class GameSaveManager : MonoBehaviour
 {
     public DialogueRunner dialogueRunner;
     public NotebookController notebook;
 
-    // Za vracanje pozadine pri ucitavanju; nadje se sam ako nije spojen.
     public SceneTransitionController sceneTransition;
-
 
     public static bool ShouldLoadOnStart = false;
 
-    // Slot koji je glavni izbornik odabrao za nastavak igre.
     public static int SlotToLoad = 1;
 
    
@@ -65,9 +59,6 @@ public class GameSaveManager : MonoBehaviour
         }
     }
 
-    // U sceni postoji vise NotebookControllera (RightPanel i ClueLogPanel),
-    // pa FindFirstObjectByType zna uhvatiti krivi i spremiti praznu biljeznicu.
-    // Trazi se onaj koji stvarno ima rijeci; ako su svi prazni, uzima se prvi.
     private NotebookController ResolveNotebook()
     {
         var all = FindObjectsByType<NotebookController>(FindObjectsSortMode.None);
@@ -111,7 +102,6 @@ public class GameSaveManager : MonoBehaviour
         var storage = dialogueRunner.VariableStorage;
         if (storage != null)
         {
-            // Prvo se uzme sve sto Yarn trenutno drzi...
             var all = storage.GetAllVariables();
 
             var floats = new Dictionary<string, float>();
@@ -127,9 +117,6 @@ public class GameSaveManager : MonoBehaviour
             foreach (var pair in all.BoolVariables)
                 bools[pair.Key] = pair.Value;
 
-            // ...a onda se svaka deklarirana varijabla jos procita poimence.
-            // Yarn varijable stvara lijeno, pa GetAllVariables() zna vratiti
-            // prazno ili nepotpuno - bez ovoga se napredak gubio.
             foreach (var name in YarnVariableNames.FloatNames)
             {
                 if (!floats.ContainsKey(name) && storage.TryGetValue<float>(name, out float v))
@@ -170,8 +157,6 @@ public class GameSaveManager : MonoBehaviour
                       strings.Count + " string, " + bools.Count + " bool varijabli.");
         }
 
-        // Razrjesava se i ovdje: u Awakeu su sve biljeznice jos prazne,
-        // pa se tek sada zna koja je prava.
         var activeNotebook = ResolveNotebook() ?? notebook;
 
         if (activeNotebook != null)
@@ -227,9 +212,6 @@ public class GameSaveManager : MonoBehaviour
 
         currentNode = data.currentNode;
 
-        // Pokretanje ide kroz korutinu: ako Runner jos gasi prethodni dijalog
-        // (Stop je asinkron) ili tek treba odraditi svoj autoStart, cekamo da
-        // se smiri pa tek onda krecemo od spremljenog nodea.
         StartCoroutine(StartLoadedNode(data.currentNode));
     }
 
@@ -238,7 +220,6 @@ public class GameSaveManager : MonoBehaviour
         if (dialogueRunner.IsDialogueRunning)
             dialogueRunner.Stop().Forget();
 
-        // Jedan frame da Runner odradi svoj Start() i eventualni autoStart.
         yield return null;
 
         if (dialogueRunner.IsDialogueRunning)
@@ -247,8 +228,6 @@ public class GameSaveManager : MonoBehaviour
             yield return null;
         }
 
-        // Pozadina odgovara sesiji spremljenog nodea - inace ostane ona
-        // s kojom je scena krenula (Session 1).
         if (sceneTransition != null)
         {
             string session = NodeSessionMap.GetSessionFor(nodeName);
@@ -260,8 +239,6 @@ public class GameSaveManager : MonoBehaviour
         currentNode = nodeName;
         dialogueRunner.StartDialogue(nodeName).Forget();
 
-        // Tek sada je sigurno vratiti autoStart u prvobitno stanje: dijalog
-        // je pokrenut, pa ga Runner vise ne moze pregaziti svojim startNodeom.
         dialogueRunner.autoStart = wasAutoStart;
 
         Debug.Log("Igra ucitana, nastavak od nodea: " + nodeName);

@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 
-
 public static class NodeSessionMap
 {
     private static readonly Dictionary<string, string> map = new Dictionary<string, string>
@@ -128,7 +127,6 @@ public static class NodeSessionMap
         { "Session8_WarEpilogue", "Session8_Start" },
         { "Session8_End", "Session8_Start" },
     };
-
 
     public static string GetSessionFor(string nodeName)
     {

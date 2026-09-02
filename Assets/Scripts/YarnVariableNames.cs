@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 
-
 public static class YarnVariableNames
 {
     private static readonly string[] Floats =

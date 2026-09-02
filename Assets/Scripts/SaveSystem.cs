@@ -40,7 +40,6 @@ public static class SaveSystem
         return Path.Combine(Application.persistentDataPath, "savegame" + slot + ".json");
     }
 
-
     private static string LegacyFilePath => Path.Combine(Application.persistentDataPath, "savegame.json");
 
     public static bool IsValidSlot(int slot)

@@ -37,9 +37,6 @@ public class SceneTransitionController : MonoBehaviour
         StartFade(0f);
     }
 
-    // Postavlja pozadinu odmah, bez fadea i bez pokretanja dijaloga.
-    // Koristi se pri ucitavanju spremljene igre, da pozadina odgovara sesiji
-    // u kojoj je igrac stao.
     public void ApplyBackgroundForSession(string sessionName)
     {
         if (string.IsNullOrEmpty(sessionName) || backgroundImage == null || sessionBackgrounds == null)

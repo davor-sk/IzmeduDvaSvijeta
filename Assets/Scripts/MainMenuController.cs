@@ -52,7 +52,6 @@ public class MainMenuController : MonoBehaviour
         SceneManager.LoadScene("SampleScene");
     }
 
-
     public void ContinueSlot1() { ContinueGame(1); }
     public void ContinueSlot2() { ContinueGame(2); }
     public void ContinueSlot3() { ContinueGame(3); }
