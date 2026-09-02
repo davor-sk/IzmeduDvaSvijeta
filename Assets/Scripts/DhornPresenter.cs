@@ -164,21 +164,32 @@ public class DhornPresenter : DialoguePresenterBase
         // NOVO — pomoćne funkcije koje garantiraju točno stanje gumba
         void EnsureButtonShown()
         {
+            if (nextButton == null)
+                return;
+
             if (!listenerAdded)
             {
                 nextButton.onClick.AddListener(OnNextClicked);
                 listenerAdded = true;
             }
+
             nextButton.gameObject.SetActive(true);
         }
 
         void EnsureButtonHidden()
         {
+            if (nextButton == null)
+            {
+                listenerAdded = false;
+                return;
+            }
+
             if (listenerAdded)
             {
                 nextButton.onClick.RemoveListener(OnNextClicked);
                 listenerAdded = false;
             }
+
             nextButton.gameObject.SetActive(false);
         }
 
