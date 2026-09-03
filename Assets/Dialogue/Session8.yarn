@@ -99,7 +99,7 @@ Kael: Vatra-7 ulazi u privremenu obustavu dok Operativno zapovjedništvo procjen
 <<expression DialogueController Kael happy>>
 Kael: Dhorni ne otvaraju sve prolaze. Površina ne povlači sve jedinice. Mir nije postignut. Ali govor nije prekinut. Za sada je to dovoljno.
 
-<<jump Session8_End>>
+<<show_ending EndingCardPanel "DHORN" "Glas podzemlja." "Govor nije prekinut. Za sada je to dovoljno.">>
 ===
 
 title: Session8_GovernmentEnding
@@ -165,7 +165,7 @@ title: Session8_GovernmentEpilogue
 
 Kael: Dhorni ne vjeruju Površini. Površina ne vjeruje Dhornima. Ništa od toga nije nestalo zato što sam se vratio. Ali prvi put originalna Dhorn poruka ostaje uz prijevod u službenom zapisu. Nijedna riječ više ne može nestati samo zato što je netko odlučio sačuvati sažetak.
 
-<<jump Session8_End>>
+<<show_ending EndingCardPanel "VLADA" "Red iznad istine." "Nijedna riječ više ne može nestati samo zato što je netko odlučio sačuvati sažetak.">>
 ===
 
 title: Session8_TruthEnding
@@ -243,7 +243,7 @@ title: Session8_TruthEpilogue
 <<expression DialogueController Kael happy>>
 Kael: Vatra-7 ulazi u privremenu obustavu. Pregovori još nisu mir. Ali rat također nije počeo. Pred nama je nešto sporije i teže od pobjede. Razgovor u kojem obje strane mogu provjeriti što je druga stvarno rekla. Između dva svijeta.
 
-<<jump Session8_End>>
+<<show_ending EndingCardPanel "ISTINA" "Istina između dva svijeta." "Razgovor u kojem obje strane mogu provjeriti što je druga stvarno rekla. Između dva svijeta.">>
 ===
 
 title: Session8_WarEnding
@@ -322,12 +322,5 @@ Kael: Vatra-7 se gasi tek nakon urušavanja dijela dubinskog sustava.
 <<expression DialogueController Kael sad>>
 Kael: Površina zatvara javne informacije. Dhorni prekidaju 7-G. Broj stradalih ne postoji u jednoj verziji kojoj obje strane vjeruju. Najgore nije to što smo jednu riječ pogrešno preveli. Najgore je što smo prestali provjeravati prije nego što smo djelovali.
 
-<<jump Session8_End>>
-===
-
-title: Session8_End
----
-<<expression DialogueController Kael sad>>
-Kael: Kanal ostaje otvoren još nekoliko sekundi. Dovoljno da čujem statiku. Dovoljno da znam da je s druge strane netko barem jednom slušao. Vel-ahn.
-
+<<show_ending EndingCardPanel "RAT" "Kad riječi više nisu dovoljne." "Najgore nije to što smo jednu riječ pogrešno preveli. Najgore je što smo prestali provjeravati prije nego što smo djelovali.">>
 ===

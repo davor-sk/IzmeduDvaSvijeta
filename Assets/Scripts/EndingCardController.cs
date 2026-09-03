@@ -15,8 +15,8 @@ public class EndingCardController : MonoBehaviour
     public DialogueRunner dialogueRunner;
 
     [YarnCommand("show_ending")]
-    public void ShowEnding(string quote)
-    {        
+    public void ShowEnding(string title, string subtitle, string quote)
+    {
         PauseMenuController.CanPause = false;
 
         endingCardPanel.SetActive(true);
@@ -25,7 +25,10 @@ public class EndingCardController : MonoBehaviour
         canvasGroup.interactable = true;
         canvasGroup.blocksRaycasts = true;
 
+        titleText.text = title;
+        subtitleText.text = subtitle;
         endingQuote.text = quote;
+
         mainMenuButton.SetActive(false);
 
         StartCoroutine(FadeInAndShowButton());
