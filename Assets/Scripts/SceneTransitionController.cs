@@ -5,7 +5,7 @@ public class SceneTransitionController : MonoBehaviour
 {
     [Header("Fade")]
     [SerializeField] private CanvasGroup fadeCanvasGroup;
-    [SerializeField] private float fadeDuration = 0.5f;
+    [SerializeField] private float fadeDuration = 1.5f;
     [Header("Yarn")]
     [SerializeField] private DialogueRunner dialogueRunner;
     [System.Serializable]
@@ -24,7 +24,13 @@ public class SceneTransitionController : MonoBehaviour
     private void Awake()
     {
         if (fadeCanvasGroup != null)
-            fadeCanvasGroup.alpha = 0f;
+            fadeCanvasGroup.alpha = 1f;
+    }
+
+    private void Start()
+    {
+        if (fadeCanvasGroup != null)
+            FadeIn();
     }
 
     public void FadeOut()
